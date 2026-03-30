@@ -1,5 +1,5 @@
 import { motion, useScroll } from "framer-motion";
-import { FaGithub, FaLinkedin, FaEnvelope, FaPhone } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaEnvelope, FaPhone, FaCode, FaGlobe, FaTools } from "react-icons/fa";
 import emailjs from "emailjs-com";
 import { useEffect, useRef } from "react";
 
@@ -443,7 +443,7 @@ export default function Portfolio() {
   };
 
   return (
-    <div className="relative bg-[#020617] text-white min-h-screen overflow-hidden">
+    <div className="relative bg-[#050816] text-white min-h-screen overflow-hidden">
 
       {/* SCROLL BAR */}
       <motion.div
@@ -457,66 +457,117 @@ export default function Portfolio() {
         className="absolute inset-0 w-full h-full z-0 pointer-events-none"
         aria-hidden
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/70 pointer-events-none z-0" />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/40 to-black/80 pointer-events-none z-0" />
 
       <div className="relative z-10">
       {/* NAVBAR */}
-      <div className="fixed top-0 left-0 w-full flex justify-between px-10 py-5 z-50 bg-black/40 backdrop-blur-md">
-        <h1 className="text-lg font-semibold text-green-400">Gaurav</h1>
+      <div className="fixed top-0 left-0 w-full z-50">
+        <div className="mx-auto max-w-6xl px-6 py-4 flex items-center justify-between bg-slate-900/60 backdrop-blur-xl border-b border-white/5 rounded-b-2xl shadow-[0_18px_60px_rgba(15,23,42,0.8)]">
+          <h1 className="text-lg md:text-xl font-semibold tracking-tight text-green-400 select-none">
+            Gaurav<span className="text-slate-400">.dev</span>
+          </h1>
 
-        <div className="flex items-center gap-6 text-gray-400">
-          <a href="#about" className="hover:text-green-400">About</a>
-          <a href="#skills" className="hover:text-green-400">Skills</a>
-          <a href="#experience" className="hover:text-green-400">Experience</a>
-          <a href="#projects" className="hover:text-green-400">Projects</a>
-          <a href="#contact" className="hover:text-green-400">Contact</a>
+          <nav className="flex items-center gap-6 text-sm md:text-base text-slate-300">
+            <a href="#about" className="relative hover:text-green-400 transition-colors after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 hover:after:w-full after:bg-green-400 after:transition-all after:duration-300">
+              About
+            </a>
+            <a href="#skills" className="relative hover:text-green-400 transition-colors after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 hover:after:w-full after:bg-green-400 after:transition-all after:duration-300">
+              Skills
+            </a>
+            <a href="#experience" className="relative hover:text-green-400 transition-colors after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 hover:after:w-full after:bg-green-400 after:transition-all after:duration-300">
+              Experience
+            </a>
+            <a href="#projects" className="relative hover:text-green-400 transition-colors after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 hover:after:w-full after:bg-green-400 after:transition-all after:duration-300">
+              Projects
+            </a>
+            <a href="#contact" className="relative hover:text-green-400 transition-colors after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 hover:after:w-full after:bg-green-400 after:transition-all after:duration-300">
+              Contact
+            </a>
 
-          <a
-            href="/resume.pdf"
-            download
-            className="px-4 py-2 border border-green-500 rounded text-green-400 hover:bg-green-500 hover:text-black transition"
-          >
-            Resume
-          </a>
+            <a
+              href="/resume.pdf"
+              download
+              className="px-4 py-2 rounded-full border border-emerald-400/70 bg-emerald-500/10 text-emerald-300 hover:bg-emerald-400 hover:text-slate-950 hover:shadow-[0_0_35px_rgba(52,211,153,0.55)] transition-colors transition-transform duration-200 hover:-translate-y-0.5"
+            >
+              Resume
+            </a>
+          </nav>
         </div>
       </div>
 
       {/* HERO */}
-      <section className="min-h-screen flex items-center justify-center px-10 pt-24 max-w-6xl mx-auto">
+      <section className="min-h-screen flex items-center justify-center px-6 pt-28 md:pt-32 max-w-6xl mx-auto">
 
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+          className="relative max-w-2xl"
         >
-          <h1 className="text-5xl md:text-6xl font-bold leading-tight">
-            Hi, I'm{" "}
-            <span className="bg-gradient-to-r from-green-400 to-emerald-600 text-transparent bg-clip-text">
-              Gaurav
-            </span>
-            <br />
-            <span className="text-gray-300">
-              I build interactive experiences
-            </span>
-          </h1>
+          <motion.p
+            initial={{ opacity: 0, x: -10 }}
+            animate={{ opacity: 0.9, x: 0 }}
+            transition={{ delay: 0.1, duration: 0.6 }}
+            className="text-xs md:text-sm uppercase tracking-[0.25em] text-emerald-300/80 mb-3"
+          >
+            Hi, I'm <span className="font-semibold text-emerald-300">Gaurav</span>
+          </motion.p>
 
-          <p className="mt-6 text-gray-400 max-w-md">
-            Computer Science student passionate about building modern web apps and real-world solutions.
-          </p>
+          <motion.h1
+            initial={{ opacity: 0, y: 18 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.18, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+            className="text-4xl md:text-5xl lg:text-6xl font-semibold md:font-bold leading-tight tracking-tight"
+          >
+            <span className="block text-slate-200">
+              Building Modern
+            </span>
+            <span className="block bg-gradient-to-r from-cyan-400 via-emerald-400 to-violet-500 text-transparent bg-clip-text">
+              Web Experiences
+            </span>
+          </motion.h1>
 
-          <div className="mt-6 flex gap-4">
-            <a href="#projects" className="bg-green-500 text-black px-6 py-2 rounded hover:scale-105 transition">
+          <motion.p
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 0.9, y: 0 }}
+            transition={{ delay: 0.32, duration: 0.6 }}
+            className="mt-5 text-sm md:text-base text-slate-300/80 max-w-xl"
+          >
+            Frontend-focused developer crafting interactive, performant interfaces with{" "}
+            <span className="text-emerald-300">React</span>,{" "}
+            <span className="text-emerald-300">JavaScript</span>, and{" "}
+            <span className="text-emerald-300">modern UI engineering</span>.
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 8 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.45, duration: 0.6 }}
+            className="mt-7 flex flex-wrap gap-4"
+          >
+            <a
+              href="#projects"
+              className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-emerald-400 to-cyan-400 text-slate-950 px-7 py-2.5 text-sm font-semibold shadow-[0_0_30px_rgba(16,185,129,0.6)] hover:shadow-[0_0_40px_rgba(16,185,129,0.9)] transition-transform transition-shadow duration-200 hover:-translate-y-0.5 hover:scale-[1.03]"
+            >
               View Projects
             </a>
-            <a href="#contact" className="border border-green-500 px-6 py-2 rounded hover:bg-green-500 hover:text-black transition">
+            <a
+              href="#contact"
+              className="inline-flex items-center gap-2 rounded-full border border-emerald-400/70 bg-slate-900/40 px-7 py-2.5 text-sm font-semibold text-emerald-200 hover:bg-emerald-400 hover:text-slate-950 hover:shadow-[0_0_30px_rgba(52,211,153,0.6)] transition-colors transition-transform duration-200 hover:-translate-y-0.5 hover:scale-[1.03]"
+            >
               Contact Me
             </a>
-          </div>
+          </motion.div>
         </motion.div>
 
-        <h1 className="absolute text-[100px] font-bold text-green-500 opacity-5 right-10 bottom-10 pointer-events-none">
+        <motion.h1
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 0.08, y: [0, -8, 0] }}
+          transition={{ delay: 0.6, duration: 8, repeat: Infinity, ease: "easeInOut" }}
+          className="pointer-events-none absolute right-6 md:right-10 bottom-10 text-[72px] md:text-[96px] lg:text-[110px] font-black tracking-[0.2em] text-emerald-400/20"
+        >
           GAURAV
-        </h1>
+        </motion.h1>
 
       </section>
 
@@ -536,51 +587,128 @@ export default function Portfolio() {
       </motion.section>
 
       {/* SKILLS */}
-      <motion.section id="skills" className="px-10 mt-32 max-w-6xl mx-auto"
-        initial={{ opacity: 0, y: 60 }} whileInView={{ opacity: 1, y: 0 }}>
+      <motion.section
+        id="skills"
+        className="px-6 mt-32 max-w-6xl mx-auto"
+        initial={{ opacity: 0, y: 60 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+      >
 
-        <h2 className="text-3xl mb-6">Skills<span className="text-green-400"></span></h2>
+        <h2 className="text-3xl md:text-4xl mb-6 font-semibold tracking-tight">
+          Skills<span className="text-emerald-400"></span>
+        </h2>
 
-        <div className="grid md:grid-cols-2 gap-8 text-gray-400">
-          <div><h3 className="text-green-400">Programming</h3><p>Python, C, C#, Arduino</p></div>
-          <div><h3 className="text-green-400">Web</h3><p>HTML, CSS, JavaScript, React</p></div>
-          <div><h3 className="text-green-400">Tools</h3><p>Git, VS Code, Pandas, NumPy</p></div>
-          <div><h3 className="text-green-400">Domains</h3><p>Frontend, Data Analytics, Embedded Systems</p></div>
+        <div className="grid md:grid-cols-4 gap-6 text-gray-200">
+          <motion.div
+            whileHover={{ y: -4, scale: 1.02 }}
+            transition={{ type: "spring", stiffness: 280, damping: 18 }}
+            className="relative overflow-hidden rounded-2xl bg-slate-900/60 border border-emerald-400/15 shadow-[0_18px_60px_rgba(15,23,42,0.9)] backdrop-blur-xl p-4 flex flex-col gap-2"
+          >
+            <div className="inline-flex items-center gap-2 text-emerald-300 text-sm font-medium">
+              <FaCode className="text-emerald-300/90" />
+              Programming
+            </div>
+            <p className="text-xs md:text-sm text-slate-300/80">
+              Python • C • C# • Arduino
+            </p>
+          </motion.div>
+
+          <motion.div
+            whileHover={{ y: -4, scale: 1.02 }}
+            transition={{ type: "spring", stiffness: 280, damping: 18 }}
+            className="relative overflow-hidden rounded-2xl bg-slate-900/60 border border-cyan-400/15 shadow-[0_18px_60px_rgba(15,23,42,0.9)] backdrop-blur-xl p-4 flex flex-col gap-2"
+          >
+            <div className="inline-flex items-center gap-2 text-cyan-300 text-sm font-medium">
+              <FaGlobe className="text-cyan-300/90" />
+              Web
+            </div>
+            <p className="text-xs md:text-sm text-slate-300/80">
+              HTML • CSS • JavaScript • React
+            </p>
+          </motion.div>
+
+          <motion.div
+            whileHover={{ y: -4, scale: 1.02 }}
+            transition={{ type: "spring", stiffness: 280, damping: 18 }}
+            className="relative overflow-hidden rounded-2xl bg-slate-900/60 border border-indigo-400/15 shadow-[0_18px_60px_rgba(15,23,42,0.9)] backdrop-blur-xl p-4 flex flex-col gap-2"
+          >
+            <div className="inline-flex items-center gap-2 text-indigo-300 text-sm font-medium">
+              <FaTools className="text-indigo-300/90" />
+              Tools
+            </div>
+            <p className="text-xs md:text-sm text-slate-300/80">
+              Git • VS Code • Pandas • NumPy
+            </p>
+          </motion.div>
+
+          <motion.div
+            whileHover={{ y: -4, scale: 1.02 }}
+            transition={{ type: "spring", stiffness: 280, damping: 18 }}
+            className="relative overflow-hidden rounded-2xl bg-slate-900/60 border border-violet-400/15 shadow-[0_18px_60px_rgba(15,23,42,0.9)] backdrop-blur-xl p-4 flex flex-col gap-2"
+          >
+            <div className="inline-flex items-center gap-2 text-violet-300 text-sm font-medium">
+              <span className="inline-block h-2 w-2 rounded-full bg-violet-300/90 shadow-[0_0_12px_rgba(167,139,250,0.9)]" />
+              Domains
+            </div>
+            <p className="text-xs md:text-sm text-slate-300/80">
+              Frontend • Data Analytics • Embedded Systems
+            </p>
+          </motion.div>
         </div>
 
       </motion.section>
 
       {/* EXPERIENCE */}
-      <motion.section id="experience" className="px-10 mt-32 max-w-6xl mx-auto"
-        initial={{ opacity: 0, x: 80 }} whileInView={{ opacity: 1, x: 0 }}>
+      <motion.section
+        id="experience"
+        className="px-6 mt-32 max-w-6xl mx-auto"
+        initial={{ opacity: 0, x: 80 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+      >
 
-        <h2 className="text-3xl mb-6">Experience<span className="text-green-400"></span></h2>
+        <h2 className="text-3xl md:text-4xl mb-6 font-semibold tracking-tight">
+          Experience<span className="text-emerald-400"></span>
+        </h2>
 
-        <div className="bg-[#0f172a] p-6 rounded-xl text-gray-400">
-          <h3 className="text-green-400">Software Support Intern</h3>
-          <p className="text-sm mb-2">LAMCO Transformers (2025)</p>
-          <ul className="list-disc ml-5 space-y-1">
-            <li>Worked on system troubleshooting and software support</li>
-            <li>Handled PLC programming and automation tasks</li>
-            <li>Improved workflow efficiency and reporting</li>
+        <div className="rounded-2xl bg-slate-900/70 border border-emerald-400/15 shadow-[0_18px_60px_rgba(15,23,42,0.95)] backdrop-blur-xl p-6 md:p-7 text-slate-200">
+          <h3 className="text-emerald-300 text-lg font-semibold">Software Support Intern</h3>
+          <p className="text-xs md:text-sm mb-3 text-slate-400/90">LAMCO Transformers • 2025</p>
+          <ul className="list-disc ml-5 space-y-2 text-sm text-slate-200/85">
+            <li>Worked on system troubleshooting and on-site software support for production systems.</li>
+            <li>Handled PLC programming and automation logic to improve reliability and monitoring.</li>
+            <li>Optimized internal workflows and reporting, reducing manual overhead for engineering teams.</li>
           </ul>
         </div>
 
       </motion.section>
 
       {/* PROJECTS */}
-      <motion.section id="projects" className="px-10 mt-32 space-y-10 max-w-6xl mx-auto"
-        initial={{ opacity: 0, x: 80 }} whileInView={{ opacity: 1, x: 0 }}>
+      <motion.section
+        id="projects"
+        className="px-6 mt-32 space-y-10 max-w-6xl mx-auto"
+        initial={{ opacity: 0, x: 80 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+      >
 
-        <h2 className="text-3xl">Projects<span className="text-green-400"></span></h2>
+        <h2 className="text-3xl md:text-4xl font-semibold tracking-tight">Projects<span className="text-emerald-400"></span></h2>
 
         <div className="grid md:grid-cols-2 gap-8">
 
           {/* IPL */}
-          <div className="group p-6 bg-[#0f172a] rounded-xl transition duration-300 hover:-translate-y-2 hover:shadow-[0_0_50px_rgba(34,197,94,0.3)]">
-            <p className="text-yellow-400 text-xs mb-2">● Featured Project</p>
-            <h3 className="text-xl">IPL Auction System</h3>
-            <p className="text-gray-400 mb-4">
+          <motion.div
+            whileHover={{ y: -8, scale: 1.01 }}
+            transition={{ type: "spring", stiffness: 260, damping: 20 }}
+            className="group p-6 bg-slate-900/70 rounded-2xl border border-emerald-400/20 shadow-[0_24px_80px_rgba(15,23,42,1)] transition duration-300 hover:shadow-[0_0_60px_rgba(34,197,94,0.55)]"
+          >
+            <p className="inline-flex items-center gap-2 text-yellow-400 text-[0.7rem] uppercase tracking-[0.2em] mb-3">
+              <span className="h-1.5 w-1.5 rounded-full bg-yellow-300 shadow-[0_0_12px_rgba(250,204,21,0.9)]" />
+              Featured Project
+            </p>
+            <h3 className="text-xl font-semibold text-slate-50 mb-1.5">IPL Auction System</h3>
+            <p className="text-gray-300 mb-4 text-sm">
   Full-fledged IPL Auction Simulator with real-time bidding logic, team purse tracking, player pools, and auto-bidding AI teams.
 </p>
 
@@ -593,41 +721,64 @@ export default function Portfolio() {
   
 </ul> 
 
-<p className="text-sm text-green-400 mb-4">
+<p className="text-sm text-emerald-300 mb-4">
   React • JavaScript • Node.js • State Management
 </p> 
             <div className="flex gap-4 mt-4">
 
-  <a 
+  <a
     href="https://github.com/Gaurav-29-eng/ipl-auction"
     target="_blank"
-    className="px-4 py-2 border border-green-500 rounded hover:bg-green-500 hover:text-black transition"
+    className="px-4 py-2 border border-emerald-400 rounded-full text-sm text-emerald-200 hover:bg-emerald-400 hover:text-slate-950 hover:shadow-[0_0_25px_rgba(52,211,153,0.7)] transition-colors transition-transform duration-200 hover:-translate-y-0.5"
   >
     GitHub
   </a>
 
-  <a 
+  <a
     href="https://ipl-auction-hazel.vercel.app/"
     target="_blank"
-    className="px-4 py-2 bg-green-500 text-black rounded hover:scale-105 transition"
+    className="px-4 py-2 rounded-full bg-emerald-400 text-slate-950 text-sm font-medium hover:shadow-[0_0_28px_rgba(52,211,153,0.9)] transition-transform transition-colors duration-200 hover:-translate-y-0.5 hover:scale-[1.03]"
   >
     Live
   </a>
 
 </div>
-          </div>
+          </motion.div>
 
           {/* PORTFOLIO */}
-          <div className="group p-6 bg-[#0f172a] rounded-xl transition duration-300 hover:-translate-y-2 hover:shadow-[0_0_50px_rgba(34,197,94,0.3)]">
-            <h3 className="text-xl">Portfolio Website</h3>
-            <p className="text-gray-400">Modern portfolio with animations.</p>
+          <motion.div
+            whileHover={{ y: -8, scale: 1.01 }}
+            transition={{ type: "spring", stiffness: 260, damping: 20 }}
+            className="group p-6 bg-slate-900/70 rounded-2xl border border-emerald-400/20 shadow-[0_24px_80px_rgba(15,23,42,1)] transition duration-300 hover:shadow-[0_0_60px_rgba(34,197,94,0.55)]"
+          >
+            <h3 className="text-xl font-semibold text-slate-50">Portfolio Website</h3>
+            <p className="text-gray-300 mb-4 text-sm">
+              Modern responsive portfolio website showcasing projects, skills, and experience with smooth animations and interactive UI.
+            </p>
+
+            <ul className="text-sm text-gray-400 mb-4 space-y-1">
+              <li>• Responsive design for all devices</li>
+              <li>• Smooth animations and transitions</li>
+              <li>• Interactive project showcase section</li>
+              <li>• Clean UI with modern dark theme</li>
+              <li>• Contact form / easy navigation</li>
+            </ul>
+
+            <p className="text-sm text-emerald-300 mb-4">
+              React • JavaScript • CSS • Vercel Deployment
+            </p>
+
             <div className="flex gap-4 mt-4">
               <a href="https://github.com/Gaurav-29-eng/gaurav-portfolio" target="_blank"
-                className="px-4 py-2 border border-green-500 rounded">GitHub</a>
+                className="px-4 py-2 border border-emerald-400 rounded-full text-sm text-emerald-200 hover:bg-emerald-400 hover:text-slate-950 hover:shadow-[0_0_25px_rgba(52,211,153,0.7)] transition-colors transition-transform duration-200 hover:-translate-y-0.5">
+                GitHub
+              </a>
               <a href="https://gaurav-portfolio-roan.vercel.app/" target="_blank"
-                className="px-4 py-2 bg-green-500 text-black rounded">Live</a>
+                className="px-4 py-2 rounded-full bg-emerald-400 text-slate-950 text-sm font-medium hover:shadow-[0_0_28px_rgba(52,211,153,0.9)] transition-transform transition-colors duration-200 hover:-translate-y-0.5 hover:scale-[1.03]">
+                Live
+              </a>
             </div>
-          </div>
+          </motion.div>
 
         </div>
 
