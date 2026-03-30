@@ -160,13 +160,22 @@ transition duration-300"
 
       <div className="flex gap-4">
 
-        <span className="px-4 py-2 border border-gray-600 text-gray-400 rounded cursor-not-allowed">
+        <a 
+  href="https://github.com/Gaurav-29-eng/gaurav-portfolio"
+  target="_blank"
+  rel="noopener noreferrer"
+>
   GitHub
-</span>
+</a>
 
-        <span className="px-4 py-2 bg-gray-700 text-gray-300 rounded cursor-not-allowed">
-  Coming Soon
-</span>
+        <a 
+  href="https://gaurav-portfolio-roan.vercel.app/" 
+  target="_blank"
+  rel="noopener noreferrer"
+  className="px-4 py-2 bg-green-500 text-black rounded hover:scale-105 transition"
+>
+  Live
+</a>
 
       </div>
 
