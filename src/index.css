@@ -24,3 +24,41 @@ body::after {
 * {
   cursor: none;
 }
+
+body {
+  background-color: #020617;
+
+  /* GRID */
+  background-image:
+    linear-gradient(rgba(0, 255, 100, 0.06) 1px, transparent 1px),
+    linear-gradient(to right, rgba(0, 255, 100, 0.06) 1px, transparent 1px);
+
+  background-size: 40px 40px;
+}
+
+/* SCANLINES (hacker screen effect) */
+body::after {
+  content: "";
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(0, 255, 100, 0.03),
+    rgba(0, 255, 100, 0.03) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+
+@keyframes flicker {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.97; }
+}
+
+body {
+  animation: flicker 5s infinite;
+}
