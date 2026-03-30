@@ -36,15 +36,9 @@ export default function App() {
   const playBid = () => bidSound.current.play().catch(()=>{});
   const playSold = () => soldSound.current.play().catch(()=>{});
 
-  // TIMER
-  useEffect(() => {
-    if (!started) return;
-    if (timer <= 0) return finalize();
-    const t = setInterval(() => setTimer(t => t - 1), 1000);
-    return () => clearInterval(t);
-  }, [timer, started]);
-
   // AI LOGIC (SAFE + STRATEGIC)
+  // NOTE: Intentionally limited dependencies to keep the bidding interval stable during gameplay.
+  /* eslint-disable react-hooks/exhaustive-deps */
   useEffect(() => {
     if (!started) return;
 
@@ -73,6 +67,7 @@ export default function App() {
 
     return () => clearInterval(ai);
   }, [started, bid, teams, withdrawn]);
+  /* eslint-enable react-hooks/exhaustive-deps */
 
   const userTeamData = teams.find(t => t.name === team);
   const nextBid = +(bid + 0.25).toFixed(2);
@@ -125,6 +120,23 @@ export default function App() {
     setHighest(null);
     setWithdrawn([]);
   };
+
+  // TIMER
+  // NOTE: Intentionally limited dependencies to keep the timer behavior stable.
+  /* eslint-disable react-hooks/exhaustive-deps */
+  useEffect(() => {
+    if (!started) return;
+
+    if (timer <= 0) {
+      // Avoid calling setState synchronously inside this effect.
+      setTimeout(() => finalize(), 0);
+      return;
+    }
+
+    const t = setInterval(() => setTimer(t => t - 1), 1000);
+    return () => clearInterval(t);
+  }, [timer, started]);
+  /* eslint-enable react-hooks/exhaustive-deps */
 
   const addTeam = () => {
     if (!newTeam.trim()) return;

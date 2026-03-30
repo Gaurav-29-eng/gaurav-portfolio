@@ -1,18 +1,18 @@
 import { useState, useEffect, useRef } from "react";
 
+const BOOT_LINES = [
+  "Booting system...",
+  "Loading AI modules...",
+  "Injecting creativity...",
+  "Welcome Gaurav 🚀"
+];
+
 export default function Terminal({ onEnter }) {
   const [input, setInput] = useState("");
   const [history, setHistory] = useState([]);
   const [booting, setBooting] = useState(true);
   const [suggestions, setSuggestions] = useState([]);
   const terminalRef = useRef(null);
-
-  const bootLines = [
-    "Booting system...",
-    "Loading AI modules...",
-    "Injecting creativity...",
-    "Welcome Gaurav 🚀"
-  ];
 
   const commandList = ["help", "about", "skills", "projects", "contact", "enter"];
 
@@ -34,10 +34,10 @@ export default function Terminal({ onEnter }) {
     let i = 0;
 
     const interval = setInterval(() => {
-      setHistory((prev) => [...prev, bootLines[i]]);
+      setHistory((prev) => [...prev, BOOT_LINES[i]]);
       i++;
 
-      if (i === bootLines.length) {
+      if (i === BOOT_LINES.length) {
         clearInterval(interval);
         setBooting(false);
       }

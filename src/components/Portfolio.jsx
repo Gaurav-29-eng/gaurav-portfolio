@@ -1,13 +1,107 @@
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll } from "framer-motion";
 import { FaGithub, FaLinkedin, FaEnvelope, FaPhone } from "react-icons/fa";
 import emailjs from "emailjs-com";
+import { useEffect, useRef } from "react";
+
+// Fix: some eslint configs ignore JSX member-usage; this keeps `motion` marked as used.
+void motion;
 
 export default function Portfolio() {
 
-  const { scrollYProgress, scrollY } = useScroll();
+  const { scrollYProgress } = useScroll();
 
-  const y1 = useTransform(scrollY, [0, 500], [0, 80]);
-  const y2 = useTransform(scrollY, [0, 500], [0, -80]);
+  const canvasRef = useRef(null);
+
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+
+    const ctx = canvas.getContext("2d", { alpha: true });
+    if (!ctx) return;
+
+    const prefersReducedMotion =
+      typeof window !== "undefined" &&
+      window.matchMedia &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    const CHAR_SET = "01ABCDEFGHIJKLMNOPQRSTUVWXYZ@#$%&";
+    const randChar = () =>
+      CHAR_SET[Math.floor(Math.random() * CHAR_SET.length)];
+
+    let rafId = 0;
+    let width = 0;
+    let height = 0;
+    let dpr = 1;
+    let columns = [];
+
+    const fontSize = 14; // CSS pixels
+    const columnWidth = Math.max(10, fontSize * 0.6);
+
+    const resize = () => {
+      width = canvas.clientWidth || window.innerWidth;
+      height = canvas.clientHeight || window.innerHeight;
+
+      dpr = Math.max(1, window.devicePixelRatio || 1);
+      canvas.width = Math.floor(width * dpr);
+      canvas.height = Math.floor(height * dpr);
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+      const colCount = Math.max(1, Math.floor(width / columnWidth));
+      columns = Array.from({ length: colCount }, (_, i) => ({
+        x: i * columnWidth,
+        y: Math.random() * height,
+        speed: 0.6 + Math.random() * 2.2,
+        char: randChar(),
+      }));
+
+      ctx.font = `${fontSize}px ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace`;
+      ctx.textBaseline = "top";
+    };
+
+    const draw = () => {
+      if (prefersReducedMotion) {
+        ctx.fillStyle = "rgba(2, 6, 23, 1)";
+        ctx.fillRect(0, 0, width, height);
+        columns.forEach((col) => {
+          ctx.fillStyle = "rgba(34, 197, 94, 0.55)";
+          ctx.fillText(col.char, col.x, col.y);
+        });
+        return;
+      }
+
+      // Trail persistence for the “rain” effect.
+      ctx.fillStyle = "rgba(2, 6, 23, 0.06)";
+      ctx.fillRect(0, 0, width, height);
+
+      columns.forEach((col) => {
+        const isBright = Math.random() > 0.96;
+        ctx.fillStyle = isBright
+          ? "rgba(110, 231, 183, 0.95)"
+          : "rgba(34, 197, 94, 0.55)";
+        ctx.fillText(col.char, col.x, col.y);
+
+        col.y += col.speed;
+        if (Math.random() > 0.94) col.char = randChar();
+
+        if (col.y > height + 30) {
+          col.y = -40 - Math.random() * height * 0.2;
+          col.speed = 0.6 + Math.random() * 2.2;
+          col.char = randChar();
+        }
+      });
+
+      rafId = window.requestAnimationFrame(draw);
+    };
+
+    resize();
+    rafId = window.requestAnimationFrame(draw);
+    window.addEventListener("resize", resize);
+
+    return () => {
+      window.cancelAnimationFrame(rafId);
+      window.removeEventListener("resize", resize);
+    };
+  }, []);
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -35,11 +129,74 @@ export default function Portfolio() {
       />
 
       {/* BACKGROUND */}
-      <motion.div style={{ y: y1 }} className="absolute w-[500px] h-[500px] bg-green-500 opacity-10 blur-[120px] top-[-100px] left-[20%]" />
-      <motion.div style={{ y: y2 }} className="absolute w-[400px] h-[400px] bg-green-400 opacity-10 blur-[120px] bottom-[-100px] right-[20%]" />
+      <canvas
+        ref={canvasRef}
+        className="absolute inset-0 w-full h-full z-0 pointer-events-none"
+        aria-hidden
+      />
+      <div
+        className="absolute inset-0 hacker-grid z-0 pointer-events-none"
+        aria-hidden
+      />
+      <div
+        className="absolute inset-0 hacker-scanlines z-0 pointer-events-none"
+        aria-hidden
+      />
+      <motion.div
+        className="absolute inset-0 z-0 pointer-events-none"
+        style={{ opacity: 0.18 }}
+        animate={{ x: [-20, 20, -20], y: [0, 60, 0], rotate: [0, 6, 0] }}
+        transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+      >
+        <div className="w-full h-full bg-gradient-to-r from-green-400/0 via-green-400/30 to-green-400/0 blur-2xl" />
+      </motion.div>
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-green-500/5 to-transparent pointer-events-none z-0" />
 
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-green-500/5 to-transparent pointer-events-none"></div>
+      <style>
+        {`
+          .hacker-grid {
+            opacity: 0.22;
+            background-image:
+              linear-gradient(rgba(34, 197, 94, 0.22) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(34, 197, 94, 0.22) 1px, transparent 1px);
+            background-size: 42px 42px;
+            animation: gridMove 14s linear infinite;
+          }
 
+          .hacker-scanlines {
+            opacity: 0.25;
+            background-image: repeating-linear-gradient(
+              to bottom,
+              rgba(110, 231, 183, 0.10) 0px,
+              rgba(110, 231, 183, 0.02) 1px,
+              rgba(0, 0, 0, 0) 3px,
+              rgba(0, 0, 0, 0) 6px
+            );
+            animation: scanMove 6s linear infinite;
+            mix-blend-mode: overlay;
+          }
+
+          @keyframes gridMove {
+            0% {
+              background-position: 0px 0px;
+            }
+            100% {
+              background-position: 84px 84px;
+            }
+          }
+
+          @keyframes scanMove {
+            0% {
+              transform: translateY(-30px);
+            }
+            100% {
+              transform: translateY(30px);
+            }
+          }
+        `}
+      </style>
+
+      <div className="relative z-10">
       {/* NAVBAR */}
       <div className="fixed top-0 left-0 w-full flex justify-between px-10 py-5 z-50 bg-black/40 backdrop-blur-md">
         <h1 className="text-lg font-semibold text-green-400">Gaurav</h1>
@@ -235,6 +392,7 @@ export default function Portfolio() {
 
       </motion.section>
 
+      </div>
     </div>
   );
 }
