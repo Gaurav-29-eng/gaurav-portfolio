@@ -157,12 +157,25 @@ export default function Portfolio() {
         <div className="grid md:grid-cols-2 gap-8">
 
           {/* IPL */}
-          <div className="p-6 bg-[#0f172a] rounded-xl">
-            <p className="text-yellow-400 text-xs mb-2">● IN DEVELOPMENT</p>
+          <div className="group p-6 bg-[#0f172a] rounded-xl transition duration-300 hover:-translate-y-2 hover:shadow-[0_0_50px_rgba(34,197,94,0.3)]">
+            <p className="text-yellow-400 text-xs mb-2">● Featured Project</p>
             <h3 className="text-xl">IPL Auction System</h3>
-            <p className="text-gray-400">
-  Real-time IPL auction system with dynamic bidding and team purse management.
+            <p className="text-gray-400 mb-4">
+  Full-fledged IPL Auction Simulator with real-time bidding logic, team purse tracking, player pools, and auto-bidding AI teams.
 </p>
+
+<ul className="text-sm text-gray-500 mb-4 space-y-1">
+  <li>• Real-time bidding system</li>
+  <li>• Team purse management</li>
+  <li>• Auto-bidding AI teams</li>
+  <li>• Player auction simulation</li>
+  <li>• Multi-team participation</li>
+  
+</ul> 
+
+<p className="text-sm text-green-400 mb-4">
+  React • JavaScript • Node.js • State Management
+</p> 
             <div className="flex gap-4 mt-4">
 
   <a 
@@ -185,7 +198,7 @@ export default function Portfolio() {
           </div>
 
           {/* PORTFOLIO */}
-          <div className="p-6 bg-[#0f172a] rounded-xl">
+          <div className="group p-6 bg-[#0f172a] rounded-xl transition duration-300 hover:-translate-y-2 hover:shadow-[0_0_50px_rgba(34,197,94,0.3)]">
             <h3 className="text-xl">Portfolio Website</h3>
             <p className="text-gray-400">Modern portfolio with animations.</p>
             <div className="flex gap-4 mt-4">
