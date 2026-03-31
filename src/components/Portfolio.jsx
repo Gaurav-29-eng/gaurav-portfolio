@@ -252,7 +252,7 @@ export default function Portfolio() {
       </nav>
 
       {/* HERO - Vision Pro Style Glass Card with Parallax Depth */}
-      <section className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-24 md:pt-32 pb-16" style={{ perspective: '1000px' }}>
+      <section className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-28 md:pt-32 pb-16" style={{ perspective: '1000px' }}>
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
@@ -316,7 +316,7 @@ export default function Portfolio() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.3, duration: 0.7 }}
-                    className="text-3xl sm:text-4xl md:text-5xl font-bold leading-[1.15] tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 via-violet-500 to-cyan-400"
+                    className="text-2xl sm:text-3xl md:text-5xl font-bold leading-[1.15] tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 via-violet-500 to-cyan-400"
                     style={{ backgroundSize: '200% auto', animation: 'gradient-shift 8s ease infinite' }}
                   >
                     I build interactive, real-time web experiences.
@@ -344,7 +344,7 @@ export default function Portfolio() {
                     initial={{ opacity: 0, y: 8 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.65, duration: 0.6 }}
-                    className="flex flex-col sm:flex-row gap-3 justify-center md:justify-start pt-2"
+                    className="flex flex-col sm:flex-row gap-3 justify-center md:justify-start pt-4"
                   >
                     <a
                       href="#projects"
@@ -376,7 +376,7 @@ export default function Portfolio() {
                     scale: { delay: 0.4, duration: 0.6 },
                     y: { delay: 1.2, duration: 5, repeat: Infinity, ease: "easeInOut" }
                   }}
-                  className="relative flex-shrink-0 group"
+                  className="relative flex-shrink-0 group mx-auto"
                   style={{
                     transform: `translateZ(80px) translateX(${smoothMouse.x * 12}px) translateY(${smoothMouse.y * 8}px) rotateY(${smoothMouse.x * 4}deg) rotateX(${-smoothMouse.y * 4}deg)`,
                     transformStyle: 'preserve-3d',
