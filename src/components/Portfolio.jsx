@@ -18,6 +18,7 @@ export default function Portfolio() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [smoothMouse, setSmoothMouse] = useState({ x: 0, y: 0 });
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   
   useEffect(() => {
@@ -133,21 +134,21 @@ export default function Portfolio() {
       {/* NAVBAR - Premium Apple-Style Glass Design */}
       <nav className={`fixed left-1/2 -translate-x-1/2 z-50 w-[92%] max-w-5xl transition-all duration-500 ease-out ${isScrolled ? 'top-2' : 'top-4'}`}>
         <div 
-          className={`flex items-center justify-between px-6 rounded-full
+          className={`flex items-center justify-between px-4 md:px-6 rounded-full
                      bg-slate-950/40 border border-white/[0.08]
                      shadow-[0_8px_32px_rgba(0,0,0,0.4),0_1px_0_rgba(255,255,255,0.05)_inset]
                      transition-all duration-500 ease-out
-                     ${isScrolled ? 'py-2 backdrop-blur-2xl bg-slate-950/60' : 'py-3 backdrop-blur-xl'}`}
+                     ${isScrolled ? 'py-2 backdrop-blur-2xl bg-slate-950/60' : 'py-2 md:py-3 backdrop-blur-xl'}`}
         >
           {/* Logo */}
-          <a href="#" className="flex items-center gap-2 group">
-            <span className={`font-semibold tracking-tight text-slate-100 group-hover:text-cyan-300 transition-colors duration-300 ${isScrolled ? 'text-base' : 'text-lg'}`}>
+          <a href="#" className="flex items-center gap-1.5 md:gap-2 group">
+            <span className={`font-semibold tracking-tight text-slate-100 group-hover:text-cyan-300 transition-colors duration-300 text-sm md:text-base ${isScrolled ? 'md:text-base' : 'md:text-lg'}`}>
               Gaurav
             </span>
-            <span className={`text-slate-500 transition-all duration-500 ${isScrolled ? 'text-xs' : 'text-sm'}`}>.dev</span>
+            <span className={`text-slate-500 transition-all duration-500 text-xs ${isScrolled ? 'md:text-xs' : 'md:text-sm'}`}>.dev</span>
           </a>
 
-          {/* Center Navigation */}
+          {/* Center Navigation - Desktop Only */}
           <div className="hidden md:flex items-center gap-1">
             <a 
               href="#projects" 
@@ -175,25 +176,79 @@ export default function Portfolio() {
             </a>
           </div>
 
-          {/* Resume CTA - Premium Pill Button */}
-          <a
-            href="/resume.pdf"
-            target="_blank"
-            download
-            className="relative group px-5 py-2 rounded-full
-                       bg-gradient-to-r from-cyan-500/20 to-blue-500/20
-                       border border-cyan-400/30
-                       text-sm font-medium text-cyan-300
-                       transition-all duration-300 ease-in-out
-                       hover:scale-105 hover:border-cyan-400/60
-                       hover:shadow-[0_0_20px_rgba(6,182,212,0.4),0_0_40px_rgba(6,182,212,0.2)]
-                       hover:text-white
-                       active:scale-95"
-          >
-            <span className="relative z-10">Resume</span>
-            <div className="absolute inset-0 rounded-full bg-gradient-to-r from-cyan-500/0 via-cyan-500/10 to-blue-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-          </a>
+          {/* Right Side - Resume Button & Mobile Menu */}
+          <div className="flex items-center gap-2 md:gap-3">
+            {/* Resume CTA - Premium Pill Button */}
+            <a
+              href="/resume.pdf"
+              target="_blank"
+              download
+              className="relative group px-3 md:px-5 py-1.5 md:py-2 rounded-full
+                         bg-gradient-to-r from-cyan-500/20 to-blue-500/20
+                         border border-cyan-400/30
+                         text-xs md:text-sm font-medium text-cyan-300
+                         transition-all duration-300 ease-in-out
+                         hover:scale-105 hover:border-cyan-400/60
+                         hover:shadow-[0_0_20px_rgba(6,182,212,0.4),0_0_40px_rgba(6,182,212,0.2)]
+                         hover:text-white
+                         active:scale-95"
+            >
+              <span className="relative z-10 hidden sm:inline">Resume</span>
+              <span className="relative z-10 sm:hidden">CV</span>
+              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-cyan-500/0 via-cyan-500/10 to-blue-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            </a>
+
+            {/* Mobile Menu Button */}
+            <button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="md:hidden p-2 text-slate-300 hover:text-cyan-300 transition-colors duration-300"
+              aria-label="Toggle menu"
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                {isMobileMenuOpen ? (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                ) : (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                )}
+              </svg>
+            </button>
+          </div>
         </div>
+
+        {/* Mobile Menu Dropdown */}
+        {isMobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.2 }}
+            className="md:hidden mt-2 mx-2 rounded-2xl bg-slate-950/80 backdrop-blur-xl border border-white/[0.08] shadow-[0_8px_32px_rgba(0,0,0,0.4)] overflow-hidden"
+          >
+            <div className="flex flex-col p-2">
+              <a
+                href="#projects"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="px-4 py-3 text-sm font-medium text-slate-300 hover:text-cyan-300 hover:bg-white/[0.06] rounded-xl transition-all duration-300"
+              >
+                Projects
+              </a>
+              <a
+                href="#about"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="px-4 py-3 text-sm font-medium text-slate-300 hover:text-cyan-300 hover:bg-white/[0.06] rounded-xl transition-all duration-300"
+              >
+                About
+              </a>
+              <a
+                href="#contact"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="px-4 py-3 text-sm font-medium text-slate-300 hover:text-cyan-300 hover:bg-white/[0.06] rounded-xl transition-all duration-300"
+              >
+                Contact
+              </a>
+            </div>
+          </motion.div>
+        )}
       </nav>
 
       {/* HERO - Vision Pro Style Glass Card with Parallax Depth */}
@@ -289,11 +344,11 @@ export default function Portfolio() {
                     initial={{ opacity: 0, y: 8 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.65, duration: 0.6 }}
-                    className="flex flex-wrap gap-3 justify-center md:justify-start pt-2"
+                    className="flex flex-col sm:flex-row gap-3 justify-center md:justify-start pt-2"
                   >
                     <a
                       href="#projects"
-                      className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-cyan-400 to-blue-500 text-slate-950 px-6 py-2.5 text-sm font-semibold shadow-[0_4px_20px_rgba(6,182,212,0.4)] hover:shadow-[0_8px_30px_rgba(6,182,212,0.6)] transition-all duration-300 ease-in-out hover:scale-105 hover:-translate-y-0.5"
+                      className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-cyan-400 to-blue-500 text-slate-950 px-6 py-3 text-sm font-semibold shadow-[0_4px_20px_rgba(6,182,212,0.4)] hover:shadow-[0_8px_30px_rgba(6,182,212,0.6)] transition-all duration-300 ease-in-out hover:scale-105 hover:-translate-y-0.5 w-full sm:w-auto"
                     >
                       View Projects
                     </a>
@@ -301,7 +356,7 @@ export default function Portfolio() {
                       href="/resume.pdf"
                       target="_blank"
                       download
-                      className="inline-flex items-center justify-center gap-2 rounded-full border border-white/20 bg-white/[0.03] px-6 py-2.5 text-sm font-medium text-slate-200 hover:bg-white/[0.08] hover:border-cyan-400/50 hover:text-cyan-300 transition-all duration-300 ease-in-out hover:scale-105 hover:-translate-y-0.5"
+                      className="inline-flex items-center justify-center gap-2 rounded-full border border-white/20 bg-white/[0.03] px-6 py-3 text-sm font-medium text-slate-200 hover:bg-white/[0.08] hover:border-cyan-400/50 hover:text-cyan-300 transition-all duration-300 ease-in-out hover:scale-105 hover:-translate-y-0.5 w-full sm:w-auto"
                     >
                       Download CV
                     </a>
