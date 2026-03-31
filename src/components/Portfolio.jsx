@@ -176,7 +176,8 @@ export default function Portfolio() {
 
           {/* Resume CTA - Premium Pill Button */}
           <a
-            href="/assets/resume.pdf"
+            href="/resume.pdf"
+            target="_blank"
             download
             className="relative group px-5 py-2 rounded-full
                        bg-gradient-to-r from-cyan-500/20 to-blue-500/20
@@ -296,7 +297,8 @@ export default function Portfolio() {
                       View Projects
                     </a>
                     <a
-                      href="/assets/resume.pdf"
+                      href="/resume.pdf"
+                      target="_blank"
                       download
                       className="inline-flex items-center justify-center gap-2 rounded-full border border-white/20 bg-white/[0.03] px-6 py-2.5 text-sm font-medium text-slate-200 hover:bg-white/[0.08] hover:border-cyan-400/50 hover:text-cyan-300 transition-all duration-300 ease-in-out hover:scale-105 hover:-translate-y-0.5"
                     >
