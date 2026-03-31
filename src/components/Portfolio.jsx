@@ -816,21 +816,26 @@ export default function Portfolio() {
                   <span className="px-1.5 py-0.5 md:px-2 md:py-1 bg-slate-800/80 text-slate-300 text-[10px] md:text-xs rounded whitespace-nowrap">WebSocket</span>
                 </div>
                 
-                <ul className="text-slate-400 text-xs md:text-sm space-y-1 w-full">
-                  <li className="flex items-center gap-2 w-full">
-                    <span className="text-cyan-400 flex-shrink-0">✓</span> <span className="break-words">Real-time bidding system</span>
+                <ul className="text-slate-400 text-xs md:text-sm space-y-2 w-full feature-list" style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                  <li className="flex items-start gap-2 w-full" style={{ display: 'flex', flexDirection: 'row' }}>
+                    <span className="text-cyan-400 flex-shrink-0">✓</span>
+                    <span className="feature-text" style={{ display: 'inline', flex: '1 1 auto' }}>Real-time bidding system</span>
                   </li>
-                  <li className="flex items-center gap-2 w-full">
-                    <span className="text-cyan-400 flex-shrink-0">✓</span> <span className="break-words">Team purse management</span>
+                  <li className="flex items-start gap-2 w-full" style={{ display: 'flex', flexDirection: 'row' }}>
+                    <span className="text-cyan-400 flex-shrink-0">✓</span>
+                    <span className="feature-text" style={{ display: 'inline', flex: '1 1 auto' }}>Team purse management</span>
                   </li>
-                  <li className="flex items-center gap-2 w-full">
-                    <span className="text-cyan-400 flex-shrink-0">✓</span> <span className="break-words">Player dataset handling</span>
+                  <li className="flex items-start gap-2 w-full" style={{ display: 'flex', flexDirection: 'row' }}>
+                    <span className="text-cyan-400 flex-shrink-0">✓</span>
+                    <span className="feature-text" style={{ display: 'inline', flex: '1 1 auto' }}>Player dataset handling</span>
                   </li>
-                  <li className="flex items-center gap-2 w-full">
-                    <span className="text-cyan-400 flex-shrink-0">✓</span> <span className="break-words">AI-based team participation</span>
+                  <li className="flex items-start gap-2 w-full" style={{ display: 'flex', flexDirection: 'row' }}>
+                    <span className="text-cyan-400 flex-shrink-0">✓</span>
+                    <span className="feature-text" style={{ display: 'inline', flex: '1 1 auto' }}>AI-based team participation</span>
                   </li>
-                  <li className="flex items-center gap-2 w-full">
-                    <span className="text-amber-400 flex-shrink-0">⏳</span> <span className="text-amber-300/80 break-words">Multiplayer mode (In Progress)</span>
+                  <li className="flex items-start gap-2 w-full" style={{ display: 'flex', flexDirection: 'row' }}>
+                    <span className="text-amber-400 flex-shrink-0">⏳</span>
+                    <span className="feature-text text-amber-300/80" style={{ display: 'inline', flex: '1 1 auto' }}>Multiplayer mode (In Progress)</span>
                   </li>
                 </ul>
               </div>
@@ -890,15 +895,18 @@ export default function Portfolio() {
                   <span className="px-1.5 py-0.5 md:px-2 md:py-1 bg-slate-800/80 text-slate-300 text-[10px] md:text-xs rounded whitespace-nowrap">Framer Motion</span>
                 </div>
                 
-                <ul className="text-slate-400 text-xs md:text-sm space-y-1 w-full">
-                  <li className="flex items-center gap-2 w-full">
-                    <span className="text-blue-400 flex-shrink-0">✓</span> <span className="break-words">Scroll animations & transitions</span>
+                <ul className="text-slate-400 text-xs md:text-sm space-y-2 w-full feature-list" style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                  <li className="flex items-start gap-2 w-full" style={{ display: 'flex', flexDirection: 'row' }}>
+                    <span className="text-blue-400 flex-shrink-0">✓</span>
+                    <span className="feature-text" style={{ display: 'inline', flex: '1 1 auto' }}>Scroll animations & transitions</span>
                   </li>
-                  <li className="flex items-center gap-2 w-full">
-                    <span className="text-blue-400 flex-shrink-0">✓</span> <span className="break-words">Interactive project showcase</span>
+                  <li className="flex items-start gap-2 w-full" style={{ display: 'flex', flexDirection: 'row' }}>
+                    <span className="text-blue-400 flex-shrink-0">✓</span>
+                    <span className="feature-text" style={{ display: 'inline', flex: '1 1 auto' }}>Interactive project showcase</span>
                   </li>
-                  <li className="flex items-center gap-2 w-full">
-                    <span className="text-blue-400 flex-shrink-0">✓</span> <span className="break-words">Responsive design all devices</span>
+                  <li className="flex items-start gap-2 w-full" style={{ display: 'flex', flexDirection: 'row' }}>
+                    <span className="text-blue-400 flex-shrink-0">✓</span>
+                    <span className="feature-text" style={{ display: 'inline', flex: '1 1 auto' }}>Responsive design all devices</span>
                   </li>
                 </ul>
               </div>
