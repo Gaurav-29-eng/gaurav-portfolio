@@ -77,14 +77,14 @@ const AnimatedBackground = () => {
       ctx.fillStyle = 'rgba(2, 6, 23, 0.25)';
       ctx.fillRect(0, 0, width, height);
 
-      // Cursor glow effect
+      // Cursor glow effect - subtle and tight
       if (mouseX > 0) {
-        const cursorGradient = ctx.createRadialGradient(mouseX, mouseY, 0, mouseX, mouseY, 180);
-        cursorGradient.addColorStop(0, 'rgba(6, 182, 212, 0.06)');
-        cursorGradient.addColorStop(0.5, 'rgba(6, 182, 212, 0.02)');
+        const cursorGradient = ctx.createRadialGradient(mouseX, mouseY, 0, mouseX, mouseY, 60);
+        cursorGradient.addColorStop(0, 'rgba(6, 182, 212, 0.15)');
+        cursorGradient.addColorStop(0.6, 'rgba(6, 182, 212, 0.03)');
         cursorGradient.addColorStop(1, 'rgba(0, 0, 0, 0)');
         ctx.fillStyle = cursorGradient;
-        ctx.fillRect(mouseX - 180, mouseY - 180, 360, 360);
+        ctx.fillRect(mouseX - 60, mouseY - 60, 120, 120);
       }
 
       // Update target parallax based on mouse position
@@ -208,35 +208,37 @@ const AnimatedBackground = () => {
         const size = node.radius * pulse;
         
         // Enhanced glow near cursor
-        let glowAlpha = 0.08 + node.depth * 0.1;
+        let glowAlpha = 0.04 + node.depth * 0.06;
         if (mouseX > 0) {
           const distToMouse = Math.sqrt((node.x - mouseX) ** 2 + (node.y - mouseY) ** 2);
           if (distToMouse < 120) {
-            glowAlpha += (1 - distToMouse / 120) * 0.15;
+            glowAlpha += (1 - distToMouse / 120) * 0.08;
           }
         }
 
-        // Outer glow
+        // Outer glow - reduced radius and opacity
         ctx.beginPath();
-        ctx.arc(drawX, drawY, size * (2.5 + node.depth), 0, Math.PI * 2);
+        ctx.arc(drawX, drawY, size * (1.8 + node.depth * 0.5), 0, Math.PI * 2);
         ctx.fillStyle = `hsla(${node.hue}, 70%, 55%, ${glowAlpha})`;
         ctx.fill();
 
-        // Inner glow
+        // Inner glow - tighter and more subtle
         ctx.beginPath();
-        ctx.arc(drawX, drawY, size * 1.3, 0, Math.PI * 2);
-        ctx.fillStyle = `hsla(${node.hue}, 80%, 65%, ${glowAlpha * 1.8})`;
+        ctx.arc(drawX, drawY, size * 1.1, 0, Math.PI * 2);
+        ctx.fillStyle = `hsla(${node.hue}, 80%, 65%, ${glowAlpha * 1.2})`;
         ctx.fill();
 
-        // Core
+        // Core - sharper and more defined
         ctx.beginPath();
         ctx.arc(drawX, drawY, size, 0, Math.PI * 2);
-        ctx.fillStyle = `hsla(${node.hue}, 90%, 80%, ${0.7 + node.depth * 0.25})`;
+        ctx.fillStyle = `hsla(${node.hue}, 90%, 85%, ${0.85 + node.depth * 0.15})`;
         ctx.fill();
 
-        // Bright center
+        // Bright center - crisp bright point
         ctx.beginPath();
-        ctx.arc(drawX, drawY, size * 0.35, 0, Math.PI * 2);
+        ctx.arc(drawX, drawY, size * 0.4, 0, Math.PI * 2);
+        ctx.fillStyle = `hsla(${node.hue}, 95%, 95%, 0.95)`;
+        ctx.fill();
         ctx.fillStyle = 'rgba(255, 255, 255, 0.9)';
         ctx.fill();
       });

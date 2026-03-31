@@ -16,19 +16,18 @@ export default function MouseGlow() {
     <div
       className="pointer-events-none fixed z-50"
       style={{
-        left: pos.x - 200,
-        top: pos.y - 200,
-        width: "400px",
-        height: "400px",
+        left: pos.x - 50,
+        top: pos.y - 50,
+        width: "100px",
+        height: "100px",
         background: `
           radial-gradient(circle at center,
-            rgba(34,197,94,0.35) 0%,
-            rgba(34,197,94,0.15) 20%,
-            rgba(34,197,94,0.08) 40%,
+            rgba(6, 182, 212, 0.12) 0%,
+            rgba(6, 182, 212, 0.04) 40%,
             transparent 70%
           )
         `,
-        filter: "blur(40px)",
+        filter: "blur(12px)",
       }}
     />
   );
