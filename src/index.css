@@ -314,4 +314,64 @@ body {
     max-width: 100%;
     overflow: hidden;
   }
+  
+  /* Force all inner elements to vertical layout - but only inside cards, not the card container */
+  #projects .flex > * .flex,
+  #projects .flex > * .flex-row,
+  #projects .flex > * .flex-col {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  /* Keep project cards horizontal swipe layout - don't force vertical */
+  #projects > div.flex {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+  }
+  
+  /* Ensure cards don't get forced to vertical */
+  #projects .flex > .motion-div,
+  #projects .flex > [class*="motion"],
+  #projects .flex > div[class*="w-\\[90vw\\]"] {
+    flex-shrink: 0;
+    width: 90vw !important;
+    max-width: 90vw !important;
+  }
+  
+  /* Force grid to single column inside cards only */
+  #projects .flex > * .grid,
+  #projects .flex > * .grid-cols-2,
+  #projects .flex > * .grid-cols-3,
+  #projects .flex > * [class*="grid-cols"] {
+    display: flex;
+    flex-direction: column;
+    grid-template-columns: 1fr;
+  }
+  
+  /* Ensure all children stack vertically inside cards */
+  #projects .flex > * > div > div,
+  #projects .flex > * > div > a,
+  #projects .flex > * > div > button,
+  #projects .flex > * > div > span,
+  #projects .flex > * > div > ul,
+  #projects .flex > * > div > li {
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  /* Override sm:flex-row to flex-col inside cards */
+  #projects .flex > * .sm\:flex-row {
+    flex-direction: column;
+  }
+  
+  /* Ensure buttons stack vertically inside cards */
+  #projects .flex > * a,
+  #projects .flex > * button {
+    display: flex;
+    width: 100%;
+    max-width: 100%;
+  }
 }
