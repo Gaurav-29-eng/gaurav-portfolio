@@ -254,9 +254,9 @@ export default function Portfolio() {
       {/* HERO - Vision Pro Style Glass Card with Parallax Depth */}
       <section className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-28 md:pt-32 pb-16" style={{ perspective: '1000px' }}>
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 60 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
           className="relative w-full max-w-5xl mx-auto"
         >
           {/* Main Glass Card Container - Primary Tilt Layer */}
@@ -304,18 +304,18 @@ export default function Portfolio() {
                   }}
                 >
                   <motion.p
-                    initial={{ opacity: 0, x: -10 }}
-                    animate={{ opacity: 0.9, x: 0 }}
-                    transition={{ delay: 0.2, duration: 0.6 }}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 0.9, x: 0, y: 0 }}
+                    transition={{ delay: 0.3, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
                     className="text-xs uppercase tracking-[0.3em] text-cyan-300/80 font-medium"
                   >
                     Hi, I'm <span className="text-cyan-300 font-semibold">Gaurav</span>
                   </motion.p>
 
                   <motion.h1
-                    initial={{ opacity: 0, y: 20 }}
+                    initial={{ opacity: 0, y: 25 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.3, duration: 0.7 }}
+                    transition={{ delay: 0.45, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
                     className="text-2xl sm:text-3xl md:text-5xl font-bold leading-[1.15] tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 via-violet-500 to-cyan-400"
                     style={{ backgroundSize: '200% auto', animation: 'gradient-shift 8s ease infinite' }}
                   >
@@ -323,27 +323,27 @@ export default function Portfolio() {
                   </motion.h1>
 
                   <motion.p
-                    initial={{ opacity: 0, y: 10 }}
+                    initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.45, duration: 0.6 }}
+                    transition={{ delay: 0.6, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
                     className="text-base md:text-lg text-slate-300/90 font-medium"
                   >
                     Frontend Developer focused on performance, UI and modern web apps.
                   </motion.p>
 
                   <motion.p
-                    initial={{ opacity: 0, y: 10 }}
+                    initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 0.7, y: 0 }}
-                    transition={{ delay: 0.55, duration: 0.6 }}
+                    transition={{ delay: 0.75, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
                     className="text-sm text-slate-400/80 max-w-md"
                   >
                     Currently building a real-time IPL Auction platform with multiplayer features.
                   </motion.p>
 
                   <motion.div
-                    initial={{ opacity: 0, y: 8 }}
+                    initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.65, duration: 0.6 }}
+                    transition={{ delay: 0.9, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
                     className="flex flex-col sm:flex-row gap-3 justify-center md:justify-start pt-4"
                   >
                     <a
@@ -365,16 +365,16 @@ export default function Portfolio() {
 
                 {/* Profile Image - Foreground Layer (fast parallax) */}
                 <motion.div
-                  initial={{ opacity: 0, scale: 0.9 }}
+                  initial={{ opacity: 0, scale: 0.8, y: 30 }}
                   animate={{ 
                     opacity: 1, 
                     scale: 1,
-                    y: [0, -6, 0]
+                    y: [0, -8, 0]
                   }}
                   transition={{ 
-                    opacity: { delay: 0.4, duration: 0.6 },
-                    scale: { delay: 0.4, duration: 0.6 },
-                    y: { delay: 1.2, duration: 5, repeat: Infinity, ease: "easeInOut" }
+                    opacity: { delay: 0.5, duration: 0.8, ease: [0.22, 1, 0.36, 1] },
+                    scale: { delay: 0.5, duration: 0.8, ease: [0.22, 1, 0.36, 1] },
+                    y: { delay: 1.5, duration: 6, repeat: Infinity, ease: "easeInOut" }
                   }}
                   className="relative flex-shrink-0 group mx-auto"
                   style={{
