@@ -427,38 +427,4 @@ body {
     line-height: 1.5 !important;
     padding: 2px 0 !important;
   }
-  
-  /* Fix scrolling issues - ensure vertical scroll priority over horizontal swipe */
-  #projects {
-    touch-action: pan-y !important;
-  }
-  
-  /* Project cards container - vertical scroll priority, horizontal swipe secondary */
-  #projects > div.flex {
-    touch-action: pan-y !important;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-  }
-  
-  /* Individual project cards - allow vertical scroll only */
-  #projects .flex > .motion-div,
-  #projects .flex > [class*="motion"],
-  #projects .flex > div[class*="w-\\[90vw\\]"] {
-    touch-action: pan-y !important;
-    overflow: visible !important;
-  }
-  
-  /* Prevent any nested scroll containers inside cards */
-  #projects .flex > * div,
-  #projects .flex > * ul,
-  #projects .flex > * p,
-  #projects .flex > * h3 {
-    overflow: visible !important;
-    touch-action: pan-y !important;
-  }
-  
-  /* Ensure all project elements allow vertical scroll */
-  #projects * {
-    touch-action: pan-y !important;
-  }
 }

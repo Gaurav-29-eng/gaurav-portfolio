@@ -780,14 +780,14 @@ export default function Portfolio() {
           <span className="text-cyan-400 inline-block transition-all duration-300 hover:scale-110 hover:drop-shadow-[0_0_8px_rgba(34,211,238,0.8)]"></span>
         </h2>
 
-        <div className="flex flex-row md:grid md:grid-cols-2 gap-4 md:gap-8 overflow-x-auto md:overflow-visible snap-x snap-mandatory md:snap-none scrollbar-hide px-4 md:px-0 pb-4 md:pb-0 w-full">
+        <div className="flex flex-col md:grid md:grid-cols-2 gap-6 md:gap-8 px-4 md:px-0 w-full">
           {/* IPL */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-            className="flex-shrink-0 w-[90vw] md:w-auto snap-center bg-slate-950/30 md:bg-slate-950/40 rounded-2xl md:rounded-2xl border border-white/[0.06] md:border-white/[0.08] hover:border-cyan-400/30 cursor-pointer group relative overflow-hidden backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.3)] md:shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:shadow-[0_12px_40px_rgba(6,182,212,0.15)] md:hover:shadow-[0_20px_60px_rgba(6,182,212,0.2)] transition-all duration-300 ease-in-out hover:-translate-y-1 hover:scale-[1.02] active:scale-[0.98]"
+            className="w-full md:w-auto bg-slate-950/30 md:bg-slate-950/40 rounded-2xl md:rounded-2xl border border-white/[0.06] md:border-white/[0.08] hover:border-cyan-400/30 cursor-pointer group relative overflow-hidden backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.3)] md:shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:shadow-[0_12px_40px_rgba(6,182,212,0.15)] md:hover:shadow-[0_20px_60px_rgba(6,182,212,0.2)] transition-all duration-300 ease-in-out hover:-translate-y-1 hover:scale-[1.02] active:scale-[0.98]"
             style={{ perspective: '1000px', transformStyle: 'preserve-3d' }}
           >
             {/* Glow effect overlay */}
@@ -862,7 +862,7 @@ export default function Portfolio() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.6, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
-            className="flex-shrink-0 w-[90vw] md:w-auto snap-center bg-slate-950/30 md:bg-slate-950/40 rounded-2xl md:rounded-2xl border border-white/[0.06] md:border-white/[0.08] hover:border-blue-400/30 cursor-pointer group relative overflow-hidden backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.3)] md:shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:shadow-[0_12px_40px_rgba(59,130,246,0.15)] md:hover:shadow-[0_20px_60px_rgba(59,130,246,0.2)] transition-all duration-300 ease-in-out hover:-translate-y-1 hover:scale-[1.02] active:scale-[0.98]"
+            className="w-full md:w-auto bg-slate-950/30 md:bg-slate-950/40 rounded-2xl md:rounded-2xl border border-white/[0.06] md:border-white/[0.08] hover:border-blue-400/30 cursor-pointer group relative overflow-hidden backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.3)] md:shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:shadow-[0_12px_40px_rgba(59,130,246,0.15)] md:hover:shadow-[0_20px_60px_rgba(59,130,246,0.2)] transition-all duration-300 ease-in-out hover:-translate-y-1 hover:scale-[1.02] active:scale-[0.98]"
             style={{ perspective: '1000px', transformStyle: 'preserve-3d' }}
           >
             {/* Glow effect overlay */}
