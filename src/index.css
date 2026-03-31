@@ -283,43 +283,58 @@ body {
     top: 8px;
   }
   
-  /* Force text to behave normally - remove restrictions */
-  #projects * {
-    max-width: none !important;
-    min-width: 0 !important;
-  }
-  
-  /* Ensure text containers are block or full-width flex column */
+  /* Ensure proper text wrapping - NOT aggressive removal of max-width */
   #projects .flex > * h3,
-  #projects .flex > * p,
-  #projects .flex > * span:not(.absolute span):not([class*="flex-shrink"]) {
-    display: block !important;
+  #projects .flex > * p {
     width: 100% !important;
-    max-width: none !important;
+    max-width: 100% !important;
     word-break: normal !important;
     white-space: normal !important;
     overflow: visible !important;
-    text-overflow: clip !important;
+    display: block !important;
   }
   
-  /* Fix any transform or positioning issues on text */
-  #projects .flex > * h3,
-  #projects .flex > * p {
-    transform: none !important;
-    position: static !important;
-    left: auto !important;
-    right: auto !important;
-  }
-  
-  /* Ensure all text containers take full width */
-  #projects .flex > * div[class*="space-y"],
-  #projects .flex > * .space-y-1,
-  #projects .flex > * .space-y-2,
-  #projects .flex > * .space-y-3 {
+  /* CRITICAL: Fix feature list items to display horizontally */
+  #projects .flex > * ul,
+  #projects .flex > * .space-y-1 {
     width: 100% !important;
-    max-width: none !important;
+    max-width: 100% !important;
     display: flex !important;
     flex-direction: column !important;
+    gap: 10px !important;
+  }
+  
+  /* Feature list items MUST be row layout */
+  #projects .flex > * ul li,
+  #projects .flex > * .space-y-1 > li {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+    gap: 8px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  
+  /* Icon stays fixed size */
+  #projects .flex > * ul li > span:first-child,
+  #projects .flex > * .space-y-1 > li > span:first-child {
+    flex-shrink: 0 !important;
+    flex-grow: 0 !important;
+    flex-basis: auto !important;
+    display: inline-flex !important;
+  }
+  
+  /* Text takes remaining width but doesn't collapse */
+  #projects .flex > * ul li > span:last-child,
+  #projects .flex > * .space-y-1 > li > span:last-child {
+    flex: 0 1 auto !important;
+    width: auto !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    word-break: normal !important;
+    white-space: normal !important;
+    display: inline !important;
   }
   
   /* Fix button containers */
