@@ -434,7 +434,7 @@ export default function Portfolio() {
       {/* WHY HIRE ME */}
       <motion.section 
         id="why-hire-me"
-        className="px-4 sm:px-8 py-16 md:py-28 max-w-6xl mx-auto"
+        className="px-4 sm:px-8 py-20 md:py-28 max-w-6xl mx-auto"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
@@ -451,25 +451,24 @@ export default function Portfolio() {
           <span className="text-cyan-400 inline-block transition-all duration-300 hover:scale-110 hover:drop-shadow-[0_0_8px_rgba(34,211,238,0.8)]"></span>
         </motion.h2>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4 lg:gap-5">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1, ease: [0.25, 0.1, 0.25, 1] }}
             viewport={{ once: true }}
-            className="relative overflow-hidden rounded-2xl bg-slate-950/40 border border-white/[0.08] hover:border-cyan-400/30 backdrop-blur-xl p-6 md:p-7 flex flex-col gap-4 cursor-pointer shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:shadow-[0_20px_60px_rgba(6,182,212,0.2)] transition-all duration-300 ease-in-out hover:-translate-y-1 hover:scale-[1.02]"
-            style={{ 
-              perspective: '1000px',
-              transformStyle: 'preserve-3d',
-            }}
+            className="relative overflow-hidden rounded-2xl bg-slate-950/30 border border-white/[0.06] hover:border-cyan-400/30 backdrop-blur-md p-4 md:p-5 flex flex-col gap-2.5 cursor-pointer shadow-[0_4px_20px_rgba(0,0,0,0.2)] hover:shadow-[0_8px_30px_rgba(6,182,212,0.15)] transition-all duration-300 ease-in-out hover:-translate-y-1"
+            style={{ perspective: '1000px', transformStyle: 'preserve-3d' }}
           >
-            <div className="inline-flex items-center gap-3 text-cyan-300 text-lg font-semibold" style={{ transform: 'translateZ(20px)' }}>
-              <span className="text-2xl">🚀</span>
+            <div className="inline-flex items-center gap-2 text-cyan-300 text-sm md:text-base font-semibold">
+              <span className="text-lg md:text-xl">🚀</span>
               Real Front-End Projects
             </div>
-            <p className="text-sm text-slate-300/90 leading-relaxed" style={{ transform: 'translateZ(10px)' }}>
-              Built modern, responsive applications with focus on user experience, interactive interfaces, and clean design patterns.
-            </p>
+            <div className="bg-slate-950/20 border border-white/[0.04] rounded-xl p-2.5 md:p-3">
+              <p className="text-xs md:text-sm text-slate-300/90 leading-relaxed">
+                Built modern, responsive applications with focus on user experience, interactive interfaces, and clean design patterns.
+              </p>
+            </div>
           </motion.div>
 
           <motion.div
@@ -477,19 +476,18 @@ export default function Portfolio() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
             viewport={{ once: true }}
-            className="relative overflow-hidden rounded-2xl bg-slate-950/40 border border-white/[0.08] hover:border-blue-400/30 backdrop-blur-xl p-6 md:p-7 flex flex-col gap-4 cursor-pointer shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:shadow-[0_20px_60px_rgba(59,130,246,0.2)] transition-all duration-300 ease-in-out hover:-translate-y-1 hover:scale-[1.02]"
-            style={{ 
-              perspective: '1000px',
-              transformStyle: 'preserve-3d',
-            }}
+            className="relative overflow-hidden rounded-2xl bg-slate-950/30 border border-white/[0.06] hover:border-blue-400/30 backdrop-blur-md p-4 md:p-5 flex flex-col gap-2.5 cursor-pointer shadow-[0_4px_20px_rgba(0,0,0,0.2)] hover:shadow-[0_8px_30px_rgba(59,130,246,0.15)] transition-all duration-300 ease-in-out hover:-translate-y-1"
+            style={{ perspective: '1000px', transformStyle: 'preserve-3d' }}
           >
-            <div className="inline-flex items-center gap-3 text-blue-300 text-lg font-semibold" style={{ transform: 'translateZ(20px)' }}>
-              <span className="text-2xl">💡</span>
+            <div className="inline-flex items-center gap-2 text-blue-300 text-sm md:text-base font-semibold">
+              <span className="text-lg md:text-xl">💡</span>
               Strong Front-End Fundamentals
             </div>
-            <p className="text-sm text-slate-300/90 leading-relaxed" style={{ transform: 'translateZ(10px)' }}>
-              Solid understanding of JavaScript, React patterns, CSS architecture, and modern front-end best practices.
-            </p>
+            <div className="bg-slate-950/20 border border-white/[0.04] rounded-xl p-2.5 md:p-3">
+              <p className="text-xs md:text-sm text-slate-300/90 leading-relaxed">
+                Solid understanding of JavaScript, React patterns, CSS architecture, and modern front-end best practices.
+              </p>
+            </div>
           </motion.div>
 
           <motion.div
@@ -497,19 +495,18 @@ export default function Portfolio() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
             viewport={{ once: true }}
-            className="relative overflow-hidden rounded-2xl bg-slate-950/40 border border-white/[0.08] hover:border-indigo-400/30 backdrop-blur-xl p-6 md:p-7 flex flex-col gap-4 cursor-pointer shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:shadow-[0_20px_60px_rgba(99,102,241,0.2)] transition-all duration-300 ease-in-out hover:-translate-y-1 hover:scale-[1.02]"
-            style={{ 
-              perspective: '1000px',
-              transformStyle: 'preserve-3d',
-            }}
+            className="relative overflow-hidden rounded-2xl bg-slate-950/30 border border-white/[0.06] hover:border-indigo-400/30 backdrop-blur-md p-4 md:p-5 flex flex-col gap-2.5 cursor-pointer shadow-[0_4px_20px_rgba(0,0,0,0.2)] hover:shadow-[0_8px_30px_rgba(99,102,241,0.15)] transition-all duration-300 ease-in-out hover:-translate-y-1"
+            style={{ perspective: '1000px', transformStyle: 'preserve-3d' }}
           >
-            <div className="inline-flex items-center gap-3 text-indigo-300 text-lg font-semibold" style={{ transform: 'translateZ(20px)' }}>
-              <span className="text-2xl">🎨</span>
+            <div className="inline-flex items-center gap-2 text-indigo-300 text-sm md:text-base font-semibold">
+              <span className="text-lg md:text-xl">🎨</span>
               Clean UI/UX
             </div>
-            <p className="text-sm text-slate-300/90 leading-relaxed" style={{ transform: 'translateZ(10px)' }}>
-              Focus on modern, responsive, and user-friendly design with smooth animations and interactions.
-            </p>
+            <div className="bg-slate-950/20 border border-white/[0.04] rounded-xl p-2.5 md:p-3">
+              <p className="text-xs md:text-sm text-slate-300/90 leading-relaxed">
+                Focus on modern, responsive, and user-friendly design with smooth animations and interactions.
+              </p>
+            </div>
           </motion.div>
 
           <motion.div
@@ -517,19 +514,18 @@ export default function Portfolio() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
             viewport={{ once: true }}
-            className="relative overflow-hidden rounded-2xl bg-slate-950/40 border border-white/[0.08] hover:border-violet-400/30 backdrop-blur-xl p-6 md:p-7 flex flex-col gap-4 cursor-pointer shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:shadow-[0_20px_60px_rgba(139,92,246,0.2)] transition-all duration-300 ease-in-out hover:-translate-y-1 hover:scale-[1.02]"
-            style={{ 
-              perspective: '1000px',
-              transformStyle: 'preserve-3d',
-            }}
+            className="relative overflow-hidden rounded-2xl bg-slate-950/30 border border-white/[0.06] hover:border-violet-400/30 backdrop-blur-md p-4 md:p-5 flex flex-col gap-2.5 cursor-pointer shadow-[0_4px_20px_rgba(0,0,0,0.2)] hover:shadow-[0_8px_30px_rgba(139,92,246,0.15)] transition-all duration-300 ease-in-out hover:-translate-y-1"
+            style={{ perspective: '1000px', transformStyle: 'preserve-3d' }}
           >
-            <div className="inline-flex items-center gap-3 text-violet-300 text-lg font-semibold" style={{ transform: 'translateZ(20px)' }}>
-              <span className="text-2xl">📈</span>
+            <div className="inline-flex items-center gap-2 text-violet-300 text-sm md:text-base font-semibold">
+              <span className="text-lg md:text-xl">📈</span>
               Fast Learner
             </div>
-            <p className="text-sm text-slate-300/90 leading-relaxed" style={{ transform: 'translateZ(10px)' }}>
-              Continuously improving and adapting to new technologies with a growth mindset approach.
-            </p>
+            <div className="bg-slate-950/20 border border-white/[0.04] rounded-xl p-2.5 md:p-3">
+              <p className="text-xs md:text-sm text-slate-300/90 leading-relaxed">
+                Continuously improving and adapting to new technologies with a growth mindset approach.
+              </p>
+            </div>
           </motion.div>
         </div>
       </motion.section>
@@ -537,7 +533,7 @@ export default function Portfolio() {
       {/* ABOUT */}
       <motion.section 
         id="about" 
-        className="px-4 sm:px-8 py-16 md:py-28 max-w-4xl mx-auto"
+        className="px-4 sm:px-8 py-20 md:py-28 max-w-4xl mx-auto"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
@@ -548,7 +544,7 @@ export default function Portfolio() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
           viewport={{ once: true }}
-          className="text-3xl md:text-4xl mb-8 md:mb-10 font-semibold tracking-tight transition-all duration-300 ease-in-out hover:scale-[1.02] hover:tracking-wide cursor-default group"
+          className="text-2xl md:text-4xl mb-6 md:mb-10 font-semibold tracking-tight transition-all duration-300 ease-in-out hover:scale-[1.02] hover:tracking-wide cursor-default group"
         >
           <span className="group-hover:drop-shadow-[0_0_8px_rgba(34,211,238,0.5)] transition-all duration-300">About</span>
           <span className="text-cyan-400 inline-block transition-all duration-300 hover:scale-110 hover:drop-shadow-[0_0_8px_rgba(34,211,238,0.8)]"></span>
@@ -619,23 +615,25 @@ export default function Portfolio() {
           <span className="text-cyan-400 inline-block transition-all duration-300 hover:scale-110 hover:drop-shadow-[0_0_8px_rgba(34,211,238,0.8)]"></span>
         </motion.h2>
 
-        <div className="grid md:grid-cols-2 gap-5 md:gap-6 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-5 max-w-4xl mx-auto">
           {/* Languages */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1, ease: [0.25, 0.1, 0.25, 1] }}
             viewport={{ once: true }}
-            className="relative overflow-hidden rounded-2xl bg-slate-950/40 border border-white/[0.08] hover:border-cyan-400/30 backdrop-blur-xl p-6 flex flex-col gap-3 cursor-pointer shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:shadow-[0_20px_60px_rgba(6,182,212,0.2)] transition-all duration-300 ease-in-out hover:-translate-y-1 hover:scale-[1.02]"
+            className="relative overflow-hidden rounded-2xl bg-slate-950/30 border border-white/[0.06] hover:border-cyan-400/30 backdrop-blur-md p-4 md:p-5 flex flex-col gap-2.5 cursor-pointer shadow-[0_4px_20px_rgba(0,0,0,0.2)] hover:shadow-[0_8px_30px_rgba(6,182,212,0.15)] transition-all duration-300 ease-in-out hover:-translate-y-1"
             style={{ perspective: '1000px', transformStyle: 'preserve-3d' }}
           >
-            <div className="inline-flex items-center gap-2 text-cyan-300 text-sm font-semibold" style={{ transform: 'translateZ(15px)' }}>
-              <FaCode className="text-cyan-300/90" />
+            <div className="inline-flex items-center gap-2 text-cyan-300 text-sm md:text-base font-semibold">
+              <FaCode className="text-cyan-300/90 w-4 h-4 md:w-5 md:h-5" />
               Languages
             </div>
-            <p className="text-sm text-slate-300/90 leading-relaxed" style={{ transform: 'translateZ(8px)' }}>
-              Python • JavaScript • C • C++ • C#
-            </p>
+            <div className="bg-slate-950/20 border border-white/[0.04] rounded-xl p-2.5 md:p-3">
+              <p className="text-xs md:text-sm text-slate-300/90 leading-relaxed">
+                Python • JavaScript • C • C++ • C#
+              </p>
+            </div>
           </motion.div>
 
           {/* Frontend */}
@@ -644,16 +642,18 @@ export default function Portfolio() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
             viewport={{ once: true }}
-            className="relative overflow-hidden rounded-2xl bg-slate-950/40 border border-white/[0.08] hover:border-blue-400/30 backdrop-blur-xl p-6 flex flex-col gap-3 cursor-pointer shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:shadow-[0_20px_60px_rgba(59,130,246,0.2)] transition-all duration-300 ease-in-out hover:-translate-y-1 hover:scale-[1.02]"
+            className="relative overflow-hidden rounded-2xl bg-slate-950/30 border border-white/[0.06] hover:border-blue-400/30 backdrop-blur-md p-4 md:p-5 flex flex-col gap-2.5 cursor-pointer shadow-[0_4px_20px_rgba(0,0,0,0.2)] hover:shadow-[0_8px_30px_rgba(59,130,246,0.15)] transition-all duration-300 ease-in-out hover:-translate-y-1"
             style={{ perspective: '1000px', transformStyle: 'preserve-3d' }}
           >
-            <div className="inline-flex items-center gap-2 text-blue-300 text-sm font-semibold" style={{ transform: 'translateZ(15px)' }}>
-              <FaGlobe className="text-blue-300/90" />
+            <div className="inline-flex items-center gap-2 text-blue-300 text-sm md:text-base font-semibold">
+              <FaGlobe className="text-blue-300/90 w-4 h-4 md:w-5 md:h-5" />
               Frontend
             </div>
-            <p className="text-sm text-slate-300/90 leading-relaxed" style={{ transform: 'translateZ(8px)' }}>
-              React.js • HTML5 • CSS3 • Tailwind CSS • JavaScript ES6+
-            </p>
+            <div className="bg-slate-950/20 border border-white/[0.04] rounded-xl p-2.5 md:p-3">
+              <p className="text-xs md:text-sm text-slate-300/90 leading-relaxed">
+                React.js • HTML5 • CSS3 • Tailwind CSS • JavaScript ES6+
+              </p>
+            </div>
           </motion.div>
 
           {/* Tools */}
@@ -662,16 +662,18 @@ export default function Portfolio() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
             viewport={{ once: true }}
-            className="relative overflow-hidden rounded-2xl bg-slate-950/40 border border-white/[0.08] hover:border-indigo-400/30 backdrop-blur-xl p-6 flex flex-col gap-3 cursor-pointer shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:shadow-[0_20px_60px_rgba(99,102,241,0.2)] transition-all duration-300 ease-in-out hover:-translate-y-1 hover:scale-[1.02]"
+            className="relative overflow-hidden rounded-2xl bg-slate-950/30 border border-white/[0.06] hover:border-indigo-400/30 backdrop-blur-md p-4 md:p-5 flex flex-col gap-2.5 cursor-pointer shadow-[0_4px_20px_rgba(0,0,0,0.2)] hover:shadow-[0_8px_30px_rgba(99,102,241,0.15)] transition-all duration-300 ease-in-out hover:-translate-y-1"
             style={{ perspective: '1000px', transformStyle: 'preserve-3d' }}
           >
-            <div className="inline-flex items-center gap-2 text-indigo-300 text-sm font-semibold" style={{ transform: 'translateZ(15px)' }}>
-              <FaTools className="text-indigo-300/90" />
+            <div className="inline-flex items-center gap-2 text-indigo-300 text-sm md:text-base font-semibold">
+              <FaTools className="text-indigo-300/90 w-4 h-4 md:w-5 md:h-5" />
               Tools
             </div>
-            <p className="text-sm text-slate-300/90 leading-relaxed" style={{ transform: 'translateZ(8px)' }}>
-              Git • GitHub • VS Code • Vercel • Framer Motion
-            </p>
+            <div className="bg-slate-950/20 border border-white/[0.04] rounded-xl p-2.5 md:p-3">
+              <p className="text-xs md:text-sm text-slate-300/90 leading-relaxed">
+                Git • GitHub • VS Code • Vercel • Framer Motion
+              </p>
+            </div>
           </motion.div>
 
           {/* Core Concepts */}
@@ -680,23 +682,25 @@ export default function Portfolio() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
             viewport={{ once: true }}
-            className="relative overflow-hidden rounded-2xl bg-slate-950/40 border border-white/[0.08] hover:border-violet-400/30 backdrop-blur-xl p-6 flex flex-col gap-3 cursor-pointer shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:shadow-[0_20px_60px_rgba(139,92,246,0.2)] transition-all duration-300 ease-in-out hover:-translate-y-1 hover:scale-[1.02]"
+            className="relative overflow-hidden rounded-2xl bg-slate-950/30 border border-white/[0.06] hover:border-violet-400/30 backdrop-blur-md p-4 md:p-5 flex flex-col gap-2.5 cursor-pointer shadow-[0_4px_20px_rgba(0,0,0,0.2)] hover:shadow-[0_8px_30px_rgba(139,92,246,0.15)] transition-all duration-300 ease-in-out hover:-translate-y-1"
             style={{ perspective: '1000px', transformStyle: 'preserve-3d' }}
           >
-            <div className="inline-flex items-center gap-2 text-violet-300 text-sm font-semibold" style={{ transform: 'translateZ(15px)' }}>
-              <span className="inline-block h-2 w-2 rounded-full bg-violet-300/90 shadow-[0_0_12px_rgba(167,139,250,0.9)]" />
+            <div className="inline-flex items-center gap-2 text-violet-300 text-sm md:text-base font-semibold">
+              <span className="inline-block h-2 w-2 rounded-full bg-violet-300/90 shadow-[0_0_8px_rgba(167,139,250,0.6)]" />
               Core Concepts
             </div>
-            <p className="text-sm text-slate-300/90 leading-relaxed" style={{ transform: 'translateZ(8px)' }}>
-              Data Structures & Algorithms • UI/UX Design • Responsive Design
-            </p>
+            <div className="bg-slate-950/20 border border-white/[0.04] rounded-xl p-2.5 md:p-3">
+              <p className="text-xs md:text-sm text-slate-300/90 leading-relaxed">
+                Data Structures & Algorithms • UI/UX Design • Responsive Design
+              </p>
+            </div>
           </motion.div>
         </div>
 
       </motion.section>
       <motion.section
         id="experience"
-        className="px-4 sm:px-8 py-16 md:py-28 max-w-6xl mx-auto"
+        className="px-4 sm:px-8 py-20 md:py-28 max-w-6xl mx-auto"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
@@ -707,22 +711,22 @@ export default function Portfolio() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
           viewport={{ once: true }}
-          className="text-3xl md:text-4xl mb-10 md:mb-12 font-semibold tracking-tight transition-all duration-300 ease-in-out hover:scale-[1.02] hover:tracking-wide cursor-default group"
+          className="text-2xl md:text-4xl mb-8 md:mb-12 font-semibold tracking-tight transition-all duration-300 ease-in-out hover:scale-[1.02] hover:tracking-wide cursor-default group"
         >
           <span className="group-hover:drop-shadow-[0_0_8px_rgba(34,211,238,0.5)] transition-all duration-300">Learning & Growth</span>
           <span className="text-cyan-400 inline-block transition-all duration-300 hover:scale-110 hover:drop-shadow-[0_0_8px_rgba(34,211,238,0.8)]"></span>
         </motion.h2>
 
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1, ease: [0.25, 0.1, 0.25, 1] }}
             viewport={{ once: true }}
-            className="rounded-2xl bg-slate-950/40 border border-white/[0.08] hover:border-cyan-400/30 backdrop-blur-xl p-6 md:p-8 text-slate-200 cursor-pointer shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:shadow-[0_20px_60px_rgba(6,182,212,0.2)] transition-all duration-300 ease-in-out hover:-translate-y-1 hover:scale-[1.02]"
+            className="rounded-2xl md:rounded-2xl bg-slate-950/30 md:bg-slate-950/40 border border-white/[0.06] md:border-white/[0.08] hover:border-cyan-400/30 backdrop-blur-xl md:backdrop-blur-xl p-6 md:p-8 text-slate-200 cursor-pointer shadow-[0_8px_32px_rgba(0,0,0,0.3)] md:shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:shadow-[0_12px_40px_rgba(6,182,212,0.15)] md:hover:shadow-[0_20px_60px_rgba(6,182,212,0.2)] transition-all duration-300 ease-in-out hover:-translate-y-1 hover:scale-[1.02]"
             style={{ perspective: '1000px', transformStyle: 'preserve-3d' }}
           >
-            <h3 className="text-cyan-300 text-lg font-semibold mb-4" style={{ transform: 'translateZ(20px)' }}>🎓 Certifications</h3>
+            <h3 className="text-cyan-300 text-base md:text-lg font-semibold mb-4" style={{ transform: 'translateZ(20px)' }}>🎓 Certifications</h3>
             <ul className="space-y-3 text-sm text-slate-200/90 leading-relaxed" style={{ transform: 'translateZ(10px)' }}>
               <li>• <strong>Python Programming</strong> - Udemy Certification</li>
               <li>• <strong>Data Structures & Algorithms</strong> - Continuous Practice</li>
@@ -735,10 +739,10 @@ export default function Portfolio() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
             viewport={{ once: true }}
-            className="rounded-2xl bg-slate-950/40 border border-white/[0.08] hover:border-blue-400/30 backdrop-blur-xl p-6 md:p-8 text-slate-200 cursor-pointer shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:shadow-[0_20px_60px_rgba(59,130,246,0.2)] transition-all duration-300 ease-in-out hover:-translate-y-1 hover:scale-[1.02]"
+            className="rounded-2xl md:rounded-2xl bg-slate-950/30 md:bg-slate-950/40 border border-white/[0.06] md:border-white/[0.08] hover:border-blue-400/30 backdrop-blur-xl md:backdrop-blur-xl p-6 md:p-8 text-slate-200 cursor-pointer shadow-[0_8px_32px_rgba(0,0,0,0.3)] md:shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:shadow-[0_12px_40px_rgba(59,130,246,0.15)] md:hover:shadow-[0_20px_60px_rgba(59,130,246,0.2)] transition-all duration-300 ease-in-out hover:-translate-y-1 hover:scale-[1.02]"
             style={{ perspective: '1000px', transformStyle: 'preserve-3d' }}
           >
-            <h3 className="text-blue-300 text-lg font-semibold mb-4" style={{ transform: 'translateZ(20px)' }}>📚 Continuous Learning</h3>
+            <h3 className="text-blue-300 text-base md:text-lg font-semibold mb-4" style={{ transform: 'translateZ(20px)' }}>📚 Continuous Learning</h3>
             <ul className="space-y-3 text-sm text-slate-200/90 leading-relaxed" style={{ transform: 'translateZ(10px)' }}>
               <li>• <strong>DSA Practice</strong> - Problem solving on LeetCode</li>
               <li>• <strong>Project Building</strong> - Real-world application development</li>
@@ -752,10 +756,10 @@ export default function Portfolio() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
           viewport={{ once: true }}
-          className="mt-8 rounded-2xl bg-gradient-to-r from-cyan-500/10 to-blue-500/10 border border-white/[0.08] hover:border-cyan-400/30 backdrop-blur-xl p-6 md:p-8 text-center cursor-pointer shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:shadow-[0_20px_60px_rgba(6,182,212,0.2)] transition-all duration-300 ease-in-out hover:-translate-y-1 hover:scale-[1.02]"
+          className="mt-6 md:mt-8 rounded-2xl md:rounded-2xl bg-gradient-to-r from-cyan-500/10 to-blue-500/10 border border-white/[0.06] md:border-white/[0.08] hover:border-cyan-400/30 backdrop-blur-xl md:backdrop-blur-xl p-6 md:p-8 text-center cursor-pointer shadow-[0_8px_32px_rgba(0,0,0,0.3)] md:shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:shadow-[0_12px_40px_rgba(6,182,212,0.15)] md:hover:shadow-[0_20px_60px_rgba(6,182,212,0.2)] transition-all duration-300 ease-in-out hover:-translate-y-1 hover:scale-[1.02]"
         >
-          <p className="text-cyan-300 text-lg font-semibold mb-3">🚀 Growth Mindset</p>
-          <p className="text-slate-300/90 text-base max-w-2xl mx-auto leading-relaxed">
+          <p className="text-cyan-300 text-base md:text-lg font-semibold mb-3">🚀 Growth Mindset</p>
+          <p className="text-slate-300/90 text-sm md:text-base max-w-2xl mx-auto leading-relaxed">
             Passionate about continuous improvement and adapting to new technologies. 
             Always seeking to expand my skill set and tackle challenging problems that push me to grow as a developer.
           </p>
@@ -765,34 +769,34 @@ export default function Portfolio() {
 
       <motion.section
         id="projects"
-        className="px-4 sm:px-8 py-16 md:py-28 max-w-6xl mx-auto"
+        className="px-4 sm:px-8 py-20 md:py-28 max-w-6xl mx-auto"
         initial={{ opacity: 0, x: 80 }}
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
         viewport={{ once: true, margin: "-100px" }}
       >
-        <h2 className="text-3xl md:text-4xl mb-10 md:mb-12 font-semibold tracking-tight text-center transition-all duration-300 ease-in-out hover:scale-[1.02] hover:tracking-wide cursor-default group">
+        <h2 className="text-2xl md:text-4xl mb-8 md:mb-12 font-semibold tracking-tight text-center transition-all duration-300 ease-in-out hover:scale-[1.02] hover:tracking-wide cursor-default group">
           <span className="group-hover:drop-shadow-[0_0_8px_rgba(34,211,238,0.5)] transition-all duration-300 group-hover:letter-spacing-[1px]">Projects</span>
           <span className="text-cyan-400 inline-block transition-all duration-300 hover:scale-110 hover:drop-shadow-[0_0_8px_rgba(34,211,238,0.8)]"></span>
         </h2>
 
-        <div className="grid md:grid-cols-2 gap-6 md:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
           {/* IPL */}
           <motion.div
             animate={{ y: [0, -4, 0] }}
             transition={{ 
               y: { duration: 6, repeat: Infinity, ease: "easeInOut" },
             }}
-            className="bg-slate-950/40 rounded-2xl border border-white/[0.08] hover:border-cyan-400/30 cursor-pointer group relative overflow-hidden backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:shadow-[0_20px_60px_rgba(6,182,212,0.2)] transition-all duration-300 ease-in-out hover:-translate-y-1 hover:scale-[1.02]"
+            className="bg-slate-950/30 md:bg-slate-950/40 rounded-2xl md:rounded-2xl border border-white/[0.06] md:border-white/[0.08] hover:border-cyan-400/30 cursor-pointer group relative overflow-hidden backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.3)] md:shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:shadow-[0_12px_40px_rgba(6,182,212,0.15)] md:hover:shadow-[0_20px_60px_rgba(6,182,212,0.2)] transition-all duration-300 ease-in-out hover:-translate-y-1 hover:scale-[1.02]"
             style={{ perspective: '1000px', transformStyle: 'preserve-3d' }}
           >
             {/* Glow effect overlay */}
             <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/0 via-cyan-400/0 to-cyan-400/0 group-hover:from-cyan-400/5 group-hover:via-transparent group-hover:to-transparent transition-all duration-500 rounded-2xl z-10 pointer-events-none" />
             
             {/* Project Image Preview */}
-            <div className="relative h-40 md:h-48 bg-gradient-to-br from-slate-800 via-cyan-900/30 to-slate-900 overflow-hidden">
+            <div className="relative h-44 md:h-48 bg-gradient-to-br from-slate-800 via-cyan-900/30 to-slate-900 overflow-hidden">
               <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-6xl">🏏</div>
+                <div className="text-5xl md:text-6xl">🏏</div>
               </div>
               <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent" />
               <div className="absolute top-3 right-3 flex gap-2">
@@ -801,15 +805,15 @@ export default function Portfolio() {
               </div>
             </div>
 
-            <div className="p-6">
-              <h3 className="text-xl font-semibold text-slate-100 mb-2">Real-Time IPL Auction Simulator</h3>
-              <p className="text-cyan-300 text-sm mb-4">Real-time IPL Auction simulation with bidding logic, team purse management and AI-based teams. Multiplayer mode currently under development.</p>
+            <div className="p-5 md:p-6">
+              <h3 className="text-lg md:text-xl font-semibold text-slate-100 mb-2">Real-Time IPL Auction Simulator</h3>
+              <p className="text-cyan-300/90 text-sm mb-4">Real-time IPL Auction simulation with bidding logic, team purse management and AI-based teams. Multiplayer mode currently under development.</p>
               
               <div className="space-y-3 mb-4">
                 <div className="flex flex-wrap gap-2">
-                  <span className="px-2 py-1 bg-slate-800 text-slate-300 text-xs rounded">React</span>
-                  <span className="px-2 py-1 bg-slate-800 text-slate-300 text-xs rounded">Firebase</span>
-                  <span className="px-2 py-1 bg-slate-800 text-slate-300 text-xs rounded">WebSocket</span>
+                  <span className="px-2 py-1 bg-slate-800/80 text-slate-300 text-xs rounded">React</span>
+                  <span className="px-2 py-1 bg-slate-800/80 text-slate-300 text-xs rounded">Firebase</span>
+                  <span className="px-2 py-1 bg-slate-800/80 text-slate-300 text-xs rounded">WebSocket</span>
                 </div>
                 
                 <ul className="text-slate-400 text-sm space-y-1">
@@ -831,11 +835,11 @@ export default function Portfolio() {
                 </ul>
               </div>
               
-              <div className="flex gap-3 pt-2">
+              <div className="flex flex-col sm:flex-row gap-3 pt-2">
                 <a
                   href="https://github.com/Gaurav-29-eng/ipl-auction"
                   target="_blank"
-                  className="inline-flex items-center gap-1.5 px-4 py-2 bg-slate-800 hover:bg-slate-700 text-cyan-300 text-sm rounded-lg transition-all duration-300 border border-cyan-400/20 hover:border-cyan-400/40"
+                  className="inline-flex items-center justify-center gap-1.5 px-4 py-3 bg-slate-800/80 hover:bg-slate-700/80 text-cyan-300 text-sm rounded-lg transition-all duration-300 border border-cyan-400/20 hover:border-cyan-400/40 w-full sm:w-auto"
                 >
                   <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
                   GitHub
@@ -843,7 +847,7 @@ export default function Portfolio() {
                 <a
                   href="https://ipl-auction-hazel.vercel.app/"
                   target="_blank"
-                  className="inline-flex items-center gap-1.5 px-4 py-2 bg-gradient-to-r from-cyan-400/20 to-blue-400/20 hover:from-cyan-400/30 hover:to-blue-400/30 text-cyan-300 text-sm rounded-lg transition-all duration-300 border border-cyan-400/30 hover:border-cyan-400/50"
+                  className="inline-flex items-center justify-center gap-1.5 px-4 py-3 bg-gradient-to-r from-cyan-400/20 to-blue-400/20 hover:from-cyan-400/30 hover:to-blue-400/30 text-cyan-300 text-sm rounded-lg transition-all duration-300 border border-cyan-400/30 hover:border-cyan-400/50 w-full sm:w-auto"
                 >
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
                   Live Demo
@@ -858,16 +862,16 @@ export default function Portfolio() {
             transition={{ 
               y: { duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1.5 },
             }}
-            className="bg-slate-950/40 rounded-2xl border border-white/[0.08] hover:border-blue-400/30 cursor-pointer group relative overflow-hidden backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:shadow-[0_20px_60px_rgba(59,130,246,0.2)] transition-all duration-300 ease-in-out hover:-translate-y-1 hover:scale-[1.02]"
+            className="bg-slate-950/30 md:bg-slate-950/40 rounded-2xl md:rounded-2xl border border-white/[0.06] md:border-white/[0.08] hover:border-blue-400/30 cursor-pointer group relative overflow-hidden backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.3)] md:shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:shadow-[0_12px_40px_rgba(59,130,246,0.15)] md:hover:shadow-[0_20px_60px_rgba(59,130,246,0.2)] transition-all duration-300 ease-in-out hover:-translate-y-1 hover:scale-[1.02]"
             style={{ perspective: '1000px', transformStyle: 'preserve-3d' }}
           >
             {/* Glow effect overlay */}
             <div className="absolute inset-0 bg-gradient-to-br from-blue-400/0 via-blue-400/0 to-blue-400/0 group-hover:from-blue-400/5 group-hover:via-transparent group-hover:to-transparent transition-all duration-500 rounded-2xl z-10 pointer-events-none" />
             
             {/* Project Image Preview */}
-            <div className="relative h-40 md:h-48 bg-gradient-to-br from-slate-800 via-blue-900/30 to-slate-900 overflow-hidden">
+            <div className="relative h-44 md:h-48 bg-gradient-to-br from-slate-800 via-blue-900/30 to-slate-900 overflow-hidden">
               <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-6xl">💼</div>
+                <div className="text-5xl md:text-6xl">💼</div>
               </div>
               <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent" />
               <div className="absolute top-3 right-3 flex gap-2">
@@ -875,15 +879,15 @@ export default function Portfolio() {
               </div>
             </div>
 
-            <div className="p-6">
-              <h3 className="text-xl font-semibold text-slate-100 mb-2">Developer Portfolio</h3>
-              <p className="text-blue-300 text-sm mb-4">Interactive portfolio with animations and modern UI</p>
+            <div className="p-5 md:p-6">
+              <h3 className="text-lg md:text-xl font-semibold text-slate-100 mb-2">Developer Portfolio</h3>
+              <p className="text-blue-300/90 text-sm mb-4">Interactive portfolio with animations and modern UI</p>
               
               <div className="space-y-3 mb-4">
                 <div className="flex flex-wrap gap-2">
-                  <span className="px-2 py-1 bg-slate-800 text-slate-300 text-xs rounded">React</span>
-                  <span className="px-2 py-1 bg-slate-800 text-slate-300 text-xs rounded">Tailwind</span>
-                  <span className="px-2 py-1 bg-slate-800 text-slate-300 text-xs rounded">Framer Motion</span>
+                  <span className="px-2 py-1 bg-slate-800/80 text-slate-300 text-xs rounded">React</span>
+                  <span className="px-2 py-1 bg-slate-800/80 text-slate-300 text-xs rounded">Tailwind</span>
+                  <span className="px-2 py-1 bg-slate-800/80 text-slate-300 text-xs rounded">Framer Motion</span>
                 </div>
                 
                 <ul className="text-slate-400 text-sm space-y-1">
@@ -899,11 +903,11 @@ export default function Portfolio() {
                 </ul>
               </div>
               
-              <div className="flex gap-3 pt-2">
+              <div className="flex flex-col sm:flex-row gap-3 pt-2">
                 <a
                   href="https://github.com/Gaurav-29-eng/gaurav-portfolio"
                   target="_blank"
-                  className="inline-flex items-center gap-1.5 px-4 py-2 bg-slate-800 hover:bg-slate-700 text-blue-300 text-sm rounded-lg transition-all duration-300 border border-blue-400/20 hover:border-blue-400/40"
+                  className="inline-flex items-center justify-center gap-1.5 px-4 py-3 bg-slate-800/80 hover:bg-slate-700/80 text-blue-300 text-sm rounded-lg transition-all duration-300 border border-blue-400/20 hover:border-blue-400/40 w-full sm:w-auto"
                 >
                   <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
                   GitHub
@@ -911,7 +915,7 @@ export default function Portfolio() {
                 <a
                   href="https://gaurav-portfolio-roan.vercel.app/"
                   target="_blank"
-                  className="inline-flex items-center gap-1.5 px-4 py-2 bg-gradient-to-r from-blue-400/20 to-indigo-400/20 hover:from-blue-400/30 hover:to-indigo-400/30 text-blue-300 text-sm rounded-lg transition-all duration-300 border border-blue-400/30 hover:border-blue-400/50"
+                  className="inline-flex items-center justify-center gap-1.5 px-4 py-3 bg-gradient-to-r from-blue-400/20 to-indigo-400/20 hover:from-blue-400/30 hover:to-indigo-400/30 text-blue-300 text-sm rounded-lg transition-all duration-300 border border-blue-400/30 hover:border-blue-400/50 w-full sm:w-auto"
                 >
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
                   Live Demo
@@ -925,33 +929,33 @@ export default function Portfolio() {
 
       {/* PROBLEM SOLVING */}
       <motion.section 
-        className="px-4 sm:px-8 py-16 md:py-28 max-w-6xl mx-auto"
+        className="px-4 sm:px-8 py-20 md:py-28 max-w-6xl mx-auto"
         initial={{ opacity: 0, y: 60 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
         viewport={{ once: true, margin: "-100px" }}
       >
-        <h2 className="text-3xl md:text-4xl mb-10 md:mb-12 font-semibold tracking-tight text-center transition-all duration-300 ease-in-out hover:scale-[1.02] hover:tracking-wide cursor-default group">
+        <h2 className="text-2xl md:text-4xl mb-8 md:mb-12 font-semibold tracking-tight text-center transition-all duration-300 ease-in-out hover:scale-[1.02] hover:tracking-wide cursor-default group">
           <span className="group-hover:drop-shadow-[0_0_8px_rgba(34,211,238,0.5)] transition-all duration-300">Problem Solving</span>
           <span className="text-cyan-400 inline-block transition-all duration-300 hover:scale-110 hover:drop-shadow-[0_0_8px_rgba(34,211,238,0.8)]"></span>
         </h2>
 
         <motion.div 
-          className="max-w-3xl mx-auto bg-slate-950/40 rounded-2xl border border-white/[0.08] hover:border-cyan-400/30 backdrop-blur-xl p-6 md:p-10 cursor-pointer shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:shadow-[0_20px_60px_rgba(6,182,212,0.2)] transition-all duration-300 ease-in-out hover:-translate-y-1 hover:scale-[1.02]"
+          className="max-w-3xl mx-auto bg-slate-950/30 md:bg-slate-950/40 rounded-2xl md:rounded-2xl border border-white/[0.06] md:border-white/[0.08] hover:border-cyan-400/30 backdrop-blur-xl p-6 md:p-10 cursor-pointer shadow-[0_8px_32px_rgba(0,0,0,0.3)] md:shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:shadow-[0_12px_40px_rgba(6,182,212,0.15)] md:hover:shadow-[0_20px_60px_rgba(6,182,212,0.2)] transition-all duration-300 ease-in-out hover:-translate-y-1 hover:scale-[1.02]"
           style={{ perspective: '1000px', transformStyle: 'preserve-3d' }}
         >
-          <div className="space-y-5 text-slate-300" style={{ transform: 'translateZ(15px)' }}>
-            <div className="flex items-start gap-4">
-              <span className="text-cyan-400 text-xl mt-0.5">•</span>
-              <p className="text-base leading-relaxed">Practicing Data Structures & Algorithms regularly</p>
+          <div className="space-y-4 md:space-y-5 text-slate-300" style={{ transform: 'translateZ(15px)' }}>
+            <div className="flex items-start gap-3 md:gap-4">
+              <span className="text-cyan-400 text-lg md:text-xl mt-0.5">•</span>
+              <p className="text-sm md:text-base leading-relaxed">Practicing Data Structures & Algorithms regularly</p>
             </div>
-            <div className="flex items-start gap-4">
-              <span className="text-cyan-400 text-xl mt-0.5">•</span>
-              <p className="text-base leading-relaxed">Strong in arrays, strings, and basic recursion</p>
+            <div className="flex items-start gap-3 md:gap-4">
+              <span className="text-cyan-400 text-lg md:text-xl mt-0.5">•</span>
+              <p className="text-sm md:text-base leading-relaxed">Strong in arrays, strings, and basic recursion</p>
             </div>
-            <div className="flex items-start gap-4">
-              <span className="text-cyan-400 text-xl mt-0.5">•</span>
-              <p className="text-base leading-relaxed">Actively improving problem-solving skills</p>
+            <div className="flex items-start gap-3 md:gap-4">
+              <span className="text-cyan-400 text-lg md:text-xl mt-0.5">•</span>
+              <p className="text-sm md:text-base leading-relaxed">Actively improving problem-solving skills</p>
             </div>
           </div>
         </motion.div>
@@ -959,77 +963,77 @@ export default function Portfolio() {
 
       {/* EDUCATION */}
       <motion.section 
-        className="px-4 sm:px-8 py-16 md:py-28 max-w-6xl mx-auto"
+        className="px-4 sm:px-8 py-20 md:py-28 max-w-6xl mx-auto"
         initial={{ opacity: 0, y: 60 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
         viewport={{ once: true, margin: "-100px" }}
       >
-        <h2 className="text-3xl md:text-4xl mb-10 md:mb-12 font-semibold tracking-tight text-center transition-all duration-300 ease-in-out hover:scale-[1.02] hover:tracking-wide cursor-default group">
+        <h2 className="text-2xl md:text-4xl mb-8 md:mb-12 font-semibold tracking-tight text-center transition-all duration-300 ease-in-out hover:scale-[1.02] hover:tracking-wide cursor-default group">
           <span className="group-hover:drop-shadow-[0_0_8px_rgba(34,211,238,0.5)] transition-all duration-300">Education</span>
           <span className="text-cyan-400 inline-block transition-all duration-300 hover:scale-110 hover:drop-shadow-[0_0_8px_rgba(34,211,238,0.8)]"></span>
         </h2>
 
         <motion.div 
-          className="max-w-2xl mx-auto bg-slate-950/40 rounded-2xl border border-white/[0.08] hover:border-cyan-400/30 backdrop-blur-xl p-8 md:p-10 cursor-pointer shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:shadow-[0_20px_60px_rgba(6,182,212,0.2)] transition-all duration-300 ease-in-out hover:-translate-y-1 hover:scale-[1.02]"
+          className="max-w-2xl mx-auto bg-slate-950/30 md:bg-slate-950/40 rounded-2xl md:rounded-2xl border border-white/[0.06] md:border-white/[0.08] hover:border-cyan-400/30 backdrop-blur-xl p-6 md:p-10 cursor-pointer shadow-[0_8px_32px_rgba(0,0,0,0.3)] md:shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:shadow-[0_12px_40px_rgba(6,182,212,0.15)] md:hover:shadow-[0_20px_60px_rgba(6,182,212,0.2)] transition-all duration-300 ease-in-out hover:-translate-y-1 hover:scale-[1.02]"
           style={{ perspective: '1000px', transformStyle: 'preserve-3d' }}
         >
           <div className="text-center" style={{ transform: 'translateZ(20px)' }}>
-            <h3 className="text-xl md:text-2xl font-semibold text-slate-100 mb-3">B.E. Computer Science</h3>
-            <p className="text-cyan-300 text-base mb-2">SPPU, Pune</p>
-            <p className="text-slate-400 text-sm">3rd Year • Current</p>
+            <h3 className="text-lg md:text-2xl font-semibold text-slate-100 mb-3">B.E. Computer Science</h3>
+            <p className="text-cyan-300 text-sm md:text-base mb-2">SPPU, Pune</p>
+            <p className="text-slate-400 text-xs md:text-sm">3rd Year • Current</p>
           </div>
         </motion.div>
       </motion.section>
 
       {/* CONTACT */}
-      <motion.section id="contact" className="px-4 sm:px-8 py-16 md:py-28 pb-24 md:pb-32 max-w-4xl mx-auto"
+      <motion.section id="contact" className="px-4 sm:px-8 py-20 md:py-28 pb-24 md:pb-32 max-w-4xl mx-auto"
         initial={{ opacity: 0, y: 60 }} 
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
         viewport={{ once: true, margin: "-100px" }}>
 
-        <h2 className="text-3xl md:text-4xl mb-6 text-center font-semibold tracking-tight transition-all duration-300 ease-in-out hover:scale-[1.02] hover:tracking-wide cursor-default group">
+        <h2 className="text-2xl md:text-4xl mb-4 md:mb-6 text-center font-semibold tracking-tight transition-all duration-300 ease-in-out hover:scale-[1.02] hover:tracking-wide cursor-default group">
           <span className="group-hover:drop-shadow-[0_0_8px_rgba(34,211,238,0.5)] transition-all duration-300">Let's Connect</span>
           <span className="text-cyan-400 inline-block transition-all duration-300 hover:scale-110 hover:drop-shadow-[0_0_8px_rgba(34,211,238,0.8)]"></span>
         </h2>
         
-        <p className="text-center text-slate-300/90 mb-8 md:mb-10 max-w-xl mx-auto text-base md:text-lg leading-relaxed px-4">
+        <p className="text-center text-slate-300/90 mb-8 md:mb-10 max-w-xl mx-auto text-sm md:text-lg leading-relaxed px-4">
           Open to internships and opportunities
         </p>
 
         <div className="flex flex-col sm:flex-row justify-center items-stretch sm:items-center gap-3 sm:gap-6">
           <a
             href="mailto:gaurav@example.com"
-            className="group inline-flex items-center justify-center gap-3 px-6 py-4 min-h-[48px] bg-slate-950/40 backdrop-blur-xl rounded-xl border border-white/[0.08] hover:border-cyan-400/40 hover:bg-slate-950/60 transition-all duration-300 ease-in-out hover:scale-105 hover:-translate-y-1 shadow-[0_8px_32px_rgba(0,0,0,0.4)] w-full sm:w-auto"
+            className="group inline-flex items-center justify-center gap-3 px-6 py-4 min-h-[52px] bg-slate-950/30 md:bg-slate-950/40 backdrop-blur-xl rounded-xl md:rounded-xl border border-white/[0.06] md:border-white/[0.08] hover:border-cyan-400/40 hover:bg-slate-950/50 transition-all duration-300 ease-in-out hover:scale-105 hover:-translate-y-1 shadow-[0_8px_32px_rgba(0,0,0,0.3)] md:shadow-[0_8px_32px_rgba(0,0,0,0.4)] w-full sm:w-auto"
           >
             <svg className="w-5 h-5 text-cyan-400 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
             </svg>
-            <span className="text-cyan-300 font-medium">Email</span>
+            <span className="text-cyan-300 font-medium text-sm md:text-base">Email</span>
           </a>
 
           <a
             href="https://github.com/Gaurav-29-eng"
             target="_blank"
-            className="group inline-flex items-center justify-center gap-3 px-6 py-4 min-h-[48px] bg-slate-950/40 backdrop-blur-xl rounded-xl border border-white/[0.08] hover:border-cyan-400/40 hover:bg-slate-950/60 transition-all duration-300 ease-in-out hover:scale-105 hover:-translate-y-1 shadow-[0_8px_32px_rgba(0,0,0,0.4)] w-full sm:w-auto"
+            className="group inline-flex items-center justify-center gap-3 px-6 py-4 min-h-[52px] bg-slate-950/30 md:bg-slate-950/40 backdrop-blur-xl rounded-xl md:rounded-xl border border-white/[0.06] md:border-white/[0.08] hover:border-cyan-400/40 hover:bg-slate-950/50 transition-all duration-300 ease-in-out hover:scale-105 hover:-translate-y-1 shadow-[0_8px_32px_rgba(0,0,0,0.3)] md:shadow-[0_8px_32px_rgba(0,0,0,0.4)] w-full sm:w-auto"
           >
             <svg className="w-5 h-5 text-cyan-400 group-hover:scale-110 transition-transform duration-300" fill="currentColor" viewBox="0 0 24 24">
               <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
             </svg>
-            <span className="text-cyan-300 font-medium">GitHub</span>
+            <span className="text-cyan-300 font-medium text-sm md:text-base">GitHub</span>
           </a>
 
           <a
             href="https://linkedin.com/in/gaurav-salunke-cse27"
             target="_blank"
             rel="noopener noreferrer"
-            className="group inline-flex items-center justify-center gap-3 px-6 py-4 min-h-[48px] bg-slate-950/40 backdrop-blur-xl rounded-xl border border-white/[0.08] hover:border-cyan-400/40 hover:bg-slate-950/60 transition-all duration-300 ease-in-out hover:scale-105 hover:-translate-y-1 shadow-[0_8px_32px_rgba(0,0,0,0.4)] w-full sm:w-auto"
+            className="group inline-flex items-center justify-center gap-3 px-6 py-4 min-h-[52px] bg-slate-950/30 md:bg-slate-950/40 backdrop-blur-xl rounded-xl md:rounded-xl border border-white/[0.06] md:border-white/[0.08] hover:border-cyan-400/40 hover:bg-slate-950/50 transition-all duration-300 ease-in-out hover:scale-105 hover:-translate-y-1 shadow-[0_8px_32px_rgba(0,0,0,0.3)] md:shadow-[0_8px_32px_rgba(0,0,0,0.4)] w-full sm:w-auto"
           >
             <svg className="w-5 h-5 text-cyan-400 group-hover:scale-110 transition-transform duration-300" fill="currentColor" viewBox="0 0 24 24">
               <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
             </svg>
-            <span className="text-cyan-300 font-medium">LinkedIn</span>
+            <span className="text-cyan-300 font-medium text-sm md:text-base">LinkedIn</span>
           </a>
         </div>
       </motion.section>
