@@ -17,6 +17,7 @@ export default function Portfolio() {
   // Mouse tracking for 3D effects
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [smoothMouse, setSmoothMouse] = useState({ x: 0, y: 0 });
+  const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
     const handleMouseMove = (e) => {
@@ -43,6 +44,15 @@ export default function Portfolio() {
     animationId = requestAnimationFrame(animate);
     return () => cancelAnimationFrame(animationId);
   }, [mousePosition]);
+
+  // Scroll listener for navbar transformation
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   // Loading state management
   useEffect(() => {
@@ -109,31 +119,70 @@ export default function Portfolio() {
       <CursorTrail />
 
       <div className="relative z-10 flex flex-col">
-      {/* NAVBAR */}
-      <div className="fixed top-0 left-0 w-full z-50">
-        <div className="mx-auto max-w-6xl px-8 py-4 flex items-center justify-between bg-slate-900/60 backdrop-blur-xl border-b border-white/5 rounded-b-2xl shadow-[0_18px_60px_rgba(15,23,42,0.8)]">
-          <h1 className="text-lg md:text-xl font-semibold tracking-tight text-cyan-400 select-none">
-            Gaurav<span className="text-slate-400">.dev</span>
-          </h1>
+      {/* NAVBAR - Premium Apple-Style Glass Design */}
+      <nav className={`fixed left-1/2 -translate-x-1/2 z-50 w-[92%] max-w-5xl transition-all duration-500 ease-out ${isScrolled ? 'top-2' : 'top-4'}`}>
+        <div 
+          className={`flex items-center justify-between px-6 rounded-full
+                     bg-slate-950/40 border border-white/[0.08]
+                     shadow-[0_8px_32px_rgba(0,0,0,0.4),0_1px_0_rgba(255,255,255,0.05)_inset]
+                     transition-all duration-500 ease-out
+                     ${isScrolled ? 'py-2 backdrop-blur-2xl bg-slate-950/60' : 'py-3 backdrop-blur-xl'}`}
+        >
+          {/* Logo */}
+          <a href="#" className="flex items-center gap-2 group">
+            <span className={`font-semibold tracking-tight text-slate-100 group-hover:text-cyan-300 transition-colors duration-300 ${isScrolled ? 'text-base' : 'text-lg'}`}>
+              Gaurav
+            </span>
+            <span className={`text-slate-500 transition-all duration-500 ${isScrolled ? 'text-xs' : 'text-sm'}`}>.dev</span>
+          </a>
 
-          <nav className="flex items-center gap-8 text-sm md:text-base text-slate-300">
-            <a href="#projects" className="relative hover:text-cyan-400 transition-all duration-300 ease-out after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 hover:after:w-full after:bg-cyan-400 after:transition-all after:duration-300">
+          {/* Center Navigation */}
+          <div className="hidden md:flex items-center gap-1">
+            <a 
+              href="#projects" 
+              className="relative px-4 py-2 text-sm font-medium text-slate-400 hover:text-slate-100 
+                         transition-all duration-300 ease-out rounded-full
+                         hover:bg-white/[0.06]"
+            >
               Projects
             </a>
-            <a href="#contact" className="relative hover:text-cyan-400 transition-all duration-300 ease-out after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 hover:after:w-full after:bg-cyan-400 after:transition-all after:duration-300">
+            <a 
+              href="#about" 
+              className="relative px-4 py-2 text-sm font-medium text-slate-400 hover:text-slate-100 
+                         transition-all duration-300 ease-out rounded-full
+                         hover:bg-white/[0.06]"
+            >
+              About
+            </a>
+            <a 
+              href="#contact" 
+              className="relative px-4 py-2 text-sm font-medium text-slate-400 hover:text-slate-100 
+                         transition-all duration-300 ease-out rounded-full
+                         hover:bg-white/[0.06]"
+            >
               Contact
             </a>
+          </div>
 
-            <a
-              href="/resume.pdf"
-              download
-              className="px-5 py-2.5 rounded-full border border-cyan-400/70 bg-cyan-500/10 text-cyan-300 hover:bg-cyan-400 hover:text-slate-950 hover:shadow-[0_0_35px_rgba(6,182,212,0.55)] transition-all duration-300 ease-out"
-            >
-              Resume
-            </a>
-          </nav>
+          {/* Resume CTA - Premium Pill Button */}
+          <a
+            href="/resume.pdf"
+            download
+            className="relative group px-5 py-2 rounded-full
+                       bg-gradient-to-r from-cyan-500/20 to-blue-500/20
+                       border border-cyan-400/30
+                       text-sm font-medium text-cyan-300
+                       transition-all duration-300 ease-out
+                       hover:scale-105 hover:border-cyan-400/60
+                       hover:shadow-[0_0_20px_rgba(6,182,212,0.4),0_0_40px_rgba(6,182,212,0.2)]
+                       hover:text-white
+                       active:scale-95"
+          >
+            <span className="relative z-10">Resume</span>
+            <div className="absolute inset-0 rounded-full bg-gradient-to-r from-cyan-500/0 via-cyan-500/10 to-blue-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+          </a>
         </div>
-      </div>
+      </nav>
 
       {/* HERO */}
       <section className="min-h-screen flex items-center justify-center px-8 pt-32 md:pt-40 max-w-6xl mx-auto" style={{ perspective: '1000px' }}>
@@ -164,63 +213,31 @@ export default function Portfolio() {
             </motion.p>
 
             <div className="overflow-hidden" style={{ transform: 'translateZ(40px)' }}>
-              <motion.h1
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.18, duration: 0.1 }}
-                className="text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] tracking-tight"
+              <h1
+                className="text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.15] tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 via-violet-500 to-cyan-400 animate-gradient max-w-4xl transition-all duration-300 ease-out hover:scale-[1.02]" style={{ backgroundSize: '200% auto', animation: 'gradient-shift 8s ease infinite' }}
               >
-                <span className="block text-slate-100 overflow-hidden">
-                  {["Front-End", "Developer"].map((word, i) => (
-                    <motion.span
-                      key={i}
-                      initial={{ y: 50, opacity: 0 }}
-                      animate={{ y: 0, opacity: 1 }}
-                      transition={{
-                        delay: 0.25 + i * 0.15,
-                        duration: 0.6,
-                        ease: [0.22, 1, 0.36, 1]
-                      }}
-                      className="inline-block mr-4"
-                    >
-                      {word}
-                    </motion.span>
-                  ))}
-                </span>
-                <span 
-                  className="block mt-2 overflow-hidden bg-gradient-to-r from-cyan-400 via-blue-400 to-violet-500 to-cyan-400 bg-clip-text text-transparent"
-                  style={{
-                    backgroundSize: '200% 100%',
-                    animation: 'gradient-shift 4s ease infinite',
-                  }}
-                >
-                  {["Computer", "Science", "Student"].map((word, i) => (
-                    <motion.span
-                      key={i}
-                      initial={{ y: 50, opacity: 0 }}
-                      animate={{ y: 0, opacity: 1 }}
-                      transition={{
-                        delay: 0.55 + i * 0.12,
-                        duration: 0.6,
-                        ease: [0.22, 1, 0.36, 1]
-                      }}
-                      className="inline-block mr-4"
-                    >
-                      {word}
-                    </motion.span>
-                  ))}
-                </span>
-              </motion.h1>
+                I build interactive, real-time web experiences.
+              </h1>
             </div>
 
             <motion.p
               initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 0.85, y: 0 }}
-              transition={{ delay: 0.32, duration: 0.6 }}
-              className="mt-6 text-base md:text-lg text-slate-300/80 max-w-xl leading-relaxed"
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.35, duration: 0.6 }}
+              className="mt-4 text-lg md:text-xl text-cyan-300/90 font-medium max-w-2xl"
               style={{ transform: 'translateZ(30px)' }}
             >
-              I build modern web applications with strong fundamentals in Data Structures, JavaScript, and front-end development.
+              Frontend Developer focused on performance, UI and modern web apps.
+            </motion.p>
+
+            <motion.p
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 0.8, y: 0 }}
+              transition={{ delay: 0.45, duration: 0.6 }}
+              className="mt-3 text-base text-slate-400/80 max-w-xl"
+              style={{ transform: 'translateZ(25px)' }}
+            >
+              Currently building a real-time IPL Auction platform with multiplayer features.
             </motion.p>
 
             <motion.div
@@ -241,7 +258,7 @@ export default function Portfolio() {
                 download
                 className="inline-flex items-center justify-center gap-2 rounded-full border border-cyan-400/70 bg-slate-900/40 px-8 py-3 text-sm font-semibold text-cyan-300 hover:bg-cyan-400 hover:text-slate-950 hover:shadow-[0_8px_30px_rgba(6,182,212,0.5)] transition-all duration-300 ease-out hover:scale-105 hover:-translate-y-1"
               >
-                Resume
+                Download CV
               </a>
             </motion.div>
           </div>
@@ -270,8 +287,8 @@ export default function Portfolio() {
               <img
                 src={profileImage}
                 alt="Gaurav"
-                className="w-full h-full object-cover scale-110 hover:scale-105 transition-transform duration-500 ease-out"
-                style={{ objectPosition: '50% 15%' }}
+                className="w-full h-full object-cover scale-125 hover:scale-120 transition-transform duration-500 ease-out"
+                style={{ objectPosition: '50% 20%' }}
               />
                 </div>
               </div>
@@ -290,9 +307,9 @@ export default function Portfolio() {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 0.06, y: [0, -8, 0] }}
           transition={{ delay: 0.6, duration: 8, repeat: Infinity, ease: "easeInOut" }}
-          className="pointer-events-none absolute right-8 md:right-12 bottom-12 text-[72px] md:text-[96px] lg:text-[110px] font-black tracking-[0.2em] text-cyan-400/20"
+          className="pointer-events-none absolute right-8 md:right-12 bottom-12 text-[72px] md:text-[96px] lg:text-[110px] font-black tracking-[0.2em] text-cyan-400/20 select-none"
         >
-          GAURAV
+          <span className="inline-block transition-all duration-500 ease-out hover:scale-105 hover:text-cyan-400/40 hover:drop-shadow-[0_0_30px_rgba(34,211,238,0.5)] cursor-default">GAURAV</span>
         </motion.h1>
 
       </section>
@@ -304,20 +321,20 @@ export default function Portfolio() {
         initial={{ opacity: 0, y: 60 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+        viewport={{ once: true, margin: "-100px" }}
       >
-        <h2 className="text-3xl md:text-4xl mb-10 md:mb-12 font-semibold tracking-tight text-center">
-          Why Hire Me<span className="text-cyan-400"></span>
+        <h2 className="text-3xl md:text-4xl mb-10 md:mb-12 font-semibold tracking-tight text-center transition-all duration-300 ease-out hover:scale-[1.02] cursor-default">
+          Why Hire Me<span className="text-cyan-400 inline-block transition-all duration-300 hover:scale-110 hover:drop-shadow-[0_0_8px_rgba(34,211,238,0.8)]"></span>
         </h2>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
           <motion.div
             whileHover={{ 
-              y: -6, 
-              rotateX: 5,
-              rotateY: -5,
-              boxShadow: "0 25px 80px rgba(6, 182, 212, 0.25)",
+              scale: 1.03,
+              y: -8,
+              boxShadow: "0 25px 80px rgba(6, 182, 212, 0.3), 0 0 0 1px rgba(6, 182, 212, 0.4)",
             }}
-            transition={{ type: "spring", stiffness: 300, damping: 20 }}
+            transition={{ duration: 0.3, ease: "easeOut" }}
             className="relative overflow-hidden rounded-2xl bg-slate-900/60 border border-cyan-400/15 shadow-[0_18px_60px_rgba(15,23,42,0.9)] backdrop-blur-xl p-6 md:p-7 flex flex-col gap-4 cursor-pointer"
             style={{ 
               perspective: '1000px',
@@ -335,12 +352,11 @@ export default function Portfolio() {
 
           <motion.div
             whileHover={{ 
-              y: -6, 
-              rotateX: 5,
-              rotateY: -5,
-              boxShadow: "0 25px 80px rgba(59, 130, 246, 0.25)",
+              scale: 1.03,
+              y: -8,
+              boxShadow: "0 25px 80px rgba(59, 130, 246, 0.3), 0 0 0 1px rgba(59, 130, 246, 0.4)",
             }}
-            transition={{ type: "spring", stiffness: 300, damping: 20 }}
+            transition={{ duration: 0.3, ease: "easeOut" }}
             className="relative overflow-hidden rounded-2xl bg-slate-900/60 border border-blue-400/15 shadow-[0_18px_60px_rgba(15,23,42,0.9)] backdrop-blur-xl p-6 md:p-7 flex flex-col gap-4 cursor-pointer"
             style={{ 
               perspective: '1000px',
@@ -358,12 +374,11 @@ export default function Portfolio() {
 
           <motion.div
             whileHover={{ 
-              y: -6, 
-              rotateX: 5,
-              rotateY: -5,
-              boxShadow: "0 25px 80px rgba(99, 102, 241, 0.25)",
+              scale: 1.03,
+              y: -8,
+              boxShadow: "0 25px 80px rgba(99, 102, 241, 0.3), 0 0 0 1px rgba(99, 102, 241, 0.4)",
             }}
-            transition={{ type: "spring", stiffness: 300, damping: 20 }}
+            transition={{ duration: 0.3, ease: "easeOut" }}
             className="relative overflow-hidden rounded-2xl bg-slate-900/60 border border-indigo-400/15 shadow-[0_18px_60px_rgba(15,23,42,0.9)] backdrop-blur-xl p-6 md:p-7 flex flex-col gap-4 cursor-pointer"
             style={{ 
               perspective: '1000px',
@@ -381,12 +396,11 @@ export default function Portfolio() {
 
           <motion.div
             whileHover={{ 
-              y: -6, 
-              rotateX: 5,
-              rotateY: -5,
-              boxShadow: "0 25px 80px rgba(139, 92, 246, 0.25)",
+              scale: 1.03,
+              y: -8,
+              boxShadow: "0 25px 80px rgba(139, 92, 246, 0.3), 0 0 0 1px rgba(139, 92, 246, 0.4)",
             }}
-            transition={{ type: "spring", stiffness: 300, damping: 20 }}
+            transition={{ duration: 0.3, ease: "easeOut" }}
             className="relative overflow-hidden rounded-2xl bg-slate-900/60 border border-violet-400/15 shadow-[0_18px_60px_rgba(15,23,42,0.9)] backdrop-blur-xl p-6 md:p-7 flex flex-col gap-4 cursor-pointer"
             style={{ 
               perspective: '1000px',
@@ -411,136 +425,155 @@ export default function Portfolio() {
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
         viewport={{ once: true, margin: "-100px" }}>
         
-        <h2 className="text-3xl md:text-4xl mb-8 md:mb-10 font-semibold tracking-tight">
-          About<span className="text-cyan-400"></span>
+        <h2 className="text-3xl md:text-4xl mb-8 md:mb-10 font-semibold tracking-tight transition-all duration-300 ease-out hover:scale-[1.02] cursor-default">
+          About<span className="text-cyan-400 inline-block transition-all duration-300 hover:scale-110 hover:drop-shadow-[0_0_8px_rgba(34,211,238,0.8)]"></span>
         </h2>
 
-        <div className="space-y-5 text-slate-300/90 text-base md:text-lg leading-relaxed max-w-2xl">
-          <p>I am a Computer Science Engineering student at SPPU, Pune, specializing in front-end development and creating exceptional user experiences.</p>
-          <p>I enjoy building modern, responsive web applications with clean interfaces and smooth interactions that users love.</p>
-          <p>Currently developing an IPL Auction system with real-time features and continuously expanding my front-end technical skillset.</p>
-          <p className="text-cyan-400 font-medium pt-2">🚀 Actively seeking Front-End Developer internship opportunities to create impactful user interfaces.</p>
-        </div>
+        <p className="text-slate-300/90 text-base md:text-lg mb-6 max-w-2xl">
+          I specialize in building modern web applications with clean interfaces and smooth interactions.
+        </p>
+
+        <ul className="space-y-3 text-slate-300/90 text-base md:text-lg max-w-2xl">
+          <li className="flex items-start gap-3">
+            <span className="text-cyan-400 mt-1.5">•</span>
+            <span><strong className="text-slate-100">Pune, India</strong></span>
+          </li>
+          <li className="flex items-start gap-3">
+            <span className="text-cyan-400 mt-1.5">•</span>
+            <span><strong className="text-slate-100">B.E Computer Science</strong> (SPPU)</span>
+          </li>
+          <li className="flex items-start gap-3">
+            <span className="text-cyan-400 mt-1.5">•</span>
+            <span><strong className="text-slate-100">Frontend Developer</strong> (React)</span>
+          </li>
+          <li className="flex items-start gap-3">
+            <span className="text-cyan-400 mt-1.5">•</span>
+            <span>Building real-time apps like <strong className="text-cyan-300">IPL Auction system</strong></span>
+          </li>
+          <li className="flex items-start gap-3">
+            <span className="text-cyan-400 mt-1.5">•</span>
+            <span className="text-cyan-400 font-medium">Open to internships and opportunities</span>
+          </li>
+        </ul>
 
       </motion.section>
 
-      {/* SKILLS */}
+      {/* TECH STACK */}
       <motion.section
         id="skills"
         className="px-8 py-20 md:py-28 max-w-6xl mx-auto"
         initial={{ opacity: 0, y: 60 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+        viewport={{ once: true, margin: "-100px" }}
       >
-        <h2 className="text-3xl md:text-4xl mb-10 md:mb-12 font-semibold tracking-tight">
-          Technical Skills<span className="text-cyan-400"></span>
+        <h2 className="text-3xl md:text-4xl mb-10 md:mb-12 font-semibold tracking-tight text-center transition-all duration-300 ease-out hover:scale-[1.02] cursor-default">
+          Tech Stack<span className="text-cyan-400 inline-block transition-all duration-300 hover:scale-110 hover:drop-shadow-[0_0_8px_rgba(34,211,238,0.8)]"></span>
         </h2>
 
-        <div className="grid md:grid-cols-4 gap-5 md:gap-6 text-slate-200">
+        <div className="grid md:grid-cols-2 gap-5 md:gap-6 max-w-4xl mx-auto">
+          {/* Languages */}
           <motion.div
             whileHover={{ 
-              y: -6, 
-              rotateX: 4,
-              rotateY: -4,
-              boxShadow: "0 20px 60px rgba(6, 182, 212, 0.2)",
+              scale: 1.03,
+              y: -8,
+              boxShadow: "0 25px 80px rgba(6, 182, 212, 0.3), 0 0 0 1px rgba(6, 182, 212, 0.4)",
             }}
-            transition={{ type: "spring", stiffness: 300, damping: 20 }}
-            className="relative overflow-hidden rounded-2xl bg-slate-900/60 border border-cyan-400/15 shadow-[0_18px_60px_rgba(15,23,42,0.9)] backdrop-blur-xl p-5 md:p-6 flex flex-col gap-3 cursor-pointer"
+            transition={{ duration: 0.3, ease: "easeOut" }}
+            className="relative overflow-hidden rounded-2xl bg-slate-900/60 border border-cyan-400/15 shadow-[0_18px_60px_rgba(15,23,42,0.9)] backdrop-blur-xl p-6 flex flex-col gap-3 cursor-pointer"
             style={{ perspective: '1000px', transformStyle: 'preserve-3d' }}
           >
-            <div className="inline-flex items-center gap-2 text-cyan-300 text-sm font-medium" style={{ transform: 'translateZ(15px)' }}>
+            <div className="inline-flex items-center gap-2 text-cyan-300 text-sm font-semibold" style={{ transform: 'translateZ(15px)' }}>
               <FaCode className="text-cyan-300/90" />
-              Programming
+              Languages
             </div>
-            <p className="text-xs md:text-sm text-slate-300/80 leading-relaxed" style={{ transform: 'translateZ(8px)' }}>
-              Python • C • C# • Arduino Programming
+            <p className="text-sm text-slate-300/80 leading-relaxed" style={{ transform: 'translateZ(8px)' }}>
+              Python • JavaScript • C • C++ • C#
             </p>
           </motion.div>
 
+          {/* Frontend */}
           <motion.div
             whileHover={{ 
-              y: -6, 
-              rotateX: 4,
-              rotateY: -4,
-              boxShadow: "0 20px 60px rgba(59, 130, 246, 0.2)",
+              scale: 1.03,
+              y: -8,
+              boxShadow: "0 25px 80px rgba(59, 130, 246, 0.3), 0 0 0 1px rgba(59, 130, 246, 0.4)",
             }}
-            transition={{ type: "spring", stiffness: 300, damping: 20 }}
-            className="relative overflow-hidden rounded-2xl bg-slate-900/60 border border-blue-400/15 shadow-[0_18px_60px_rgba(15,23,42,0.9)] backdrop-blur-xl p-5 md:p-6 flex flex-col gap-3 cursor-pointer"
+            transition={{ duration: 0.3, ease: "easeOut" }}
+            className="relative overflow-hidden rounded-2xl bg-slate-900/60 border border-blue-400/15 shadow-[0_18px_60px_rgba(15,23,42,0.9)] backdrop-blur-xl p-6 flex flex-col gap-3 cursor-pointer"
             style={{ perspective: '1000px', transformStyle: 'preserve-3d' }}
           >
-            <div className="inline-flex items-center gap-2 text-blue-300 text-sm font-medium" style={{ transform: 'translateZ(15px)' }}>
+            <div className="inline-flex items-center gap-2 text-blue-300 text-sm font-semibold" style={{ transform: 'translateZ(15px)' }}>
               <FaGlobe className="text-blue-300/90" />
-              Front-End
+              Frontend
             </div>
-            <p className="text-xs md:text-sm text-slate-300/80 leading-relaxed" style={{ transform: 'translateZ(8px)' }}>
-              HTML5 • CSS3 • JavaScript ES6+ • React.js • Tailwind CSS
+            <p className="text-sm text-slate-300/80 leading-relaxed" style={{ transform: 'translateZ(8px)' }}>
+              React.js • HTML5 • CSS3 • Tailwind CSS • JavaScript ES6+
             </p>
           </motion.div>
 
+          {/* Tools */}
           <motion.div
             whileHover={{ 
-              y: -6, 
-              rotateX: 4,
-              rotateY: -4,
-              boxShadow: "0 20px 60px rgba(99, 102, 241, 0.2)",
+              scale: 1.03,
+              y: -8,
+              boxShadow: "0 25px 80px rgba(99, 102, 241, 0.3), 0 0 0 1px rgba(99, 102, 241, 0.4)",
             }}
-            transition={{ type: "spring", stiffness: 300, damping: 20 }}
-            className="relative overflow-hidden rounded-2xl bg-slate-900/60 border border-indigo-400/15 shadow-[0_18px_60px_rgba(15,23,42,0.9)] backdrop-blur-xl p-5 md:p-6 flex flex-col gap-3 cursor-pointer"
+            transition={{ duration: 0.3, ease: "easeOut" }}
+            className="relative overflow-hidden rounded-2xl bg-slate-900/60 border border-indigo-400/15 shadow-[0_18px_60px_rgba(15,23,42,0.9)] backdrop-blur-xl p-6 flex flex-col gap-3 cursor-pointer"
             style={{ perspective: '1000px', transformStyle: 'preserve-3d' }}
           >
-            <div className="inline-flex items-center gap-2 text-indigo-300 text-sm font-medium" style={{ transform: 'translateZ(15px)' }}>
+            <div className="inline-flex items-center gap-2 text-indigo-300 text-sm font-semibold" style={{ transform: 'translateZ(15px)' }}>
               <FaTools className="text-indigo-300/90" />
               Tools
             </div>
-            <p className="text-xs md:text-sm text-slate-300/80 leading-relaxed" style={{ transform: 'translateZ(8px)' }}>
-              Git • VS Code • Pandas • NumPy • Framer Motion
+            <p className="text-sm text-slate-300/80 leading-relaxed" style={{ transform: 'translateZ(8px)' }}>
+              Git • GitHub • VS Code • Vercel • Framer Motion
             </p>
           </motion.div>
 
+          {/* Core Concepts */}
           <motion.div
             whileHover={{ 
-              y: -6, 
-              rotateX: 4,
-              rotateY: -4,
-              boxShadow: "0 20px 60px rgba(139, 92, 246, 0.2)",
+              scale: 1.03,
+              y: -8,
+              boxShadow: "0 25px 80px rgba(139, 92, 246, 0.3), 0 0 0 1px rgba(139, 92, 246, 0.4)",
             }}
-            transition={{ type: "spring", stiffness: 300, damping: 20 }}
-            className="relative overflow-hidden rounded-2xl bg-slate-900/60 border border-violet-400/15 shadow-[0_18px_60px_rgba(15,23,42,0.9)] backdrop-blur-xl p-5 md:p-6 flex flex-col gap-3 cursor-pointer"
+            transition={{ duration: 0.3, ease: "easeOut" }}
+            className="relative overflow-hidden rounded-2xl bg-slate-900/60 border border-violet-400/15 shadow-[0_18px_60px_rgba(15,23,42,0.9)] backdrop-blur-xl p-6 flex flex-col gap-3 cursor-pointer"
             style={{ perspective: '1000px', transformStyle: 'preserve-3d' }}
           >
-            <div className="inline-flex items-center gap-2 text-violet-300 text-sm font-medium" style={{ transform: 'translateZ(15px)' }}>
+            <div className="inline-flex items-center gap-2 text-violet-300 text-sm font-semibold" style={{ transform: 'translateZ(15px)' }}>
               <span className="inline-block h-2 w-2 rounded-full bg-violet-300/90 shadow-[0_0_12px_rgba(167,139,250,0.9)]" />
-              Specialization
+              Core Concepts
             </div>
-            <p className="text-xs md:text-sm text-slate-300/80 leading-relaxed" style={{ transform: 'translateZ(8px)' }}>
-              Frontend Development • UI/UX Design • Responsive Design
+            <p className="text-sm text-slate-300/80 leading-relaxed" style={{ transform: 'translateZ(8px)' }}>
+              Data Structures & Algorithms • UI/UX Design • Responsive Design
             </p>
           </motion.div>
         </div>
 
       </motion.section>
-
-      {/* LEARNING & GROWTH */}
       <motion.section
         id="experience"
         className="px-8 py-20 md:py-28 max-w-6xl mx-auto"
         initial={{ opacity: 0, x: 80 }}
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+        viewport={{ once: true, margin: "-100px" }}
       >
-        <h2 className="text-3xl md:text-4xl mb-10 md:mb-12 font-semibold tracking-tight">
-          Learning & Growth<span className="text-cyan-400"></span>
+        <h2 className="text-3xl md:text-4xl mb-10 md:mb-12 font-semibold tracking-tight transition-all duration-300 ease-out hover:scale-[1.02] cursor-default">
+          Learning & Growth<span className="text-cyan-400 inline-block transition-all duration-300 hover:scale-110 hover:drop-shadow-[0_0_8px_rgba(34,211,238,0.8)]"></span>
         </h2>
 
         <div className="grid md:grid-cols-2 gap-6">
           <motion.div
             whileHover={{ 
-              y: -6, 
-              rotateX: 4,
-              rotateY: -4,
-              boxShadow: "0 25px 80px rgba(6, 182, 212, 0.25)",
+              scale: 1.03,
+              y: -8,
+              boxShadow: "0 25px 80px rgba(6, 182, 212, 0.3), 0 0 0 1px rgba(6, 182, 212, 0.4)",
             }}
-            transition={{ type: "spring", stiffness: 300, damping: 20 }}
+            transition={{ duration: 0.3, ease: "easeOut" }}
             className="rounded-2xl bg-slate-900/70 border border-cyan-400/15 shadow-[0_18px_60px_rgba(15,23,42,0.95)] backdrop-blur-xl p-6 md:p-8 text-slate-200 cursor-pointer"
             style={{ perspective: '1000px', transformStyle: 'preserve-3d' }}
           >
@@ -554,12 +587,11 @@ export default function Portfolio() {
 
           <motion.div
             whileHover={{ 
-              y: -6, 
-              rotateX: 4,
-              rotateY: -4,
-              boxShadow: "0 25px 80px rgba(59, 130, 246, 0.25)",
+              scale: 1.03,
+              y: -8,
+              boxShadow: "0 25px 80px rgba(59, 130, 246, 0.3), 0 0 0 1px rgba(59, 130, 246, 0.4)",
             }}
-            transition={{ type: "spring", stiffness: 300, damping: 20 }}
+            transition={{ duration: 0.3, ease: "easeOut" }}
             className="rounded-2xl bg-slate-900/70 border border-blue-400/15 shadow-[0_18px_60px_rgba(15,23,42,0.95)] backdrop-blur-xl p-6 md:p-8 text-slate-200 cursor-pointer"
             style={{ perspective: '1000px', transformStyle: 'preserve-3d' }}
           >
@@ -574,10 +606,11 @@ export default function Portfolio() {
 
         <motion.div 
           whileHover={{ 
-            y: -4,
-            boxShadow: "0 25px 80px rgba(6, 182, 212, 0.15)",
+            scale: 1.03,
+            y: -8,
+            boxShadow: "0 25px 80px rgba(6, 182, 212, 0.3), 0 0 0 1px rgba(6, 182, 212, 0.4)",
           }}
-          transition={{ type: "spring", stiffness: 300, damping: 20 }}
+          transition={{ duration: 0.3, ease: "easeOut" }}
           className="mt-8 rounded-2xl bg-gradient-to-r from-cyan-400/10 to-blue-400/10 border border-cyan-400/20 shadow-[0_18px_60px_rgba(15,23,42,0.95)] backdrop-blur-xl p-6 md:p-8 text-center cursor-pointer"
         >
           <p className="text-cyan-300 text-lg font-semibold mb-3">🚀 Growth Mindset</p>
@@ -589,178 +622,163 @@ export default function Portfolio() {
 
       </motion.section>
 
-      {/* TECH STACK */}
-      <motion.section 
-        className="px-8 py-20 md:py-28 max-w-6xl mx-auto"
-        initial={{ opacity: 0, y: 60 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-      >
-        <h2 className="text-3xl md:text-4xl mb-10 md:mb-12 font-semibold tracking-tight text-center">
-          Tech Stack<span className="text-cyan-400"></span>
-        </h2>
-
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 max-w-4xl mx-auto">
-          <div className="text-center">
-            <h3 className="text-cyan-300 font-semibold mb-3 text-lg">Languages</h3>
-            <p className="text-slate-300 text-sm leading-relaxed">Python, C++, JavaScript</p>
-          </div>
-          
-          <div className="text-center">
-            <h3 className="text-blue-300 font-semibold mb-3 text-lg">Frontend</h3>
-            <p className="text-slate-300 text-sm leading-relaxed">React, HTML, CSS</p>
-          </div>
-          
-          <div className="text-center">
-            <h3 className="text-indigo-300 font-semibold mb-3 text-lg">Core</h3>
-            <p className="text-slate-300 text-sm leading-relaxed">Data Structures & Algorithms</p>
-          </div>
-          
-          <div className="text-center">
-            <h3 className="text-violet-300 font-semibold mb-3 text-lg">Tools</h3>
-            <p className="text-slate-300 text-sm leading-relaxed">Git, GitHub, Vercel</p>
-          </div>
-        </div>
-      </motion.section>
-
-      {/* PROJECTS */}
       <motion.section
         id="projects"
         className="px-8 py-20 md:py-28 max-w-6xl mx-auto"
         initial={{ opacity: 0, x: 80 }}
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+        viewport={{ once: true, margin: "-100px" }}
       >
-        <h2 className="text-3xl md:text-4xl mb-10 md:mb-12 font-semibold tracking-tight">
-          Projects<span className="text-cyan-400"></span>
+        <h2 className="text-3xl md:text-4xl mb-10 md:mb-12 font-semibold tracking-tight transition-all duration-300 ease-out hover:scale-[1.02] cursor-default">
+          Projects<span className="text-cyan-400 inline-block transition-all duration-300 hover:scale-110 hover:drop-shadow-[0_0_8px_rgba(34,211,238,0.8)]"></span>
         </h2>
 
         <div className="grid md:grid-cols-2 gap-6 md:gap-8">
           {/* IPL */}
           <motion.div
             whileHover={{ 
-              scale: 1.02,
-              y: -8, 
-              rotateX: 6,
-              rotateY: -6,
-              boxShadow: "0 30px 100px rgba(6, 182, 212, 0.4), 0 0 0 1px rgba(6, 182, 212, 0.5)",
+              scale: 1.03,
+              y: -10, 
+              boxShadow: "0 35px 120px rgba(6, 182, 212, 0.35), 0 0 0 2px rgba(6, 182, 212, 0.6)",
             }}
             transition={{ type: "spring", stiffness: 280, damping: 20 }}
-            className="p-6 md:p-8 bg-slate-900/70 rounded-2xl border border-cyan-400/20 shadow-[0_24px_80px_rgba(15,23,42,1)] cursor-pointer group relative overflow-hidden"
+            className="bg-slate-900/70 rounded-2xl border border-cyan-400/20 shadow-[0_24px_80px_rgba(15,23,42,1)] cursor-pointer group relative overflow-hidden"
             style={{ perspective: '1000px', transformStyle: 'preserve-3d' }}
           >
             {/* Glow effect overlay */}
-            <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/0 via-cyan-400/0 to-cyan-400/0 group-hover:from-cyan-400/5 group-hover:via-transparent group-hover:to-transparent transition-all duration-500 rounded-2xl" />
-            <h3 className="text-xl font-semibold text-slate-100 mb-2" style={{ transform: 'translateZ(30px)' }}>IPL Auction System</h3>
-            <p className="text-cyan-300 text-sm mb-5" style={{ transform: 'translateZ(20px)' }}>Real-time IPL Auction simulation with bidding logic and AI teams</p>
+            <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/0 via-cyan-400/0 to-cyan-400/0 group-hover:from-cyan-400/5 group-hover:via-transparent group-hover:to-transparent transition-all duration-500 rounded-2xl z-10 pointer-events-none" />
             
-            <div className="space-y-4 mb-5" style={{ transform: 'translateZ(15px)' }}>
-              <div>
-                <p className="text-cyan-300 text-sm font-medium mb-1">Problem:</p>
-                <p className="text-slate-400 text-sm leading-relaxed">Simulates real IPL auction complexity</p>
+            {/* Project Image Preview */}
+            <div className="relative h-40 md:h-48 bg-gradient-to-br from-slate-800 via-cyan-900/30 to-slate-900 overflow-hidden">
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="text-6xl">🏏</div>
               </div>
-              
-              <div>
-                <p className="text-cyan-300 text-sm font-medium mb-1">Solution:</p>
-                <p className="text-slate-400 text-sm leading-relaxed">Built a dynamic bidding system with team strategies</p>
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent" />
+              <div className="absolute top-3 right-3 flex gap-2">
+                <span className="px-2 py-1 bg-amber-400/20 backdrop-blur-sm text-amber-300 text-xs rounded-full border border-amber-400/30">In Progress</span>
+                <span className="px-2 py-1 bg-cyan-400/20 backdrop-blur-sm text-cyan-300 text-xs rounded-full border border-cyan-400/30">Real-Time</span>
               </div>
+            </div>
+
+            <div className="p-6">
+              <h3 className="text-xl font-semibold text-slate-100 mb-2">Real-Time IPL Auction Simulator</h3>
+              <p className="text-cyan-300 text-sm mb-4">Real-time IPL Auction simulation with bidding logic, team purse management and AI-based teams. Multiplayer mode currently under development.</p>
               
-              <div>
-                <p className="text-cyan-300 text-sm font-medium mb-1">Features:</p>
-                <ul className="text-slate-400 text-sm space-y-1 ml-4 leading-relaxed">
-                  <li>• Real-time bidding system</li>
-                  <li>• Team purse management</li>
-                  <li>• Player dataset handling</li>
-                  <li>• AI-based team participation</li>
+              <div className="space-y-3 mb-4">
+                <div className="flex flex-wrap gap-2">
+                  <span className="px-2 py-1 bg-slate-800 text-slate-300 text-xs rounded">React</span>
+                  <span className="px-2 py-1 bg-slate-800 text-slate-300 text-xs rounded">Firebase</span>
+                  <span className="px-2 py-1 bg-slate-800 text-slate-300 text-xs rounded">WebSocket</span>
+                </div>
+                
+                <ul className="text-slate-400 text-sm space-y-1">
+                  <li className="flex items-center gap-2">
+                    <span className="text-cyan-400">✓</span> Real-time bidding system
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="text-cyan-400">✓</span> Team purse management
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="text-cyan-400">✓</span> Player dataset handling
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="text-cyan-400">✓</span> AI-based team participation
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="text-amber-400">⏳</span> <span className="text-amber-300/80">Multiplayer mode (In Progress)</span>
+                  </li>
                 </ul>
               </div>
               
-              <div>
-                <p className="text-cyan-300 text-sm font-medium mb-1">Tech:</p>
-                <p className="text-slate-400 text-sm leading-relaxed">React, JavaScript, CSS</p>
+              <div className="flex gap-3 pt-2">
+                <a
+                  href="https://github.com/Gaurav-29-eng/ipl-auction"
+                  target="_blank"
+                  className="inline-flex items-center gap-1.5 px-4 py-2 bg-slate-800 hover:bg-slate-700 text-cyan-300 text-sm rounded-lg transition-all duration-300 border border-cyan-400/20 hover:border-cyan-400/40"
+                >
+                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                  GitHub
+                </a>
+                <a
+                  href="https://ipl-auction-hazel.vercel.app/"
+                  target="_blank"
+                  className="inline-flex items-center gap-1.5 px-4 py-2 bg-gradient-to-r from-cyan-400/20 to-blue-400/20 hover:from-cyan-400/30 hover:to-blue-400/30 text-cyan-300 text-sm rounded-lg transition-all duration-300 border border-cyan-400/30 hover:border-cyan-400/50"
+                >
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                  Live Demo
+                </a>
               </div>
-            </div>
-            
-            <div className="flex gap-4 pt-2" style={{ transform: 'translateZ(25px)' }}>
-              <a
-                href="https://github.com/Gaurav-29-eng/ipl-auction"
-                target="_blank"
-                className="text-cyan-300 text-sm hover:text-cyan-200 transition-colors duration-300 hover:scale-105 inline-block"
-              >
-                GitHub
-              </a>
-              <span className="text-slate-500">|</span>
-              <a
-                href="https://ipl-auction-hazel.vercel.app/"
-                target="_blank"
-                className="text-cyan-300 text-sm hover:text-cyan-200 transition-colors duration-300 hover:scale-105 inline-block"
-              >
-                Live
-              </a>
             </div>
           </motion.div>
 
           {/* PORTFOLIO */}
           <motion.div
             whileHover={{ 
-              scale: 1.02,
-              y: -8, 
-              rotateX: 6,
-              rotateY: -6,
-              boxShadow: "0 30px 100px rgba(59, 130, 246, 0.4), 0 0 0 1px rgba(59, 130, 246, 0.5)",
+              scale: 1.03,
+              y: -10, 
+              boxShadow: "0 35px 120px rgba(59, 130, 246, 0.35), 0 0 0 2px rgba(59, 130, 246, 0.6)",
             }}
             transition={{ type: "spring", stiffness: 280, damping: 20 }}
-            className="p-6 md:p-8 bg-slate-900/70 rounded-2xl border border-blue-400/20 shadow-[0_24px_80px_rgba(15,23,42,1)] cursor-pointer group relative overflow-hidden"
+            className="bg-slate-900/70 rounded-2xl border border-blue-400/20 shadow-[0_24px_80px_rgba(15,23,42,1)] cursor-pointer group relative overflow-hidden"
             style={{ perspective: '1000px', transformStyle: 'preserve-3d' }}
           >
             {/* Glow effect overlay */}
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-400/0 via-blue-400/0 to-blue-400/0 group-hover:from-blue-400/5 group-hover:via-transparent group-hover:to-transparent transition-all duration-500 rounded-2xl" />
-            <h3 className="text-xl font-semibold text-slate-100 mb-2" style={{ transform: 'translateZ(30px)' }}>Portfolio Website</h3>
-            <p className="text-blue-300 text-sm mb-5" style={{ transform: 'translateZ(20px)' }}>Professional portfolio showcasing projects and technical skills</p>
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-400/0 via-blue-400/0 to-blue-400/0 group-hover:from-blue-400/5 group-hover:via-transparent group-hover:to-transparent transition-all duration-500 rounded-2xl z-10 pointer-events-none" />
             
-            <div className="space-y-4 mb-5" style={{ transform: 'translateZ(15px)' }}>
-              <div>
-                <p className="text-blue-300 text-sm font-medium mb-1">Problem:</p>
-                <p className="text-slate-400 text-sm leading-relaxed">Create a professional portfolio for recruiters</p>
+            {/* Project Image Preview */}
+            <div className="relative h-40 md:h-48 bg-gradient-to-br from-slate-800 via-blue-900/30 to-slate-900 overflow-hidden">
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="text-6xl">💼</div>
               </div>
-              
-              <div>
-                <p className="text-blue-300 text-sm font-medium mb-1">Solution:</p>
-                <p className="text-slate-400 text-sm leading-relaxed">Built a clean, responsive portfolio with modern design</p>
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent" />
+              <div className="absolute top-3 right-3 flex gap-2">
+                <span className="px-2 py-1 bg-blue-400/20 backdrop-blur-sm text-blue-300 text-xs rounded-full border border-blue-400/30">Portfolio</span>
               </div>
+            </div>
+
+            <div className="p-6">
+              <h3 className="text-xl font-semibold text-slate-100 mb-2">Developer Portfolio</h3>
+              <p className="text-blue-300 text-sm mb-4">Interactive portfolio with animations and modern UI</p>
               
-              <div>
-                <p className="text-blue-300 text-sm font-medium mb-1">Features:</p>
-                <ul className="text-slate-400 text-sm space-y-1 ml-4 leading-relaxed">
-                  <li>• Responsive design for all devices</li>
-                  <li>• Clean, professional layout</li>
-                  <li>• Project showcase section</li>
-                  <li>• Contact form integration</li>
+              <div className="space-y-3 mb-4">
+                <div className="flex flex-wrap gap-2">
+                  <span className="px-2 py-1 bg-slate-800 text-slate-300 text-xs rounded">React</span>
+                  <span className="px-2 py-1 bg-slate-800 text-slate-300 text-xs rounded">Tailwind</span>
+                  <span className="px-2 py-1 bg-slate-800 text-slate-300 text-xs rounded">Framer Motion</span>
+                </div>
+                
+                <ul className="text-slate-400 text-sm space-y-1">
+                  <li className="flex items-center gap-2">
+                    <span className="text-blue-400">✓</span> Scroll animations & transitions
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="text-blue-400">✓</span> Interactive project showcase
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="text-blue-400">✓</span> Responsive design all devices
+                  </li>
                 </ul>
               </div>
               
-              <div>
-                <p className="text-blue-300 text-sm font-medium mb-1">Tech:</p>
-                <p className="text-slate-400 text-sm leading-relaxed">React, JavaScript, CSS</p>
+              <div className="flex gap-3 pt-2">
+                <a
+                  href="https://github.com/Gaurav-29-eng/gaurav-portfolio"
+                  target="_blank"
+                  className="inline-flex items-center gap-1.5 px-4 py-2 bg-slate-800 hover:bg-slate-700 text-blue-300 text-sm rounded-lg transition-all duration-300 border border-blue-400/20 hover:border-blue-400/40"
+                >
+                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                  GitHub
+                </a>
+                <a
+                  href="https://gaurav-portfolio-roan.vercel.app/"
+                  target="_blank"
+                  className="inline-flex items-center gap-1.5 px-4 py-2 bg-gradient-to-r from-blue-400/20 to-indigo-400/20 hover:from-blue-400/30 hover:to-indigo-400/30 text-blue-300 text-sm rounded-lg transition-all duration-300 border border-blue-400/30 hover:border-blue-400/50"
+                >
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                  Live Demo
+                </a>
               </div>
-            </div>
-            
-            <div className="flex gap-4 pt-2" style={{ transform: 'translateZ(25px)' }}>
-              <a
-                href="https://github.com/Gaurav-29-eng/gaurav-portfolio"
-                target="_blank"
-                className="text-blue-300 text-sm hover:text-blue-200 transition-colors duration-300 hover:scale-105 inline-block"
-              >
-                GitHub
-              </a>
-              <span className="text-slate-500">|</span>
-              <a
-                href="https://gaurav-portfolio-roan.vercel.app/"
-                target="_blank"
-                className="text-blue-300 text-sm hover:text-blue-200 transition-colors duration-300 hover:scale-105 inline-block"
-              >
-                Live
-              </a>
             </div>
           </motion.div>
         </div>
@@ -773,19 +791,19 @@ export default function Portfolio() {
         initial={{ opacity: 0, y: 60 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+        viewport={{ once: true, margin: "-100px" }}
       >
-        <h2 className="text-3xl md:text-4xl mb-10 md:mb-12 font-semibold tracking-tight text-center">
-          Problem Solving<span className="text-cyan-400"></span>
+        <h2 className="text-3xl md:text-4xl mb-10 md:mb-12 font-semibold tracking-tight text-center transition-all duration-300 ease-out hover:scale-[1.02] cursor-default">
+          Problem Solving<span className="text-cyan-400 inline-block transition-all duration-300 hover:scale-110 hover:drop-shadow-[0_0_8px_rgba(34,211,238,0.8)]"></span>
         </h2>
 
         <motion.div 
           whileHover={{ 
-            y: -6,
-            rotateX: 4,
-            rotateY: -4,
-            boxShadow: "0 25px 80px rgba(6, 182, 212, 0.2)",
+            scale: 1.03,
+            y: -8,
+            boxShadow: "0 25px 80px rgba(6, 182, 212, 0.3), 0 0 0 1px rgba(6, 182, 212, 0.4)",
           }}
-          transition={{ type: "spring", stiffness: 300, damping: 20 }}
+          transition={{ duration: 0.3, ease: "easeOut" }}
           className="max-w-3xl mx-auto bg-slate-900/70 rounded-2xl border border-cyan-400/15 shadow-[0_18px_60px_rgba(15,23,42,0.9)] backdrop-blur-xl p-6 md:p-10 cursor-pointer"
           style={{ perspective: '1000px', transformStyle: 'preserve-3d' }}
         >
@@ -812,19 +830,19 @@ export default function Portfolio() {
         initial={{ opacity: 0, y: 60 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+        viewport={{ once: true, margin: "-100px" }}
       >
-        <h2 className="text-3xl md:text-4xl mb-10 md:mb-12 font-semibold tracking-tight text-center">
-          Education<span className="text-cyan-400"></span>
+        <h2 className="text-3xl md:text-4xl mb-10 md:mb-12 font-semibold tracking-tight text-center transition-all duration-300 ease-out hover:scale-[1.02] cursor-default">
+          Education<span className="text-cyan-400 inline-block transition-all duration-300 hover:scale-110 hover:drop-shadow-[0_0_8px_rgba(34,211,238,0.8)]"></span>
         </h2>
 
         <motion.div 
           whileHover={{ 
-            y: -6,
-            rotateX: 4,
-            rotateY: -4,
-            boxShadow: "0 25px 80px rgba(6, 182, 212, 0.25)",
+            scale: 1.03,
+            y: -8,
+            boxShadow: "0 25px 80px rgba(6, 182, 212, 0.3), 0 0 0 1px rgba(6, 182, 212, 0.4)",
           }}
-          transition={{ type: "spring", stiffness: 300, damping: 20 }}
+          transition={{ duration: 0.3, ease: "easeOut" }}
           className="max-w-2xl mx-auto bg-slate-900/70 rounded-2xl border border-cyan-400/15 shadow-[0_18px_60px_rgba(15,23,42,0.9)] backdrop-blur-xl p-8 md:p-10 cursor-pointer"
           style={{ perspective: '1000px', transformStyle: 'preserve-3d' }}
         >
@@ -838,41 +856,50 @@ export default function Portfolio() {
 
       {/* CONTACT */}
       <motion.section id="contact" className="px-8 py-20 md:py-28 pb-32 max-w-4xl mx-auto"
-        initial={{ opacity: 0, x: -80 }} 
-        whileInView={{ opacity: 1, x: 0 }}
+        initial={{ opacity: 0, y: 60 }} 
+        whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
         viewport={{ once: true, margin: "-100px" }}>
 
-        <h2 className="text-3xl md:text-4xl mb-8 md:mb-10 text-center font-semibold tracking-tight">
-          Let's Connect<span className="text-cyan-400"></span>
+        <h2 className="text-3xl md:text-4xl mb-6 text-center font-semibold tracking-tight transition-all duration-300 ease-out hover:scale-[1.02] cursor-default">
+          Let's Connect<span className="text-cyan-400 inline-block transition-all duration-300 hover:scale-110 hover:drop-shadow-[0_0_8px_rgba(34,211,238,0.8)]"></span>
         </h2>
         
-        <p className="text-center text-slate-300/80 mb-8 max-w-xl mx-auto text-base leading-relaxed">
+        <p className="text-center text-slate-300/90 mb-10 max-w-xl mx-auto text-lg leading-relaxed">
           Open to internships and opportunities
         </p>
 
-        <div className="flex justify-center gap-8 mb-8">
+        <div className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6">
           <a
             href="mailto:gaurav@example.com"
-            className="text-cyan-300 hover:text-cyan-200 transition-colors duration-300 text-base font-medium"
+            className="group inline-flex items-center gap-3 px-6 py-3 bg-slate-800/80 hover:bg-slate-700/80 rounded-xl border border-cyan-400/20 hover:border-cyan-400/50 transition-all duration-300 ease-out hover:scale-105 hover:-translate-y-1"
           >
-            Email
+            <svg className="w-5 h-5 text-cyan-400 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+            <span className="text-cyan-300 font-medium">Email</span>
           </a>
-          <span className="text-slate-500">|</span>
+
           <a
             href="https://github.com/Gaurav-29-eng"
             target="_blank"
-            className="text-cyan-300 hover:text-cyan-200 transition-colors duration-300 text-base font-medium"
+            className="group inline-flex items-center gap-3 px-6 py-3 bg-slate-800/80 hover:bg-slate-700/80 rounded-xl border border-cyan-400/20 hover:border-cyan-400/50 transition-all duration-300 ease-out hover:scale-105 hover:-translate-y-1"
           >
-            GitHub
+            <svg className="w-5 h-5 text-cyan-400 group-hover:scale-110 transition-transform duration-300" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+            </svg>
+            <span className="text-cyan-300 font-medium">GitHub</span>
           </a>
-          <span className="text-slate-500">|</span>
+
           <a
             href="https://linkedin.com/in/gaurav"
             target="_blank"
-            className="text-cyan-300 hover:text-cyan-200 transition-colors duration-300 text-base font-medium"
+            className="group inline-flex items-center gap-3 px-6 py-3 bg-slate-800/80 hover:bg-slate-700/80 rounded-xl border border-cyan-400/20 hover:border-cyan-400/50 transition-all duration-300 ease-out hover:scale-105 hover:-translate-y-1"
           >
-            LinkedIn
+            <svg className="w-5 h-5 text-cyan-400 group-hover:scale-110 transition-transform duration-300" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+            </svg>
+            <span className="text-cyan-300 font-medium">LinkedIn</span>
           </a>
         </div>
       </motion.section>
