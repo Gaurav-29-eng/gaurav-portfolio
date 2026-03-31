@@ -428,18 +428,19 @@ body {
     padding: 2px 0 !important;
   }
   
-  /* Fix scrolling issues - ensure vertical scroll works on mobile */
+  /* Fix scrolling issues - ensure vertical scroll priority over horizontal swipe */
   #projects {
     touch-action: pan-y !important;
   }
   
-  /* Project cards container - allow horizontal swipe but don't block vertical scroll */
+  /* Project cards container - vertical scroll priority, horizontal swipe secondary */
   #projects > div.flex {
-    touch-action: pan-y pan-x !important;
+    touch-action: pan-y !important;
+    overflow-x: auto;
     -webkit-overflow-scrolling: touch;
   }
   
-  /* Individual project cards - allow vertical scroll, no touch-action: none */
+  /* Individual project cards - allow vertical scroll only */
   #projects .flex > .motion-div,
   #projects .flex > [class*="motion"],
   #projects .flex > div[class*="w-\\[90vw\\]"] {
@@ -456,7 +457,7 @@ body {
     touch-action: pan-y !important;
   }
   
-  /* Ensure no element has touch-action: none */
+  /* Ensure all project elements allow vertical scroll */
   #projects * {
     touch-action: pan-y !important;
   }
