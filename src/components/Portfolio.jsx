@@ -114,11 +114,21 @@ export default function Portfolio() {
   }
 
   return (
-    <div className="relative bg-[#050816] text-white min-h-screen overflow-hidden">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.6, ease: "easeInOut" }}
+      className="relative bg-[#050816] text-white min-h-screen overflow-hidden"
+    >
       <AnimatedBackground />
       <CursorTrail />
 
-      <div className="relative z-10 flex flex-col">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+        className="relative z-10 flex flex-col"
+      >
       {/* NAVBAR - Premium Apple-Style Glass Design */}
       <nav className={`fixed left-1/2 -translate-x-1/2 z-50 w-[92%] max-w-5xl transition-all duration-500 ease-out ${isScrolled ? 'top-2' : 'top-4'}`}>
         <div 
@@ -965,7 +975,7 @@ export default function Portfolio() {
         </div>
       </motion.section>
 
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 }
