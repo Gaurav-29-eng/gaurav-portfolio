@@ -388,12 +388,7 @@ export default function Portfolio() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1, ease: [0.25, 0.1, 0.25, 1] }}
             viewport={{ once: true }}
-            whileHover={{ 
-              scale: 1.03,
-              y: -8,
-              boxShadow: "0 25px 80px rgba(6, 182, 212, 0.25)",
-            }}
-            className="relative overflow-hidden rounded-2xl bg-slate-950/40 border border-white/[0.08] backdrop-blur-xl p-6 md:p-7 flex flex-col gap-4 cursor-pointer shadow-[0_8px_32px_rgba(0,0,0,0.4)]"
+            className="relative overflow-hidden rounded-2xl bg-slate-950/40 border border-white/[0.08] hover:border-cyan-400/30 backdrop-blur-xl p-6 md:p-7 flex flex-col gap-4 cursor-pointer shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:shadow-[0_20px_60px_rgba(6,182,212,0.2)] transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-[1.02]"
             style={{ 
               perspective: '1000px',
               transformStyle: 'preserve-3d',
@@ -413,12 +408,7 @@ export default function Portfolio() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
             viewport={{ once: true }}
-            whileHover={{ 
-              scale: 1.03,
-              y: -8,
-              boxShadow: "0 25px 80px rgba(59, 130, 246, 0.25)",
-            }}
-            className="relative overflow-hidden rounded-2xl bg-slate-950/40 border border-white/[0.08] backdrop-blur-xl p-6 md:p-7 flex flex-col gap-4 cursor-pointer shadow-[0_8px_32px_rgba(0,0,0,0.4)]"
+            className="relative overflow-hidden rounded-2xl bg-slate-950/40 border border-white/[0.08] hover:border-blue-400/30 backdrop-blur-xl p-6 md:p-7 flex flex-col gap-4 cursor-pointer shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:shadow-[0_20px_60px_rgba(59,130,246,0.2)] transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-[1.02]"
             style={{ 
               perspective: '1000px',
               transformStyle: 'preserve-3d',
@@ -438,12 +428,7 @@ export default function Portfolio() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
             viewport={{ once: true }}
-            whileHover={{ 
-              scale: 1.03,
-              y: -8,
-              boxShadow: "0 25px 80px rgba(99, 102, 241, 0.25)",
-            }}
-            className="relative overflow-hidden rounded-2xl bg-slate-950/40 border border-white/[0.08] backdrop-blur-xl p-6 md:p-7 flex flex-col gap-4 cursor-pointer shadow-[0_8px_32px_rgba(0,0,0,0.4)]"
+            className="relative overflow-hidden rounded-2xl bg-slate-950/40 border border-white/[0.08] hover:border-indigo-400/30 backdrop-blur-xl p-6 md:p-7 flex flex-col gap-4 cursor-pointer shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:shadow-[0_20px_60px_rgba(99,102,241,0.2)] transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-[1.02]"
             style={{ 
               perspective: '1000px',
               transformStyle: 'preserve-3d',
@@ -463,12 +448,7 @@ export default function Portfolio() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
             viewport={{ once: true }}
-            whileHover={{ 
-              scale: 1.03,
-              y: -8,
-              boxShadow: "0 25px 80px rgba(139, 92, 246, 0.25)",
-            }}
-            className="relative overflow-hidden rounded-2xl bg-slate-950/40 border border-white/[0.08] backdrop-blur-xl p-6 md:p-7 flex flex-col gap-4 cursor-pointer shadow-[0_8px_32px_rgba(0,0,0,0.4)]"
+            className="relative overflow-hidden rounded-2xl bg-slate-950/40 border border-white/[0.08] hover:border-violet-400/30 backdrop-blur-xl p-6 md:p-7 flex flex-col gap-4 cursor-pointer shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:shadow-[0_20px_60px_rgba(139,92,246,0.2)] transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-[1.02]"
             style={{ 
               perspective: '1000px',
               transformStyle: 'preserve-3d',
@@ -575,12 +555,7 @@ export default function Portfolio() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1, ease: [0.25, 0.1, 0.25, 1] }}
             viewport={{ once: true }}
-            whileHover={{ 
-              scale: 1.03,
-              y: -8,
-              boxShadow: "0 25px 80px rgba(6, 182, 212, 0.25)",
-            }}
-            className="relative overflow-hidden rounded-2xl bg-slate-950/40 border border-white/[0.08] backdrop-blur-xl p-6 flex flex-col gap-3 cursor-pointer shadow-[0_8px_32px_rgba(0,0,0,0.4)]"
+            className="relative overflow-hidden rounded-2xl bg-slate-950/40 border border-white/[0.08] hover:border-cyan-400/30 backdrop-blur-xl p-6 flex flex-col gap-3 cursor-pointer shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:shadow-[0_20px_60px_rgba(6,182,212,0.2)] transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-[1.02]"
             style={{ perspective: '1000px', transformStyle: 'preserve-3d' }}
           >
             <div className="inline-flex items-center gap-2 text-cyan-300 text-sm font-semibold" style={{ transform: 'translateZ(15px)' }}>
@@ -598,12 +573,7 @@ export default function Portfolio() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
             viewport={{ once: true }}
-            whileHover={{ 
-              scale: 1.03,
-              y: -8,
-              boxShadow: "0 25px 80px rgba(59, 130, 246, 0.25)",
-            }}
-            className="relative overflow-hidden rounded-2xl bg-slate-950/40 border border-white/[0.08] backdrop-blur-xl p-6 flex flex-col gap-3 cursor-pointer shadow-[0_8px_32px_rgba(0,0,0,0.4)]"
+            className="relative overflow-hidden rounded-2xl bg-slate-950/40 border border-white/[0.08] hover:border-blue-400/30 backdrop-blur-xl p-6 flex flex-col gap-3 cursor-pointer shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:shadow-[0_20px_60px_rgba(59,130,246,0.2)] transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-[1.02]"
             style={{ perspective: '1000px', transformStyle: 'preserve-3d' }}
           >
             <div className="inline-flex items-center gap-2 text-blue-300 text-sm font-semibold" style={{ transform: 'translateZ(15px)' }}>
@@ -621,12 +591,7 @@ export default function Portfolio() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
             viewport={{ once: true }}
-            whileHover={{ 
-              scale: 1.03,
-              y: -8,
-              boxShadow: "0 25px 80px rgba(99, 102, 241, 0.25)",
-            }}
-            className="relative overflow-hidden rounded-2xl bg-slate-950/40 border border-white/[0.08] backdrop-blur-xl p-6 flex flex-col gap-3 cursor-pointer shadow-[0_8px_32px_rgba(0,0,0,0.4)]"
+            className="relative overflow-hidden rounded-2xl bg-slate-950/40 border border-white/[0.08] hover:border-indigo-400/30 backdrop-blur-xl p-6 flex flex-col gap-3 cursor-pointer shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:shadow-[0_20px_60px_rgba(99,102,241,0.2)] transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-[1.02]"
             style={{ perspective: '1000px', transformStyle: 'preserve-3d' }}
           >
             <div className="inline-flex items-center gap-2 text-indigo-300 text-sm font-semibold" style={{ transform: 'translateZ(15px)' }}>
@@ -644,12 +609,7 @@ export default function Portfolio() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
             viewport={{ once: true }}
-            whileHover={{ 
-              scale: 1.03,
-              y: -8,
-              boxShadow: "0 25px 80px rgba(139, 92, 246, 0.25)",
-            }}
-            className="relative overflow-hidden rounded-2xl bg-slate-950/40 border border-white/[0.08] backdrop-blur-xl p-6 flex flex-col gap-3 cursor-pointer shadow-[0_8px_32px_rgba(0,0,0,0.4)]"
+            className="relative overflow-hidden rounded-2xl bg-slate-950/40 border border-white/[0.08] hover:border-violet-400/30 backdrop-blur-xl p-6 flex flex-col gap-3 cursor-pointer shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:shadow-[0_20px_60px_rgba(139,92,246,0.2)] transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-[1.02]"
             style={{ perspective: '1000px', transformStyle: 'preserve-3d' }}
           >
             <div className="inline-flex items-center gap-2 text-violet-300 text-sm font-semibold" style={{ transform: 'translateZ(15px)' }}>
@@ -687,12 +647,7 @@ export default function Portfolio() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1, ease: [0.25, 0.1, 0.25, 1] }}
             viewport={{ once: true }}
-            whileHover={{ 
-              scale: 1.03,
-              y: -8,
-              boxShadow: "0 25px 80px rgba(6, 182, 212, 0.25)",
-            }}
-            className="rounded-2xl bg-slate-950/40 border border-white/[0.08] backdrop-blur-xl p-6 md:p-8 text-slate-200 cursor-pointer shadow-[0_8px_32px_rgba(0,0,0,0.4)]"
+            className="rounded-2xl bg-slate-950/40 border border-white/[0.08] hover:border-cyan-400/30 backdrop-blur-xl p-6 md:p-8 text-slate-200 cursor-pointer shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:shadow-[0_20px_60px_rgba(6,182,212,0.2)] transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-[1.02]"
             style={{ perspective: '1000px', transformStyle: 'preserve-3d' }}
           >
             <h3 className="text-cyan-300 text-lg font-semibold mb-4" style={{ transform: 'translateZ(20px)' }}>🎓 Certifications</h3>
@@ -708,12 +663,7 @@ export default function Portfolio() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
             viewport={{ once: true }}
-            whileHover={{ 
-              scale: 1.03,
-              y: -8,
-              boxShadow: "0 25px 80px rgba(59, 130, 246, 0.25)",
-            }}
-            className="rounded-2xl bg-slate-950/40 border border-white/[0.08] backdrop-blur-xl p-6 md:p-8 text-slate-200 cursor-pointer shadow-[0_8px_32px_rgba(0,0,0,0.4)]"
+            className="rounded-2xl bg-slate-950/40 border border-white/[0.08] hover:border-blue-400/30 backdrop-blur-xl p-6 md:p-8 text-slate-200 cursor-pointer shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:shadow-[0_20px_60px_rgba(59,130,246,0.2)] transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-[1.02]"
             style={{ perspective: '1000px', transformStyle: 'preserve-3d' }}
           >
             <h3 className="text-blue-300 text-lg font-semibold mb-4" style={{ transform: 'translateZ(20px)' }}>📚 Continuous Learning</h3>
@@ -730,12 +680,7 @@ export default function Portfolio() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
           viewport={{ once: true }}
-          whileHover={{ 
-            scale: 1.03,
-            y: -8,
-            boxShadow: "0 25px 80px rgba(6, 182, 212, 0.25)",
-          }}
-          className="mt-8 rounded-2xl bg-gradient-to-r from-cyan-500/10 to-blue-500/10 border border-white/[0.08] backdrop-blur-xl p-6 md:p-8 text-center cursor-pointer shadow-[0_8px_32px_rgba(0,0,0,0.4)]"
+          className="mt-8 rounded-2xl bg-gradient-to-r from-cyan-500/10 to-blue-500/10 border border-white/[0.08] hover:border-cyan-400/30 backdrop-blur-xl p-6 md:p-8 text-center cursor-pointer shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:shadow-[0_20px_60px_rgba(6,182,212,0.2)] transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-[1.02]"
         >
           <p className="text-cyan-300 text-lg font-semibold mb-3">🚀 Growth Mindset</p>
           <p className="text-slate-300/90 text-base max-w-2xl mx-auto leading-relaxed">
@@ -761,17 +706,11 @@ export default function Portfolio() {
         <div className="grid md:grid-cols-2 gap-6 md:gap-8">
           {/* IPL */}
           <motion.div
-            whileHover={{ 
-              scale: 1.03,
-              y: -10, 
-              boxShadow: "0 25px 80px rgba(6, 182, 212, 0.25)",
-            }}
             animate={{ y: [0, -4, 0] }}
             transition={{ 
               y: { duration: 6, repeat: Infinity, ease: "easeInOut" },
-              whileHover: { type: "spring", stiffness: 280, damping: 20 }
             }}
-            className="bg-slate-950/40 rounded-2xl border border-white/[0.08] cursor-pointer group relative overflow-hidden backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.4)]"
+            className="bg-slate-950/40 rounded-2xl border border-white/[0.08] hover:border-cyan-400/30 cursor-pointer group relative overflow-hidden backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:shadow-[0_20px_60px_rgba(6,182,212,0.2)] transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-[1.02]"
             style={{ perspective: '1000px', transformStyle: 'preserve-3d' }}
           >
             {/* Glow effect overlay */}
@@ -842,17 +781,11 @@ export default function Portfolio() {
 
           {/* PORTFOLIO */}
           <motion.div
-            whileHover={{ 
-              scale: 1.03,
-              y: -10, 
-              boxShadow: "0 25px 80px rgba(59, 130, 246, 0.25)",
-            }}
             animate={{ y: [0, -4, 0] }}
             transition={{ 
               y: { duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1.5 },
-              whileHover: { type: "spring", stiffness: 280, damping: 20 }
             }}
-            className="bg-slate-950/40 rounded-2xl border border-white/[0.08] cursor-pointer group relative overflow-hidden backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.4)]"
+            className="bg-slate-950/40 rounded-2xl border border-white/[0.08] hover:border-blue-400/30 cursor-pointer group relative overflow-hidden backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:shadow-[0_20px_60px_rgba(59,130,246,0.2)] transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-[1.02]"
             style={{ perspective: '1000px', transformStyle: 'preserve-3d' }}
           >
             {/* Glow effect overlay */}
@@ -930,13 +863,7 @@ export default function Portfolio() {
         </h2>
 
         <motion.div 
-          whileHover={{ 
-            scale: 1.03,
-            y: -8,
-            boxShadow: "0 25px 80px rgba(6, 182, 212, 0.25)",
-          }}
-          transition={{ duration: 0.3, ease: "easeOut" }}
-          className="max-w-3xl mx-auto bg-slate-950/40 rounded-2xl border border-white/[0.08] backdrop-blur-xl p-6 md:p-10 cursor-pointer shadow-[0_8px_32px_rgba(0,0,0,0.4)]"
+          className="max-w-3xl mx-auto bg-slate-950/40 rounded-2xl border border-white/[0.08] hover:border-cyan-400/30 backdrop-blur-xl p-6 md:p-10 cursor-pointer shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:shadow-[0_20px_60px_rgba(6,182,212,0.2)] transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-[1.02]"
           style={{ perspective: '1000px', transformStyle: 'preserve-3d' }}
         >
           <div className="space-y-5 text-slate-300" style={{ transform: 'translateZ(15px)' }}>
@@ -969,13 +896,7 @@ export default function Portfolio() {
         </h2>
 
         <motion.div 
-          whileHover={{ 
-            scale: 1.03,
-            y: -8,
-            boxShadow: "0 25px 80px rgba(6, 182, 212, 0.25)",
-          }}
-          transition={{ duration: 0.3, ease: "easeOut" }}
-          className="max-w-2xl mx-auto bg-slate-950/40 rounded-2xl border border-white/[0.08] backdrop-blur-xl p-8 md:p-10 cursor-pointer shadow-[0_8px_32px_rgba(0,0,0,0.4)]"
+          className="max-w-2xl mx-auto bg-slate-950/40 rounded-2xl border border-white/[0.08] hover:border-cyan-400/30 backdrop-blur-xl p-8 md:p-10 cursor-pointer shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:shadow-[0_20px_60px_rgba(6,182,212,0.2)] transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-[1.02]"
           style={{ perspective: '1000px', transformStyle: 'preserve-3d' }}
         >
           <div className="text-center" style={{ transform: 'translateZ(20px)' }}>
