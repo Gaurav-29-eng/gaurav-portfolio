@@ -283,15 +283,43 @@ body {
     top: 8px;
   }
   
-  /* Ensure text elements wrap properly - use normal word breaking */
+  /* Force text to behave normally - remove restrictions */
+  #projects * {
+    max-width: none !important;
+    min-width: 0 !important;
+  }
+  
+  /* Ensure text containers are block or full-width flex column */
   #projects .flex > * h3,
   #projects .flex > * p,
-  #projects .flex > * span,
-  #projects .flex > * li {
-    max-width: 100%;
-    overflow-wrap: break-word;
-    word-break: normal;
-    white-space: normal;
+  #projects .flex > * span:not(.absolute span):not([class*="flex-shrink"]) {
+    display: block !important;
+    width: 100% !important;
+    max-width: none !important;
+    word-break: normal !important;
+    white-space: normal !important;
+    overflow: visible !important;
+    text-overflow: clip !important;
+  }
+  
+  /* Fix any transform or positioning issues on text */
+  #projects .flex > * h3,
+  #projects .flex > * p {
+    transform: none !important;
+    position: static !important;
+    left: auto !important;
+    right: auto !important;
+  }
+  
+  /* Ensure all text containers take full width */
+  #projects .flex > * div[class*="space-y"],
+  #projects .flex > * .space-y-1,
+  #projects .flex > * .space-y-2,
+  #projects .flex > * .space-y-3 {
+    width: 100% !important;
+    max-width: none !important;
+    display: flex !important;
+    flex-direction: column !important;
   }
   
   /* Fix button containers */
