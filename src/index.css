@@ -315,7 +315,7 @@ body {
     overflow: hidden;
   }
   
-  /* Force all inner elements to vertical layout - but only inside cards, not the card container */
+  /* Force all inner elements to vertical layout inside cards */
   #projects .flex > * .flex,
   #projects .flex > * .flex-row,
   #projects .flex > * .flex-col {
@@ -325,20 +325,16 @@ body {
     max-width: 100%;
   }
   
-  /* Keep project cards horizontal swipe layout - don't force vertical */
+  /* Project cards container - vertical column layout */
   #projects > div.flex {
     display: flex;
-    flex-direction: row;
-    overflow-x: auto;
+    flex-direction: column;
   }
   
-  /* Ensure cards don't get forced to vertical */
-  #projects .flex > .motion-div,
-  #projects .flex > [class*="motion"],
-  #projects .flex > div[class*="w-\\[90vw\\]"] {
-    flex-shrink: 0;
-    width: 90vw !important;
-    max-width: 90vw !important;
+  /* Cards take full width */
+  #projects .flex > div {
+    width: 100% !important;
+    max-width: 100% !important;
   }
   
   /* Force grid to single column inside cards only */
