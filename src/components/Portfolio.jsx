@@ -19,6 +19,7 @@ export default function Portfolio() {
   const [smoothMouse, setSmoothMouse] = useState({ x: 0, y: 0 });
   const [isScrolled, setIsScrolled] = useState(false);
 
+  
   useEffect(() => {
     const handleMouseMove = (e) => {
       setMousePosition({
