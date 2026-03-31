@@ -799,7 +799,7 @@ export default function Portfolio() {
                 <div className="text-5xl md:text-6xl">🏏</div>
               </div>
               <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent" />
-              <div className="absolute top-2 right-2 md:top-3 md:right-3 flex flex-wrap justify-end gap-1.5 md:gap-2 max-w-[70%]">
+              <div className="absolute top-2 right-2 md:top-3 md:right-3 flex flex-col md:flex-row items-end gap-1 md:gap-2">
                 <span className="px-1.5 py-0.5 md:px-2 md:py-1 bg-amber-400/20 backdrop-blur-sm text-amber-300 text-[10px] md:text-xs rounded-full border border-amber-400/30 whitespace-nowrap">In Progress</span>
                 <span className="px-1.5 py-0.5 md:px-2 md:py-1 bg-cyan-400/20 backdrop-blur-sm text-cyan-300 text-[10px] md:text-xs rounded-full border border-cyan-400/30 whitespace-nowrap">Real-Time</span>
               </div>
@@ -874,7 +874,7 @@ export default function Portfolio() {
                 <div className="text-5xl md:text-6xl">💼</div>
               </div>
               <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent" />
-              <div className="absolute top-2 right-2 md:top-3 md:right-3 flex flex-wrap justify-end gap-1.5 md:gap-2 max-w-[50%]">
+              <div className="absolute top-2 right-2 md:top-3 md:right-3 flex flex-col md:flex-row items-end gap-1 md:gap-2">
                 <span className="px-1.5 py-0.5 md:px-2 md:py-1 bg-blue-400/20 backdrop-blur-sm text-blue-300 text-[10px] md:text-xs rounded-full border border-blue-400/30 whitespace-nowrap">Portfolio</span>
               </div>
             </div>
