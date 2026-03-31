@@ -283,14 +283,15 @@ body {
     top: 8px;
   }
   
-  /* Ensure text elements wrap */
+  /* Ensure text elements wrap properly - use normal word breaking */
   #projects .flex > * h3,
   #projects .flex > * p,
   #projects .flex > * span,
   #projects .flex > * li {
     max-width: 100%;
     overflow-wrap: break-word;
-    word-break: break-word;
+    word-break: normal;
+    white-space: normal;
   }
   
   /* Fix button containers */
@@ -331,10 +332,21 @@ body {
     flex-direction: column;
   }
   
-  /* Cards take full width */
+  /* Cards take full width with proper internal spacing */
   #projects .flex > div {
     width: 100% !important;
     max-width: 100% !important;
+    min-width: 0 !important;
+  }
+  
+  /* Ensure card content container has proper padding */
+  #projects .flex > div > div[class*="p-4"],
+  #projects .flex > div > div.p-4,
+  #projects .flex > div > div {
+    padding: 16px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
   }
   
   /* Force grid to single column inside cards only */
@@ -396,7 +408,8 @@ body {
   #projects .flex > * .space-y-1 > li > span:last-child {
     flex: 1 !important;
     min-width: 0 !important;
-    word-break: break-word !important;
+    word-break: normal !important;
+    white-space: normal !important;
   }
   
   /* Improve feature list spacing */
