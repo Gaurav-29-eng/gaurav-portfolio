@@ -799,38 +799,38 @@ export default function Portfolio() {
                 <div className="text-5xl md:text-6xl">🏏</div>
               </div>
               <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent" />
-              <div className="absolute top-3 right-3 flex gap-2">
-                <span className="px-2 py-1 bg-amber-400/20 backdrop-blur-sm text-amber-300 text-xs rounded-full border border-amber-400/30">In Progress</span>
-                <span className="px-2 py-1 bg-cyan-400/20 backdrop-blur-sm text-cyan-300 text-xs rounded-full border border-cyan-400/30">Real-Time</span>
+              <div className="absolute top-2 right-2 md:top-3 md:right-3 flex flex-wrap justify-end gap-1.5 md:gap-2 max-w-[70%]">
+                <span className="px-1.5 py-0.5 md:px-2 md:py-1 bg-amber-400/20 backdrop-blur-sm text-amber-300 text-[10px] md:text-xs rounded-full border border-amber-400/30 whitespace-nowrap">In Progress</span>
+                <span className="px-1.5 py-0.5 md:px-2 md:py-1 bg-cyan-400/20 backdrop-blur-sm text-cyan-300 text-[10px] md:text-xs rounded-full border border-cyan-400/30 whitespace-nowrap">Real-Time</span>
               </div>
             </div>
 
-            <div className="p-5 md:p-6">
-              <h3 className="text-lg md:text-xl font-semibold text-slate-100 mb-2">Real-Time IPL Auction Simulator</h3>
-              <p className="text-cyan-300/90 text-sm mb-4">Real-time IPL Auction simulation with bidding logic, team purse management and AI-based teams. Multiplayer mode currently under development.</p>
+            <div className="p-4 md:p-6">
+              <h3 className="text-base md:text-xl font-semibold text-slate-100 mb-2 leading-tight">Real-Time IPL Auction Simulator</h3>
+              <p className="text-cyan-300/90 text-xs md:text-sm mb-3 md:mb-4 leading-relaxed">Real-time IPL Auction simulation with bidding logic, team purse management and AI-based teams. Multiplayer mode currently under development.</p>
               
-              <div className="space-y-3 mb-4">
-                <div className="flex flex-wrap gap-2">
-                  <span className="px-2 py-1 bg-slate-800/80 text-slate-300 text-xs rounded">React</span>
-                  <span className="px-2 py-1 bg-slate-800/80 text-slate-300 text-xs rounded">Firebase</span>
-                  <span className="px-2 py-1 bg-slate-800/80 text-slate-300 text-xs rounded">WebSocket</span>
+              <div className="space-y-2 md:space-y-3 mb-3 md:mb-4">
+                <div className="flex flex-wrap gap-1.5 md:gap-2">
+                  <span className="px-1.5 py-0.5 md:px-2 md:py-1 bg-slate-800/80 text-slate-300 text-[10px] md:text-xs rounded">React</span>
+                  <span className="px-1.5 py-0.5 md:px-2 md:py-1 bg-slate-800/80 text-slate-300 text-[10px] md:text-xs rounded">Firebase</span>
+                  <span className="px-1.5 py-0.5 md:px-2 md:py-1 bg-slate-800/80 text-slate-300 text-[10px] md:text-xs rounded">WebSocket</span>
                 </div>
                 
-                <ul className="text-slate-400 text-sm space-y-1">
+                <ul className="text-slate-400 text-xs md:text-sm space-y-1">
                   <li className="flex items-center gap-2">
-                    <span className="text-cyan-400">✓</span> Real-time bidding system
+                    <span className="text-cyan-400">✓</span> <span className="truncate">Real-time bidding system</span>
                   </li>
                   <li className="flex items-center gap-2">
-                    <span className="text-cyan-400">✓</span> Team purse management
+                    <span className="text-cyan-400">✓</span> <span className="truncate">Team purse management</span>
                   </li>
                   <li className="flex items-center gap-2">
-                    <span className="text-cyan-400">✓</span> Player dataset handling
+                    <span className="text-cyan-400">✓</span> <span className="truncate">Player dataset handling</span>
                   </li>
                   <li className="flex items-center gap-2">
-                    <span className="text-cyan-400">✓</span> AI-based team participation
+                    <span className="text-cyan-400">✓</span> <span className="truncate">AI-based team participation</span>
                   </li>
                   <li className="flex items-center gap-2">
-                    <span className="text-amber-400">⏳</span> <span className="text-amber-300/80">Multiplayer mode (In Progress)</span>
+                    <span className="text-amber-400">⏳</span> <span className="text-amber-300/80 truncate">Multiplayer mode (In Progress)</span>
                   </li>
                 </ul>
               </div>
@@ -874,31 +874,31 @@ export default function Portfolio() {
                 <div className="text-5xl md:text-6xl">💼</div>
               </div>
               <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent" />
-              <div className="absolute top-3 right-3 flex gap-2">
-                <span className="px-2 py-1 bg-blue-400/20 backdrop-blur-sm text-blue-300 text-xs rounded-full border border-blue-400/30">Portfolio</span>
+              <div className="absolute top-2 right-2 md:top-3 md:right-3 flex flex-wrap justify-end gap-1.5 md:gap-2 max-w-[50%]">
+                <span className="px-1.5 py-0.5 md:px-2 md:py-1 bg-blue-400/20 backdrop-blur-sm text-blue-300 text-[10px] md:text-xs rounded-full border border-blue-400/30 whitespace-nowrap">Portfolio</span>
               </div>
             </div>
 
-            <div className="p-5 md:p-6">
-              <h3 className="text-lg md:text-xl font-semibold text-slate-100 mb-2">Developer Portfolio</h3>
-              <p className="text-blue-300/90 text-sm mb-4">Interactive portfolio with animations and modern UI</p>
+            <div className="p-4 md:p-6">
+              <h3 className="text-base md:text-xl font-semibold text-slate-100 mb-2 leading-tight">Developer Portfolio</h3>
+              <p className="text-blue-300/90 text-xs md:text-sm mb-3 md:mb-4 leading-relaxed">Interactive portfolio with animations and modern UI</p>
               
-              <div className="space-y-3 mb-4">
-                <div className="flex flex-wrap gap-2">
-                  <span className="px-2 py-1 bg-slate-800/80 text-slate-300 text-xs rounded">React</span>
-                  <span className="px-2 py-1 bg-slate-800/80 text-slate-300 text-xs rounded">Tailwind</span>
-                  <span className="px-2 py-1 bg-slate-800/80 text-slate-300 text-xs rounded">Framer Motion</span>
+              <div className="space-y-2 md:space-y-3 mb-3 md:mb-4">
+                <div className="flex flex-wrap gap-1.5 md:gap-2">
+                  <span className="px-1.5 py-0.5 md:px-2 md:py-1 bg-slate-800/80 text-slate-300 text-[10px] md:text-xs rounded">React</span>
+                  <span className="px-1.5 py-0.5 md:px-2 md:py-1 bg-slate-800/80 text-slate-300 text-[10px] md:text-xs rounded">Tailwind</span>
+                  <span className="px-1.5 py-0.5 md:px-2 md:py-1 bg-slate-800/80 text-slate-300 text-[10px] md:text-xs rounded">Framer Motion</span>
                 </div>
                 
-                <ul className="text-slate-400 text-sm space-y-1">
+                <ul className="text-slate-400 text-xs md:text-sm space-y-1">
                   <li className="flex items-center gap-2">
-                    <span className="text-blue-400">✓</span> Scroll animations & transitions
+                    <span className="text-blue-400">✓</span> <span className="truncate">Scroll animations & transitions</span>
                   </li>
                   <li className="flex items-center gap-2">
-                    <span className="text-blue-400">✓</span> Interactive project showcase
+                    <span className="text-blue-400">✓</span> <span className="truncate">Interactive project showcase</span>
                   </li>
                   <li className="flex items-center gap-2">
-                    <span className="text-blue-400">✓</span> Responsive design all devices
+                    <span className="text-blue-400">✓</span> <span className="truncate">Responsive design all devices</span>
                   </li>
                 </ul>
               </div>
