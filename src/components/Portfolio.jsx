@@ -780,7 +780,7 @@ export default function Portfolio() {
           <span className="text-cyan-400 inline-block transition-all duration-300 hover:scale-110 hover:drop-shadow-[0_0_8px_rgba(34,211,238,0.8)]"></span>
         </h2>
 
-        <div className="flex flex-row md:grid md:grid-cols-2 gap-3 md:gap-8 overflow-x-auto md:overflow-visible snap-x snap-mandatory md:snap-none scrollbar-hide px-4 md:px-0 pb-4 md:pb-0">
+        <div className="flex flex-row md:grid md:grid-cols-2 gap-4 md:gap-8 overflow-x-auto md:overflow-visible snap-x snap-mandatory md:snap-none scrollbar-hide px-5 md:px-0 pb-4 md:pb-0 justify-start md:justify-center">
           {/* IPL */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
