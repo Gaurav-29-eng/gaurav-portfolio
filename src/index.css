@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -66,5 +70,5 @@ body::after {
 }
 
 body {
-  animation: flicker 5s infinite;
+  animation: flicker 5s ease-in-out infinite;
 }

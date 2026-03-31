@@ -141,7 +141,7 @@ export default function Portfolio() {
             <a 
               href="#projects" 
               className="relative px-4 py-2 text-sm font-medium text-slate-400 hover:text-slate-100 
-                         transition-all duration-300 ease-out rounded-full
+                         transition-all duration-300 ease-in-out rounded-full
                          hover:bg-white/[0.06]"
             >
               Projects
@@ -149,7 +149,7 @@ export default function Portfolio() {
             <a 
               href="#about" 
               className="relative px-4 py-2 text-sm font-medium text-slate-400 hover:text-slate-100 
-                         transition-all duration-300 ease-out rounded-full
+                         transition-all duration-300 ease-in-out rounded-full
                          hover:bg-white/[0.06]"
             >
               About
@@ -157,7 +157,7 @@ export default function Portfolio() {
             <a 
               href="#contact" 
               className="relative px-4 py-2 text-sm font-medium text-slate-400 hover:text-slate-100 
-                         transition-all duration-300 ease-out rounded-full
+                         transition-all duration-300 ease-in-out rounded-full
                          hover:bg-white/[0.06]"
             >
               Contact
@@ -172,7 +172,7 @@ export default function Portfolio() {
                        bg-gradient-to-r from-cyan-500/20 to-blue-500/20
                        border border-cyan-400/30
                        text-sm font-medium text-cyan-300
-                       transition-all duration-300 ease-out
+                       transition-all duration-300 ease-in-out
                        hover:scale-105 hover:border-cyan-400/60
                        hover:shadow-[0_0_20px_rgba(6,182,212,0.4),0_0_40px_rgba(6,182,212,0.2)]
                        hover:text-white
@@ -281,14 +281,14 @@ export default function Portfolio() {
                   >
                     <a
                       href="#projects"
-                      className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-cyan-400 to-blue-500 text-slate-950 px-6 py-2.5 text-sm font-semibold shadow-[0_4px_20px_rgba(6,182,212,0.4)] hover:shadow-[0_8px_30px_rgba(6,182,212,0.6)] transition-all duration-300 ease-out hover:scale-105 hover:-translate-y-0.5"
+                      className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-cyan-400 to-blue-500 text-slate-950 px-6 py-2.5 text-sm font-semibold shadow-[0_4px_20px_rgba(6,182,212,0.4)] hover:shadow-[0_8px_30px_rgba(6,182,212,0.6)] transition-all duration-300 ease-in-out hover:scale-105 hover:-translate-y-0.5"
                     >
                       View Projects
                     </a>
                     <a
                       href="/resume.pdf"
                       download
-                      className="inline-flex items-center justify-center gap-2 rounded-full border border-white/20 bg-white/[0.03] px-6 py-2.5 text-sm font-medium text-slate-200 hover:bg-white/[0.08] hover:border-cyan-400/50 hover:text-cyan-300 transition-all duration-300 ease-out hover:scale-105 hover:-translate-y-0.5"
+                      className="inline-flex items-center justify-center gap-2 rounded-full border border-white/20 bg-white/[0.03] px-6 py-2.5 text-sm font-medium text-slate-200 hover:bg-white/[0.08] hover:border-cyan-400/50 hover:text-cyan-300 transition-all duration-300 ease-in-out hover:scale-105 hover:-translate-y-0.5"
                     >
                       Download CV
                     </a>
@@ -377,7 +377,7 @@ export default function Portfolio() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
           viewport={{ once: true }}
-          className="text-3xl md:text-4xl mb-10 md:mb-12 font-semibold tracking-tight text-center transition-all duration-300 ease-out hover:scale-[1.02] hover:tracking-wide cursor-default group"
+          className="text-3xl md:text-4xl mb-10 md:mb-12 font-semibold tracking-tight text-center transition-all duration-300 ease-in-out hover:scale-[1.02] hover:tracking-wide cursor-default group"
         >
           <span className="group-hover:drop-shadow-[0_0_8px_rgba(34,211,238,0.5)] transition-all duration-300">Why Hire Me</span>
           <span className="text-cyan-400 inline-block transition-all duration-300 hover:scale-110 hover:drop-shadow-[0_0_8px_rgba(34,211,238,0.8)]"></span>
@@ -389,7 +389,7 @@ export default function Portfolio() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1, ease: [0.25, 0.1, 0.25, 1] }}
             viewport={{ once: true }}
-            className="relative overflow-hidden rounded-2xl bg-slate-950/40 border border-white/[0.08] hover:border-cyan-400/30 backdrop-blur-xl p-6 md:p-7 flex flex-col gap-4 cursor-pointer shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:shadow-[0_20px_60px_rgba(6,182,212,0.2)] transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-[1.02]"
+            className="relative overflow-hidden rounded-2xl bg-slate-950/40 border border-white/[0.08] hover:border-cyan-400/30 backdrop-blur-xl p-6 md:p-7 flex flex-col gap-4 cursor-pointer shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:shadow-[0_20px_60px_rgba(6,182,212,0.2)] transition-all duration-300 ease-in-out hover:-translate-y-1 hover:scale-[1.02]"
             style={{ 
               perspective: '1000px',
               transformStyle: 'preserve-3d',
@@ -409,7 +409,7 @@ export default function Portfolio() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
             viewport={{ once: true }}
-            className="relative overflow-hidden rounded-2xl bg-slate-950/40 border border-white/[0.08] hover:border-blue-400/30 backdrop-blur-xl p-6 md:p-7 flex flex-col gap-4 cursor-pointer shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:shadow-[0_20px_60px_rgba(59,130,246,0.2)] transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-[1.02]"
+            className="relative overflow-hidden rounded-2xl bg-slate-950/40 border border-white/[0.08] hover:border-blue-400/30 backdrop-blur-xl p-6 md:p-7 flex flex-col gap-4 cursor-pointer shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:shadow-[0_20px_60px_rgba(59,130,246,0.2)] transition-all duration-300 ease-in-out hover:-translate-y-1 hover:scale-[1.02]"
             style={{ 
               perspective: '1000px',
               transformStyle: 'preserve-3d',
@@ -429,7 +429,7 @@ export default function Portfolio() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
             viewport={{ once: true }}
-            className="relative overflow-hidden rounded-2xl bg-slate-950/40 border border-white/[0.08] hover:border-indigo-400/30 backdrop-blur-xl p-6 md:p-7 flex flex-col gap-4 cursor-pointer shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:shadow-[0_20px_60px_rgba(99,102,241,0.2)] transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-[1.02]"
+            className="relative overflow-hidden rounded-2xl bg-slate-950/40 border border-white/[0.08] hover:border-indigo-400/30 backdrop-blur-xl p-6 md:p-7 flex flex-col gap-4 cursor-pointer shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:shadow-[0_20px_60px_rgba(99,102,241,0.2)] transition-all duration-300 ease-in-out hover:-translate-y-1 hover:scale-[1.02]"
             style={{ 
               perspective: '1000px',
               transformStyle: 'preserve-3d',
@@ -449,7 +449,7 @@ export default function Portfolio() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
             viewport={{ once: true }}
-            className="relative overflow-hidden rounded-2xl bg-slate-950/40 border border-white/[0.08] hover:border-violet-400/30 backdrop-blur-xl p-6 md:p-7 flex flex-col gap-4 cursor-pointer shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:shadow-[0_20px_60px_rgba(139,92,246,0.2)] transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-[1.02]"
+            className="relative overflow-hidden rounded-2xl bg-slate-950/40 border border-white/[0.08] hover:border-violet-400/30 backdrop-blur-xl p-6 md:p-7 flex flex-col gap-4 cursor-pointer shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:shadow-[0_20px_60px_rgba(139,92,246,0.2)] transition-all duration-300 ease-in-out hover:-translate-y-1 hover:scale-[1.02]"
             style={{ 
               perspective: '1000px',
               transformStyle: 'preserve-3d',
@@ -480,7 +480,7 @@ export default function Portfolio() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
           viewport={{ once: true }}
-          className="text-3xl md:text-4xl mb-8 md:mb-10 font-semibold tracking-tight transition-all duration-300 ease-out hover:scale-[1.02] hover:tracking-wide cursor-default group"
+          className="text-3xl md:text-4xl mb-8 md:mb-10 font-semibold tracking-tight transition-all duration-300 ease-in-out hover:scale-[1.02] hover:tracking-wide cursor-default group"
         >
           <span className="group-hover:drop-shadow-[0_0_8px_rgba(34,211,238,0.5)] transition-all duration-300">About</span>
           <span className="text-cyan-400 inline-block transition-all duration-300 hover:scale-110 hover:drop-shadow-[0_0_8px_rgba(34,211,238,0.8)]"></span>
@@ -545,7 +545,7 @@ export default function Portfolio() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
           viewport={{ once: true }}
-          className="text-3xl md:text-4xl mb-10 md:mb-12 font-semibold tracking-tight text-center transition-all duration-300 ease-out hover:scale-[1.02] hover:tracking-wide cursor-default group"
+          className="text-3xl md:text-4xl mb-10 md:mb-12 font-semibold tracking-tight text-center transition-all duration-300 ease-in-out hover:scale-[1.02] hover:tracking-wide cursor-default group"
         >
           <span className="group-hover:drop-shadow-[0_0_8px_rgba(34,211,238,0.5)] transition-all duration-300">Tech Stack</span>
           <span className="text-cyan-400 inline-block transition-all duration-300 hover:scale-110 hover:drop-shadow-[0_0_8px_rgba(34,211,238,0.8)]"></span>
@@ -558,7 +558,7 @@ export default function Portfolio() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1, ease: [0.25, 0.1, 0.25, 1] }}
             viewport={{ once: true }}
-            className="relative overflow-hidden rounded-2xl bg-slate-950/40 border border-white/[0.08] hover:border-cyan-400/30 backdrop-blur-xl p-6 flex flex-col gap-3 cursor-pointer shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:shadow-[0_20px_60px_rgba(6,182,212,0.2)] transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-[1.02]"
+            className="relative overflow-hidden rounded-2xl bg-slate-950/40 border border-white/[0.08] hover:border-cyan-400/30 backdrop-blur-xl p-6 flex flex-col gap-3 cursor-pointer shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:shadow-[0_20px_60px_rgba(6,182,212,0.2)] transition-all duration-300 ease-in-out hover:-translate-y-1 hover:scale-[1.02]"
             style={{ perspective: '1000px', transformStyle: 'preserve-3d' }}
           >
             <div className="inline-flex items-center gap-2 text-cyan-300 text-sm font-semibold" style={{ transform: 'translateZ(15px)' }}>
@@ -576,7 +576,7 @@ export default function Portfolio() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
             viewport={{ once: true }}
-            className="relative overflow-hidden rounded-2xl bg-slate-950/40 border border-white/[0.08] hover:border-blue-400/30 backdrop-blur-xl p-6 flex flex-col gap-3 cursor-pointer shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:shadow-[0_20px_60px_rgba(59,130,246,0.2)] transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-[1.02]"
+            className="relative overflow-hidden rounded-2xl bg-slate-950/40 border border-white/[0.08] hover:border-blue-400/30 backdrop-blur-xl p-6 flex flex-col gap-3 cursor-pointer shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:shadow-[0_20px_60px_rgba(59,130,246,0.2)] transition-all duration-300 ease-in-out hover:-translate-y-1 hover:scale-[1.02]"
             style={{ perspective: '1000px', transformStyle: 'preserve-3d' }}
           >
             <div className="inline-flex items-center gap-2 text-blue-300 text-sm font-semibold" style={{ transform: 'translateZ(15px)' }}>
@@ -594,7 +594,7 @@ export default function Portfolio() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
             viewport={{ once: true }}
-            className="relative overflow-hidden rounded-2xl bg-slate-950/40 border border-white/[0.08] hover:border-indigo-400/30 backdrop-blur-xl p-6 flex flex-col gap-3 cursor-pointer shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:shadow-[0_20px_60px_rgba(99,102,241,0.2)] transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-[1.02]"
+            className="relative overflow-hidden rounded-2xl bg-slate-950/40 border border-white/[0.08] hover:border-indigo-400/30 backdrop-blur-xl p-6 flex flex-col gap-3 cursor-pointer shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:shadow-[0_20px_60px_rgba(99,102,241,0.2)] transition-all duration-300 ease-in-out hover:-translate-y-1 hover:scale-[1.02]"
             style={{ perspective: '1000px', transformStyle: 'preserve-3d' }}
           >
             <div className="inline-flex items-center gap-2 text-indigo-300 text-sm font-semibold" style={{ transform: 'translateZ(15px)' }}>
@@ -612,7 +612,7 @@ export default function Portfolio() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
             viewport={{ once: true }}
-            className="relative overflow-hidden rounded-2xl bg-slate-950/40 border border-white/[0.08] hover:border-violet-400/30 backdrop-blur-xl p-6 flex flex-col gap-3 cursor-pointer shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:shadow-[0_20px_60px_rgba(139,92,246,0.2)] transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-[1.02]"
+            className="relative overflow-hidden rounded-2xl bg-slate-950/40 border border-white/[0.08] hover:border-violet-400/30 backdrop-blur-xl p-6 flex flex-col gap-3 cursor-pointer shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:shadow-[0_20px_60px_rgba(139,92,246,0.2)] transition-all duration-300 ease-in-out hover:-translate-y-1 hover:scale-[1.02]"
             style={{ perspective: '1000px', transformStyle: 'preserve-3d' }}
           >
             <div className="inline-flex items-center gap-2 text-violet-300 text-sm font-semibold" style={{ transform: 'translateZ(15px)' }}>
@@ -639,7 +639,7 @@ export default function Portfolio() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
           viewport={{ once: true }}
-          className="text-3xl md:text-4xl mb-10 md:mb-12 font-semibold tracking-tight transition-all duration-300 ease-out hover:scale-[1.02] hover:tracking-wide cursor-default group"
+          className="text-3xl md:text-4xl mb-10 md:mb-12 font-semibold tracking-tight transition-all duration-300 ease-in-out hover:scale-[1.02] hover:tracking-wide cursor-default group"
         >
           <span className="group-hover:drop-shadow-[0_0_8px_rgba(34,211,238,0.5)] transition-all duration-300">Learning & Growth</span>
           <span className="text-cyan-400 inline-block transition-all duration-300 hover:scale-110 hover:drop-shadow-[0_0_8px_rgba(34,211,238,0.8)]"></span>
@@ -651,7 +651,7 @@ export default function Portfolio() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1, ease: [0.25, 0.1, 0.25, 1] }}
             viewport={{ once: true }}
-            className="rounded-2xl bg-slate-950/40 border border-white/[0.08] hover:border-cyan-400/30 backdrop-blur-xl p-6 md:p-8 text-slate-200 cursor-pointer shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:shadow-[0_20px_60px_rgba(6,182,212,0.2)] transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-[1.02]"
+            className="rounded-2xl bg-slate-950/40 border border-white/[0.08] hover:border-cyan-400/30 backdrop-blur-xl p-6 md:p-8 text-slate-200 cursor-pointer shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:shadow-[0_20px_60px_rgba(6,182,212,0.2)] transition-all duration-300 ease-in-out hover:-translate-y-1 hover:scale-[1.02]"
             style={{ perspective: '1000px', transformStyle: 'preserve-3d' }}
           >
             <h3 className="text-cyan-300 text-lg font-semibold mb-4" style={{ transform: 'translateZ(20px)' }}>🎓 Certifications</h3>
@@ -667,7 +667,7 @@ export default function Portfolio() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
             viewport={{ once: true }}
-            className="rounded-2xl bg-slate-950/40 border border-white/[0.08] hover:border-blue-400/30 backdrop-blur-xl p-6 md:p-8 text-slate-200 cursor-pointer shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:shadow-[0_20px_60px_rgba(59,130,246,0.2)] transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-[1.02]"
+            className="rounded-2xl bg-slate-950/40 border border-white/[0.08] hover:border-blue-400/30 backdrop-blur-xl p-6 md:p-8 text-slate-200 cursor-pointer shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:shadow-[0_20px_60px_rgba(59,130,246,0.2)] transition-all duration-300 ease-in-out hover:-translate-y-1 hover:scale-[1.02]"
             style={{ perspective: '1000px', transformStyle: 'preserve-3d' }}
           >
             <h3 className="text-blue-300 text-lg font-semibold mb-4" style={{ transform: 'translateZ(20px)' }}>📚 Continuous Learning</h3>
@@ -684,7 +684,7 @@ export default function Portfolio() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
           viewport={{ once: true }}
-          className="mt-8 rounded-2xl bg-gradient-to-r from-cyan-500/10 to-blue-500/10 border border-white/[0.08] hover:border-cyan-400/30 backdrop-blur-xl p-6 md:p-8 text-center cursor-pointer shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:shadow-[0_20px_60px_rgba(6,182,212,0.2)] transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-[1.02]"
+          className="mt-8 rounded-2xl bg-gradient-to-r from-cyan-500/10 to-blue-500/10 border border-white/[0.08] hover:border-cyan-400/30 backdrop-blur-xl p-6 md:p-8 text-center cursor-pointer shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:shadow-[0_20px_60px_rgba(6,182,212,0.2)] transition-all duration-300 ease-in-out hover:-translate-y-1 hover:scale-[1.02]"
         >
           <p className="text-cyan-300 text-lg font-semibold mb-3">🚀 Growth Mindset</p>
           <p className="text-slate-300/90 text-base max-w-2xl mx-auto leading-relaxed">
@@ -703,7 +703,7 @@ export default function Portfolio() {
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
         viewport={{ once: true, margin: "-100px" }}
       >
-        <h2 className="text-3xl md:text-4xl mb-10 md:mb-12 font-semibold tracking-tight text-center transition-all duration-300 ease-out hover:scale-[1.02] hover:tracking-wide cursor-default group">
+        <h2 className="text-3xl md:text-4xl mb-10 md:mb-12 font-semibold tracking-tight text-center transition-all duration-300 ease-in-out hover:scale-[1.02] hover:tracking-wide cursor-default group">
           <span className="group-hover:drop-shadow-[0_0_8px_rgba(34,211,238,0.5)] transition-all duration-300 group-hover:letter-spacing-[1px]">Projects</span>
           <span className="text-cyan-400 inline-block transition-all duration-300 hover:scale-110 hover:drop-shadow-[0_0_8px_rgba(34,211,238,0.8)]"></span>
         </h2>
@@ -715,7 +715,7 @@ export default function Portfolio() {
             transition={{ 
               y: { duration: 6, repeat: Infinity, ease: "easeInOut" },
             }}
-            className="bg-slate-950/40 rounded-2xl border border-white/[0.08] hover:border-cyan-400/30 cursor-pointer group relative overflow-hidden backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:shadow-[0_20px_60px_rgba(6,182,212,0.2)] transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-[1.02]"
+            className="bg-slate-950/40 rounded-2xl border border-white/[0.08] hover:border-cyan-400/30 cursor-pointer group relative overflow-hidden backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:shadow-[0_20px_60px_rgba(6,182,212,0.2)] transition-all duration-300 ease-in-out hover:-translate-y-1 hover:scale-[1.02]"
             style={{ perspective: '1000px', transformStyle: 'preserve-3d' }}
           >
             {/* Glow effect overlay */}
@@ -790,7 +790,7 @@ export default function Portfolio() {
             transition={{ 
               y: { duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1.5 },
             }}
-            className="bg-slate-950/40 rounded-2xl border border-white/[0.08] hover:border-blue-400/30 cursor-pointer group relative overflow-hidden backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:shadow-[0_20px_60px_rgba(59,130,246,0.2)] transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-[1.02]"
+            className="bg-slate-950/40 rounded-2xl border border-white/[0.08] hover:border-blue-400/30 cursor-pointer group relative overflow-hidden backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:shadow-[0_20px_60px_rgba(59,130,246,0.2)] transition-all duration-300 ease-in-out hover:-translate-y-1 hover:scale-[1.02]"
             style={{ perspective: '1000px', transformStyle: 'preserve-3d' }}
           >
             {/* Glow effect overlay */}
@@ -863,13 +863,13 @@ export default function Portfolio() {
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
         viewport={{ once: true, margin: "-100px" }}
       >
-        <h2 className="text-3xl md:text-4xl mb-10 md:mb-12 font-semibold tracking-tight text-center transition-all duration-300 ease-out hover:scale-[1.02] hover:tracking-wide cursor-default group">
+        <h2 className="text-3xl md:text-4xl mb-10 md:mb-12 font-semibold tracking-tight text-center transition-all duration-300 ease-in-out hover:scale-[1.02] hover:tracking-wide cursor-default group">
           <span className="group-hover:drop-shadow-[0_0_8px_rgba(34,211,238,0.5)] transition-all duration-300">Problem Solving</span>
           <span className="text-cyan-400 inline-block transition-all duration-300 hover:scale-110 hover:drop-shadow-[0_0_8px_rgba(34,211,238,0.8)]"></span>
         </h2>
 
         <motion.div 
-          className="max-w-3xl mx-auto bg-slate-950/40 rounded-2xl border border-white/[0.08] hover:border-cyan-400/30 backdrop-blur-xl p-6 md:p-10 cursor-pointer shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:shadow-[0_20px_60px_rgba(6,182,212,0.2)] transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-[1.02]"
+          className="max-w-3xl mx-auto bg-slate-950/40 rounded-2xl border border-white/[0.08] hover:border-cyan-400/30 backdrop-blur-xl p-6 md:p-10 cursor-pointer shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:shadow-[0_20px_60px_rgba(6,182,212,0.2)] transition-all duration-300 ease-in-out hover:-translate-y-1 hover:scale-[1.02]"
           style={{ perspective: '1000px', transformStyle: 'preserve-3d' }}
         >
           <div className="space-y-5 text-slate-300" style={{ transform: 'translateZ(15px)' }}>
@@ -897,13 +897,13 @@ export default function Portfolio() {
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
         viewport={{ once: true, margin: "-100px" }}
       >
-        <h2 className="text-3xl md:text-4xl mb-10 md:mb-12 font-semibold tracking-tight text-center transition-all duration-300 ease-out hover:scale-[1.02] hover:tracking-wide cursor-default group">
+        <h2 className="text-3xl md:text-4xl mb-10 md:mb-12 font-semibold tracking-tight text-center transition-all duration-300 ease-in-out hover:scale-[1.02] hover:tracking-wide cursor-default group">
           <span className="group-hover:drop-shadow-[0_0_8px_rgba(34,211,238,0.5)] transition-all duration-300">Education</span>
           <span className="text-cyan-400 inline-block transition-all duration-300 hover:scale-110 hover:drop-shadow-[0_0_8px_rgba(34,211,238,0.8)]"></span>
         </h2>
 
         <motion.div 
-          className="max-w-2xl mx-auto bg-slate-950/40 rounded-2xl border border-white/[0.08] hover:border-cyan-400/30 backdrop-blur-xl p-8 md:p-10 cursor-pointer shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:shadow-[0_20px_60px_rgba(6,182,212,0.2)] transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-[1.02]"
+          className="max-w-2xl mx-auto bg-slate-950/40 rounded-2xl border border-white/[0.08] hover:border-cyan-400/30 backdrop-blur-xl p-8 md:p-10 cursor-pointer shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:shadow-[0_20px_60px_rgba(6,182,212,0.2)] transition-all duration-300 ease-in-out hover:-translate-y-1 hover:scale-[1.02]"
           style={{ perspective: '1000px', transformStyle: 'preserve-3d' }}
         >
           <div className="text-center" style={{ transform: 'translateZ(20px)' }}>
@@ -921,7 +921,7 @@ export default function Portfolio() {
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
         viewport={{ once: true, margin: "-100px" }}>
 
-        <h2 className="text-3xl md:text-4xl mb-6 text-center font-semibold tracking-tight transition-all duration-300 ease-out hover:scale-[1.02] hover:tracking-wide cursor-default group">
+        <h2 className="text-3xl md:text-4xl mb-6 text-center font-semibold tracking-tight transition-all duration-300 ease-in-out hover:scale-[1.02] hover:tracking-wide cursor-default group">
           <span className="group-hover:drop-shadow-[0_0_8px_rgba(34,211,238,0.5)] transition-all duration-300">Let's Connect</span>
           <span className="text-cyan-400 inline-block transition-all duration-300 hover:scale-110 hover:drop-shadow-[0_0_8px_rgba(34,211,238,0.8)]"></span>
         </h2>
@@ -933,7 +933,7 @@ export default function Portfolio() {
         <div className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6">
           <a
             href="mailto:gaurav@example.com"
-            className="group inline-flex items-center gap-3 px-6 py-3 bg-slate-950/40 backdrop-blur-xl rounded-xl border border-white/[0.08] hover:border-cyan-400/40 hover:bg-slate-950/60 transition-all duration-300 ease-out hover:scale-105 hover:-translate-y-1 shadow-[0_8px_32px_rgba(0,0,0,0.4)]"
+            className="group inline-flex items-center gap-3 px-6 py-3 bg-slate-950/40 backdrop-blur-xl rounded-xl border border-white/[0.08] hover:border-cyan-400/40 hover:bg-slate-950/60 transition-all duration-300 ease-in-out hover:scale-105 hover:-translate-y-1 shadow-[0_8px_32px_rgba(0,0,0,0.4)]"
           >
             <svg className="w-5 h-5 text-cyan-400 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
@@ -944,7 +944,7 @@ export default function Portfolio() {
           <a
             href="https://github.com/Gaurav-29-eng"
             target="_blank"
-            className="group inline-flex items-center gap-3 px-6 py-3 bg-slate-950/40 backdrop-blur-xl rounded-xl border border-white/[0.08] hover:border-cyan-400/40 hover:bg-slate-950/60 transition-all duration-300 ease-out hover:scale-105 hover:-translate-y-1 shadow-[0_8px_32px_rgba(0,0,0,0.4)]"
+            className="group inline-flex items-center gap-3 px-6 py-3 bg-slate-950/40 backdrop-blur-xl rounded-xl border border-white/[0.08] hover:border-cyan-400/40 hover:bg-slate-950/60 transition-all duration-300 ease-in-out hover:scale-105 hover:-translate-y-1 shadow-[0_8px_32px_rgba(0,0,0,0.4)]"
           >
             <svg className="w-5 h-5 text-cyan-400 group-hover:scale-110 transition-transform duration-300" fill="currentColor" viewBox="0 0 24 24">
               <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
@@ -955,7 +955,7 @@ export default function Portfolio() {
           <a
             href="https://linkedin.com/in/gaurav"
             target="_blank"
-            className="group inline-flex items-center gap-3 px-6 py-3 bg-slate-950/40 backdrop-blur-xl rounded-xl border border-white/[0.08] hover:border-cyan-400/40 hover:bg-slate-950/60 transition-all duration-300 ease-out hover:scale-105 hover:-translate-y-1 shadow-[0_8px_32px_rgba(0,0,0,0.4)]"
+            className="group inline-flex items-center gap-3 px-6 py-3 bg-slate-950/40 backdrop-blur-xl rounded-xl border border-white/[0.08] hover:border-cyan-400/40 hover:bg-slate-950/60 transition-all duration-300 ease-in-out hover:scale-105 hover:-translate-y-1 shadow-[0_8px_32px_rgba(0,0,0,0.4)]"
           >
             <svg className="w-5 h-5 text-cyan-400 group-hover:scale-110 transition-transform duration-300" fill="currentColor" viewBox="0 0 24 24">
               <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
