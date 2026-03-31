@@ -377,9 +377,10 @@ export default function Portfolio() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
           viewport={{ once: true }}
-          className="text-3xl md:text-4xl mb-10 md:mb-12 font-semibold tracking-tight text-center transition-all duration-300 ease-out hover:scale-[1.02] cursor-default"
+          className="text-3xl md:text-4xl mb-10 md:mb-12 font-semibold tracking-tight text-center transition-all duration-300 ease-out hover:scale-[1.02] hover:tracking-wide cursor-default group"
         >
-          Why Hire Me<span className="text-cyan-400 inline-block transition-all duration-300 hover:scale-110 hover:drop-shadow-[0_0_8px_rgba(34,211,238,0.8)]"></span>
+          <span className="group-hover:drop-shadow-[0_0_8px_rgba(34,211,238,0.5)] transition-all duration-300">Why Hire Me</span>
+          <span className="text-cyan-400 inline-block transition-all duration-300 hover:scale-110 hover:drop-shadow-[0_0_8px_rgba(34,211,238,0.8)]"></span>
         </motion.h2>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
@@ -479,9 +480,10 @@ export default function Portfolio() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
           viewport={{ once: true }}
-          className="text-3xl md:text-4xl mb-8 md:mb-10 font-semibold tracking-tight transition-all duration-300 ease-out hover:scale-[1.02] cursor-default"
+          className="text-3xl md:text-4xl mb-8 md:mb-10 font-semibold tracking-tight transition-all duration-300 ease-out hover:scale-[1.02] hover:tracking-wide cursor-default group"
         >
-          About<span className="text-cyan-400 inline-block transition-all duration-300 hover:scale-110 hover:drop-shadow-[0_0_8px_rgba(34,211,238,0.8)]"></span>
+          <span className="group-hover:drop-shadow-[0_0_8px_rgba(34,211,238,0.5)] transition-all duration-300">About</span>
+          <span className="text-cyan-400 inline-block transition-all duration-300 hover:scale-110 hover:drop-shadow-[0_0_8px_rgba(34,211,238,0.8)]"></span>
         </motion.h2>
 
         <motion.p 
@@ -543,9 +545,10 @@ export default function Portfolio() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
           viewport={{ once: true }}
-          className="text-3xl md:text-4xl mb-10 md:mb-12 font-semibold tracking-tight text-center transition-all duration-300 ease-out hover:scale-[1.02] cursor-default"
+          className="text-3xl md:text-4xl mb-10 md:mb-12 font-semibold tracking-tight text-center transition-all duration-300 ease-out hover:scale-[1.02] hover:tracking-wide cursor-default group"
         >
-          Tech Stack<span className="text-cyan-400 inline-block transition-all duration-300 hover:scale-110 hover:drop-shadow-[0_0_8px_rgba(34,211,238,0.8)]"></span>
+          <span className="group-hover:drop-shadow-[0_0_8px_rgba(34,211,238,0.5)] transition-all duration-300">Tech Stack</span>
+          <span className="text-cyan-400 inline-block transition-all duration-300 hover:scale-110 hover:drop-shadow-[0_0_8px_rgba(34,211,238,0.8)]"></span>
         </motion.h2>
 
         <div className="grid md:grid-cols-2 gap-5 md:gap-6 max-w-4xl mx-auto">
@@ -636,9 +639,10 @@ export default function Portfolio() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
           viewport={{ once: true }}
-          className="text-3xl md:text-4xl mb-10 md:mb-12 font-semibold tracking-tight transition-all duration-300 ease-out hover:scale-[1.02] cursor-default"
+          className="text-3xl md:text-4xl mb-10 md:mb-12 font-semibold tracking-tight transition-all duration-300 ease-out hover:scale-[1.02] hover:tracking-wide cursor-default group"
         >
-          Learning & Growth<span className="text-cyan-400 inline-block transition-all duration-300 hover:scale-110 hover:drop-shadow-[0_0_8px_rgba(34,211,238,0.8)]"></span>
+          <span className="group-hover:drop-shadow-[0_0_8px_rgba(34,211,238,0.5)] transition-all duration-300">Learning & Growth</span>
+          <span className="text-cyan-400 inline-block transition-all duration-300 hover:scale-110 hover:drop-shadow-[0_0_8px_rgba(34,211,238,0.8)]"></span>
         </motion.h2>
 
         <div className="grid md:grid-cols-2 gap-6">
@@ -699,8 +703,9 @@ export default function Portfolio() {
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
         viewport={{ once: true, margin: "-100px" }}
       >
-        <h2 className="text-3xl md:text-4xl mb-10 md:mb-12 font-semibold tracking-tight transition-all duration-300 ease-out hover:scale-[1.02] cursor-default">
-          Projects<span className="text-cyan-400 inline-block transition-all duration-300 hover:scale-110 hover:drop-shadow-[0_0_8px_rgba(34,211,238,0.8)]"></span>
+        <h2 className="text-3xl md:text-4xl mb-10 md:mb-12 font-semibold tracking-tight text-center transition-all duration-300 ease-out hover:scale-[1.02] hover:tracking-wide cursor-default group">
+          <span className="group-hover:drop-shadow-[0_0_8px_rgba(34,211,238,0.5)] transition-all duration-300 group-hover:letter-spacing-[1px]">Projects</span>
+          <span className="text-cyan-400 inline-block transition-all duration-300 hover:scale-110 hover:drop-shadow-[0_0_8px_rgba(34,211,238,0.8)]"></span>
         </h2>
 
         <div className="grid md:grid-cols-2 gap-6 md:gap-8">
@@ -858,8 +863,9 @@ export default function Portfolio() {
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
         viewport={{ once: true, margin: "-100px" }}
       >
-        <h2 className="text-3xl md:text-4xl mb-10 md:mb-12 font-semibold tracking-tight text-center transition-all duration-300 ease-out hover:scale-[1.02] cursor-default">
-          Problem Solving<span className="text-cyan-400 inline-block transition-all duration-300 hover:scale-110 hover:drop-shadow-[0_0_8px_rgba(34,211,238,0.8)]"></span>
+        <h2 className="text-3xl md:text-4xl mb-10 md:mb-12 font-semibold tracking-tight text-center transition-all duration-300 ease-out hover:scale-[1.02] hover:tracking-wide cursor-default group">
+          <span className="group-hover:drop-shadow-[0_0_8px_rgba(34,211,238,0.5)] transition-all duration-300">Problem Solving</span>
+          <span className="text-cyan-400 inline-block transition-all duration-300 hover:scale-110 hover:drop-shadow-[0_0_8px_rgba(34,211,238,0.8)]"></span>
         </h2>
 
         <motion.div 
@@ -891,8 +897,9 @@ export default function Portfolio() {
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
         viewport={{ once: true, margin: "-100px" }}
       >
-        <h2 className="text-3xl md:text-4xl mb-10 md:mb-12 font-semibold tracking-tight text-center transition-all duration-300 ease-out hover:scale-[1.02] cursor-default">
-          Education<span className="text-cyan-400 inline-block transition-all duration-300 hover:scale-110 hover:drop-shadow-[0_0_8px_rgba(34,211,238,0.8)]"></span>
+        <h2 className="text-3xl md:text-4xl mb-10 md:mb-12 font-semibold tracking-tight text-center transition-all duration-300 ease-out hover:scale-[1.02] hover:tracking-wide cursor-default group">
+          <span className="group-hover:drop-shadow-[0_0_8px_rgba(34,211,238,0.5)] transition-all duration-300">Education</span>
+          <span className="text-cyan-400 inline-block transition-all duration-300 hover:scale-110 hover:drop-shadow-[0_0_8px_rgba(34,211,238,0.8)]"></span>
         </h2>
 
         <motion.div 
@@ -914,8 +921,9 @@ export default function Portfolio() {
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
         viewport={{ once: true, margin: "-100px" }}>
 
-        <h2 className="text-3xl md:text-4xl mb-6 text-center font-semibold tracking-tight transition-all duration-300 ease-out hover:scale-[1.02] cursor-default">
-          Let's Connect<span className="text-cyan-400 inline-block transition-all duration-300 hover:scale-110 hover:drop-shadow-[0_0_8px_rgba(34,211,238,0.8)]"></span>
+        <h2 className="text-3xl md:text-4xl mb-6 text-center font-semibold tracking-tight transition-all duration-300 ease-out hover:scale-[1.02] hover:tracking-wide cursor-default group">
+          <span className="group-hover:drop-shadow-[0_0_8px_rgba(34,211,238,0.5)] transition-all duration-300">Let's Connect</span>
+          <span className="text-cyan-400 inline-block transition-all duration-300 hover:scale-110 hover:drop-shadow-[0_0_8px_rgba(34,211,238,0.8)]"></span>
         </h2>
         
         <p className="text-center text-slate-300/90 mb-10 max-w-xl mx-auto text-lg leading-relaxed">
