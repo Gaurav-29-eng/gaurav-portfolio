@@ -963,8 +963,9 @@ export default function Portfolio() {
           </a>
 
           <a
-            href="https://linkedin.com/in/gaurav"
+            href="https://linkedin.com/in/gaurav-salunke-cse27"
             target="_blank"
+            rel="noopener noreferrer"
             className="group inline-flex items-center gap-3 px-6 py-3 bg-slate-950/40 backdrop-blur-xl rounded-xl border border-white/[0.08] hover:border-cyan-400/40 hover:bg-slate-950/60 transition-all duration-300 ease-in-out hover:scale-105 hover:-translate-y-1 shadow-[0_8px_32px_rgba(0,0,0,0.4)]"
           >
             <svg className="w-5 h-5 text-cyan-400 group-hover:scale-110 transition-transform duration-300" fill="currentColor" viewBox="0 0 24 24">
