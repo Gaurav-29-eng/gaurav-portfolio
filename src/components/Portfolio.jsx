@@ -805,52 +805,52 @@ export default function Portfolio() {
               </div>
             </div>
 
-            <div className="p-4 md:p-6">
-              <h3 className="text-base md:text-xl font-semibold text-slate-100 mb-2 leading-tight">Real-Time IPL Auction Simulator</h3>
-              <p className="text-cyan-300/90 text-xs md:text-sm mb-3 md:mb-4 leading-relaxed">Real-time IPL Auction simulation with bidding logic, team purse management and AI-based teams. Multiplayer mode currently under development.</p>
+            <div className="p-4 md:p-6 w-full">
+              <h3 className="text-base md:text-xl font-semibold text-slate-100 mb-2 leading-tight w-full break-words">Real-Time IPL Auction Simulator</h3>
+              <p className="text-cyan-300/90 text-xs md:text-sm mb-3 md:mb-4 leading-relaxed w-full break-words">Real-time IPL Auction simulation with bidding logic, team purse management and AI-based teams. Multiplayer mode currently under development.</p>
               
-              <div className="space-y-2 md:space-y-3 mb-3 md:mb-4">
-                <div className="flex flex-wrap gap-1.5 md:gap-2">
-                  <span className="px-1.5 py-0.5 md:px-2 md:py-1 bg-slate-800/80 text-slate-300 text-[10px] md:text-xs rounded">React</span>
-                  <span className="px-1.5 py-0.5 md:px-2 md:py-1 bg-slate-800/80 text-slate-300 text-[10px] md:text-xs rounded">Firebase</span>
-                  <span className="px-1.5 py-0.5 md:px-2 md:py-1 bg-slate-800/80 text-slate-300 text-[10px] md:text-xs rounded">WebSocket</span>
+              <div className="space-y-2 md:space-y-3 mb-3 md:mb-4 w-full">
+                <div className="flex flex-wrap gap-1.5 md:gap-2 w-full">
+                  <span className="px-1.5 py-0.5 md:px-2 md:py-1 bg-slate-800/80 text-slate-300 text-[10px] md:text-xs rounded whitespace-nowrap">React</span>
+                  <span className="px-1.5 py-0.5 md:px-2 md:py-1 bg-slate-800/80 text-slate-300 text-[10px] md:text-xs rounded whitespace-nowrap">Firebase</span>
+                  <span className="px-1.5 py-0.5 md:px-2 md:py-1 bg-slate-800/80 text-slate-300 text-[10px] md:text-xs rounded whitespace-nowrap">WebSocket</span>
                 </div>
                 
-                <ul className="text-slate-400 text-xs md:text-sm space-y-1">
-                  <li className="flex items-center gap-2">
-                    <span className="text-cyan-400">✓</span> <span className="truncate">Real-time bidding system</span>
+                <ul className="text-slate-400 text-xs md:text-sm space-y-1 w-full">
+                  <li className="flex items-center gap-2 w-full">
+                    <span className="text-cyan-400 flex-shrink-0">✓</span> <span className="break-words">Real-time bidding system</span>
                   </li>
-                  <li className="flex items-center gap-2">
-                    <span className="text-cyan-400">✓</span> <span className="truncate">Team purse management</span>
+                  <li className="flex items-center gap-2 w-full">
+                    <span className="text-cyan-400 flex-shrink-0">✓</span> <span className="break-words">Team purse management</span>
                   </li>
-                  <li className="flex items-center gap-2">
-                    <span className="text-cyan-400">✓</span> <span className="truncate">Player dataset handling</span>
+                  <li className="flex items-center gap-2 w-full">
+                    <span className="text-cyan-400 flex-shrink-0">✓</span> <span className="break-words">Player dataset handling</span>
                   </li>
-                  <li className="flex items-center gap-2">
-                    <span className="text-cyan-400">✓</span> <span className="truncate">AI-based team participation</span>
+                  <li className="flex items-center gap-2 w-full">
+                    <span className="text-cyan-400 flex-shrink-0">✓</span> <span className="break-words">AI-based team participation</span>
                   </li>
-                  <li className="flex items-center gap-2">
-                    <span className="text-amber-400">⏳</span> <span className="text-amber-300/80 truncate">Multiplayer mode (In Progress)</span>
+                  <li className="flex items-center gap-2 w-full">
+                    <span className="text-amber-400 flex-shrink-0">⏳</span> <span className="text-amber-300/80 break-words">Multiplayer mode (In Progress)</span>
                   </li>
                 </ul>
               </div>
               
-              <div className="flex flex-col sm:flex-row gap-3 pt-2">
+              <div className="flex flex-col gap-3 pt-2 w-full">
                 <a
                   href="https://github.com/Gaurav-29-eng/ipl-auction"
                   target="_blank"
-                  className="inline-flex items-center justify-center gap-1.5 px-4 py-3 bg-slate-800/80 hover:bg-slate-700/80 text-cyan-300 text-sm rounded-lg transition-all duration-300 border border-cyan-400/20 hover:border-cyan-400/40 active:bg-slate-700/90 active:border-cyan-400/60 active:scale-95 w-full sm:w-auto"
+                  className="inline-flex items-center justify-center gap-1.5 px-4 py-3 bg-slate-800/80 hover:bg-slate-700/80 text-cyan-300 text-sm rounded-lg transition-all duration-300 border border-cyan-400/20 hover:border-cyan-400/40 active:bg-slate-700/90 active:border-cyan-400/60 active:scale-95 w-full"
                 >
-                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                  GitHub
+                  <svg className="w-4 h-4 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                  <span className="break-words">GitHub</span>
                 </a>
                 <a
                   href="https://ipl-auction-hazel.vercel.app/"
                   target="_blank"
-                  className="inline-flex items-center justify-center gap-1.5 px-4 py-3 bg-gradient-to-r from-cyan-400/20 to-blue-400/20 hover:from-cyan-400/30 hover:to-blue-400/30 text-cyan-300 text-sm rounded-lg transition-all duration-300 border border-cyan-400/30 hover:border-cyan-400/50 active:from-cyan-400/40 active:to-blue-400/40 active:border-cyan-400/70 active:scale-95 w-full sm:w-auto"
+                  className="inline-flex items-center justify-center gap-1.5 px-4 py-3 bg-gradient-to-r from-cyan-400/20 to-blue-400/20 hover:from-cyan-400/30 hover:to-blue-400/30 text-cyan-300 text-sm rounded-lg transition-all duration-300 border border-cyan-400/30 hover:border-cyan-400/50 active:from-cyan-400/40 active:to-blue-400/40 active:border-cyan-400/70 active:scale-95 w-full"
                 >
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
-                  Live Demo
+                  <svg className="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                  <span className="break-words">Live Demo</span>
                 </a>
               </div>
             </div>
@@ -879,46 +879,46 @@ export default function Portfolio() {
               </div>
             </div>
 
-            <div className="p-4 md:p-6">
-              <h3 className="text-base md:text-xl font-semibold text-slate-100 mb-2 leading-tight">Developer Portfolio</h3>
-              <p className="text-blue-300/90 text-xs md:text-sm mb-3 md:mb-4 leading-relaxed">Interactive portfolio with animations and modern UI</p>
+            <div className="p-4 md:p-6 w-full">
+              <h3 className="text-base md:text-xl font-semibold text-slate-100 mb-2 leading-tight w-full break-words">Developer Portfolio</h3>
+              <p className="text-blue-300/90 text-xs md:text-sm mb-3 md:mb-4 leading-relaxed w-full break-words">Interactive portfolio with animations and modern UI</p>
               
-              <div className="space-y-2 md:space-y-3 mb-3 md:mb-4">
-                <div className="flex flex-wrap gap-1.5 md:gap-2">
-                  <span className="px-1.5 py-0.5 md:px-2 md:py-1 bg-slate-800/80 text-slate-300 text-[10px] md:text-xs rounded">React</span>
-                  <span className="px-1.5 py-0.5 md:px-2 md:py-1 bg-slate-800/80 text-slate-300 text-[10px] md:text-xs rounded">Tailwind</span>
-                  <span className="px-1.5 py-0.5 md:px-2 md:py-1 bg-slate-800/80 text-slate-300 text-[10px] md:text-xs rounded">Framer Motion</span>
+              <div className="space-y-2 md:space-y-3 mb-3 md:mb-4 w-full">
+                <div className="flex flex-wrap gap-1.5 md:gap-2 w-full">
+                  <span className="px-1.5 py-0.5 md:px-2 md:py-1 bg-slate-800/80 text-slate-300 text-[10px] md:text-xs rounded whitespace-nowrap">React</span>
+                  <span className="px-1.5 py-0.5 md:px-2 md:py-1 bg-slate-800/80 text-slate-300 text-[10px] md:text-xs rounded whitespace-nowrap">Tailwind</span>
+                  <span className="px-1.5 py-0.5 md:px-2 md:py-1 bg-slate-800/80 text-slate-300 text-[10px] md:text-xs rounded whitespace-nowrap">Framer Motion</span>
                 </div>
                 
-                <ul className="text-slate-400 text-xs md:text-sm space-y-1">
-                  <li className="flex items-center gap-2">
-                    <span className="text-blue-400">✓</span> <span className="truncate">Scroll animations & transitions</span>
+                <ul className="text-slate-400 text-xs md:text-sm space-y-1 w-full">
+                  <li className="flex items-center gap-2 w-full">
+                    <span className="text-blue-400 flex-shrink-0">✓</span> <span className="break-words">Scroll animations & transitions</span>
                   </li>
-                  <li className="flex items-center gap-2">
-                    <span className="text-blue-400">✓</span> <span className="truncate">Interactive project showcase</span>
+                  <li className="flex items-center gap-2 w-full">
+                    <span className="text-blue-400 flex-shrink-0">✓</span> <span className="break-words">Interactive project showcase</span>
                   </li>
-                  <li className="flex items-center gap-2">
-                    <span className="text-blue-400">✓</span> <span className="truncate">Responsive design all devices</span>
+                  <li className="flex items-center gap-2 w-full">
+                    <span className="text-blue-400 flex-shrink-0">✓</span> <span className="break-words">Responsive design all devices</span>
                   </li>
                 </ul>
               </div>
               
-              <div className="flex flex-col sm:flex-row gap-3 pt-2">
+              <div className="flex flex-col gap-3 pt-2 w-full">
                 <a
                   href="https://github.com/Gaurav-29-eng/gaurav-portfolio"
                   target="_blank"
-                  className="inline-flex items-center justify-center gap-1.5 px-4 py-3 bg-slate-800/80 hover:bg-slate-700/80 text-blue-300 text-sm rounded-lg transition-all duration-300 border border-blue-400/20 hover:border-blue-400/40 active:bg-slate-700/90 active:border-blue-400/60 active:scale-95 w-full sm:w-auto"
+                  className="inline-flex items-center justify-center gap-1.5 px-4 py-3 bg-slate-800/80 hover:bg-slate-700/80 text-blue-300 text-sm rounded-lg transition-all duration-300 border border-blue-400/20 hover:border-blue-400/40 active:bg-slate-700/90 active:border-blue-400/60 active:scale-95 w-full"
                 >
-                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                  GitHub
+                  <svg className="w-4 h-4 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                  <span className="break-words">GitHub</span>
                 </a>
                 <a
                   href="https://gaurav-portfolio-roan.vercel.app/"
                   target="_blank"
-                  className="inline-flex items-center justify-center gap-1.5 px-4 py-3 bg-gradient-to-r from-blue-400/20 to-indigo-400/20 hover:from-blue-400/30 hover:to-indigo-400/30 text-blue-300 text-sm rounded-lg transition-all duration-300 border border-blue-400/30 hover:border-blue-400/50 active:from-blue-400/40 active:to-indigo-400/40 active:border-blue-400/70 active:scale-95 w-full sm:w-auto"
+                  className="inline-flex items-center justify-center gap-1.5 px-4 py-3 bg-gradient-to-r from-blue-400/20 to-indigo-400/20 hover:from-blue-400/30 hover:to-indigo-400/30 text-blue-300 text-sm rounded-lg transition-all duration-300 border border-blue-400/30 hover:border-blue-400/50 active:from-blue-400/40 active:to-indigo-400/40 active:border-blue-400/70 active:scale-95 w-full"
                 >
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
-                  Live Demo
+                  <svg className="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                  <span className="break-words">Live Demo</span>
                 </a>
               </div>
             </div>
