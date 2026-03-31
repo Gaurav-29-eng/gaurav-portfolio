@@ -184,7 +184,7 @@ export default function Portfolio() {
         </div>
       </nav>
 
-      {/* HERO - Vision Pro Style Glass Card */}
+      {/* HERO - Vision Pro Style Glass Card with Parallax Depth */}
       <section className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-24 md:pt-32 pb-16" style={{ perspective: '1000px' }}>
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -192,31 +192,55 @@ export default function Portfolio() {
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           className="relative w-full max-w-5xl mx-auto"
         >
-          {/* Main Glass Card Container */}
+          {/* Main Glass Card Container - Primary Tilt Layer */}
           <div 
             className="relative rounded-3xl p-[1px] bg-gradient-to-br from-cyan-500/30 via-blue-500/20 to-violet-500/30 shadow-[0_32px_80px_rgba(0,0,0,0.5),0_0_0_1px_rgba(255,255,255,0.05)_inset]"
             style={{
-              transform: `rotateY(${smoothMouse.x * 2}deg) rotateX(${-smoothMouse.y * 2}deg)`,
+              transform: `rotateY(${smoothMouse.x * 3}deg) rotateX(${-smoothMouse.y * 3}deg)`,
               transformStyle: 'preserve-3d',
-              transition: 'transform 0.1s ease-out',
+              transition: 'transform 0.15s ease-out',
             }}
           >
             {/* Inner Glass Surface */}
             <div className="relative rounded-3xl bg-slate-950/60 backdrop-blur-2xl overflow-hidden">
-              {/* Ambient Glow */}
-              <div className="absolute -top-32 -right-32 w-64 h-64 bg-cyan-500/10 rounded-full blur-[100px]" />
-              <div className="absolute -bottom-32 -left-32 w-64 h-64 bg-violet-500/10 rounded-full blur-[100px]" />
+              {/* Ambient Glow - Background Layer (slow parallax) */}
+              <div 
+                className="absolute -top-32 -right-32 w-64 h-64 bg-cyan-500/10 rounded-full blur-[100px]"
+                style={{
+                  transform: `translate(${smoothMouse.x * -15}px, ${smoothMouse.y * -15}px)`,
+                  transition: 'transform 0.3s ease-out',
+                }}
+              />
+              <div 
+                className="absolute -bottom-32 -left-32 w-64 h-64 bg-violet-500/10 rounded-full blur-[100px]"
+                style={{
+                  transform: `translate(${smoothMouse.x * -20}px, ${smoothMouse.y * -20}px)`,
+                  transition: 'transform 0.3s ease-out',
+                }}
+              />
               
-              <div className="relative px-6 py-10 md:px-12 md:py-14 flex flex-col md:flex-row items-center gap-8 md:gap-12">
+              <div 
+                className="relative px-6 py-10 md:px-12 md:py-14 flex flex-col md:flex-row items-center gap-8 md:gap-12"
+                style={{
+                  transform: `translateZ(20px) rotateY(${smoothMouse.x * 1}deg) rotateX(${-smoothMouse.y * 1}deg)`,
+                  transformStyle: 'preserve-3d',
+                  transition: 'transform 0.15s ease-out',
+                }}
+              >
                 
-                {/* Text Content */}
-                <div className="flex-1 text-center md:text-left space-y-5">
+                {/* Text Content - Mid Layer */}
+                <div 
+                  className="flex-1 text-center md:text-left space-y-5"
+                  style={{
+                    transform: `translateZ(40px) translateX(${smoothMouse.x * -8}px)`,
+                    transition: 'transform 0.15s ease-out',
+                  }}
+                >
                   <motion.p
                     initial={{ opacity: 0, x: -10 }}
                     animate={{ opacity: 0.9, x: 0 }}
                     transition={{ delay: 0.2, duration: 0.6 }}
                     className="text-xs uppercase tracking-[0.3em] text-cyan-300/80 font-medium"
-                    style={{ transform: 'translateZ(30px)' }}
                   >
                     Hi, I'm <span className="text-cyan-300 font-semibold">Gaurav</span>
                   </motion.p>
@@ -226,7 +250,7 @@ export default function Portfolio() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.3, duration: 0.7 }}
                     className="text-3xl sm:text-4xl md:text-5xl font-bold leading-[1.15] tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 via-violet-500 to-cyan-400"
-                    style={{ backgroundSize: '200% auto', animation: 'gradient-shift 8s ease infinite', transform: 'translateZ(40px)' }}
+                    style={{ backgroundSize: '200% auto', animation: 'gradient-shift 8s ease infinite' }}
                   >
                     I build interactive, real-time web experiences.
                   </motion.h1>
@@ -236,7 +260,6 @@ export default function Portfolio() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.45, duration: 0.6 }}
                     className="text-base md:text-lg text-slate-300/90 font-medium"
-                    style={{ transform: 'translateZ(25px)' }}
                   >
                     Frontend Developer focused on performance, UI and modern web apps.
                   </motion.p>
@@ -246,7 +269,6 @@ export default function Portfolio() {
                     animate={{ opacity: 0.7, y: 0 }}
                     transition={{ delay: 0.55, duration: 0.6 }}
                     className="text-sm text-slate-400/80 max-w-md"
-                    style={{ transform: 'translateZ(20px)' }}
                   >
                     Currently building a real-time IPL Auction platform with multiplayer features.
                   </motion.p>
@@ -256,7 +278,6 @@ export default function Portfolio() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.65, duration: 0.6 }}
                     className="flex flex-wrap gap-3 justify-center md:justify-start pt-2"
-                    style={{ transform: 'translateZ(35px)' }}
                   >
                     <a
                       href="#projects"
@@ -274,7 +295,7 @@ export default function Portfolio() {
                   </motion.div>
                 </div>
 
-                {/* Profile Image */}
+                {/* Profile Image - Foreground Layer (fast parallax) */}
                 <motion.div
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ 
@@ -288,10 +309,20 @@ export default function Portfolio() {
                     y: { delay: 1.2, duration: 5, repeat: Infinity, ease: "easeInOut" }
                   }}
                   className="relative flex-shrink-0 group"
-                  style={{ transform: 'translateZ(50px)' }}
+                  style={{
+                    transform: `translateZ(80px) translateX(${smoothMouse.x * 12}px) translateY(${smoothMouse.y * 8}px) rotateY(${smoothMouse.x * 4}deg) rotateX(${-smoothMouse.y * 4}deg)`,
+                    transformStyle: 'preserve-3d',
+                    transition: 'transform 0.1s ease-out',
+                  }}
                 >
-                  {/* Outer Glow Ring */}
-                  <div className="absolute -inset-3 rounded-full bg-gradient-to-br from-cyan-400/20 via-blue-500/20 to-violet-500/20 blur-xl opacity-60 group-hover:opacity-80 transition-opacity duration-500" />
+                  {/* Outer Glow Ring - moves with parallax */}
+                  <div 
+                    className="absolute -inset-3 rounded-full bg-gradient-to-br from-cyan-400/20 via-blue-500/20 to-violet-500/20 blur-xl opacity-60 group-hover:opacity-80 transition-opacity duration-500"
+                    style={{
+                      transform: `translateZ(-20px) scale(${1 + smoothMouse.y * 0.02})`,
+                      transition: 'transform 0.2s ease-out, opacity 0.5s',
+                    }}
+                  />
                   
                   {/* Gradient Border Ring */}
                   <div className="relative w-36 h-36 md:w-44 md:h-44 lg:w-52 lg:h-52 rounded-full p-[2px] bg-gradient-to-br from-cyan-400 via-blue-500 to-violet-500 shadow-[0_8px_30px_rgba(6,182,212,0.3)] group-hover:shadow-[0_12px_40px_rgba(6,182,212,0.5)] transition-shadow duration-500">
@@ -317,12 +348,16 @@ export default function Portfolio() {
           </div>
         </motion.div>
 
-        {/* Background Watermark */}
+        {/* Background Watermark - Deep Background (very slow parallax) */}
         <motion.h1
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 0.04, y: [0, -6, 0] }}
           transition={{ delay: 0.8, duration: 8, repeat: Infinity, ease: "easeInOut" }}
           className="pointer-events-none absolute right-4 md:right-8 bottom-8 text-[60px] md:text-[80px] lg:text-[100px] font-black tracking-[0.15em] text-cyan-400/20 select-none"
+          style={{
+            transform: `translate(${smoothMouse.x * -25}px, ${smoothMouse.y * -10}px)`,
+            transition: 'transform 0.4s ease-out',
+          }}
         >
           <span className="inline-block transition-all duration-500 ease-out hover:scale-105 hover:text-cyan-400/30 hover:drop-shadow-[0_0_30px_rgba(34,211,238,0.5)] cursor-default">GAURAV</span>
         </motion.h1>
