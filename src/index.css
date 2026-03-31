@@ -427,4 +427,37 @@ body {
     line-height: 1.5 !important;
     padding: 2px 0 !important;
   }
+  
+  /* Fix scrolling issues - ensure vertical scroll works on mobile */
+  #projects {
+    touch-action: pan-y !important;
+  }
+  
+  /* Project cards container - allow horizontal swipe but don't block vertical scroll */
+  #projects > div.flex {
+    touch-action: pan-y pan-x !important;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  /* Individual project cards - allow vertical scroll, no touch-action: none */
+  #projects .flex > .motion-div,
+  #projects .flex > [class*="motion"],
+  #projects .flex > div[class*="w-\\[90vw\\]"] {
+    touch-action: pan-y !important;
+    overflow: visible !important;
+  }
+  
+  /* Prevent any nested scroll containers inside cards */
+  #projects .flex > * div,
+  #projects .flex > * ul,
+  #projects .flex > * p,
+  #projects .flex > * h3 {
+    overflow: visible !important;
+    touch-action: pan-y !important;
+  }
+  
+  /* Ensure no element has touch-action: none */
+  #projects * {
+    touch-action: pan-y !important;
+  }
 }
