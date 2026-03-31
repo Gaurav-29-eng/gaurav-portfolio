@@ -4,6 +4,7 @@ import emailjs from "emailjs-com";
 import { useEffect, useRef, useState } from "react";
 import AnimatedBackground from "./AnimatedBackground";
 import CursorTrail from "./CursorTrail";
+import MagneticButton from "./MagneticButton";
 import profileImage from "../assets/profile.jpeg";
 
 // Fix: some eslint configs ignore JSX member-usage; this keeps `motion` marked as used.
@@ -164,23 +165,25 @@ export default function Portfolio() {
             </a>
           </div>
 
-          {/* Resume CTA - Premium Pill Button */}
-          <a
-            href="/resume.pdf"
-            download
-            className="relative group px-5 py-2 rounded-full
-                       bg-gradient-to-r from-cyan-500/20 to-blue-500/20
-                       border border-cyan-400/30
-                       text-sm font-medium text-cyan-300
-                       transition-all duration-300 ease-out
-                       hover:scale-105 hover:border-cyan-400/60
-                       hover:shadow-[0_0_20px_rgba(6,182,212,0.4),0_0_40px_rgba(6,182,212,0.2)]
-                       hover:text-white
-                       active:scale-95"
-          >
-            <span className="relative z-10">Resume</span>
-            <div className="absolute inset-0 rounded-full bg-gradient-to-r from-cyan-500/0 via-cyan-500/10 to-blue-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-          </a>
+          {/* Resume CTA - Premium Pill Button with Magnetic Effect */}
+          <MagneticButton strength={0.2}>
+            <a
+              href="/resume.pdf"
+              download
+              className="relative group px-5 py-2 rounded-full
+                         bg-gradient-to-r from-cyan-500/20 to-blue-500/20
+                         border border-cyan-400/30
+                         text-sm font-medium text-cyan-300
+                         transition-all duration-300 ease-out
+                         hover:scale-105 hover:border-cyan-400/60
+                         hover:shadow-[0_0_20px_rgba(6,182,212,0.4),0_0_40px_rgba(6,182,212,0.2)]
+                         hover:text-white
+                         active:scale-95"
+            >
+              <span className="relative z-10">Resume</span>
+              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-cyan-500/0 via-cyan-500/10 to-blue-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            </a>
+          </MagneticButton>
         </div>
       </nav>
 
@@ -279,19 +282,23 @@ export default function Portfolio() {
                     transition={{ delay: 0.65, duration: 0.6 }}
                     className="flex flex-wrap gap-3 justify-center md:justify-start pt-2"
                   >
-                    <a
-                      href="#projects"
-                      className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-cyan-400 to-blue-500 text-slate-950 px-6 py-2.5 text-sm font-semibold shadow-[0_4px_20px_rgba(6,182,212,0.4)] hover:shadow-[0_8px_30px_rgba(6,182,212,0.6)] transition-all duration-300 ease-out hover:scale-105 hover:-translate-y-0.5"
-                    >
-                      View Projects
-                    </a>
-                    <a
-                      href="/resume.pdf"
-                      download
-                      className="inline-flex items-center justify-center gap-2 rounded-full border border-white/20 bg-white/[0.03] px-6 py-2.5 text-sm font-medium text-slate-200 hover:bg-white/[0.08] hover:border-cyan-400/50 hover:text-cyan-300 transition-all duration-300 ease-out hover:scale-105 hover:-translate-y-0.5"
-                    >
-                      Download CV
-                    </a>
+                    <MagneticButton strength={0.25}>
+                      <a
+                        href="#projects"
+                        className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-cyan-400 to-blue-500 text-slate-950 px-6 py-2.5 text-sm font-semibold shadow-[0_4px_20px_rgba(6,182,212,0.4)] hover:shadow-[0_8px_30px_rgba(6,182,212,0.6)] transition-all duration-300 ease-out hover:scale-105 hover:-translate-y-0.5"
+                      >
+                        View Projects
+                      </a>
+                    </MagneticButton>
+                    <MagneticButton strength={0.25}>
+                      <a
+                        href="/resume.pdf"
+                        download
+                        className="inline-flex items-center justify-center gap-2 rounded-full border border-white/20 bg-white/[0.03] px-6 py-2.5 text-sm font-medium text-slate-200 hover:bg-white/[0.08] hover:border-cyan-400/50 hover:text-cyan-300 transition-all duration-300 ease-out hover:scale-105 hover:-translate-y-0.5"
+                      >
+                        Download CV
+                      </a>
+                    </MagneticButton>
                   </motion.div>
                 </div>
 
