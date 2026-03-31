@@ -374,4 +374,32 @@ body {
     width: 100%;
     max-width: 100%;
   }
+  
+  /* Feature list alignment - ensure icon and text stay in single row */
+  #projects .flex > * ul li,
+  #projects .flex > * .space-y-1 > li {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 8px !important;
+    width: 100% !important;
+  }
+  
+  /* Ensure icon doesn't shrink */
+  #projects .flex > * ul li > span:first-child,
+  #projects .flex > * .space-y-1 > li > span:first-child {
+    flex-shrink: 0 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+  
+  /* Ensure text stays next to icon and wraps properly */
+  #projects .flex > * ul li > span:last-child,
+  #projects .flex > * .space-y-1 > li > span:last-child {
+    flex: 1 !important;
+    min-width: 0 !important;
+    word-break: break-word !important;
+  }
 }
