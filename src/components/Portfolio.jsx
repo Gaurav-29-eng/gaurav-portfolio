@@ -783,10 +783,10 @@ export default function Portfolio() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
           {/* IPL */}
           <motion.div
-            animate={{ y: [0, -4, 0] }}
-            transition={{ 
-              y: { duration: 6, repeat: Infinity, ease: "easeInOut" },
-            }}
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
             className="bg-slate-950/30 md:bg-slate-950/40 rounded-2xl md:rounded-2xl border border-white/[0.06] md:border-white/[0.08] hover:border-cyan-400/30 cursor-pointer group relative overflow-hidden backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.3)] md:shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:shadow-[0_12px_40px_rgba(6,182,212,0.15)] md:hover:shadow-[0_20px_60px_rgba(6,182,212,0.2)] transition-all duration-300 ease-in-out hover:-translate-y-1 hover:scale-[1.02]"
             style={{ perspective: '1000px', transformStyle: 'preserve-3d' }}
           >
@@ -858,10 +858,10 @@ export default function Portfolio() {
 
           {/* PORTFOLIO */}
           <motion.div
-            animate={{ y: [0, -4, 0] }}
-            transition={{ 
-              y: { duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1.5 },
-            }}
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.6, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
             className="bg-slate-950/30 md:bg-slate-950/40 rounded-2xl md:rounded-2xl border border-white/[0.06] md:border-white/[0.08] hover:border-blue-400/30 cursor-pointer group relative overflow-hidden backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.3)] md:shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:shadow-[0_12px_40px_rgba(59,130,246,0.15)] md:hover:shadow-[0_20px_60px_rgba(59,130,246,0.2)] transition-all duration-300 ease-in-out hover:-translate-y-1 hover:scale-[1.02]"
             style={{ perspective: '1000px', transformStyle: 'preserve-3d' }}
           >
