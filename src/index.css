@@ -402,4 +402,29 @@ body {
     min-width: 0 !important;
     word-break: break-word !important;
   }
+  
+  /* Improve feature list spacing */
+  #projects .flex > * ul,
+  #projects .flex > * .space-y-1 {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+    padding: 8px 0 !important;
+  }
+  
+  /* Ensure feature list container has proper padding */
+  #projects .flex > * ul.space-y-1,
+  #projects .flex > * .space-y-2 > ul,
+  #projects .flex > * .space-y-3 > ul {
+    margin: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  
+  /* Ensure text doesn't stretch too wide and stays readable */
+  #projects .flex > * ul li {
+    max-width: 100% !important;
+    line-height: 1.5 !important;
+    padding: 2px 0 !important;
+  }
 }
