@@ -931,6 +931,285 @@ export default function Portfolio() {
               </div>
             </div>
           </motion.div>
+
+          {/* PASSWORD GENERATOR */}
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.6, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+            className="w-full md:w-auto bg-slate-950/30 md:bg-slate-950/40 rounded-2xl md:rounded-2xl border border-white/[0.06] md:border-white/[0.08] hover:border-emerald-400/30 cursor-pointer group relative overflow-hidden backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.3)] md:shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:shadow-[0_12px_40px_rgba(16,185,129,0.15)] md:hover:shadow-[0_20px_60px_rgba(16,185,129,0.2)] transition-all duration-300 ease-in-out hover:-translate-y-1 hover:scale-[1.02] active:scale-[0.98]"
+            style={{ perspective: '1000px', transformStyle: 'preserve-3d' }}
+          >
+            {/* Glow effect overlay */}
+            <div className="absolute inset-0 bg-gradient-to-br from-emerald-400/0 via-emerald-400/0 to-emerald-400/0 group-hover:from-emerald-400/5 group-hover:via-transparent group-hover:to-transparent transition-all duration-500 rounded-2xl z-10 pointer-events-none" />
+            
+            {/* Project Image Preview */}
+            <div className="relative h-44 md:h-48 bg-gradient-to-br from-slate-800 via-emerald-900/30 to-slate-900 overflow-hidden">
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="text-5xl md:text-6xl">🔐</div>
+              </div>
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent" />
+              <div className="absolute top-2 right-2 md:top-3 md:right-3 flex flex-col md:flex-row items-end gap-1 md:gap-2">
+                <span className="px-1.5 py-0.5 md:px-2 md:py-1 bg-emerald-400/20 backdrop-blur-sm text-emerald-300 text-[10px] md:text-xs rounded-full border border-emerald-400/30 whitespace-nowrap">Web App</span>
+              </div>
+            </div>
+
+            <div className="p-4 md:p-6 w-full">
+              <h3 className="text-base md:text-xl font-semibold text-slate-100 mb-2 leading-tight w-full break-words">Password Generator</h3>
+              <p className="text-emerald-300/90 text-xs md:text-sm mb-3 md:mb-4 leading-relaxed w-full break-words">Modern web app to generate secure passwords with strength indicator</p>
+              
+              <div className="space-y-2 md:space-y-3 mb-3 md:mb-4 w-full">
+                <div className="flex flex-wrap gap-1.5 md:gap-2 w-full">
+                  <span className="px-1.5 py-0.5 md:px-2 md:py-1 bg-slate-800/80 text-slate-300 text-[10px] md:text-xs rounded whitespace-nowrap">React</span>
+                  <span className="px-1.5 py-0.5 md:px-2 md:py-1 bg-slate-800/80 text-slate-300 text-[10px] md:text-xs rounded whitespace-nowrap">Tailwind</span>
+                  <span className="px-1.5 py-0.5 md:px-2 md:py-1 bg-slate-800/80 text-slate-300 text-[10px] md:text-xs rounded whitespace-nowrap">JavaScript</span>
+                </div>
+                
+                <ul className="text-slate-400 text-xs md:text-sm space-y-2 w-full feature-list" style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                  <li className="flex items-start gap-2 w-full" style={{ display: 'flex', flexDirection: 'row' }}>
+                    <span className="text-emerald-400 flex-shrink-0">✓</span>
+                    <span className="feature-text" style={{ display: 'inline', flex: '1 1 auto' }}>Secure password generation</span>
+                  </li>
+                  <li className="flex items-start gap-2 w-full" style={{ display: 'flex', flexDirection: 'row' }}>
+                    <span className="text-emerald-400 flex-shrink-0">✓</span>
+                    <span className="feature-text" style={{ display: 'inline', flex: '1 1 auto' }}>Real-time strength indicator</span>
+                  </li>
+                  <li className="flex items-start gap-2 w-full" style={{ display: 'flex', flexDirection: 'row' }}>
+                    <span className="text-emerald-400 flex-shrink-0">✓</span>
+                    <span className="feature-text" style={{ display: 'inline', flex: '1 1 auto' }}>Customizable length & options</span>
+                  </li>
+                </ul>
+              </div>
+              
+              <div className="flex flex-col gap-3 pt-2 w-full">
+                <a
+                  href="https://github.com/Gaurav-29-eng/password-generator"
+                  target="_blank"
+                  className="inline-flex items-center justify-center gap-1.5 px-4 py-3 bg-slate-800/80 hover:bg-slate-700/80 text-emerald-300 text-sm rounded-lg transition-all duration-300 border border-emerald-400/20 hover:border-emerald-400/40 active:bg-slate-700/90 active:border-emerald-400/60 active:scale-95 w-full"
+                >
+                  <svg className="w-4 h-4 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                  <span className="break-words">GitHub</span>
+                </a>
+                <a
+                  href="https://password-generator-phi-one-17.vercel.app"
+                  target="_blank"
+                  className="inline-flex items-center justify-center gap-1.5 px-4 py-3 bg-gradient-to-r from-emerald-400/20 to-teal-400/20 hover:from-emerald-400/30 hover:to-teal-400/30 text-emerald-300 text-sm rounded-lg transition-all duration-300 border border-emerald-400/30 hover:border-emerald-400/50 active:from-emerald-400/40 active:to-teal-400/40 active:border-emerald-400/70 active:scale-95 w-full"
+                >
+                  <svg className="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                  <span className="break-words">Live Demo</span>
+                </a>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* AI CHAT ANALYZER */}
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.6, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
+            className="w-full md:w-auto bg-slate-950/30 md:bg-slate-950/40 rounded-2xl md:rounded-2xl border border-white/[0.06] md:border-white/[0.08] hover:border-violet-400/30 cursor-pointer group relative overflow-hidden backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.3)] md:shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:shadow-[0_12px_40px_rgba(139,92,246,0.15)] md:hover:shadow-[0_20px_60px_rgba(139,92,246,0.2)] transition-all duration-300 ease-in-out hover:-translate-y-1 hover:scale-[1.02] active:scale-[0.98]"
+            style={{ perspective: '1000px', transformStyle: 'preserve-3d' }}
+          >
+            {/* Glow effect overlay */}
+            <div className="absolute inset-0 bg-gradient-to-br from-violet-400/0 via-violet-400/0 to-violet-400/0 group-hover:from-violet-400/5 group-hover:via-transparent group-hover:to-transparent transition-all duration-500 rounded-2xl z-10 pointer-events-none" />
+            
+            {/* Project Image Preview */}
+            <div className="relative h-44 md:h-48 bg-gradient-to-br from-slate-800 via-violet-900/30 to-slate-900 overflow-hidden">
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="text-5xl md:text-6xl">🤖</div>
+              </div>
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent" />
+              <div className="absolute top-2 right-2 md:top-3 md:right-3 flex flex-col md:flex-row items-end gap-1 md:gap-2">
+                <span className="px-1.5 py-0.5 md:px-2 md:py-1 bg-violet-400/20 backdrop-blur-sm text-violet-300 text-[10px] md:text-xs rounded-full border border-violet-400/30 whitespace-nowrap">Flask</span>
+                <span className="px-1.5 py-0.5 md:px-2 md:py-1 bg-violet-400/20 backdrop-blur-sm text-violet-300 text-[10px] md:text-xs rounded-full border border-violet-400/30 whitespace-nowrap">AI</span>
+              </div>
+            </div>
+
+            <div className="p-4 md:p-6 w-full">
+              <h3 className="text-base md:text-xl font-semibold text-slate-100 mb-2 leading-tight w-full break-words">AI Chat Analyzer</h3>
+              <p className="text-violet-300/90 text-xs md:text-sm mb-3 md:mb-4 leading-relaxed w-full break-words">Flask-based app to store, search and summarize conversations</p>
+              
+              <div className="space-y-2 md:space-y-3 mb-3 md:mb-4 w-full">
+                <div className="flex flex-wrap gap-1.5 md:gap-2 w-full">
+                  <span className="px-1.5 py-0.5 md:px-2 md:py-1 bg-slate-800/80 text-slate-300 text-[10px] md:text-xs rounded whitespace-nowrap">Flask</span>
+                  <span className="px-1.5 py-0.5 md:px-2 md:py-1 bg-slate-800/80 text-slate-300 text-[10px] md:text-xs rounded whitespace-nowrap">Python</span>
+                  <span className="px-1.5 py-0.5 md:px-2 md:py-1 bg-slate-800/80 text-slate-300 text-[10px] md:text-xs rounded whitespace-nowrap">AI</span>
+                </div>
+                
+                <ul className="text-slate-400 text-xs md:text-sm space-y-2 w-full feature-list" style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                  <li className="flex items-start gap-2 w-full" style={{ display: 'flex', flexDirection: 'row' }}>
+                    <span className="text-violet-400 flex-shrink-0">✓</span>
+                    <span className="feature-text" style={{ display: 'inline', flex: '1 1 auto' }}>Chat storage & management</span>
+                  </li>
+                  <li className="flex items-start gap-2 w-full" style={{ display: 'flex', flexDirection: 'row' }}>
+                    <span className="text-violet-400 flex-shrink-0">✓</span>
+                    <span className="feature-text" style={{ display: 'inline', flex: '1 1 auto' }}>AI-powered search</span>
+                  </li>
+                  <li className="flex items-start gap-2 w-full" style={{ display: 'flex', flexDirection: 'row' }}>
+                    <span className="text-violet-400 flex-shrink-0">✓</span>
+                    <span className="feature-text" style={{ display: 'inline', flex: '1 1 auto' }}>Conversation summarization</span>
+                  </li>
+                </ul>
+              </div>
+              
+              <div className="flex flex-col gap-3 pt-2 w-full">
+                <a
+                  href="https://github.com/Gaurav-29-eng/chat-analyzer"
+                  target="_blank"
+                  className="inline-flex items-center justify-center gap-1.5 px-4 py-3 bg-slate-800/80 hover:bg-slate-700/80 text-violet-300 text-sm rounded-lg transition-all duration-300 border border-violet-400/20 hover:border-violet-400/40 active:bg-slate-700/90 active:border-violet-400/60 active:scale-95 w-full"
+                >
+                  <svg className="w-4 h-4 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                  <span className="break-words">GitHub</span>
+                </a>
+                <a
+                  href="https://chat-analyzer-zpyx.onrender.com"
+                  target="_blank"
+                  className="inline-flex items-center justify-center gap-1.5 px-4 py-3 bg-gradient-to-r from-violet-400/20 to-purple-400/20 hover:from-violet-400/30 hover:to-purple-400/30 text-violet-300 text-sm rounded-lg transition-all duration-300 border border-violet-400/30 hover:border-violet-400/50 active:from-violet-400/40 active:to-purple-400/40 active:border-violet-400/70 active:scale-95 w-full"
+                >
+                  <svg className="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                  <span className="break-words">Live Demo</span>
+                </a>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* SMART FILE ORGANIZER */}
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.6, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
+            className="w-full md:w-auto bg-slate-950/30 md:bg-slate-950/40 rounded-2xl md:rounded-2xl border border-white/[0.06] md:border-white/[0.08] hover:border-orange-400/30 cursor-pointer group relative overflow-hidden backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.3)] md:shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:shadow-[0_12px_40px_rgba(251,146,60,0.15)] md:hover:shadow-[0_20px_60px_rgba(251,146,60,0.2)] transition-all duration-300 ease-in-out hover:-translate-y-1 hover:scale-[1.02] active:scale-[0.98]"
+            style={{ perspective: '1000px', transformStyle: 'preserve-3d' }}
+          >
+            {/* Glow effect overlay */}
+            <div className="absolute inset-0 bg-gradient-to-br from-orange-400/0 via-orange-400/0 to-orange-400/0 group-hover:from-orange-400/5 group-hover:via-transparent group-hover:to-transparent transition-all duration-500 rounded-2xl z-10 pointer-events-none" />
+            
+            {/* Project Image Preview */}
+            <div className="relative h-44 md:h-48 bg-gradient-to-br from-slate-800 via-orange-900/30 to-slate-900 overflow-hidden">
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="text-5xl md:text-6xl">📁</div>
+              </div>
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent" />
+              <div className="absolute top-2 right-2 md:top-3 md:right-3 flex flex-col md:flex-row items-end gap-1 md:gap-2">
+                <span className="px-1.5 py-0.5 md:px-2 md:py-1 bg-orange-400/20 backdrop-blur-sm text-orange-300 text-[10px] md:text-xs rounded-full border border-orange-400/30 whitespace-nowrap">Python</span>
+                <span className="px-1.5 py-0.5 md:px-2 md:py-1 bg-orange-400/20 backdrop-blur-sm text-orange-300 text-[10px] md:text-xs rounded-full border border-orange-400/30 whitespace-nowrap">CLI</span>
+              </div>
+            </div>
+
+            <div className="p-4 md:p-6 w-full">
+              <h3 className="text-base md:text-xl font-semibold text-slate-100 mb-2 leading-tight w-full break-words">Smart File Organizer</h3>
+              <p className="text-orange-300/90 text-xs md:text-sm mb-3 md:mb-4 leading-relaxed w-full break-words">Python tool that automatically organizes files into categories</p>
+              
+              <div className="space-y-2 md:space-y-3 mb-3 md:mb-4 w-full">
+                <div className="flex flex-wrap gap-1.5 md:gap-2 w-full">
+                  <span className="px-1.5 py-0.5 md:px-2 md:py-1 bg-slate-800/80 text-slate-300 text-[10px] md:text-xs rounded whitespace-nowrap">Python</span>
+                  <span className="px-1.5 py-0.5 md:px-2 md:py-1 bg-slate-800/80 text-slate-300 text-[10px] md:text-xs rounded whitespace-nowrap">OS</span>
+                  <span className="px-1.5 py-0.5 md:px-2 md:py-1 bg-slate-800/80 text-slate-300 text-[10px] md:text-xs rounded whitespace-nowrap">Shutil</span>
+                </div>
+                
+                <ul className="text-slate-400 text-xs md:text-sm space-y-2 w-full feature-list" style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                  <li className="flex items-start gap-2 w-full" style={{ display: 'flex', flexDirection: 'row' }}>
+                    <span className="text-orange-400 flex-shrink-0">✓</span>
+                    <span className="feature-text" style={{ display: 'inline', flex: '1 1 auto' }}>Automatic file categorization</span>
+                  </li>
+                  <li className="flex items-start gap-2 w-full" style={{ display: 'flex', flexDirection: 'row' }}>
+                    <span className="text-orange-400 flex-shrink-0">✓</span>
+                    <span className="feature-text" style={{ display: 'inline', flex: '1 1 auto' }}>Extension-based sorting</span>
+                  </li>
+                  <li className="flex items-start gap-2 w-full" style={{ display: 'flex', flexDirection: 'row' }}>
+                    <span className="text-orange-400 flex-shrink-0">✓</span>
+                    <span className="feature-text" style={{ display: 'inline', flex: '1 1 auto' }}>Customizable categories</span>
+                  </li>
+                </ul>
+              </div>
+              
+              <div className="flex flex-col gap-3 pt-2 w-full">
+                <a
+                  href="https://github.com/Gaurav-29-eng/smart-file-organizer"
+                  target="_blank"
+                  className="inline-flex items-center justify-center gap-1.5 px-4 py-3 bg-slate-800/80 hover:bg-slate-700/80 text-orange-300 text-sm rounded-lg transition-all duration-300 border border-orange-400/20 hover:border-orange-400/40 active:bg-slate-700/90 active:border-orange-400/60 active:scale-95 w-full"
+                >
+                  <svg className="w-4 h-4 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                  <span className="break-words">GitHub</span>
+                </a>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* HOTEL BOOKING SYSTEM */}
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.6, delay: 0.35, ease: [0.22, 1, 0.36, 1] }}
+            className="w-full md:w-auto bg-slate-950/30 md:bg-slate-950/40 rounded-2xl md:rounded-2xl border border-white/[0.06] md:border-white/[0.08] hover:border-pink-400/30 cursor-pointer group relative overflow-hidden backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.3)] md:shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:shadow-[0_12px_40px_rgba(236,72,153,0.15)] md:hover:shadow-[0_20px_60px_rgba(236,72,153,0.2)] transition-all duration-300 ease-in-out hover:-translate-y-1 hover:scale-[1.02] active:scale-[0.98]"
+            style={{ perspective: '1000px', transformStyle: 'preserve-3d' }}
+          >
+            {/* Glow effect overlay */}
+            <div className="absolute inset-0 bg-gradient-to-br from-pink-400/0 via-pink-400/0 to-pink-400/0 group-hover:from-pink-400/5 group-hover:via-transparent group-hover:to-transparent transition-all duration-500 rounded-2xl z-10 pointer-events-none" />
+            
+            {/* Project Image Preview */}
+            <div className="relative h-44 md:h-48 bg-gradient-to-br from-slate-800 via-pink-900/30 to-slate-900 overflow-hidden">
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="text-5xl md:text-6xl">🏨</div>
+              </div>
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent" />
+              <div className="absolute top-2 right-2 md:top-3 md:right-3 flex flex-col md:flex-row items-end gap-1 md:gap-2">
+                <span className="px-1.5 py-0.5 md:px-2 md:py-1 bg-pink-400/20 backdrop-blur-sm text-pink-300 text-[10px] md:text-xs rounded-full border border-pink-400/30 whitespace-nowrap">Flask</span>
+                <span className="px-1.5 py-0.5 md:px-2 md:py-1 bg-pink-400/20 backdrop-blur-sm text-pink-300 text-[10px] md:text-xs rounded-full border border-pink-400/30 whitespace-nowrap">Full Stack</span>
+              </div>
+            </div>
+
+            <div className="p-4 md:p-6 w-full">
+              <h3 className="text-base md:text-xl font-semibold text-slate-100 mb-2 leading-tight w-full break-words">Hotel Booking System</h3>
+              <p className="text-pink-300/90 text-xs md:text-sm mb-3 md:mb-4 leading-relaxed w-full break-words">Flask-based web app to book and manage hotel reservations</p>
+              
+              <div className="space-y-2 md:space-y-3 mb-3 md:mb-4 w-full">
+                <div className="flex flex-wrap gap-1.5 md:gap-2 w-full">
+                  <span className="px-1.5 py-0.5 md:px-2 md:py-1 bg-slate-800/80 text-slate-300 text-[10px] md:text-xs rounded whitespace-nowrap">Flask</span>
+                  <span className="px-1.5 py-0.5 md:px-2 md:py-1 bg-slate-800/80 text-slate-300 text-[10px] md:text-xs rounded whitespace-nowrap">SQLAlchemy</span>
+                  <span className="px-1.5 py-0.5 md:px-2 md:py-1 bg-slate-800/80 text-slate-300 text-[10px] md:text-xs rounded whitespace-nowrap">HTML</span>
+                </div>
+                
+                <ul className="text-slate-400 text-xs md:text-sm space-y-2 w-full feature-list" style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                  <li className="flex items-start gap-2 w-full" style={{ display: 'flex', flexDirection: 'row' }}>
+                    <span className="text-pink-400 flex-shrink-0">✓</span>
+                    <span className="feature-text" style={{ display: 'inline', flex: '1 1 auto' }}>Room booking & management</span>
+                  </li>
+                  <li className="flex items-start gap-2 w-full" style={{ display: 'flex', flexDirection: 'row' }}>
+                    <span className="text-pink-400 flex-shrink-0">✓</span>
+                    <span className="feature-text" style={{ display: 'inline', flex: '1 1 auto' }}>User authentication</span>
+                  </li>
+                  <li className="flex items-start gap-2 w-full" style={{ display: 'flex', flexDirection: 'row' }}>
+                    <span className="text-pink-400 flex-shrink-0">✓</span>
+                    <span className="feature-text" style={{ display: 'inline', flex: '1 1 auto' }}>Reservation tracking</span>
+                  </li>
+                </ul>
+              </div>
+              
+              <div className="flex flex-col gap-3 pt-2 w-full">
+                <a
+                  href="https://github.com/Gaurav-29-eng/hotel-booking-project"
+                  target="_blank"
+                  className="inline-flex items-center justify-center gap-1.5 px-4 py-3 bg-slate-800/80 hover:bg-slate-700/80 text-pink-300 text-sm rounded-lg transition-all duration-300 border border-pink-400/20 hover:border-pink-400/40 active:bg-slate-700/90 active:border-pink-400/60 active:scale-95 w-full"
+                >
+                  <svg className="w-4 h-4 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                  <span className="break-words">GitHub</span>
+                </a>
+                <a
+                  href="https://hotel-booking-project-80ln.onrender.com"
+                  target="_blank"
+                  className="inline-flex items-center justify-center gap-1.5 px-4 py-3 bg-gradient-to-r from-pink-400/20 to-rose-400/20 hover:from-pink-400/30 hover:to-rose-400/30 text-pink-300 text-sm rounded-lg transition-all duration-300 border border-pink-400/30 hover:border-pink-400/50 active:from-pink-400/40 active:to-rose-400/40 active:border-pink-400/70 active:scale-95 w-full"
+                >
+                  <svg className="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                  <span className="break-words">Live Demo</span>
+                </a>
+              </div>
+            </div>
+          </motion.div>
         </div>
 
       </motion.section>

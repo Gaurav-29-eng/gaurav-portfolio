@@ -300,14 +300,56 @@ body {
     margin-bottom: 8px !important;
   }
   
-  /* Prevent any responsive classes from leaking */
-  #projects .flex,
-  #projects .flex-row,
-  #projects .flex-col,
-  #projects .grid,
-  #projects .grid-cols-2,
+  /* ISOLATE mobile layout from desktop - override all responsive classes */
+  #projects [class*="md:"],
   #projects [class*="sm:"],
-  #projects [class*="md:flex"] {
+  #projects [class*="lg:"] {
     display: block !important;
+    flex-direction: column !important;
+    grid-template-columns: none !important;
+    grid-template-rows: none !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  
+  /* Force mobile container to flex-col only */
+  #projects > div,
+  #projects .flex,
+  #projects > div.flex {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+  }
+  
+  /* Override any flex-row or grid on cards */
+  #projects > div > div,
+  #projects .motion-div,
+  #projects [class*="motion"] {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  
+  /* Ensure no inherited flex/grid from desktop */
+  #projects * {
+    display: block !important;
+    flex: none !important;
+    grid: none !important;
+  }
+  
+  /* Exceptions: inline elements stay inline */
+  #projects span.feature-text,
+  #projects li > span:first-child {
+    display: inline !important;
+    width: auto !important;
+  }
+  
+  /* Buttons stay flex for centering */
+  #projects a,
+  #projects button {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100% !important;
   }
 }
