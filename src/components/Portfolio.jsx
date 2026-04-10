@@ -5,6 +5,8 @@ import { useEffect, useRef, useState } from "react";
 import AnimatedBackground from "./AnimatedBackground";
 import CursorTrail from "./CursorTrail";
 import profileImage from "../assets/profile.jpeg";
+import salesforceFlow from "../assets/salesforce-flow.png";
+import salesforceDashboard from "../assets/salesforce - dashboard.png";
 
 // Fix: some eslint configs ignore JSX member-usage; this keeps `motion` marked as used.
 void motion;
@@ -297,7 +299,7 @@ export default function Portfolio() {
                 
                 {/* Text Content - Mid Layer */}
                 <div 
-                  className="flex-1 text-center md:text-left space-y-5"
+                  className="flex-1 text-center space-y-5"
                   style={{
                     transform: `translateZ(40px) translateX(${smoothMouse.x * -8}px)`,
                     transition: 'transform 0.15s ease-out',
@@ -319,7 +321,7 @@ export default function Portfolio() {
                     className="text-2xl sm:text-3xl md:text-5xl font-bold leading-[1.15] tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 via-violet-500 to-cyan-400"
                     style={{ backgroundSize: '200% auto', animation: 'gradient-shift 8s ease infinite' }}
                   >
-                    I build interactive, real-time web experiences.
+                    Computer Science student building real-world projects in Web Development and Salesforce.
                   </motion.h1>
 
                   <motion.p
@@ -328,23 +330,14 @@ export default function Portfolio() {
                     transition={{ delay: 0.6, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
                     className="text-base md:text-lg text-slate-300/90 font-medium"
                   >
-                    Frontend Developer focused on performance, UI and modern web apps.
-                  </motion.p>
-
-                  <motion.p
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 0.7, y: 0 }}
-                    transition={{ delay: 0.75, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-                    className="text-sm text-slate-400/80 max-w-md"
-                  >
-                    Currently building a real-time IPL Auction platform with multiplayer features.
+                    Full Stack Developer building real-time applications using React, Python, and modern web technologies.
                   </motion.p>
 
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.9, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-                    className="flex flex-col sm:flex-row gap-3 justify-center md:justify-start pt-4"
+                    className="flex flex-col sm:flex-row gap-3 justify-center pt-4"
                   >
                     <a
                       href="#projects"
@@ -358,7 +351,15 @@ export default function Portfolio() {
                       download
                       className="inline-flex items-center justify-center gap-2 rounded-full border border-white/20 bg-white/[0.03] px-6 py-3 text-sm font-medium text-slate-200 hover:bg-white/[0.08] hover:border-cyan-400/50 hover:text-cyan-300 active:bg-white/[0.12] active:border-cyan-400/70 active:text-cyan-300 transition-all duration-300 ease-in-out hover:scale-105 hover:-translate-y-0.5 active:scale-95 active:translate-y-0 w-full sm:w-auto"
                     >
-                      Download CV
+                      Download Resume
+                    </a>
+                    <a
+                      href="https://github.com/Gaurav-29-eng"
+                      target="_blank"
+                      className="inline-flex items-center justify-center gap-2 rounded-full border border-white/20 bg-white/[0.03] px-6 py-3 text-sm font-medium text-slate-200 hover:bg-white/[0.08] hover:border-cyan-400/50 hover:text-cyan-300 active:bg-white/[0.12] active:border-cyan-400/70 active:text-cyan-300 transition-all duration-300 ease-in-out hover:scale-105 hover:-translate-y-0.5 active:scale-95 active:translate-y-0 w-full sm:w-auto"
+                    >
+                      <FaGithub className="w-4 h-4" />
+                      GitHub
                     </a>
                   </motion.div>
                 </div>
@@ -557,7 +558,7 @@ export default function Portfolio() {
           viewport={{ once: true }}
           className="text-slate-300/90 text-base md:text-lg mb-6 max-w-2xl"
         >
-          I specialize in building modern web applications with clean interfaces and smooth interactions.
+          I build scalable web applications and automation systems with a focus on performance, real-time interaction, and clean user experience.
         </motion.p>
 
         <ul className="space-y-3 text-slate-300/90 text-base md:text-lg max-w-2xl">
@@ -787,20 +788,21 @@ export default function Portfolio() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-            className="w-full md:w-auto bg-slate-950/30 md:bg-slate-950/40 rounded-2xl md:rounded-2xl border border-white/[0.06] md:border-white/[0.08] hover:border-cyan-400/30 cursor-pointer group relative overflow-hidden backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.3)] md:shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:shadow-[0_12px_40px_rgba(6,182,212,0.15)] md:hover:shadow-[0_20px_60px_rgba(6,182,212,0.2)] transition-all duration-300 ease-in-out hover:-translate-y-1 hover:scale-[1.02] active:scale-[0.98]"
+            className="w-full md:col-span-2 lg:col-span-1 md:w-auto bg-slate-950/30 md:bg-slate-950/40 rounded-2xl md:rounded-2xl border-2 border-amber-400/40 md:border-white/[0.08] hover:border-cyan-400/30 cursor-pointer group relative overflow-hidden backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.3)] md:shadow-[0_12px_40px_rgba(245,158,11,0.2)] hover:shadow-[0_12px_40px_rgba(6,182,212,0.2)] md:hover:shadow-[0_20px_60px_rgba(6,182,212,0.25)] transition-all duration-300 ease-in-out hover:-translate-y-1 hover:scale-[1.02] active:scale-[0.98] lg:hover:scale-[1.03]"
             style={{ perspective: '1000px', transformStyle: 'preserve-3d' }}
           >
             {/* Glow effect overlay */}
             <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/0 via-cyan-400/0 to-cyan-400/0 group-hover:from-cyan-400/5 group-hover:via-transparent group-hover:to-transparent transition-all duration-500 rounded-2xl z-10 pointer-events-none" />
             
             {/* Project Image Preview */}
-            <div className="relative h-44 md:h-48 bg-gradient-to-br from-slate-800 via-cyan-900/30 to-slate-900 overflow-hidden">
+            <div className="relative h-48 md:h-52 bg-gradient-to-br from-slate-800 via-cyan-900/30 to-slate-900 overflow-hidden">
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="text-5xl md:text-6xl">🏏</div>
               </div>
               <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent" />
               <div className="absolute top-2 right-2 md:top-3 md:right-3 flex flex-col md:flex-row items-end gap-1 md:gap-2">
-                <span className="px-1.5 py-0.5 md:px-2 md:py-1 bg-amber-400/20 backdrop-blur-sm text-amber-300 text-[10px] md:text-xs rounded-full border border-amber-400/30 whitespace-nowrap">In Progress</span>
+                <span className="px-1.5 py-0.5 md:px-2 md:py-1 bg-amber-400/30 backdrop-blur-sm text-amber-300 text-[10px] md:text-xs rounded-full border border-amber-400/40 whitespace-nowrap font-semibold">Featured</span>
+                <span className="px-1.5 py-0.5 md:px-2 md:py-1 bg-amber-500/20 backdrop-blur-sm text-amber-300 text-[10px] md:text-xs rounded-full border border-amber-500/30 whitespace-nowrap">Under Progress</span>
                 <span className="px-1.5 py-0.5 md:px-2 md:py-1 bg-cyan-400/20 backdrop-blur-sm text-cyan-300 text-[10px] md:text-xs rounded-full border border-cyan-400/30 whitespace-nowrap">Real-Time</span>
               </div>
             </div>
@@ -861,73 +863,78 @@ export default function Portfolio() {
             </div>
           </motion.div>
 
-          {/* PORTFOLIO */}
+          {/* SALESFORCE PLACEMENT MANAGEMENT SYSTEM */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.6, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
-            className="w-full md:w-auto bg-slate-950/30 md:bg-slate-950/40 rounded-2xl md:rounded-2xl border border-white/[0.06] md:border-white/[0.08] hover:border-blue-400/30 cursor-pointer group relative overflow-hidden backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.3)] md:shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:shadow-[0_12px_40px_rgba(59,130,246,0.15)] md:hover:shadow-[0_20px_60px_rgba(59,130,246,0.2)] transition-all duration-300 ease-in-out hover:-translate-y-1 hover:scale-[1.02] active:scale-[0.98]"
+            className="w-full md:col-span-2 lg:col-span-1 md:w-auto bg-slate-950/30 md:bg-slate-950/40 rounded-2xl md:rounded-2xl border-2 border-amber-400/40 md:border-white/[0.08] hover:border-sky-400/30 cursor-pointer group relative overflow-hidden backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.3)] md:shadow-[0_12px_40px_rgba(245,158,11,0.2)] hover:shadow-[0_12px_40px_rgba(14,165,233,0.2)] md:hover:shadow-[0_20px_60px_rgba(14,165,233,0.25)] transition-all duration-300 ease-in-out hover:-translate-y-1 hover:scale-[1.02] active:scale-[0.98] lg:hover:scale-[1.03]"
             style={{ perspective: '1000px', transformStyle: 'preserve-3d' }}
           >
             {/* Glow effect overlay */}
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-400/0 via-blue-400/0 to-blue-400/0 group-hover:from-blue-400/5 group-hover:via-transparent group-hover:to-transparent transition-all duration-500 rounded-2xl z-10 pointer-events-none" />
-            
+            <div className="absolute inset-0 bg-gradient-to-br from-sky-400/0 via-sky-400/0 to-sky-400/0 group-hover:from-sky-400/5 group-hover:via-transparent group-hover:to-transparent transition-all duration-500 rounded-2xl z-10 pointer-events-none" />
+
             {/* Project Image Preview */}
-            <div className="relative h-44 md:h-48 bg-gradient-to-br from-slate-800 via-blue-900/30 to-slate-900 overflow-hidden">
+            <div className="relative h-48 md:h-52 bg-gradient-to-br from-slate-800 via-sky-900/30 to-slate-900 overflow-hidden">
               <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-5xl md:text-6xl">💼</div>
+                <div className="text-5xl md:text-6xl">☁️</div>
               </div>
               <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent" />
               <div className="absolute top-2 right-2 md:top-3 md:right-3 flex flex-col md:flex-row items-end gap-1 md:gap-2">
-                <span className="px-1.5 py-0.5 md:px-2 md:py-1 bg-blue-400/20 backdrop-blur-sm text-blue-300 text-[10px] md:text-xs rounded-full border border-blue-400/30 whitespace-nowrap">Portfolio</span>
+                <span className="px-1.5 py-0.5 md:px-2 md:py-1 bg-amber-400/30 backdrop-blur-sm text-amber-300 text-[10px] md:text-xs rounded-full border border-amber-400/40 whitespace-nowrap font-semibold">Featured</span>
+                <span className="px-1.5 py-0.5 md:px-2 md:py-1 bg-sky-400/20 backdrop-blur-sm text-sky-300 text-[10px] md:text-xs rounded-full border border-sky-400/30 whitespace-nowrap">Salesforce</span>
+                <span className="px-1.5 py-0.5 md:px-2 md:py-1 bg-sky-400/20 backdrop-blur-sm text-sky-300 text-[10px] md:text-xs rounded-full border border-sky-400/30 whitespace-nowrap">CRM</span>
               </div>
             </div>
 
             <div className="p-4 md:p-6 w-full">
-              <h3 className="text-base md:text-xl font-semibold text-slate-100 mb-2 leading-tight w-full break-words">Developer Portfolio</h3>
-              <p className="text-blue-300/90 text-xs md:text-sm mb-3 md:mb-4 leading-relaxed w-full break-words">Interactive portfolio with animations and modern UI</p>
-              
+              <h3 className="text-base md:text-xl font-semibold text-slate-100 mb-2 leading-tight w-full break-words">Salesforce Placement Management System</h3>
+              <p className="text-sky-300/90 text-xs md:text-sm mb-3 md:mb-4 leading-relaxed w-full break-words">End-to-end campus placement solution built on Salesforce Platform</p>
+
               <div className="space-y-2 md:space-y-3 mb-3 md:mb-4 w-full">
                 <div className="flex flex-wrap gap-1.5 md:gap-2 w-full">
-                  <span className="px-1.5 py-0.5 md:px-2 md:py-1 bg-slate-800/80 text-slate-300 text-[10px] md:text-xs rounded whitespace-nowrap">React</span>
-                  <span className="px-1.5 py-0.5 md:px-2 md:py-1 bg-slate-800/80 text-slate-300 text-[10px] md:text-xs rounded whitespace-nowrap">Tailwind</span>
-                  <span className="px-1.5 py-0.5 md:px-2 md:py-1 bg-slate-800/80 text-slate-300 text-[10px] md:text-xs rounded whitespace-nowrap">Framer Motion</span>
+                  <span className="px-1.5 py-0.5 md:px-2 md:py-1 bg-slate-800/80 text-slate-300 text-[10px] md:text-xs rounded whitespace-nowrap">Salesforce</span>
+                  <span className="px-1.5 py-0.5 md:px-2 md:py-1 bg-slate-800/80 text-slate-300 text-[10px] md:text-xs rounded whitespace-nowrap">Flow Builder</span>
+                  <span className="px-1.5 py-0.5 md:px-2 md:py-1 bg-slate-800/80 text-slate-300 text-[10px] md:text-xs rounded whitespace-nowrap">Reports</span>
+                  <span className="px-1.5 py-0.5 md:px-2 md:py-1 bg-slate-800/80 text-slate-300 text-[10px] md:text-xs rounded whitespace-nowrap">Dashboard</span>
                 </div>
-                
+
                 <ul className="text-slate-400 text-xs md:text-sm space-y-2 w-full feature-list" style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
                   <li className="flex items-start gap-2 w-full" style={{ display: 'flex', flexDirection: 'row' }}>
-                    <span className="text-blue-400 flex-shrink-0">✓</span>
-                    <span className="feature-text" style={{ display: 'inline', flex: '1 1 auto' }}>Scroll animations & transitions</span>
+                    <span className="text-sky-400 flex-shrink-0">✓</span>
+                    <span className="feature-text" style={{ display: 'inline', flex: '1 1 auto' }}>Designed custom objects: Student, Company, Application</span>
                   </li>
                   <li className="flex items-start gap-2 w-full" style={{ display: 'flex', flexDirection: 'row' }}>
-                    <span className="text-blue-400 flex-shrink-0">✓</span>
-                    <span className="feature-text" style={{ display: 'inline', flex: '1 1 auto' }}>Interactive project showcase</span>
+                    <span className="text-sky-400 flex-shrink-0">✓</span>
+                    <span className="feature-text" style={{ display: 'inline', flex: '1 1 auto' }}>Built relationships using lookup fields</span>
                   </li>
                   <li className="flex items-start gap-2 w-full" style={{ display: 'flex', flexDirection: 'row' }}>
-                    <span className="text-blue-400 flex-shrink-0">✓</span>
-                    <span className="feature-text" style={{ display: 'inline', flex: '1 1 auto' }}>Responsive design all devices</span>
+                    <span className="text-sky-400 flex-shrink-0">✓</span>
+                    <span className="feature-text" style={{ display: 'inline', flex: '1 1 auto' }}>Created Record-Triggered Flow for automation</span>
+                  </li>
+                  <li className="flex items-start gap-2 w-full" style={{ display: 'flex', flexDirection: 'row' }}>
+                    <span className="text-sky-400 flex-shrink-0">✓</span>
+                    <span className="feature-text" style={{ display: 'inline', flex: '1 1 auto' }}>Auto-updates student as "Placed" when selected</span>
+                  </li>
+                  <li className="flex items-start gap-2 w-full" style={{ display: 'flex', flexDirection: 'row' }}>
+                    <span className="text-sky-400 flex-shrink-0">✓</span>
+                    <span className="feature-text" style={{ display: 'inline', flex: '1 1 auto' }}>Built dashboard for placement insights</span>
                   </li>
                 </ul>
               </div>
-              
-              <div className="flex flex-col gap-3 pt-2 w-full">
-                <a
-                  href="https://github.com/Gaurav-29-eng/gaurav-portfolio"
-                  target="_blank"
-                  className="inline-flex items-center justify-center gap-1.5 px-4 py-3 bg-slate-800/80 hover:bg-slate-700/80 text-blue-300 text-sm rounded-lg transition-all duration-300 border border-blue-400/20 hover:border-blue-400/40 active:bg-slate-700/90 active:border-blue-400/60 active:scale-95 w-full"
-                >
-                  <svg className="w-4 h-4 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                  <span className="break-words">GitHub</span>
-                </a>
-                <a
-                  href="https://gaurav-portfolio-roan.vercel.app/"
-                  target="_blank"
-                  className="inline-flex items-center justify-center gap-1.5 px-4 py-3 bg-gradient-to-r from-blue-400/20 to-indigo-400/20 hover:from-blue-400/30 hover:to-indigo-400/30 text-blue-300 text-sm rounded-lg transition-all duration-300 border border-blue-400/30 hover:border-blue-400/50 active:from-blue-400/40 active:to-indigo-400/40 active:border-blue-400/70 active:scale-95 w-full"
-                >
-                  <svg className="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
-                  <span className="break-words">Live Demo</span>
-                </a>
+
+              {/* Screenshots Section */}
+              <div className="space-y-2 mb-4">
+                <p className="text-slate-400 text-xs font-medium">Screenshots</p>
+                <div className="grid grid-cols-2 gap-2">
+                  <div className="relative aspect-video bg-slate-800/50 rounded-lg border border-white/[0.06] overflow-hidden group/image cursor-pointer hover:border-sky-400/30 transition-all duration-300">
+                    <img src={salesforceFlow} alt="Flow Builder Screenshot" className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
+                  </div>
+                  <div className="relative aspect-video bg-slate-800/50 rounded-lg border border-white/[0.06] overflow-hidden group/image cursor-pointer hover:border-sky-400/30 transition-all duration-300">
+                    <img src={salesforceDashboard} alt="Dashboard Screenshot" className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
+                  </div>
+                </div>
               </div>
             </div>
           </motion.div>
@@ -1203,6 +1210,77 @@ export default function Portfolio() {
                   href="https://hotel-booking-project-80ln.onrender.com"
                   target="_blank"
                   className="inline-flex items-center justify-center gap-1.5 px-4 py-3 bg-gradient-to-r from-pink-400/20 to-rose-400/20 hover:from-pink-400/30 hover:to-rose-400/30 text-pink-300 text-sm rounded-lg transition-all duration-300 border border-pink-400/30 hover:border-pink-400/50 active:from-pink-400/40 active:to-rose-400/40 active:border-pink-400/70 active:scale-95 w-full"
+                >
+                  <svg className="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                  <span className="break-words">Live Demo</span>
+                </a>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* PORTFOLIO */}
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.6, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
+            className="w-full md:w-auto bg-slate-950/30 md:bg-slate-950/40 rounded-2xl md:rounded-2xl border border-white/[0.06] md:border-white/[0.08] hover:border-blue-400/30 cursor-pointer group relative overflow-hidden backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.3)] md:shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:shadow-[0_12px_40px_rgba(59,130,246,0.15)] md:hover:shadow-[0_20px_60px_rgba(59,130,246,0.2)] transition-all duration-300 ease-in-out hover:-translate-y-1 hover:scale-[1.02] active:scale-[0.98]"
+            style={{ perspective: '1000px', transformStyle: 'preserve-3d' }}
+          >
+            {/* Glow effect overlay */}
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-400/0 via-blue-400/0 to-blue-400/0 group-hover:from-blue-400/5 group-hover:via-transparent group-hover:to-transparent transition-all duration-500 rounded-2xl z-10 pointer-events-none" />
+
+            {/* Project Image Preview */}
+            <div className="relative h-44 md:h-48 bg-gradient-to-br from-slate-800 via-blue-900/30 to-slate-900 overflow-hidden">
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="text-5xl md:text-6xl">💼</div>
+              </div>
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent" />
+              <div className="absolute top-2 right-2 md:top-3 md:right-3 flex flex-col md:flex-row items-end gap-1 md:gap-2">
+                <span className="px-1.5 py-0.5 md:px-2 md:py-1 bg-blue-400/20 backdrop-blur-sm text-blue-300 text-[10px] md:text-xs rounded-full border border-blue-400/30 whitespace-nowrap">Portfolio</span>
+              </div>
+            </div>
+
+            <div className="p-4 md:p-6 w-full">
+              <h3 className="text-base md:text-xl font-semibold text-slate-100 mb-2 leading-tight w-full break-words">Developer Portfolio</h3>
+              <p className="text-blue-300/90 text-xs md:text-sm mb-3 md:mb-4 leading-relaxed w-full break-words">Interactive portfolio with animations and modern UI</p>
+
+              <div className="space-y-2 md:space-y-3 mb-3 md:mb-4 w-full">
+                <div className="flex flex-wrap gap-1.5 md:gap-2 w-full">
+                  <span className="px-1.5 py-0.5 md:px-2 md:py-1 bg-slate-800/80 text-slate-300 text-[10px] md:text-xs rounded whitespace-nowrap">React</span>
+                  <span className="px-1.5 py-0.5 md:px-2 md:py-1 bg-slate-800/80 text-slate-300 text-[10px] md:text-xs rounded whitespace-nowrap">Tailwind</span>
+                  <span className="px-1.5 py-0.5 md:px-2 md:py-1 bg-slate-800/80 text-slate-300 text-[10px] md:text-xs rounded whitespace-nowrap">Framer Motion</span>
+                </div>
+
+                <ul className="text-slate-400 text-xs md:text-sm space-y-2 w-full feature-list" style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                  <li className="flex items-start gap-2 w-full" style={{ display: 'flex', flexDirection: 'row' }}>
+                    <span className="text-blue-400 flex-shrink-0">✓</span>
+                    <span className="feature-text" style={{ display: 'inline', flex: '1 1 auto' }}>Scroll animations & transitions</span>
+                  </li>
+                  <li className="flex items-start gap-2 w-full" style={{ display: 'flex', flexDirection: 'row' }}>
+                    <span className="text-blue-400 flex-shrink-0">✓</span>
+                    <span className="feature-text" style={{ display: 'inline', flex: '1 1 auto' }}>Interactive project showcase</span>
+                  </li>
+                  <li className="flex items-start gap-2 w-full" style={{ display: 'flex', flexDirection: 'row' }}>
+                    <span className="text-blue-400 flex-shrink-0">✓</span>
+                    <span className="feature-text" style={{ display: 'inline', flex: '1 1 auto' }}>Responsive design all devices</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="flex flex-col gap-3 pt-2 w-full">
+                <a
+                  href="https://github.com/Gaurav-29-eng/gaurav-portfolio"
+                  target="_blank"
+                  className="inline-flex items-center justify-center gap-1.5 px-4 py-3 bg-slate-800/80 hover:bg-slate-700/80 text-blue-300 text-sm rounded-lg transition-all duration-300 border border-blue-400/20 hover:border-blue-400/40 active:bg-slate-700/90 active:border-blue-400/60 active:scale-95 w-full"
+                >
+                  <svg className="w-4 h-4 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                  <span className="break-words">GitHub</span>
+                </a>
+                <a
+                  href="https://gaurav-portfolio-roan.vercel.app/"
+                  target="_blank"
+                  className="inline-flex items-center justify-center gap-1.5 px-4 py-3 bg-gradient-to-r from-blue-400/20 to-indigo-400/20 hover:from-blue-400/30 hover:to-indigo-400/30 text-blue-300 text-sm rounded-lg transition-all duration-300 border border-blue-400/30 hover:border-blue-400/50 active:from-blue-400/40 active:to-indigo-400/40 active:border-blue-400/70 active:scale-95 w-full"
                 >
                   <svg className="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
                   <span className="break-words">Live Demo</span>
