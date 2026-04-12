@@ -1,4 +1,4 @@
-import { motion, useScroll, useAnimation } from "framer-motion";
+import { motion, useScroll, useAnimation, AnimatePresence } from "framer-motion";
 import { FaGithub, FaLinkedin, FaEnvelope, FaPhone, FaCode, FaGlobe, FaTools, FaExternalLinkAlt } from "react-icons/fa";
 import emailjs from "emailjs-com";
 import { useEffect, useRef, useState } from "react";
@@ -25,14 +25,113 @@ export default function Portfolio() {
   // Image modal state
   const [selectedImage, setSelectedImage] = useState(null);
 
-  // ESC key handler for modal
+  // Chatbot state
+  const [isChatOpen, setIsChatOpen] = useState(false);
+  const [chatMessages, setChatMessages] = useState([]);
+  const [userInput, setUserInput] = useState("");
+  const [isTyping, setIsTyping] = useState(false);
+
+  // ESC key handler for modal and chatbot
   useEffect(() => {
     const handleEsc = (e) => {
-      if (e.key === 'Escape') setSelectedImage(null);
+      if (e.key === 'Escape') {
+        setSelectedImage(null);
+        setIsChatOpen(false);
+      }
     };
     window.addEventListener('keydown', handleEsc);
     return () => window.removeEventListener('keydown', handleEsc);
   }, []);
+
+  // Initialize chatbot welcome message
+  useEffect(() => {
+    if (isChatOpen && chatMessages.length === 0) {
+      setTimeout(() => {
+        addBotMessage("Hey 👋 I'm GauravOS — your quick guide to Gaurav's work, skills, and projects. What would you like to know?");
+      }, 300);
+    }
+  }, [isChatOpen]);
+
+  // Add bot message with typing effect
+  const addBotMessage = (text) => {
+    setIsTyping(true);
+    setTimeout(() => {
+      setChatMessages(prev => [...prev, { type: 'bot', text }]);
+      setIsTyping(false);
+    }, 600);
+  };
+
+  // Handle quick action buttons
+  const handleQuickAction = (action) => {
+    setChatMessages(prev => [...prev, { type: 'user', text: action }]);
+    
+    const responses = {
+      'About Gaurav': "Gaurav is a Computer Science student focused on web development. He enjoys building real-world projects using React and Python, and is currently exploring Salesforce as well.",
+      'Skills': "He works with React, JavaScript, Python, HTML, and CSS. He also has basic experience with Salesforce and is continuously improving through projects.",
+      'Projects': "Gaurav has built projects like a personal portfolio website and a Salesforce-based placement management system. You can check them out in the projects section 👇",
+      'Contact': "You can connect with Gaurav through LinkedIn or check out his GitHub for more projects. All links are available in the contact section!"
+    };
+
+    const response = responses[action] || "That's a good question 😄 I might not have that yet, but feel free to explore the portfolio or reach out directly!";
+    addBotMessage(response);
+  };
+
+  // Handle user message
+  const handleSendMessage = () => {
+    if (!userInput.trim()) return;
+    
+    setChatMessages(prev => [...prev, { type: 'user', text: userInput }]);
+    
+    const lowerInput = userInput.toLowerCase();
+    let response = "That's a good question 😄 I might not have that yet, but feel free to explore the portfolio or reach out directly!";
+    
+    if (lowerInput.includes('about') || lowerInput.includes('who')) {
+      response = "Gaurav is a Computer Science student focused on web development. He enjoys building real-world projects using React and Python, and is currently exploring Salesforce as well.";
+    } else if (lowerInput.includes('skill') || lowerInput.includes('tech') || lowerInput.includes('know')) {
+      response = "He works with React, JavaScript, Python, HTML, and CSS. He also has basic experience with Salesforce and is continuously improving through projects.";
+    } else if (lowerInput.includes('project') || lowerInput.includes('work') || lowerInput.includes('build')) {
+      response = "Gaurav has built projects like a personal portfolio website and a Salesforce-based placement management system. You can check them out in the projects section 👇";
+    } else if (lowerInput.includes('contact') || lowerInput.includes('reach') || lowerInput.includes('email') || lowerInput.includes('linkedin')) {
+      response = "You can connect with Gaurav through LinkedIn or check out his GitHub for more projects. All links are available in the contact section!";
+    } else if (lowerInput.includes('hi') || lowerInput.includes('hello') || lowerInput.includes('hey')) {
+      response = "Hey there! 👋 I'm GauravOS. How can I help you learn more about Gaurav?";
+    }
+    
+    addBotMessage(response);
+    setUserInput('');
+  };
+
+  const quickActions = ['About Gaurav', 'Skills', 'Projects', 'Contact'];
+
+  // Collapsible sections state (default expanded)
+  const [expandedSections, setExpandedSections] = useState({
+    languages: true,
+    frontend: true,
+    tools: true
+  });
+
+  const toggleSection = (section) => {
+    setExpandedSections(prev => ({ ...prev, [section]: !prev[section] }));
+  };
+
+  // Chat scroll container ref
+  const chatContainerRef = useRef(null);
+
+  // Handle wheel event to prevent page scroll when inside chat
+  const handleChatWheel = (e) => {
+    const container = chatContainerRef.current;
+    if (!container) return;
+
+    const isScrollingDown = e.deltaY > 0;
+    const isAtBottom = container.scrollHeight - container.scrollTop <= container.clientHeight + 1;
+    const isAtTop = container.scrollTop === 0;
+
+    // If trying to scroll down but at bottom, or scroll up but at top, don't prevent
+    // Otherwise, prevent default to stop page scroll
+    if ((isScrollingDown && !isAtBottom) || (!isScrollingDown && !isAtTop)) {
+      e.stopPropagation();
+    }
+  };
 
   
   useEffect(() => {
@@ -648,35 +747,190 @@ export default function Portfolio() {
           <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-500">Tech Stack</span>
         </motion.h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5 max-w-4xl mx-auto">
-          {[ 
-            { icon: FaCode, title: "Languages", items: "Python • JavaScript • C • C++", color: "cyan", delay: 0 },
-            { icon: FaGlobe, title: "Frontend", items: "React.js • HTML5 • CSS3 • Tailwind CSS", color: "blue", delay: 0.1 },
-            { icon: FaTools, title: "Tools", items: "Git • GitHub • VS Code • Vercel", color: "indigo", delay: 0.2 },
-            { icon: null, title: "Core Concepts", items: "Data Structures & Algorithms • UI/UX", color: "violet", delay: 0.3, isDot: true }
-          ].map((item, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, scale: 0.95, y: 20 }}
-              whileInView={{ opacity: 1, scale: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: item.delay, ease: [0.25, 0.1, 0.25, 1] }}
-              viewport={{ }}
-              whileHover={{ y: -4, transition: { duration: 0.2 } }}
-              className={`relative overflow-hidden rounded-2xl bg-slate-950/40 border border-white/[0.08] hover:border-${item.color}-400/40 backdrop-blur-md p-5 flex flex-col gap-3 cursor-pointer shadow-[0_4px_20px_rgba(0,0,0,0.3)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.4)] transition-all duration-300`}
+        {/* Skills with Animated Progress Bars */}
+        <div className="space-y-8 max-w-3xl mx-auto">
+          {/* Languages Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0, ease: [0.25, 0.1, 0.25, 1] }}
+            viewport={{ }}
+            className="space-y-3"
+          >
+            <button
+              onClick={() => toggleSection('languages')}
+              className="w-full flex items-center justify-between text-sm font-semibold text-cyan-300 hover:text-cyan-200 transition-colors group"
             >
-              <div className={`inline-flex items-center gap-2 text-${item.color}-300 text-sm font-semibold`}>
-                {item.isDot ? (
-                  <span className="inline-block h-2 w-2 rounded-full bg-violet-300/90" />
-                ) : (
-                  <item.icon className={`text-${item.color}-300/90 w-4 h-4 md:w-5 md:h-5`} />
-                )}
-                {item.title}
-              </div>
-              <p className="text-xs text-slate-400/90 leading-relaxed">
-                {item.items}
-              </p>
-            </motion.div>
-          ))}
+              <span className="flex items-center gap-2">
+                <FaCode className="w-4 h-4" /> Languages
+              </span>
+              <motion.svg
+                animate={{ rotate: expandedSections.languages ? 180 : 0 }}
+                transition={{ duration: 0.3 }}
+                className="w-4 h-4 text-slate-400 group-hover:text-cyan-300"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </motion.svg>
+            </button>
+            <AnimatePresence>
+              {expandedSections.languages && (
+                <motion.div
+                  initial={{ height: 0, opacity: 0 }}
+                  animate={{ height: 'auto', opacity: 1 }}
+                  exit={{ height: 0, opacity: 0 }}
+                  transition={{ duration: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
+                  className="space-y-3 overflow-hidden"
+                >
+                  {[
+                    { name: "Python", level: 85, color: "cyan", icon: "🐍" },
+                    { name: "JavaScript", level: 80, color: "cyan", icon: "⚡" },
+                    { name: "C / C++", level: 70, color: "cyan", icon: "⚙️" },
+                  ].map((skill, i) => (
+                    <div key={i} className="space-y-1">
+                      <div className="flex justify-between text-xs items-center">
+                        <span className="text-slate-300 flex items-center gap-1.5"><span className="text-sm">{skill.icon}</span> {skill.name}</span>
+                        <span className="text-slate-400">{skill.level}%</span>
+                      </div>
+                      <div className="h-1.5 bg-slate-800 rounded-full overflow-hidden">
+                        <motion.div
+                          initial={{ width: 0 }}
+                          whileInView={{ width: `${skill.level}%` }}
+                          transition={{ duration: 1, delay: i * 0.1 + 0.2, ease: [0.25, 0.1, 0.25, 1] }}
+                          viewport={{ }}
+                          className="h-full bg-gradient-to-r from-cyan-400 via-cyan-300 to-blue-400 rounded-full shadow-[0_0_10px_rgba(34,211,238,0.4)]"
+                        />
+                      </div>
+                    </div>
+                  ))}
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </motion.div>
+
+          {/* Frontend Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.1, ease: [0.25, 0.1, 0.25, 1] }}
+            viewport={{ }}
+            className="space-y-3"
+          >
+            <button
+              onClick={() => toggleSection('frontend')}
+              className="w-full flex items-center justify-between text-sm font-semibold text-blue-300 hover:text-blue-200 transition-colors group"
+            >
+              <span className="flex items-center gap-2">
+                <FaGlobe className="w-4 h-4" /> Frontend
+              </span>
+              <motion.svg
+                animate={{ rotate: expandedSections.frontend ? 180 : 0 }}
+                transition={{ duration: 0.3 }}
+                className="w-4 h-4 text-slate-400 group-hover:text-blue-300"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </motion.svg>
+            </button>
+            <AnimatePresence>
+              {expandedSections.frontend && (
+                <motion.div
+                  initial={{ height: 0, opacity: 0 }}
+                  animate={{ height: 'auto', opacity: 1 }}
+                  exit={{ height: 0, opacity: 0 }}
+                  transition={{ duration: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
+                  className="space-y-3 overflow-hidden"
+                >
+                  {[
+                    { name: "React.js", level: 85, color: "blue", icon: "⚛️" },
+                    { name: "HTML5 & CSS3", level: 90, color: "blue", icon: "🎨" },
+                    { name: "Tailwind CSS", level: 88, color: "blue", icon: "🌊" },
+                  ].map((skill, i) => (
+                    <div key={i} className="space-y-1">
+                      <div className="flex justify-between text-xs items-center">
+                        <span className="text-slate-300 flex items-center gap-1.5"><span className="text-sm">{skill.icon}</span> {skill.name}</span>
+                        <span className="text-slate-400">{skill.level}%</span>
+                      </div>
+                      <div className="h-1.5 bg-slate-800 rounded-full overflow-hidden">
+                        <motion.div
+                          initial={{ width: 0 }}
+                          whileInView={{ width: `${skill.level}%` }}
+                          transition={{ duration: 1, delay: i * 0.1 + 0.2, ease: [0.25, 0.1, 0.25, 1] }}
+                          viewport={{ }}
+                          className="h-full bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400 rounded-full shadow-[0_0_10px_rgba(96,165,250,0.4)]"
+                        />
+                      </div>
+                    </div>
+                  ))}
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </motion.div>
+
+          {/* Tools Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
+            viewport={{ }}
+            className="space-y-3"
+          >
+            <button
+              onClick={() => toggleSection('tools')}
+              className="w-full flex items-center justify-between text-sm font-semibold text-indigo-300 hover:text-indigo-200 transition-colors group"
+            >
+              <span className="flex items-center gap-2">
+                <FaTools className="w-4 h-4" /> Tools
+              </span>
+              <motion.svg
+                animate={{ rotate: expandedSections.tools ? 180 : 0 }}
+                transition={{ duration: 0.3 }}
+                className="w-4 h-4 text-slate-400 group-hover:text-indigo-300"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </motion.svg>
+            </button>
+            <AnimatePresence>
+              {expandedSections.tools && (
+                <motion.div
+                  initial={{ height: 0, opacity: 0 }}
+                  animate={{ height: 'auto', opacity: 1 }}
+                  exit={{ height: 0, opacity: 0 }}
+                  transition={{ duration: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
+                  className="space-y-3 overflow-hidden"
+                >
+                  {[
+                    { name: "Git & GitHub", level: 82, color: "indigo", icon: "🔀" },
+                    { name: "VS Code", level: 90, color: "indigo", icon: "📝" },
+                    { name: "Vercel", level: 75, color: "indigo", icon: "▲" },
+                  ].map((skill, i) => (
+                    <div key={i} className="space-y-1">
+                      <div className="flex justify-between text-xs items-center">
+                        <span className="text-slate-300 flex items-center gap-1.5"><span className="text-sm">{skill.icon}</span> {skill.name}</span>
+                        <span className="text-slate-400">{skill.level}%</span>
+                      </div>
+                      <div className="h-1.5 bg-slate-800 rounded-full overflow-hidden">
+                        <motion.div
+                          initial={{ width: 0 }}
+                          whileInView={{ width: `${skill.level}%` }}
+                          transition={{ duration: 1, delay: i * 0.1 + 0.2, ease: [0.25, 0.1, 0.25, 1] }}
+                          viewport={{ }}
+                          className="h-full bg-gradient-to-r from-indigo-400 via-purple-400 to-fuchsia-400 rounded-full shadow-[0_0_10px_rgba(129,140,248,0.4)]"
+                        />
+                      </div>
+                    </div>
+                  ))}
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </motion.div>
         </div>
       </motion.section>
 
@@ -1475,6 +1729,148 @@ export default function Portfolio() {
           </motion.div>
         </motion.div>
       )}
+
+      {/* Chatbot - GauravOS */}
+      <div className="fixed bottom-4 right-4 md:bottom-6 md:right-6 z-40">
+        {/* Chat Window */}
+        {isChatOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: 20, scale: 0.95 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: 20, scale: 0.95 }}
+            transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+            className="mb-4 w-[320px] md:w-[360px] bg-slate-950/90 backdrop-blur-xl border border-white/[0.1] rounded-2xl shadow-[0_8px_40px_rgba(0,0,0,0.5)] overflow-hidden"
+          >
+            {/* Chat Header */}
+            <div className="flex items-center justify-between px-4 py-3 border-b border-white/[0.08] bg-gradient-to-r from-cyan-500/10 to-blue-500/10">
+              <div className="flex items-center gap-2">
+                <div className="w-8 h-8 rounded-full bg-gradient-to-r from-cyan-400 to-blue-500 flex items-center justify-center text-white text-sm font-semibold">
+                  G
+                </div>
+                <div>
+                  <h4 className="text-sm font-semibold text-slate-100">GauravOS</h4>
+                  <span className="text-xs text-emerald-400 flex items-center gap-1">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" /> Online
+                  </span>
+                </div>
+              </div>
+              <button
+                onClick={() => setIsChatOpen(false)}
+                className="p-1.5 rounded-full hover:bg-white/10 text-slate-400 hover:text-slate-200 transition-colors"
+              >
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+
+            {/* Chat Messages */}
+            <div 
+              ref={chatContainerRef}
+              onWheel={(e) => {
+                e.stopPropagation();
+                const container = chatContainerRef.current;
+                if (!container) return;
+                const isScrollingDown = e.deltaY > 0;
+                const isAtBottom = container.scrollHeight - container.scrollTop <= container.clientHeight + 1;
+                const isAtTop = container.scrollTop === 0;
+                if ((isScrollingDown && !isAtBottom) || (!isScrollingDown && !isAtTop)) {
+                  e.preventDefault();
+                }
+              }}
+              className="h-[280px] overflow-y-auto p-4 space-y-3 scrollbar-thin scrollbar-thumb-slate-700 scrollbar-track-transparent"
+            >
+              {chatMessages.map((msg, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.3 }}
+                  className={`flex ${msg.type === 'user' ? 'justify-end' : 'justify-start'}`}
+                >
+                  <div className={`max-w-[85%] px-3 py-2 rounded-xl text-sm ${
+                    msg.type === 'user' 
+                      ? 'bg-cyan-500/20 text-cyan-100 border border-cyan-400/30' 
+                      : 'bg-slate-800/80 text-slate-200 border border-white/[0.08]'
+                  }`}>
+                    {msg.text}
+                  </div>
+                </motion.div>
+              ))}
+              
+              {/* Typing Indicator */}
+              {isTyping && (
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  className="flex justify-start"
+                >
+                  <div className="bg-slate-800/80 border border-white/[0.08] px-3 py-2 rounded-xl flex items-center gap-1">
+                    <span className="w-1.5 h-1.5 rounded-full bg-slate-400 animate-bounce" style={{ animationDelay: '0ms' }} />
+                    <span className="w-1.5 h-1.5 rounded-full bg-slate-400 animate-bounce" style={{ animationDelay: '150ms' }} />
+                    <span className="w-1.5 h-1.5 rounded-full bg-slate-400 animate-bounce" style={{ animationDelay: '300ms' }} />
+                  </div>
+                </motion.div>
+              )}
+            </div>
+
+            {/* Quick Actions */}
+            {chatMessages.length <= 2 && (
+              <div className="px-4 pb-2 flex flex-wrap gap-2">
+                {quickActions.map((action) => (
+                  <button
+                    key={action}
+                    onClick={() => handleQuickAction(action)}
+                    className="px-3 py-1.5 text-xs bg-slate-800/80 hover:bg-cyan-500/20 text-slate-300 hover:text-cyan-300 border border-white/[0.08] hover:border-cyan-400/30 rounded-full transition-all duration-200"
+                  >
+                    {action}
+                  </button>
+                ))}
+              </div>
+            )}
+
+            {/* Input Area */}
+            <div className="p-3 border-t border-white/[0.08] bg-slate-950/50">
+              <div className="flex items-center gap-2">
+                <input
+                  type="text"
+                  value={userInput}
+                  onChange={(e) => setUserInput(e.target.value)}
+                  onKeyDown={(e) => e.key === 'Enter' && handleSendMessage()}
+                  placeholder="Type a message..."
+                  className="flex-1 px-3 py-2 bg-slate-800/80 border border-white/[0.08] rounded-xl text-sm text-slate-200 placeholder-slate-500 focus:outline-none focus:border-cyan-400/40 transition-colors"
+                />
+                <button
+                  onClick={handleSendMessage}
+                  className="p-2 bg-cyan-500 hover:bg-cyan-400 rounded-xl text-white transition-colors"
+                >
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </motion.div>
+        )}
+
+        {/* Chat Toggle Button */}
+        <motion.button
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          onClick={() => setIsChatOpen(!isChatOpen)}
+          className="w-14 h-14 rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 text-white shadow-[0_4px_20px_rgba(6,182,212,0.4)] hover:shadow-[0_8px_30px_rgba(6,182,212,0.6)] transition-shadow flex items-center justify-center"
+        >
+          {isChatOpen ? (
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+            </svg>
+          ) : (
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+            </svg>
+          )}
+        </motion.button>
+      </div>
     </motion.div>
   );
 }
