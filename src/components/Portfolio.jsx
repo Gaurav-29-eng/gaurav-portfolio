@@ -343,29 +343,28 @@ export default function Portfolio() {
                     transition: 'transform 0.15s ease-out',
                   }}
                 >
-                  {/* Name Badge with Gradient */}
+                  {/* Status Badge */}
                   <motion.div
                     initial={{ opacity: 0, y: 20, scale: 0.95 }}
                     animate={{ opacity: 1, y: 0, scale: 1 }}
                     transition={{ delay: 0.2, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-                    className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-900/50 border border-white/10 backdrop-blur-sm"
+                    className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/20 backdrop-blur-sm"
                   >
                     <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                    <span className="text-xs uppercase tracking-[0.2em] text-slate-400 font-medium">Available for opportunities</span>
+                    <span className="text-xs uppercase tracking-[0.15em] text-emerald-300 font-semibold">Open to Internships & Opportunities</span>
                   </motion.div>
 
-                  {/* Main Heading with Enhanced Gradient */}
+                  {/* Main Heading */}
                   <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.35, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-                    className="space-y-2"
+                    className="space-y-3"
                   >
-                    <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] tracking-tight">
+                    <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.05] tracking-tight">
                       <span className="text-slate-100">Hi, I'm </span>
                       <span 
-                        className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 via-violet-500 to-cyan-400"
-                        style={{ backgroundSize: '200% auto', animation: 'gradient-shift 5s ease infinite' }}
+                        className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-violet-500"
                       >
                         Gaurav
                       </span>
@@ -374,9 +373,9 @@ export default function Portfolio() {
                       initial={{ opacity: 0, y: 15 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.5, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-                      className="text-lg sm:text-xl md:text-2xl text-slate-300 font-light tracking-wide"
+                      className="text-lg sm:text-xl md:text-2xl text-slate-400 font-medium tracking-wide"
                     >
-                      Computer Science Student & Full Stack Developer
+                      Computer Science Student | Web Developer | Salesforce Enthusiast
                     </motion.p>
                   </motion.div>
 
@@ -385,26 +384,26 @@ export default function Portfolio() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.65, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-                    className="text-base md:text-lg text-slate-400 font-normal max-w-xl mx-auto leading-relaxed"
+                    className="text-base md:text-lg text-slate-400 font-normal max-w-2xl mx-auto leading-relaxed"
                   >
-                    Building real-world projects with React, Python, and modern web technologies. 
-                    Focused on creating scalable applications with exceptional user experiences.
+                    I build real-world projects with React and Python — from interactive web apps to automation tools. 
+                    Currently exploring Salesforce development and always eager to learn what solves actual problems.
                   </motion.p>
 
-                  {/* CTA Buttons - Staggered Animation */}
+                  {/* CTA Buttons */}
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.8, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-                    className="flex flex-col sm:flex-row gap-3 justify-center pt-2"
+                    className="flex flex-col sm:flex-row gap-4 justify-center pt-4"
                   >
                     <motion.a
                       href="#projects"
                       whileHover={{ scale: 1.03, y: -2 }}
                       whileTap={{ scale: 0.98 }}
-                      className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-7 py-3.5 text-sm font-semibold shadow-[0_4px_20px_rgba(6,182,212,0.3)] hover:shadow-[0_8px_30px_rgba(6,182,212,0.5)] transition-all duration-300 w-full sm:w-auto group"
+                      className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-8 py-4 text-sm font-semibold shadow-[0_4px_20px_rgba(6,182,212,0.3)] hover:shadow-[0_8px_30px_rgba(6,182,212,0.5)] transition-all duration-300 w-full sm:w-auto group"
                     >
-                      View Projects
+                      Explore My Work
                       <svg className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                       </svg>
@@ -415,7 +414,7 @@ export default function Portfolio() {
                       download
                       whileHover={{ scale: 1.03, y: -2 }}
                       whileTap={{ scale: 0.98 }}
-                      className="inline-flex items-center justify-center gap-2 rounded-full border border-white/20 bg-white/[0.03] px-7 py-3.5 text-sm font-medium text-slate-200 hover:bg-white/[0.08] hover:border-cyan-400/40 hover:text-cyan-300 transition-all duration-300 w-full sm:w-auto"
+                      className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/[0.05] px-8 py-4 text-sm font-medium text-slate-300 hover:bg-white/[0.1] hover:border-cyan-400/30 hover:text-cyan-300 transition-all duration-300 w-full sm:w-auto"
                     >
                       <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
@@ -427,7 +426,7 @@ export default function Portfolio() {
                       target="_blank"
                       whileHover={{ scale: 1.03, y: -2 }}
                       whileTap={{ scale: 0.98 }}
-                      className="inline-flex items-center justify-center gap-2 rounded-full border border-white/20 bg-white/[0.03] px-7 py-3.5 text-sm font-medium text-slate-200 hover:bg-white/[0.08] hover:border-cyan-400/40 hover:text-cyan-300 transition-all duration-300 w-full sm:w-auto"
+                      className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/[0.05] px-8 py-4 text-sm font-medium text-slate-300 hover:bg-white/[0.1] hover:border-cyan-400/30 hover:text-cyan-300 transition-all duration-300 w-full sm:w-auto"
                     >
                       <FaGithub className="w-4 h-4" />
                       GitHub
@@ -639,7 +638,7 @@ export default function Portfolio() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5 max-w-4xl mx-auto">
           {[ 
-            { icon: FaCode, title: "Languages", items: "Python • JavaScript • C • C++ • C#", color: "cyan", delay: 0 },
+            { icon: FaCode, title: "Languages", items: "Python • JavaScript • C • C++", color: "cyan", delay: 0 },
             { icon: FaGlobe, title: "Frontend", items: "React.js • HTML5 • CSS3 • Tailwind CSS", color: "blue", delay: 0.1 },
             { icon: FaTools, title: "Tools", items: "Git • GitHub • VS Code • Vercel", color: "indigo", delay: 0.2 },
             { icon: null, title: "Core Concepts", items: "Data Structures & Algorithms • UI/UX", color: "violet", delay: 0.3, isDot: true }
