@@ -253,12 +253,50 @@ export default function Portfolio() {
         )}
       </nav>
 
-      {/* HERO - Vision Pro Style Glass Card with Parallax Depth */}
-      <section className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-28 md:pt-32 pb-16" style={{ perspective: '1000px' }}>
+      {/* HERO - Premium Tech Startup Style */}
+      <section className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-28 md:pt-32 pb-16 relative overflow-hidden" style={{ perspective: '1000px' }}>
+        {/* Floating Geometric Elements */}
         <motion.div
-          initial={{ opacity: 0, y: 60 }}
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 0.4, scale: 1, y: [0, -20, 0], rotate: [0, 5, 0] }}
+          transition={{ 
+            opacity: { duration: 1.2, delay: 0.5 },
+            scale: { duration: 1.2, delay: 0.5 },
+            y: { duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1.5 },
+            rotate: { duration: 8, repeat: Infinity, ease: "easeInOut", delay: 1.5 }
+          }}
+          className="absolute top-20 right-[10%] w-20 h-20 md:w-32 md:h-32 rounded-2xl bg-gradient-to-br from-cyan-500/20 to-blue-600/10 blur-sm border border-cyan-400/20 hidden md:block"
+        />
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 0.3, scale: 1, y: [0, 15, 0], rotate: [0, -8, 0] }}
+          transition={{ 
+            opacity: { duration: 1.2, delay: 0.7 },
+            scale: { duration: 1.2, delay: 0.7 },
+            y: { duration: 5, repeat: Infinity, ease: "easeInOut", delay: 2 },
+            rotate: { duration: 7, repeat: Infinity, ease: "easeInOut", delay: 2 }
+          }}
+          className="absolute bottom-32 left-[8%] w-16 h-16 md:w-24 md:h-24 rounded-full bg-gradient-to-br from-violet-500/20 to-cyan-500/10 blur-sm border border-violet-400/20 hidden md:block"
+        />
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 0.25 }}
+          transition={{ duration: 1.5, delay: 1 }}
+          className="absolute top-40 left-[15%] w-2 h-2 rounded-full bg-cyan-400/60 hidden md:block"
+          style={{ animation: 'pulse 3s ease-in-out infinite' }}
+        />
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 0.2 }}
+          transition={{ duration: 1.5, delay: 1.2 }}
+          className="absolute bottom-40 right-[20%] w-3 h-3 rounded-full bg-violet-400/60 hidden md:block"
+          style={{ animation: 'pulse 4s ease-in-out infinite 1s' }}
+        />
+
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           className="relative w-full max-w-5xl mx-auto"
         >
           {/* Main Glass Card Container - Primary Tilt Layer */}
@@ -297,85 +335,118 @@ export default function Portfolio() {
                 }}
               >
                 
-                {/* Text Content - Mid Layer */}
+                {/* Text Content - Premium Typography */}
                 <div 
-                  className="flex-1 text-center space-y-5"
+                  className="flex-1 text-center space-y-6 md:space-y-7"
                   style={{
                     transform: `translateZ(40px) translateX(${smoothMouse.x * -8}px)`,
                     transition: 'transform 0.15s ease-out',
                   }}
                 >
+                  {/* Name Badge with Gradient */}
+                  <motion.div
+                    initial={{ opacity: 0, y: 20, scale: 0.95 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    transition={{ delay: 0.2, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+                    className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-900/50 border border-white/10 backdrop-blur-sm"
+                  >
+                    <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                    <span className="text-xs uppercase tracking-[0.2em] text-slate-400 font-medium">Available for opportunities</span>
+                  </motion.div>
+
+                  {/* Main Heading with Enhanced Gradient */}
+                  <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.35, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+                    className="space-y-2"
+                  >
+                    <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] tracking-tight">
+                      <span className="text-slate-100">Hi, I'm </span>
+                      <span 
+                        className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 via-violet-500 to-cyan-400"
+                        style={{ backgroundSize: '200% auto', animation: 'gradient-shift 5s ease infinite' }}
+                      >
+                        Gaurav
+                      </span>
+                    </h1>
+                    <motion.p
+                      initial={{ opacity: 0, y: 15 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.5, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+                      className="text-lg sm:text-xl md:text-2xl text-slate-300 font-light tracking-wide"
+                    >
+                      Computer Science Student & Full Stack Developer
+                    </motion.p>
+                  </motion.div>
+
+                  {/* Description */}
                   <motion.p
                     initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 0.9, x: 0, y: 0 }}
-                    transition={{ delay: 0.3, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-                    className="text-xs uppercase tracking-[0.3em] text-cyan-300/80 font-medium"
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.65, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+                    className="text-base md:text-lg text-slate-400 font-normal max-w-xl mx-auto leading-relaxed"
                   >
-                    Hi, I'm <span className="text-cyan-300 font-semibold">Gaurav</span>
+                    Building real-world projects with React, Python, and modern web technologies. 
+                    Focused on creating scalable applications with exceptional user experiences.
                   </motion.p>
 
-                  <motion.h1
-                    initial={{ opacity: 0, y: 25 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.45, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-                    className="text-2xl sm:text-3xl md:text-5xl font-bold leading-[1.15] tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 via-violet-500 to-cyan-400"
-                    style={{ backgroundSize: '200% auto', animation: 'gradient-shift 8s ease infinite' }}
-                  >
-                    Computer Science student building real-world projects in Web Development and Salesforce.
-                  </motion.h1>
-
-                  <motion.p
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.6, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-                    className="text-base md:text-lg text-slate-300/90 font-medium"
-                  >
-                    Full Stack Developer building real-time applications using React, Python, and modern web technologies.
-                  </motion.p>
-
+                  {/* CTA Buttons - Staggered Animation */}
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.9, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-                    className="flex flex-col sm:flex-row gap-3 justify-center pt-4"
+                    transition={{ delay: 0.8, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+                    className="flex flex-col sm:flex-row gap-3 justify-center pt-2"
                   >
-                    <a
+                    <motion.a
                       href="#projects"
-                      className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-cyan-400 to-blue-500 text-slate-950 px-6 py-3 text-sm font-semibold shadow-[0_4px_20px_rgba(6,182,212,0.4)] hover:shadow-[0_8px_30px_rgba(6,182,212,0.6)] active:shadow-[0_0_20px_rgba(6,182,212,0.6)] transition-all duration-300 ease-in-out hover:scale-105 hover:-translate-y-0.5 active:scale-95 active:translate-y-0 w-full sm:w-auto"
+                      whileHover={{ scale: 1.03, y: -2 }}
+                      whileTap={{ scale: 0.98 }}
+                      className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-7 py-3.5 text-sm font-semibold shadow-[0_4px_20px_rgba(6,182,212,0.3)] hover:shadow-[0_8px_30px_rgba(6,182,212,0.5)] transition-all duration-300 w-full sm:w-auto group"
                     >
                       View Projects
-                    </a>
-                    <a
+                      <svg className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                      </svg>
+                    </motion.a>
+                    <motion.a
                       href="/resume.pdf"
                       target="_blank"
                       download
-                      className="inline-flex items-center justify-center gap-2 rounded-full border border-white/20 bg-white/[0.03] px-6 py-3 text-sm font-medium text-slate-200 hover:bg-white/[0.08] hover:border-cyan-400/50 hover:text-cyan-300 active:bg-white/[0.12] active:border-cyan-400/70 active:text-cyan-300 transition-all duration-300 ease-in-out hover:scale-105 hover:-translate-y-0.5 active:scale-95 active:translate-y-0 w-full sm:w-auto"
+                      whileHover={{ scale: 1.03, y: -2 }}
+                      whileTap={{ scale: 0.98 }}
+                      className="inline-flex items-center justify-center gap-2 rounded-full border border-white/20 bg-white/[0.03] px-7 py-3.5 text-sm font-medium text-slate-200 hover:bg-white/[0.08] hover:border-cyan-400/40 hover:text-cyan-300 transition-all duration-300 w-full sm:w-auto"
                     >
-                      Download Resume
-                    </a>
-                    <a
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                      </svg>
+                      Resume
+                    </motion.a>
+                    <motion.a
                       href="https://github.com/Gaurav-29-eng"
                       target="_blank"
-                      className="inline-flex items-center justify-center gap-2 rounded-full border border-white/20 bg-white/[0.03] px-6 py-3 text-sm font-medium text-slate-200 hover:bg-white/[0.08] hover:border-cyan-400/50 hover:text-cyan-300 active:bg-white/[0.12] active:border-cyan-400/70 active:text-cyan-300 transition-all duration-300 ease-in-out hover:scale-105 hover:-translate-y-0.5 active:scale-95 active:translate-y-0 w-full sm:w-auto"
+                      whileHover={{ scale: 1.03, y: -2 }}
+                      whileTap={{ scale: 0.98 }}
+                      className="inline-flex items-center justify-center gap-2 rounded-full border border-white/20 bg-white/[0.03] px-7 py-3.5 text-sm font-medium text-slate-200 hover:bg-white/[0.08] hover:border-cyan-400/40 hover:text-cyan-300 transition-all duration-300 w-full sm:w-auto"
                     >
                       <FaGithub className="w-4 h-4" />
                       GitHub
-                    </a>
+                    </motion.a>
                   </motion.div>
                 </div>
 
-                {/* Profile Image - Foreground Layer (fast parallax) */}
+                {/* Profile Image - Premium Floating Effect */}
                 <motion.div
-                  initial={{ opacity: 0, scale: 0.8, y: 30 }}
+                  initial={{ opacity: 0, scale: 0.9, y: 40 }}
                   animate={{ 
                     opacity: 1, 
                     scale: 1,
-                    y: [0, -8, 0]
+                    y: [0, -12, 0]
                   }}
                   transition={{ 
-                    opacity: { delay: 0.5, duration: 0.8, ease: [0.22, 1, 0.36, 1] },
-                    scale: { delay: 0.5, duration: 0.8, ease: [0.22, 1, 0.36, 1] },
-                    y: { delay: 1.5, duration: 6, repeat: Infinity, ease: "easeInOut" }
+                    opacity: { delay: 0.4, duration: 0.7, ease: [0.22, 1, 0.36, 1] },
+                    scale: { delay: 0.4, duration: 0.7, ease: [0.22, 1, 0.36, 1] },
+                    y: { delay: 1.2, duration: 5, repeat: Infinity, ease: "easeInOut" }
                   }}
                   className="relative flex-shrink-0 group mx-auto"
                   style={{
@@ -384,17 +455,24 @@ export default function Portfolio() {
                     transition: 'transform 0.1s ease-out',
                   }}
                 >
-                  {/* Outer Glow Ring - moves with parallax */}
+                  {/* Multi-layer Glow Effect */}
                   <div 
-                    className="absolute -inset-3 rounded-full bg-gradient-to-br from-cyan-400/20 via-blue-500/20 to-violet-500/20 blur-xl opacity-60 group-hover:opacity-80 transition-opacity duration-500"
+                    className="absolute -inset-4 rounded-full bg-gradient-to-br from-cyan-400/10 via-blue-500/10 to-violet-500/10 blur-2xl opacity-50 group-hover:opacity-70 transition-opacity duration-500"
                     style={{
-                      transform: `translateZ(-20px) scale(${1 + smoothMouse.y * 0.02})`,
+                      transform: `translateZ(-30px) scale(${1 + smoothMouse.y * 0.02})`,
+                      transition: 'transform 0.2s ease-out, opacity 0.5s',
+                    }}
+                  />
+                  <div 
+                    className="absolute -inset-2 rounded-full bg-gradient-to-br from-cyan-400/20 via-blue-500/15 to-violet-500/20 blur-xl opacity-60 group-hover:opacity-80 transition-opacity duration-500"
+                    style={{
+                      transform: `translateZ(-15px) scale(${1 + smoothMouse.y * 0.015})`,
                       transition: 'transform 0.2s ease-out, opacity 0.5s',
                     }}
                   />
                   
                   {/* Gradient Border Ring */}
-                  <div className="relative w-36 h-36 md:w-44 md:h-44 lg:w-52 lg:h-52 rounded-full p-[2px] bg-gradient-to-br from-cyan-400 via-blue-500 to-violet-500 shadow-[0_8px_30px_rgba(6,182,212,0.3)] group-hover:shadow-[0_12px_40px_rgba(6,182,212,0.5)] transition-shadow duration-500">
+                  <div className="relative w-36 h-36 md:w-44 md:h-44 lg:w-52 lg:h-52 rounded-full p-[3px] bg-gradient-to-br from-cyan-400 via-blue-500 to-violet-500 shadow-[0_8px_30px_rgba(6,182,212,0.25)] group-hover:shadow-[0_12px_40px_rgba(6,182,212,0.4)] transition-all duration-500">
                     <div className="w-full h-full rounded-full overflow-hidden border-2 border-slate-950 bg-slate-900">
                       <img
                         src={profileImage}
@@ -405,11 +483,16 @@ export default function Portfolio() {
                     </div>
                   </div>
                   
-                  {/* Floating Ring Animation */}
+                  {/* Animated Rings */}
                   <motion.div
-                    className="absolute -inset-4 rounded-full border border-cyan-400/10"
+                    className="absolute -inset-5 rounded-full border border-cyan-400/10"
                     animate={{ rotate: 360 }}
-                    transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
+                    transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                  />
+                  <motion.div
+                    className="absolute -inset-6 rounded-full border border-violet-400/5"
+                    animate={{ rotate: -360 }}
+                    transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
                   />
                 </motion.div>
               </div>
@@ -436,98 +519,46 @@ export default function Portfolio() {
       <motion.section 
         id="why-hire-me"
         className="px-4 sm:px-8 py-20 md:py-28 max-w-6xl mx-auto"
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
-        viewport={{ once: true, margin: "-50px" }}
+        initial={{ opacity: 0, x: -30 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
+        viewport={{ once: true, margin: "-100px" }}
       >
         <motion.h2 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
+          whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
           transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
           viewport={{ once: true }}
-          className="text-3xl md:text-4xl mb-10 md:mb-12 font-semibold tracking-tight text-center transition-all duration-300 ease-in-out hover:scale-[1.02] hover:tracking-wide cursor-default group"
+          className="text-3xl md:text-4xl mb-10 md:mb-12 font-semibold tracking-tight text-center"
         >
-          <span className="group-hover:drop-shadow-[0_0_8px_rgba(34,211,238,0.5)] transition-all duration-300">Why Hire Me</span>
-          <span className="text-cyan-400 inline-block transition-all duration-300 hover:scale-110 hover:drop-shadow-[0_0_8px_rgba(34,211,238,0.8)]"></span>
+          <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-500">Why Hire Me</span>
         </motion.h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4 lg:gap-5">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.1, ease: [0.25, 0.1, 0.25, 1] }}
-            viewport={{ once: true }}
-            className="relative overflow-hidden rounded-2xl bg-slate-950/30 border border-white/[0.06] hover:border-cyan-400/30 backdrop-blur-md p-4 md:p-5 flex flex-col gap-2.5 cursor-pointer shadow-[0_4px_20px_rgba(0,0,0,0.2)] hover:shadow-[0_8px_30px_rgba(6,182,212,0.15)] transition-all duration-300 ease-in-out hover:-translate-y-1"
-            style={{ perspective: '1000px', transformStyle: 'preserve-3d' }}
-          >
-            <div className="inline-flex items-center gap-2 text-cyan-300 text-sm md:text-base font-semibold">
-              <span className="text-lg md:text-xl">🚀</span>
-              Real Front-End Projects
-            </div>
-            <div className="bg-slate-950/20 border border-white/[0.04] rounded-xl p-2.5 md:p-3">
-              <p className="text-xs md:text-sm text-slate-300/90 leading-relaxed">
-                Built modern, responsive applications with focus on user experience, interactive interfaces, and clean design patterns.
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
+          {[ 
+            { icon: "🚀", title: "Real Front-End Projects", desc: "Built modern, responsive applications with focus on user experience, interactive interfaces, and clean design patterns.", color: "cyan", delay: 0 },
+            { icon: "💡", title: "Strong Front-End Fundamentals", desc: "Solid understanding of JavaScript, React patterns, CSS architecture, and modern front-end best practices.", color: "blue", delay: 0.1 },
+            { icon: "🎨", title: "Clean UI/UX", desc: "Focus on modern, responsive, and user-friendly design with smooth animations and interactions.", color: "indigo", delay: 0.2 },
+            { icon: "📈", title: "Fast Learner", desc: "Continuously improving and adapting to new technologies with a growth mindset approach.", color: "violet", delay: 0.3 }
+          ].map((item, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, scale: 0.95, y: 20 }}
+              whileInView={{ opacity: 1, scale: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: item.delay, ease: [0.25, 0.1, 0.25, 1] }}
+              viewport={{ once: true }}
+              whileHover={{ y: -4, transition: { duration: 0.2 } }}
+              className={`relative overflow-hidden rounded-2xl bg-slate-950/40 border border-white/[0.08] hover:border-${item.color}-400/40 backdrop-blur-md p-5 flex flex-col gap-3 cursor-pointer shadow-[0_4px_20px_rgba(0,0,0,0.3)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.4)] transition-all duration-300`}
+            >
+              <div className={`inline-flex items-center gap-2 text-${item.color}-300 text-sm font-semibold`}>
+                <span className="text-lg">{item.icon}</span>
+                {item.title}
+              </div>
+              <p className="text-xs text-slate-400/90 leading-relaxed">
+                {item.desc}
               </p>
-            </div>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
-            viewport={{ once: true }}
-            className="relative overflow-hidden rounded-2xl bg-slate-950/30 border border-white/[0.06] hover:border-blue-400/30 backdrop-blur-md p-4 md:p-5 flex flex-col gap-2.5 cursor-pointer shadow-[0_4px_20px_rgba(0,0,0,0.2)] hover:shadow-[0_8px_30px_rgba(59,130,246,0.15)] transition-all duration-300 ease-in-out hover:-translate-y-1"
-            style={{ perspective: '1000px', transformStyle: 'preserve-3d' }}
-          >
-            <div className="inline-flex items-center gap-2 text-blue-300 text-sm md:text-base font-semibold">
-              <span className="text-lg md:text-xl">💡</span>
-              Strong Front-End Fundamentals
-            </div>
-            <div className="bg-slate-950/20 border border-white/[0.04] rounded-xl p-2.5 md:p-3">
-              <p className="text-xs md:text-sm text-slate-300/90 leading-relaxed">
-                Solid understanding of JavaScript, React patterns, CSS architecture, and modern front-end best practices.
-              </p>
-            </div>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
-            viewport={{ once: true }}
-            className="relative overflow-hidden rounded-2xl bg-slate-950/30 border border-white/[0.06] hover:border-indigo-400/30 backdrop-blur-md p-4 md:p-5 flex flex-col gap-2.5 cursor-pointer shadow-[0_4px_20px_rgba(0,0,0,0.2)] hover:shadow-[0_8px_30px_rgba(99,102,241,0.15)] transition-all duration-300 ease-in-out hover:-translate-y-1"
-            style={{ perspective: '1000px', transformStyle: 'preserve-3d' }}
-          >
-            <div className="inline-flex items-center gap-2 text-indigo-300 text-sm md:text-base font-semibold">
-              <span className="text-lg md:text-xl">🎨</span>
-              Clean UI/UX
-            </div>
-            <div className="bg-slate-950/20 border border-white/[0.04] rounded-xl p-2.5 md:p-3">
-              <p className="text-xs md:text-sm text-slate-300/90 leading-relaxed">
-                Focus on modern, responsive, and user-friendly design with smooth animations and interactions.
-              </p>
-            </div>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
-            viewport={{ once: true }}
-            className="relative overflow-hidden rounded-2xl bg-slate-950/30 border border-white/[0.06] hover:border-violet-400/30 backdrop-blur-md p-4 md:p-5 flex flex-col gap-2.5 cursor-pointer shadow-[0_4px_20px_rgba(0,0,0,0.2)] hover:shadow-[0_8px_30px_rgba(139,92,246,0.15)] transition-all duration-300 ease-in-out hover:-translate-y-1"
-            style={{ perspective: '1000px', transformStyle: 'preserve-3d' }}
-          >
-            <div className="inline-flex items-center gap-2 text-violet-300 text-sm md:text-base font-semibold">
-              <span className="text-lg md:text-xl">📈</span>
-              Fast Learner
-            </div>
-            <div className="bg-slate-950/20 border border-white/[0.04] rounded-xl p-2.5 md:p-3">
-              <p className="text-xs md:text-sm text-slate-300/90 leading-relaxed">
-                Continuously improving and adapting to new technologies with a growth mindset approach.
-              </p>
-            </div>
-          </motion.div>
+            </motion.div>
+          ))}
         </div>
       </motion.section>
 
@@ -535,259 +566,193 @@ export default function Portfolio() {
       <motion.section 
         id="about" 
         className="px-4 sm:px-8 py-20 md:py-28 max-w-4xl mx-auto"
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
-        viewport={{ once: true, margin: "-50px" }}
+        initial={{ opacity: 0, x: 30 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
+        viewport={{ once: true, margin: "-100px" }}
       >
         <motion.h2 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
+          whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
           transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
           viewport={{ once: true }}
-          className="text-2xl md:text-4xl mb-6 md:mb-10 font-semibold tracking-tight transition-all duration-300 ease-in-out hover:scale-[1.02] hover:tracking-wide cursor-default group"
+          className="text-2xl md:text-4xl mb-6 md:mb-10 font-semibold tracking-tight"
         >
-          <span className="group-hover:drop-shadow-[0_0_8px_rgba(34,211,238,0.5)] transition-all duration-300">About</span>
-          <span className="text-cyan-400 inline-block transition-all duration-300 hover:scale-110 hover:drop-shadow-[0_0_8px_rgba(34,211,238,0.8)]"></span>
+          <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-500">About</span>
         </motion.h2>
 
-        <motion.p 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95, y: 20 }}
+          whileInView={{ opacity: 1, scale: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1, ease: [0.25, 0.1, 0.25, 1] }}
           viewport={{ once: true }}
-          className="text-slate-300/90 text-base md:text-lg mb-6 max-w-2xl"
+          className="rounded-2xl bg-slate-950/40 border border-white/[0.08] backdrop-blur-md p-6 md:p-8 shadow-[0_4px_20px_rgba(0,0,0,0.3)]"
         >
-          I build scalable web applications and automation systems with a focus on performance, real-time interaction, and clean user experience.
-        </motion.p>
-
-        <ul className="space-y-3 text-slate-300/90 text-base md:text-lg max-w-2xl">
-          {[
-            { text: 'Pune, India', isBold: true },
-            { text: 'B.E Computer Science (SPPU)', isBold: true },
-            { text: 'Frontend Developer (React)', isBold: true },
-            { text: 'Building real-time apps like ', highlight: 'IPL Auction system', hasHighlight: true },
-            { text: 'Open to internships and opportunities', isCyan: true }
-          ].map((item, index) => (
-            <motion.li 
-              key={index}
-              initial={{ opacity: 0, x: -10 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.4, delay: 0.15 + (index * 0.08), ease: [0.25, 0.1, 0.25, 1] }}
-              viewport={{ once: true }}
-              className="flex items-start gap-3"
-            >
-              <span className="text-cyan-400 mt-1.5">•</span>
-              <span>
-                {item.isBold ? (
-                  <strong className="text-slate-100">{item.text}</strong>
-                ) : item.hasHighlight ? (
-                  <>
-                    {item.text}<strong className="text-cyan-300">{item.highlight}</strong>
-                  </>
-                ) : item.isCyan ? (
-                  <span className="text-cyan-400 font-medium">{item.text}</span>
-                ) : (
-                  item.text
-                )}
-              </span>
-            </motion.li>
-          ))}
-        </ul>
+          <p className="text-slate-300/90 text-base md:text-lg mb-6">
+            I build scalable web applications and automation systems with a focus on performance, real-time interaction, and clean user experience.
+          </p>
+          <ul className="space-y-3 text-slate-400 text-base">
+            {[
+              { text: 'Pune, India' },
+              { text: 'B.E Computer Science (SPPU)' },
+              { text: 'Frontend Developer (React)' },
+              { text: 'Building real-time apps like ', highlight: 'IPL Auction system' },
+              { text: 'Open to internships and opportunities', highlight: null, isCyan: true }
+            ].map((item, index) => (
+              <motion.li 
+                key={index}
+                initial={{ opacity: 0, x: -10 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.4, delay: 0.2 + (index * 0.08), ease: [0.25, 0.1, 0.25, 1] }}
+                viewport={{ once: true }}
+                className="flex items-start gap-3"
+              >
+                <span className="text-cyan-400 mt-1">•</span>
+                <span className={item.isCyan ? "text-cyan-400 font-medium" : ""}>
+                  {item.text}
+                  {item.highlight && <span className="text-cyan-300 font-medium">{item.highlight}</span>}
+                </span>
+              </motion.li>
+            ))}
+          </ul>
+        </motion.div>
       </motion.section>
 
       {/* TECH STACK */}
       <motion.section
         id="skills"
         className="px-4 sm:px-8 py-16 md:py-28 max-w-6xl mx-auto"
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
-        viewport={{ once: true, margin: "-50px" }}
+        initial={{ opacity: 0, x: -30 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
+        viewport={{ once: true, margin: "-100px" }}
       >
         <motion.h2 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
+          whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
           transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
           viewport={{ once: true }}
-          className="text-3xl md:text-4xl mb-10 md:mb-12 font-semibold tracking-tight text-center transition-all duration-300 ease-in-out hover:scale-[1.02] hover:tracking-wide cursor-default group"
+          className="text-3xl md:text-4xl mb-10 md:mb-12 font-semibold tracking-tight text-center"
         >
-          <span className="group-hover:drop-shadow-[0_0_8px_rgba(34,211,238,0.5)] transition-all duration-300">Tech Stack</span>
-          <span className="text-cyan-400 inline-block transition-all duration-300 hover:scale-110 hover:drop-shadow-[0_0_8px_rgba(34,211,238,0.8)]"></span>
+          <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-500">Tech Stack</span>
         </motion.h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-5 max-w-4xl mx-auto">
-          {/* Languages */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.1, ease: [0.25, 0.1, 0.25, 1] }}
-            viewport={{ once: true }}
-            className="relative overflow-hidden rounded-2xl bg-slate-950/30 border border-white/[0.06] hover:border-cyan-400/30 backdrop-blur-md p-4 md:p-5 flex flex-col gap-2.5 cursor-pointer shadow-[0_4px_20px_rgba(0,0,0,0.2)] hover:shadow-[0_8px_30px_rgba(6,182,212,0.15)] transition-all duration-300 ease-in-out hover:-translate-y-1"
-            style={{ perspective: '1000px', transformStyle: 'preserve-3d' }}
-          >
-            <div className="inline-flex items-center gap-2 text-cyan-300 text-sm md:text-base font-semibold">
-              <FaCode className="text-cyan-300/90 w-4 h-4 md:w-5 md:h-5" />
-              Languages
-            </div>
-            <div className="bg-slate-950/20 border border-white/[0.04] rounded-xl p-2.5 md:p-3">
-              <p className="text-xs md:text-sm text-slate-300/90 leading-relaxed">
-                Python • JavaScript • C • C++ • C#
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5 max-w-4xl mx-auto">
+          {[ 
+            { icon: FaCode, title: "Languages", items: "Python • JavaScript • C • C++ • C#", color: "cyan", delay: 0 },
+            { icon: FaGlobe, title: "Frontend", items: "React.js • HTML5 • CSS3 • Tailwind CSS", color: "blue", delay: 0.1 },
+            { icon: FaTools, title: "Tools", items: "Git • GitHub • VS Code • Vercel", color: "indigo", delay: 0.2 },
+            { icon: null, title: "Core Concepts", items: "Data Structures & Algorithms • UI/UX", color: "violet", delay: 0.3, isDot: true }
+          ].map((item, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, scale: 0.95, y: 20 }}
+              whileInView={{ opacity: 1, scale: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: item.delay, ease: [0.25, 0.1, 0.25, 1] }}
+              viewport={{ once: true }}
+              whileHover={{ y: -4, transition: { duration: 0.2 } }}
+              className={`relative overflow-hidden rounded-2xl bg-slate-950/40 border border-white/[0.08] hover:border-${item.color}-400/40 backdrop-blur-md p-5 flex flex-col gap-3 cursor-pointer shadow-[0_4px_20px_rgba(0,0,0,0.3)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.4)] transition-all duration-300`}
+            >
+              <div className={`inline-flex items-center gap-2 text-${item.color}-300 text-sm font-semibold`}>
+                {item.isDot ? (
+                  <span className="inline-block h-2 w-2 rounded-full bg-violet-300/90" />
+                ) : (
+                  <item.icon className={`text-${item.color}-300/90 w-4 h-4 md:w-5 md:h-5`} />
+                )}
+                {item.title}
+              </div>
+              <p className="text-xs text-slate-400/90 leading-relaxed">
+                {item.items}
               </p>
-            </div>
-          </motion.div>
-
-          {/* Frontend */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
-            viewport={{ once: true }}
-            className="relative overflow-hidden rounded-2xl bg-slate-950/30 border border-white/[0.06] hover:border-blue-400/30 backdrop-blur-md p-4 md:p-5 flex flex-col gap-2.5 cursor-pointer shadow-[0_4px_20px_rgba(0,0,0,0.2)] hover:shadow-[0_8px_30px_rgba(59,130,246,0.15)] transition-all duration-300 ease-in-out hover:-translate-y-1"
-            style={{ perspective: '1000px', transformStyle: 'preserve-3d' }}
-          >
-            <div className="inline-flex items-center gap-2 text-blue-300 text-sm md:text-base font-semibold">
-              <FaGlobe className="text-blue-300/90 w-4 h-4 md:w-5 md:h-5" />
-              Frontend
-            </div>
-            <div className="bg-slate-950/20 border border-white/[0.04] rounded-xl p-2.5 md:p-3">
-              <p className="text-xs md:text-sm text-slate-300/90 leading-relaxed">
-                React.js • HTML5 • CSS3 • Tailwind CSS • JavaScript ES6+
-              </p>
-            </div>
-          </motion.div>
-
-          {/* Tools */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
-            viewport={{ once: true }}
-            className="relative overflow-hidden rounded-2xl bg-slate-950/30 border border-white/[0.06] hover:border-indigo-400/30 backdrop-blur-md p-4 md:p-5 flex flex-col gap-2.5 cursor-pointer shadow-[0_4px_20px_rgba(0,0,0,0.2)] hover:shadow-[0_8px_30px_rgba(99,102,241,0.15)] transition-all duration-300 ease-in-out hover:-translate-y-1"
-            style={{ perspective: '1000px', transformStyle: 'preserve-3d' }}
-          >
-            <div className="inline-flex items-center gap-2 text-indigo-300 text-sm md:text-base font-semibold">
-              <FaTools className="text-indigo-300/90 w-4 h-4 md:w-5 md:h-5" />
-              Tools
-            </div>
-            <div className="bg-slate-950/20 border border-white/[0.04] rounded-xl p-2.5 md:p-3">
-              <p className="text-xs md:text-sm text-slate-300/90 leading-relaxed">
-                Git • GitHub • VS Code • Vercel • Framer Motion
-              </p>
-            </div>
-          </motion.div>
-
-          {/* Core Concepts */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
-            viewport={{ once: true }}
-            className="relative overflow-hidden rounded-2xl bg-slate-950/30 border border-white/[0.06] hover:border-violet-400/30 backdrop-blur-md p-4 md:p-5 flex flex-col gap-2.5 cursor-pointer shadow-[0_4px_20px_rgba(0,0,0,0.2)] hover:shadow-[0_8px_30px_rgba(139,92,246,0.15)] transition-all duration-300 ease-in-out hover:-translate-y-1"
-            style={{ perspective: '1000px', transformStyle: 'preserve-3d' }}
-          >
-            <div className="inline-flex items-center gap-2 text-violet-300 text-sm md:text-base font-semibold">
-              <span className="inline-block h-2 w-2 rounded-full bg-violet-300/90 shadow-[0_0_8px_rgba(167,139,250,0.6)]" />
-              Core Concepts
-            </div>
-            <div className="bg-slate-950/20 border border-white/[0.04] rounded-xl p-2.5 md:p-3">
-              <p className="text-xs md:text-sm text-slate-300/90 leading-relaxed">
-                Data Structures & Algorithms • UI/UX Design • Responsive Design
-              </p>
-            </div>
-          </motion.div>
+            </motion.div>
+          ))}
         </div>
-
       </motion.section>
+
+      {/* EXPERIENCE */}
       <motion.section
         id="experience"
         className="px-4 sm:px-8 py-20 md:py-28 max-w-6xl mx-auto"
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
-        viewport={{ once: true, margin: "-50px" }}
+        initial={{ opacity: 0, x: 30 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
+        viewport={{ once: true, margin: "-100px" }}
       >
         <motion.h2 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
+          whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
           transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
           viewport={{ once: true }}
-          className="text-2xl md:text-4xl mb-8 md:mb-12 font-semibold tracking-tight transition-all duration-300 ease-in-out hover:scale-[1.02] hover:tracking-wide cursor-default group"
+          className="text-2xl md:text-4xl mb-8 md:mb-12 font-semibold tracking-tight"
         >
-          <span className="group-hover:drop-shadow-[0_0_8px_rgba(34,211,238,0.5)] transition-all duration-300">Learning & Growth</span>
-          <span className="text-cyan-400 inline-block transition-all duration-300 hover:scale-110 hover:drop-shadow-[0_0_8px_rgba(34,211,238,0.8)]"></span>
+          <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-500">Learning & Growth</span>
         </motion.h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.1, ease: [0.25, 0.1, 0.25, 1] }}
-            viewport={{ once: true }}
-            className="rounded-2xl md:rounded-2xl bg-slate-950/30 md:bg-slate-950/40 border border-white/[0.06] md:border-white/[0.08] hover:border-cyan-400/30 backdrop-blur-xl md:backdrop-blur-xl p-6 md:p-8 text-slate-200 cursor-pointer shadow-[0_8px_32px_rgba(0,0,0,0.3)] md:shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:shadow-[0_12px_40px_rgba(6,182,212,0.15)] md:hover:shadow-[0_20px_60px_rgba(6,182,212,0.2)] transition-all duration-300 ease-in-out hover:-translate-y-1 hover:scale-[1.02]"
-            style={{ perspective: '1000px', transformStyle: 'preserve-3d' }}
-          >
-            <h3 className="text-cyan-300 text-base md:text-lg font-semibold mb-4" style={{ transform: 'translateZ(20px)' }}>🎓 Certifications</h3>
-            <ul className="space-y-3 text-sm text-slate-200/90 leading-relaxed" style={{ transform: 'translateZ(10px)' }}>
-              <li>• <strong>Python Programming</strong> - Udemy Certification</li>
-              <li>• <strong>Data Structures & Algorithms</strong> - Continuous Practice</li>
-              <li>• <strong>Web Development</strong> - Self-taught & Online Courses</li>
-            </ul>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
-            viewport={{ once: true }}
-            className="rounded-2xl md:rounded-2xl bg-slate-950/30 md:bg-slate-950/40 border border-white/[0.06] md:border-white/[0.08] hover:border-blue-400/30 backdrop-blur-xl md:backdrop-blur-xl p-6 md:p-8 text-slate-200 cursor-pointer shadow-[0_8px_32px_rgba(0,0,0,0.3)] md:shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:shadow-[0_12px_40px_rgba(59,130,246,0.15)] md:hover:shadow-[0_20px_60px_rgba(59,130,246,0.2)] transition-all duration-300 ease-in-out hover:-translate-y-1 hover:scale-[1.02]"
-            style={{ perspective: '1000px', transformStyle: 'preserve-3d' }}
-          >
-            <h3 className="text-blue-300 text-base md:text-lg font-semibold mb-4" style={{ transform: 'translateZ(20px)' }}>📚 Continuous Learning</h3>
-            <ul className="space-y-3 text-sm text-slate-200/90 leading-relaxed" style={{ transform: 'translateZ(10px)' }}>
-              <li>• <strong>DSA Practice</strong> - Problem solving on LeetCode</li>
-              <li>• <strong>Project Building</strong> - Real-world application development</li>
-              <li>• <strong>Technology Exploration</strong> - Staying updated with modern tools</li>
-            </ul>
-          </motion.div>
+          {[
+            { icon: "🎓", title: "Certifications", items: ["Python Programming - Udemy", "Data Structures & Algorithms", "Web Development - Self-taught"], color: "cyan", delay: 0 },
+            { icon: "📚", title: "Continuous Learning", items: ["DSA Practice on LeetCode", "Real-world Project Building", "Technology Exploration"], color: "blue", delay: 0.1 }
+          ].map((item, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, scale: 0.95, y: 20 }}
+              whileInView={{ opacity: 1, scale: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: item.delay, ease: [0.25, 0.1, 0.25, 1] }}
+              viewport={{ once: true }}
+              whileHover={{ y: -4, transition: { duration: 0.2 } }}
+              className={`rounded-2xl bg-slate-950/40 border border-white/[0.08] hover:border-${item.color}-400/40 backdrop-blur-md p-6 cursor-pointer shadow-[0_4px_20px_rgba(0,0,0,0.3)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.4)] transition-all duration-300`}
+            >
+              <h3 className={`text-${item.color}-300 text-base md:text-lg font-semibold mb-4`}>{item.icon} {item.title}</h3>
+              <ul className="space-y-2 text-sm text-slate-400">
+                {item.items.map((listItem, idx) => (
+                  <li key={idx}>• <strong className="text-slate-300">{listItem}</strong></li>
+                ))}
+              </ul>
+            </motion.div>
+          ))}
         </div>
 
         <motion.div 
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
+          initial={{ opacity: 0, scale: 0.95, y: 20 }}
+          whileInView={{ opacity: 1, scale: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
           viewport={{ once: true }}
-          className="mt-6 md:mt-8 rounded-2xl md:rounded-2xl bg-gradient-to-r from-cyan-500/10 to-blue-500/10 border border-white/[0.06] md:border-white/[0.08] hover:border-cyan-400/30 backdrop-blur-xl md:backdrop-blur-xl p-6 md:p-8 text-center cursor-pointer shadow-[0_8px_32px_rgba(0,0,0,0.3)] md:shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:shadow-[0_12px_40px_rgba(6,182,212,0.15)] md:hover:shadow-[0_20px_60px_rgba(6,182,212,0.2)] transition-all duration-300 ease-in-out hover:-translate-y-1 hover:scale-[1.02]"
+          whileHover={{ y: -4, transition: { duration: 0.2 } }}
+          className="mt-6 md:mt-8 rounded-2xl bg-gradient-to-r from-cyan-500/10 to-blue-500/10 border border-white/[0.08] hover:border-cyan-400/40 backdrop-blur-md p-6 md:p-8 text-center cursor-pointer shadow-[0_4px_20px_rgba(0,0,0,0.3)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.4)] transition-all duration-300"
         >
           <p className="text-cyan-300 text-base md:text-lg font-semibold mb-3">🚀 Growth Mindset</p>
-          <p className="text-slate-300/90 text-sm md:text-base max-w-2xl mx-auto leading-relaxed">
-            Passionate about continuous improvement and adapting to new technologies. 
-            Always seeking to expand my skill set and tackle challenging problems that push me to grow as a developer.
+          <p className="text-slate-400 text-sm md:text-base max-w-2xl mx-auto leading-relaxed">
+            Passionate about continuous improvement and adapting to new technologies. Always seeking to expand my skill set and tackle challenging problems.
           </p>
         </motion.div>
-
       </motion.section>
 
+      {/* PROJECTS */}
       <motion.section
         id="projects"
         className="px-4 sm:px-8 py-20 md:py-28 max-w-6xl mx-auto"
-        initial={{ opacity: 0, x: 80 }}
+        initial={{ opacity: 0, x: -30 }}
         whileInView={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+        transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
         viewport={{ once: true, margin: "-100px" }}
       >
-        <h2 className="text-2xl md:text-4xl mb-8 md:mb-12 font-semibold tracking-tight text-center transition-all duration-300 ease-in-out hover:scale-[1.02] hover:tracking-wide cursor-default group">
-          <span className="group-hover:drop-shadow-[0_0_8px_rgba(34,211,238,0.5)] transition-all duration-300 group-hover:letter-spacing-[1px]">Projects</span>
-          <span className="text-cyan-400 inline-block transition-all duration-300 hover:scale-110 hover:drop-shadow-[0_0_8px_rgba(34,211,238,0.8)]"></span>
-        </h2>
+        <motion.h2 
+          initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
+          whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+          transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
+          viewport={{ once: true }}
+          className="text-2xl md:text-4xl mb-8 md:mb-12 font-semibold tracking-tight text-center"
+        >
+          <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-500">Projects</span>
+        </motion.h2>
 
         <div className="flex flex-col md:grid md:grid-cols-2 gap-6 md:gap-8 px-4 md:px-0 w-full">
-          {/* IPL */}
+          {/* Project 1 - IPL */}
           <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, scale: 0.9, y: 30 }}
+            whileInView={{ opacity: 1, scale: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.6, delay: 0, ease: [0.22, 1, 0.36, 1] }}
             className="w-full md:col-span-2 lg:col-span-1 md:w-auto bg-slate-950/30 md:bg-slate-950/40 rounded-2xl md:rounded-2xl border-2 border-amber-400/40 md:border-white/[0.08] hover:border-cyan-400/30 cursor-pointer group relative overflow-hidden backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.3)] md:shadow-[0_12px_40px_rgba(245,158,11,0.2)] hover:shadow-[0_12px_40px_rgba(6,182,212,0.2)] md:hover:shadow-[0_20px_60px_rgba(6,182,212,0.25)] transition-all duration-300 ease-in-out hover:-translate-y-1 hover:scale-[1.02] active:scale-[0.98] lg:hover:scale-[1.03]"
             style={{ perspective: '1000px', transformStyle: 'preserve-3d' }}
           >
@@ -863,12 +828,12 @@ export default function Portfolio() {
             </div>
           </motion.div>
 
-          {/* SALESFORCE PLACEMENT MANAGEMENT SYSTEM */}
+          {/* Project 2 - Salesforce */}
           <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, scale: 0.9, y: 30 }}
+            whileInView={{ opacity: 1, scale: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.6, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.6, delay: 0.12, ease: [0.22, 1, 0.36, 1] }}
             className="w-full md:col-span-2 lg:col-span-1 md:w-auto bg-slate-950/30 md:bg-slate-950/40 rounded-2xl md:rounded-2xl border-2 border-amber-400/40 md:border-white/[0.08] hover:border-sky-400/30 cursor-pointer group relative overflow-hidden backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.3)] md:shadow-[0_12px_40px_rgba(245,158,11,0.2)] hover:shadow-[0_12px_40px_rgba(14,165,233,0.2)] md:hover:shadow-[0_20px_60px_rgba(14,165,233,0.25)] transition-all duration-300 ease-in-out hover:-translate-y-1 hover:scale-[1.02] active:scale-[0.98] lg:hover:scale-[1.03]"
             style={{ perspective: '1000px', transformStyle: 'preserve-3d' }}
           >
@@ -939,12 +904,12 @@ export default function Portfolio() {
             </div>
           </motion.div>
 
-          {/* PASSWORD GENERATOR */}
+          {/* Project 3 - Password Generator */}
           <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, scale: 0.9, y: 30 }}
+            whileInView={{ opacity: 1, scale: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.6, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.6, delay: 0.24, ease: [0.22, 1, 0.36, 1] }}
             className="w-full md:w-auto bg-slate-950/30 md:bg-slate-950/40 rounded-2xl md:rounded-2xl border border-white/[0.06] md:border-white/[0.08] hover:border-emerald-400/30 cursor-pointer group relative overflow-hidden backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.3)] md:shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:shadow-[0_12px_40px_rgba(16,185,129,0.15)] md:hover:shadow-[0_20px_60px_rgba(16,185,129,0.2)] transition-all duration-300 ease-in-out hover:-translate-y-1 hover:scale-[1.02] active:scale-[0.98]"
             style={{ perspective: '1000px', transformStyle: 'preserve-3d' }}
           >
@@ -1010,12 +975,12 @@ export default function Portfolio() {
             </div>
           </motion.div>
 
-          {/* AI CHAT ANALYZER */}
+          {/* Project 4 - AI Chat Analyzer */}
           <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, scale: 0.9, y: 30 }}
+            whileInView={{ opacity: 1, scale: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.6, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.6, delay: 0.36, ease: [0.22, 1, 0.36, 1] }}
             className="w-full md:w-auto bg-slate-950/30 md:bg-slate-950/40 rounded-2xl md:rounded-2xl border border-white/[0.06] md:border-white/[0.08] hover:border-violet-400/30 cursor-pointer group relative overflow-hidden backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.3)] md:shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:shadow-[0_12px_40px_rgba(139,92,246,0.15)] md:hover:shadow-[0_20px_60px_rgba(139,92,246,0.2)] transition-all duration-300 ease-in-out hover:-translate-y-1 hover:scale-[1.02] active:scale-[0.98]"
             style={{ perspective: '1000px', transformStyle: 'preserve-3d' }}
           >
@@ -1082,12 +1047,12 @@ export default function Portfolio() {
             </div>
           </motion.div>
 
-          {/* SMART FILE ORGANIZER */}
+          {/* Project 5 - Smart File Organizer */}
           <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, scale: 0.9, y: 30 }}
+            whileInView={{ opacity: 1, scale: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.6, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.6, delay: 0.48, ease: [0.22, 1, 0.36, 1] }}
             className="w-full md:w-auto bg-slate-950/30 md:bg-slate-950/40 rounded-2xl md:rounded-2xl border border-white/[0.06] md:border-white/[0.08] hover:border-orange-400/30 cursor-pointer group relative overflow-hidden backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.3)] md:shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:shadow-[0_12px_40px_rgba(251,146,60,0.15)] md:hover:shadow-[0_20px_60px_rgba(251,146,60,0.2)] transition-all duration-300 ease-in-out hover:-translate-y-1 hover:scale-[1.02] active:scale-[0.98]"
             style={{ perspective: '1000px', transformStyle: 'preserve-3d' }}
           >
@@ -1295,33 +1260,40 @@ export default function Portfolio() {
       {/* PROBLEM SOLVING */}
       <motion.section 
         className="px-4 sm:px-8 py-20 md:py-28 max-w-6xl mx-auto"
-        initial={{ opacity: 0, y: 60 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+        initial={{ opacity: 0, x: 30 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
         viewport={{ once: true, margin: "-100px" }}
       >
-        <h2 className="text-2xl md:text-4xl mb-8 md:mb-12 font-semibold tracking-tight text-center transition-all duration-300 ease-in-out hover:scale-[1.02] hover:tracking-wide cursor-default group">
-          <span className="group-hover:drop-shadow-[0_0_8px_rgba(34,211,238,0.5)] transition-all duration-300">Problem Solving</span>
-          <span className="text-cyan-400 inline-block transition-all duration-300 hover:scale-110 hover:drop-shadow-[0_0_8px_rgba(34,211,238,0.8)]"></span>
-        </h2>
+        <motion.h2 
+          initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
+          whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+          transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
+          viewport={{ once: true }}
+          className="text-2xl md:text-4xl mb-8 md:mb-12 font-semibold tracking-tight text-center"
+        >
+          <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-500">Problem Solving</span>
+        </motion.h2>
 
         <motion.div 
-          className="max-w-3xl mx-auto bg-slate-950/30 md:bg-slate-950/40 rounded-2xl md:rounded-2xl border border-white/[0.06] md:border-white/[0.08] hover:border-cyan-400/30 backdrop-blur-xl p-6 md:p-10 cursor-pointer shadow-[0_8px_32px_rgba(0,0,0,0.3)] md:shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:shadow-[0_12px_40px_rgba(6,182,212,0.15)] md:hover:shadow-[0_20px_60px_rgba(6,182,212,0.2)] transition-all duration-300 ease-in-out hover:-translate-y-1 hover:scale-[1.02]"
-          style={{ perspective: '1000px', transformStyle: 'preserve-3d' }}
+          initial={{ opacity: 0, scale: 0.95, y: 20 }}
+          whileInView={{ opacity: 1, scale: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
+          viewport={{ once: true }}
+          whileHover={{ y: -4, transition: { duration: 0.2 } }}
+          className="max-w-3xl mx-auto rounded-2xl bg-slate-950/40 border border-white/[0.08] hover:border-cyan-400/40 backdrop-blur-md p-6 md:p-10 cursor-pointer shadow-[0_4px_20px_rgba(0,0,0,0.3)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.4)] transition-all duration-300"
         >
-          <div className="space-y-4 md:space-y-5 text-slate-300" style={{ transform: 'translateZ(15px)' }}>
-            <div className="flex items-start gap-3 md:gap-4">
-              <span className="text-cyan-400 text-lg md:text-xl mt-0.5">•</span>
-              <p className="text-sm md:text-base leading-relaxed">Practicing Data Structures & Algorithms regularly</p>
-            </div>
-            <div className="flex items-start gap-3 md:gap-4">
-              <span className="text-cyan-400 text-lg md:text-xl mt-0.5">•</span>
-              <p className="text-sm md:text-base leading-relaxed">Strong in arrays, strings, and basic recursion</p>
-            </div>
-            <div className="flex items-start gap-3 md:gap-4">
-              <span className="text-cyan-400 text-lg md:text-xl mt-0.5">•</span>
-              <p className="text-sm md:text-base leading-relaxed">Actively improving problem-solving skills</p>
-            </div>
+          <div className="space-y-4 text-slate-400">
+            {[
+              "Practicing Data Structures & Algorithms regularly",
+              "Strong in arrays, strings, and basic recursion", 
+              "Actively improving problem-solving skills"
+            ].map((item, i) => (
+              <div key={i} className="flex items-start gap-3">
+                <span className="text-cyan-400 text-lg mt-0.5">•</span>
+                <p className="text-sm md:text-base leading-relaxed">{item}</p>
+              </div>
+            ))}
           </div>
         </motion.div>
       </motion.section>
@@ -1329,21 +1301,30 @@ export default function Portfolio() {
       {/* EDUCATION */}
       <motion.section 
         className="px-4 sm:px-8 py-20 md:py-28 max-w-6xl mx-auto"
-        initial={{ opacity: 0, y: 60 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+        initial={{ opacity: 0, x: -30 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
         viewport={{ once: true, margin: "-100px" }}
       >
-        <h2 className="text-2xl md:text-4xl mb-8 md:mb-12 font-semibold tracking-tight text-center transition-all duration-300 ease-in-out hover:scale-[1.02] hover:tracking-wide cursor-default group">
-          <span className="group-hover:drop-shadow-[0_0_8px_rgba(34,211,238,0.5)] transition-all duration-300">Education</span>
-          <span className="text-cyan-400 inline-block transition-all duration-300 hover:scale-110 hover:drop-shadow-[0_0_8px_rgba(34,211,238,0.8)]"></span>
-        </h2>
+        <motion.h2 
+          initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
+          whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+          transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
+          viewport={{ once: true }}
+          className="text-2xl md:text-4xl mb-8 md:mb-12 font-semibold tracking-tight text-center"
+        >
+          <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-500">Education</span>
+        </motion.h2>
 
         <motion.div 
-          className="max-w-2xl mx-auto bg-slate-950/30 md:bg-slate-950/40 rounded-2xl md:rounded-2xl border border-white/[0.06] md:border-white/[0.08] hover:border-cyan-400/30 backdrop-blur-xl p-6 md:p-10 cursor-pointer shadow-[0_8px_32px_rgba(0,0,0,0.3)] md:shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:shadow-[0_12px_40px_rgba(6,182,212,0.15)] md:hover:shadow-[0_20px_60px_rgba(6,182,212,0.2)] transition-all duration-300 ease-in-out hover:-translate-y-1 hover:scale-[1.02]"
-          style={{ perspective: '1000px', transformStyle: 'preserve-3d' }}
+          initial={{ opacity: 0, scale: 0.95, y: 20 }}
+          whileInView={{ opacity: 1, scale: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
+          viewport={{ once: true }}
+          whileHover={{ y: -4, transition: { duration: 0.2 } }}
+          className="max-w-2xl mx-auto rounded-2xl bg-slate-950/40 border border-white/[0.08] hover:border-cyan-400/40 backdrop-blur-md p-6 md:p-10 cursor-pointer shadow-[0_4px_20px_rgba(0,0,0,0.3)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.4)] transition-all duration-300"
         >
-          <div className="text-center" style={{ transform: 'translateZ(20px)' }}>
+          <div className="text-center">
             <h3 className="text-lg md:text-2xl font-semibold text-slate-100 mb-3">B.E. Computer Science</h3>
             <p className="text-cyan-300 text-sm md:text-base mb-2">SPPU, Pune</p>
             <p className="text-slate-400 text-xs md:text-sm">3rd Year • Current</p>
@@ -1352,57 +1333,72 @@ export default function Portfolio() {
       </motion.section>
 
       {/* CONTACT */}
-      <motion.section id="contact" className="px-4 sm:px-8 py-20 md:py-28 pb-24 md:pb-32 max-w-4xl mx-auto"
-        initial={{ opacity: 0, y: 60 }} 
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-        viewport={{ once: true, margin: "-100px" }}>
-
-        <h2 className="text-2xl md:text-4xl mb-4 md:mb-6 text-center font-semibold tracking-tight transition-all duration-300 ease-in-out hover:scale-[1.02] hover:tracking-wide cursor-default group">
-          <span className="group-hover:drop-shadow-[0_0_8px_rgba(34,211,238,0.5)] transition-all duration-300">Let's Connect</span>
-          <span className="text-cyan-400 inline-block transition-all duration-300 hover:scale-110 hover:drop-shadow-[0_0_8px_rgba(34,211,238,0.8)]"></span>
-        </h2>
+      <motion.section 
+        id="contact" 
+        className="px-4 sm:px-8 py-20 md:py-28 pb-24 md:pb-32 max-w-4xl mx-auto"
+        initial={{ opacity: 0, x: 30 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
+        viewport={{ once: true, margin: "-100px" }}
+      >
+        <motion.h2 
+          initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
+          whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+          transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
+          viewport={{ once: true }}
+          className="text-2xl md:text-4xl mb-4 md:mb-6 text-center font-semibold tracking-tight"
+        >
+          <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-500">Let's Connect</span>
+        </motion.h2>
         
-        <p className="text-center text-slate-300/90 mb-8 md:mb-10 max-w-xl mx-auto text-sm md:text-lg leading-relaxed px-4">
+        <motion.p 
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.1, ease: [0.25, 0.1, 0.25, 1] }}
+          viewport={{ once: true }}
+          className="text-center text-slate-400 mb-8 md:mb-10 max-w-xl mx-auto text-sm md:text-lg leading-relaxed px-4"
+        >
           Open to internships and opportunities
-        </p>
+        </motion.p>
 
-        <div className="flex flex-col sm:flex-row justify-center items-stretch sm:items-center gap-3 sm:gap-6">
-          <a
-            href="mailto:gaurav@example.com"
-            className="group inline-flex items-center justify-center gap-3 px-6 py-4 min-h-[52px] bg-slate-950/30 md:bg-slate-950/40 backdrop-blur-xl rounded-xl md:rounded-xl border border-white/[0.06] md:border-white/[0.08] hover:border-cyan-400/40 hover:bg-slate-950/50 active:bg-slate-950/60 active:border-cyan-400/60 active:scale-95 transition-all duration-300 ease-in-out hover:scale-105 hover:-translate-y-1 shadow-[0_8px_32px_rgba(0,0,0,0.3)] md:shadow-[0_8px_32px_rgba(0,0,0,0.4)] w-full sm:w-auto"
-          >
-            <svg className="w-5 h-5 text-cyan-400 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-            </svg>
-            <span className="text-cyan-300 font-medium text-sm md:text-base">Email</span>
-          </a>
-
-          <a
-            href="https://github.com/Gaurav-29-eng"
-            target="_blank"
-            className="group inline-flex items-center justify-center gap-3 px-6 py-4 min-h-[52px] bg-slate-950/30 md:bg-slate-950/40 backdrop-blur-xl rounded-xl md:rounded-xl border border-white/[0.06] md:border-white/[0.08] hover:border-cyan-400/40 hover:bg-slate-950/50 active:bg-slate-950/60 active:border-cyan-400/60 active:scale-95 transition-all duration-300 ease-in-out hover:scale-105 hover:-translate-y-1 shadow-[0_8px_32px_rgba(0,0,0,0.3)] md:shadow-[0_8px_32px_rgba(0,0,0,0.4)] w-full sm:w-auto"
-          >
-            <svg className="w-5 h-5 text-cyan-400 group-hover:scale-110 transition-transform duration-300" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-            </svg>
-            <span className="text-cyan-300 font-medium text-sm md:text-base">GitHub</span>
-          </a>
-
-          <a
-            href="https://linkedin.com/in/gaurav-salunke-cse27"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group inline-flex items-center justify-center gap-3 px-6 py-4 min-h-[52px] bg-slate-950/30 md:bg-slate-950/40 backdrop-blur-xl rounded-xl md:rounded-xl border border-white/[0.06] md:border-white/[0.08] hover:border-cyan-400/40 hover:bg-slate-950/50 active:bg-slate-950/60 active:border-cyan-400/60 active:scale-95 transition-all duration-300 ease-in-out hover:scale-105 hover:-translate-y-1 shadow-[0_8px_32px_rgba(0,0,0,0.3)] md:shadow-[0_8px_32px_rgba(0,0,0,0.4)] w-full sm:w-auto"
-          >
-            <svg className="w-5 h-5 text-cyan-400 group-hover:scale-110 transition-transform duration-300" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-            </svg>
-            <span className="text-cyan-300 font-medium text-sm md:text-base">LinkedIn</span>
-          </a>
-        </div>
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.95, y: 20 }}
+          whileInView={{ opacity: 1, scale: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
+          viewport={{ once: true }}
+          className="flex flex-col sm:flex-row justify-center items-stretch sm:items-center gap-3 sm:gap-6"
+        >
+          {[
+            { icon: "M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z", label: "Email", href: "mailto:gaurav@example.com", isStroke: true },
+            { icon: "M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z", label: "GitHub", href: "https://github.com/Gaurav-29-eng", isExternal: true },
+            { icon: "M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z", label: "LinkedIn", href: "https://linkedin.com/in/gaurav-salunke-cse27", isExternal: true }
+          ].map((item, i) => (
+            <motion.a
+              key={i}
+              href={item.href}
+              target={item.isExternal ? "_blank" : undefined}
+              rel={item.isExternal ? "noopener noreferrer" : undefined}
+              whileHover={{ y: -4, scale: 1.02, transition: { duration: 0.2 } }}
+              whileTap={{ scale: 0.98 }}
+              className="group inline-flex items-center justify-center gap-3 px-6 py-4 min-h-[52px] bg-slate-950/40 backdrop-blur-md rounded-xl border border-white/[0.08] hover:border-cyan-400/40 cursor-pointer shadow-[0_4px_20px_rgba(0,0,0,0.3)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.4)] transition-all duration-300 w-full sm:w-auto"
+            >
+              <svg 
+                className="w-5 h-5 text-cyan-400 group-hover:scale-110 transition-transform duration-300" 
+                fill={item.isStroke ? "none" : "currentColor"} 
+                stroke={item.isStroke ? "currentColor" : undefined}
+                viewBox="0 0 24 24"
+              >
+                {item.isStroke ? (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={item.icon} />
+                ) : (
+                  <path d={item.icon} />
+                )}
+              </svg>
+              <span className="text-cyan-300 font-medium text-sm md:text-base">{item.label}</span>
+            </motion.a>
+          ))}
+        </motion.div>
       </motion.section>
-
       </motion.div>
     </motion.div>
   );

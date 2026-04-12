@@ -91,6 +91,11 @@ body::after {
   100% { background-position: 0% 50%; }
 }
 
+@keyframes pulse {
+  0%, 100% { opacity: 0.2; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.2); }
+}
+
 body {
   animation: flicker 5s ease-in-out infinite;
 }
