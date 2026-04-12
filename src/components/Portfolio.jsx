@@ -21,6 +21,18 @@ export default function Portfolio() {
   const [smoothMouse, setSmoothMouse] = useState({ x: 0, y: 0 });
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  
+  // Image modal state
+  const [selectedImage, setSelectedImage] = useState(null);
+
+  // ESC key handler for modal
+  useEffect(() => {
+    const handleEsc = (e) => {
+      if (e.key === 'Escape') setSelectedImage(null);
+    };
+    window.addEventListener('keydown', handleEsc);
+    return () => window.removeEventListener('keydown', handleEsc);
+  }, []);
 
   
   useEffect(() => {
@@ -758,7 +770,7 @@ export default function Portfolio() {
             {/* Glow effect overlay */}
             <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/0 via-cyan-400/0 to-cyan-400/0 group-hover:from-cyan-400/5 group-hover:via-transparent group-hover:to-transparent transition-all duration-500 rounded-2xl z-10 pointer-events-none" />
             
-            {/* Project Image Preview */}
+            {/* Project Image Preview - Banner (Not Clickable) */}
             <div className="relative h-48 md:h-52 bg-gradient-to-br from-slate-800 via-cyan-900/30 to-slate-900 overflow-hidden">
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="text-5xl md:text-6xl">🏏</div>
@@ -839,12 +851,11 @@ export default function Portfolio() {
             {/* Glow effect overlay */}
             <div className="absolute inset-0 bg-gradient-to-br from-sky-400/0 via-sky-400/0 to-sky-400/0 group-hover:from-sky-400/5 group-hover:via-transparent group-hover:to-transparent transition-all duration-500 rounded-2xl z-10 pointer-events-none" />
 
-            {/* Project Image Preview */}
+            {/* Project Image Preview - Banner (Not Clickable) */}
             <div className="relative h-48 md:h-52 bg-gradient-to-br from-slate-800 via-sky-900/30 to-slate-900 overflow-hidden">
               <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-5xl md:text-6xl">☁️</div>
+                <div className="text-7xl md:text-8xl">☁️</div>
               </div>
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent" />
               <div className="absolute top-2 right-2 md:top-3 md:right-3 flex flex-col md:flex-row items-end gap-1 md:gap-2">
                 <span className="px-1.5 py-0.5 md:px-2 md:py-1 bg-amber-400/30 backdrop-blur-sm text-amber-300 text-[10px] md:text-xs rounded-full border border-amber-400/40 whitespace-nowrap font-semibold">Featured</span>
                 <span className="px-1.5 py-0.5 md:px-2 md:py-1 bg-sky-400/20 backdrop-blur-sm text-sky-300 text-[10px] md:text-xs rounded-full border border-sky-400/30 whitespace-nowrap">Salesforce</span>
@@ -892,11 +903,25 @@ export default function Portfolio() {
               <div className="space-y-2 mb-4">
                 <p className="text-slate-400 text-xs font-medium">Screenshots</p>
                 <div className="grid grid-cols-2 gap-2">
-                  <div className="relative aspect-video bg-slate-800/50 rounded-lg border border-white/[0.06] overflow-hidden group/image cursor-pointer hover:border-sky-400/30 transition-all duration-300">
-                    <img src={salesforceFlow} alt="Flow Builder Screenshot" className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
+                  <div 
+                    onClick={() => setSelectedImage({ src: salesforceFlow, title: 'Flow Builder Screenshot', type: 'image' })}
+                    className="relative aspect-video bg-slate-800/50 rounded-lg border border-white/[0.06] overflow-hidden group/image cursor-pointer hover:border-sky-400/50 transition-all duration-300"
+                  >
+                    <img 
+                      src={salesforceFlow} 
+                      alt="Flow Builder Screenshot" 
+                      className="w-full h-full object-cover transition-transform duration-300 group-hover/image:scale-110" 
+                    />
                   </div>
-                  <div className="relative aspect-video bg-slate-800/50 rounded-lg border border-white/[0.06] overflow-hidden group/image cursor-pointer hover:border-sky-400/30 transition-all duration-300">
-                    <img src={salesforceDashboard} alt="Dashboard Screenshot" className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
+                  <div 
+                    onClick={() => setSelectedImage({ src: salesforceDashboard, title: 'Dashboard Screenshot', type: 'image' })}
+                    className="relative aspect-video bg-slate-800/50 rounded-lg border border-white/[0.06] overflow-hidden group/image cursor-pointer hover:border-sky-400/50 transition-all duration-300"
+                  >
+                    <img 
+                      src={salesforceDashboard} 
+                      alt="Dashboard Screenshot" 
+                      className="w-full h-full object-cover transition-transform duration-300 group-hover/image:scale-110" 
+                    />
                   </div>
                 </div>
               </div>
@@ -915,7 +940,7 @@ export default function Portfolio() {
             {/* Glow effect overlay */}
             <div className="absolute inset-0 bg-gradient-to-br from-emerald-400/0 via-emerald-400/0 to-emerald-400/0 group-hover:from-emerald-400/5 group-hover:via-transparent group-hover:to-transparent transition-all duration-500 rounded-2xl z-10 pointer-events-none" />
             
-            {/* Project Image Preview */}
+            {/* Project Image Preview - Banner (Not Clickable) */}
             <div className="relative h-44 md:h-48 bg-gradient-to-br from-slate-800 via-emerald-900/30 to-slate-900 overflow-hidden">
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="text-5xl md:text-6xl">🔐</div>
@@ -986,7 +1011,7 @@ export default function Portfolio() {
             {/* Glow effect overlay */}
             <div className="absolute inset-0 bg-gradient-to-br from-violet-400/0 via-violet-400/0 to-violet-400/0 group-hover:from-violet-400/5 group-hover:via-transparent group-hover:to-transparent transition-all duration-500 rounded-2xl z-10 pointer-events-none" />
             
-            {/* Project Image Preview */}
+            {/* Project Image Preview - Banner (Not Clickable) */}
             <div className="relative h-44 md:h-48 bg-gradient-to-br from-slate-800 via-violet-900/30 to-slate-900 overflow-hidden">
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="text-5xl md:text-6xl">🤖</div>
@@ -1058,7 +1083,7 @@ export default function Portfolio() {
             {/* Glow effect overlay */}
             <div className="absolute inset-0 bg-gradient-to-br from-orange-400/0 via-orange-400/0 to-orange-400/0 group-hover:from-orange-400/5 group-hover:via-transparent group-hover:to-transparent transition-all duration-500 rounded-2xl z-10 pointer-events-none" />
             
-            {/* Project Image Preview */}
+            {/* Project Image Preview - Banner (Not Clickable) */}
             <div className="relative h-44 md:h-48 bg-gradient-to-br from-slate-800 via-orange-900/30 to-slate-900 overflow-hidden">
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="text-5xl md:text-6xl">📁</div>
@@ -1122,7 +1147,7 @@ export default function Portfolio() {
             {/* Glow effect overlay */}
             <div className="absolute inset-0 bg-gradient-to-br from-pink-400/0 via-pink-400/0 to-pink-400/0 group-hover:from-pink-400/5 group-hover:via-transparent group-hover:to-transparent transition-all duration-500 rounded-2xl z-10 pointer-events-none" />
             
-            {/* Project Image Preview */}
+            {/* Project Image Preview - Banner (Not Clickable) */}
             <div className="relative h-44 md:h-48 bg-gradient-to-br from-slate-800 via-pink-900/30 to-slate-900 overflow-hidden">
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="text-5xl md:text-6xl">🏨</div>
@@ -1194,7 +1219,7 @@ export default function Portfolio() {
             {/* Glow effect overlay */}
             <div className="absolute inset-0 bg-gradient-to-br from-blue-400/0 via-blue-400/0 to-blue-400/0 group-hover:from-blue-400/5 group-hover:via-transparent group-hover:to-transparent transition-all duration-500 rounded-2xl z-10 pointer-events-none" />
 
-            {/* Project Image Preview */}
+            {/* Project Image Preview - Banner (Not Clickable) */}
             <div className="relative h-44 md:h-48 bg-gradient-to-br from-slate-800 via-blue-900/30 to-slate-900 overflow-hidden">
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="text-5xl md:text-6xl">💼</div>
@@ -1399,6 +1424,57 @@ export default function Portfolio() {
         </motion.div>
       </motion.section>
       </motion.div>
+
+      {/* Image Modal */}
+      {selectedImage && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.3 }}
+          onClick={() => setSelectedImage(null)}
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 md:p-8"
+        >
+          {/* Backdrop with blur */}
+          <div className="absolute inset-0 bg-slate-950/90 backdrop-blur-xl" />
+          
+          {/* Close button */}
+          <motion.button
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.1, duration: 0.2 }}
+            onClick={() => setSelectedImage(null)}
+            className="absolute top-4 right-4 md:top-6 md:right-6 z-50 p-2 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors duration-200"
+          >
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </motion.button>
+
+          {/* Image container */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.9 }}
+            transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+            onClick={(e) => e.stopPropagation()}
+            className="relative z-10 max-w-5xl max-h-[85vh] w-full flex flex-col items-center"
+          >
+            {selectedImage.type === 'emoji' ? (
+              <div className="text-[20vh] md:text-[30vh] select-none">{selectedImage.src}</div>
+            ) : (
+              <img
+                src={selectedImage.src}
+                alt={selectedImage.title}
+                className="max-w-full max-h-[75vh] object-contain rounded-lg shadow-2xl"
+              />
+            )}
+            <h3 className="mt-4 text-lg md:text-xl text-slate-200 font-medium text-center">
+              {selectedImage.title}
+            </h3>
+          </motion.div>
+        </motion.div>
+      )}
     </motion.div>
   );
 }
