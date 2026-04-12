@@ -522,13 +522,13 @@ export default function Portfolio() {
         initial={{ opacity: 0, x: -30 }}
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
-        viewport={{ once: true, margin: "-100px" }}
+        viewport={{ margin: "-100px" }}
       >
         <motion.h2 
           initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
           whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
           transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
-          viewport={{ once: true }}
+          viewport={{ }}
           className="text-3xl md:text-4xl mb-10 md:mb-12 font-semibold tracking-tight text-center"
         >
           <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-500">Why Hire Me</span>
@@ -546,7 +546,7 @@ export default function Portfolio() {
               initial={{ opacity: 0, scale: 0.95, y: 20 }}
               whileInView={{ opacity: 1, scale: 1, y: 0 }}
               transition={{ duration: 0.5, delay: item.delay, ease: [0.25, 0.1, 0.25, 1] }}
-              viewport={{ once: true }}
+              viewport={{ }}
               whileHover={{ y: -4, transition: { duration: 0.2 } }}
               className={`relative overflow-hidden rounded-2xl bg-slate-950/40 border border-white/[0.08] hover:border-${item.color}-400/40 backdrop-blur-md p-5 flex flex-col gap-3 cursor-pointer shadow-[0_4px_20px_rgba(0,0,0,0.3)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.4)] transition-all duration-300`}
             >
@@ -569,13 +569,13 @@ export default function Portfolio() {
         initial={{ opacity: 0, x: 30 }}
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
-        viewport={{ once: true, margin: "-100px" }}
+        viewport={{ margin: "-100px" }}
       >
         <motion.h2 
           initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
           whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
           transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
-          viewport={{ once: true }}
+          viewport={{ }}
           className="text-2xl md:text-4xl mb-6 md:mb-10 font-semibold tracking-tight"
         >
           <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-500">About</span>
@@ -585,7 +585,7 @@ export default function Portfolio() {
           initial={{ opacity: 0, scale: 0.95, y: 20 }}
           whileInView={{ opacity: 1, scale: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1, ease: [0.25, 0.1, 0.25, 1] }}
-          viewport={{ once: true }}
+          viewport={{ }}
           className="rounded-2xl bg-slate-950/40 border border-white/[0.08] backdrop-blur-md p-6 md:p-8 shadow-[0_4px_20px_rgba(0,0,0,0.3)]"
         >
           <p className="text-slate-300/90 text-base md:text-lg mb-6">
@@ -604,7 +604,7 @@ export default function Portfolio() {
                 initial={{ opacity: 0, x: -10 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.4, delay: 0.2 + (index * 0.08), ease: [0.25, 0.1, 0.25, 1] }}
-                viewport={{ once: true }}
+                viewport={{ }}
                 className="flex items-start gap-3"
               >
                 <span className="text-cyan-400 mt-1">•</span>
@@ -625,13 +625,13 @@ export default function Portfolio() {
         initial={{ opacity: 0, x: -30 }}
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
-        viewport={{ once: true, margin: "-100px" }}
+        viewport={{ margin: "-100px" }}
       >
         <motion.h2 
           initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
           whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
           transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
-          viewport={{ once: true }}
+          viewport={{ }}
           className="text-3xl md:text-4xl mb-10 md:mb-12 font-semibold tracking-tight text-center"
         >
           <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-500">Tech Stack</span>
@@ -649,7 +649,7 @@ export default function Portfolio() {
               initial={{ opacity: 0, scale: 0.95, y: 20 }}
               whileInView={{ opacity: 1, scale: 1, y: 0 }}
               transition={{ duration: 0.5, delay: item.delay, ease: [0.25, 0.1, 0.25, 1] }}
-              viewport={{ once: true }}
+              viewport={{ }}
               whileHover={{ y: -4, transition: { duration: 0.2 } }}
               className={`relative overflow-hidden rounded-2xl bg-slate-950/40 border border-white/[0.08] hover:border-${item.color}-400/40 backdrop-blur-md p-5 flex flex-col gap-3 cursor-pointer shadow-[0_4px_20px_rgba(0,0,0,0.3)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.4)] transition-all duration-300`}
             >
@@ -676,13 +676,13 @@ export default function Portfolio() {
         initial={{ opacity: 0, x: 30 }}
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
-        viewport={{ once: true, margin: "-100px" }}
+        viewport={{ margin: "-100px" }}
       >
         <motion.h2 
           initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
           whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
           transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
-          viewport={{ once: true }}
+          viewport={{ }}
           className="text-2xl md:text-4xl mb-8 md:mb-12 font-semibold tracking-tight"
         >
           <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-500">Learning & Growth</span>
@@ -698,7 +698,7 @@ export default function Portfolio() {
               initial={{ opacity: 0, scale: 0.95, y: 20 }}
               whileInView={{ opacity: 1, scale: 1, y: 0 }}
               transition={{ duration: 0.5, delay: item.delay, ease: [0.25, 0.1, 0.25, 1] }}
-              viewport={{ once: true }}
+              viewport={{ }}
               whileHover={{ y: -4, transition: { duration: 0.2 } }}
               className={`rounded-2xl bg-slate-950/40 border border-white/[0.08] hover:border-${item.color}-400/40 backdrop-blur-md p-6 cursor-pointer shadow-[0_4px_20px_rgba(0,0,0,0.3)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.4)] transition-all duration-300`}
             >
@@ -716,7 +716,7 @@ export default function Portfolio() {
           initial={{ opacity: 0, scale: 0.95, y: 20 }}
           whileInView={{ opacity: 1, scale: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
-          viewport={{ once: true }}
+          viewport={{ }}
           whileHover={{ y: -4, transition: { duration: 0.2 } }}
           className="mt-6 md:mt-8 rounded-2xl bg-gradient-to-r from-cyan-500/10 to-blue-500/10 border border-white/[0.08] hover:border-cyan-400/40 backdrop-blur-md p-6 md:p-8 text-center cursor-pointer shadow-[0_4px_20px_rgba(0,0,0,0.3)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.4)] transition-all duration-300"
         >
@@ -734,13 +734,13 @@ export default function Portfolio() {
         initial={{ opacity: 0, x: -30 }}
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
-        viewport={{ once: true, margin: "-100px" }}
+        viewport={{ margin: "-100px" }}
       >
         <motion.h2 
           initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
           whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
           transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
-          viewport={{ once: true }}
+          viewport={{ }}
           className="text-2xl md:text-4xl mb-8 md:mb-12 font-semibold tracking-tight text-center"
         >
           <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-500">Projects</span>
@@ -751,7 +751,7 @@ export default function Portfolio() {
           <motion.div
             initial={{ opacity: 0, scale: 0.9, y: 30 }}
             whileInView={{ opacity: 1, scale: 1, y: 0 }}
-            viewport={{ once: true, margin: "-50px" }}
+            viewport={{ margin: "-50px" }}
             transition={{ duration: 0.6, delay: 0, ease: [0.22, 1, 0.36, 1] }}
             className="w-full md:col-span-2 lg:col-span-1 md:w-auto bg-slate-950/30 md:bg-slate-950/40 rounded-2xl md:rounded-2xl border-2 border-amber-400/40 md:border-white/[0.08] hover:border-cyan-400/30 cursor-pointer group relative overflow-hidden backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.3)] md:shadow-[0_12px_40px_rgba(245,158,11,0.2)] hover:shadow-[0_12px_40px_rgba(6,182,212,0.2)] md:hover:shadow-[0_20px_60px_rgba(6,182,212,0.25)] transition-all duration-300 ease-in-out hover:-translate-y-1 hover:scale-[1.02] active:scale-[0.98] lg:hover:scale-[1.03]"
             style={{ perspective: '1000px', transformStyle: 'preserve-3d' }}
@@ -832,7 +832,7 @@ export default function Portfolio() {
           <motion.div
             initial={{ opacity: 0, scale: 0.9, y: 30 }}
             whileInView={{ opacity: 1, scale: 1, y: 0 }}
-            viewport={{ once: true, margin: "-50px" }}
+            viewport={{ margin: "-50px" }}
             transition={{ duration: 0.6, delay: 0.12, ease: [0.22, 1, 0.36, 1] }}
             className="w-full md:col-span-2 lg:col-span-1 md:w-auto bg-slate-950/30 md:bg-slate-950/40 rounded-2xl md:rounded-2xl border-2 border-amber-400/40 md:border-white/[0.08] hover:border-sky-400/30 cursor-pointer group relative overflow-hidden backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.3)] md:shadow-[0_12px_40px_rgba(245,158,11,0.2)] hover:shadow-[0_12px_40px_rgba(14,165,233,0.2)] md:hover:shadow-[0_20px_60px_rgba(14,165,233,0.25)] transition-all duration-300 ease-in-out hover:-translate-y-1 hover:scale-[1.02] active:scale-[0.98] lg:hover:scale-[1.03]"
             style={{ perspective: '1000px', transformStyle: 'preserve-3d' }}
@@ -908,7 +908,7 @@ export default function Portfolio() {
           <motion.div
             initial={{ opacity: 0, scale: 0.9, y: 30 }}
             whileInView={{ opacity: 1, scale: 1, y: 0 }}
-            viewport={{ once: true, margin: "-50px" }}
+            viewport={{ margin: "-50px" }}
             transition={{ duration: 0.6, delay: 0.24, ease: [0.22, 1, 0.36, 1] }}
             className="w-full md:w-auto bg-slate-950/30 md:bg-slate-950/40 rounded-2xl md:rounded-2xl border border-white/[0.06] md:border-white/[0.08] hover:border-emerald-400/30 cursor-pointer group relative overflow-hidden backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.3)] md:shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:shadow-[0_12px_40px_rgba(16,185,129,0.15)] md:hover:shadow-[0_20px_60px_rgba(16,185,129,0.2)] transition-all duration-300 ease-in-out hover:-translate-y-1 hover:scale-[1.02] active:scale-[0.98]"
             style={{ perspective: '1000px', transformStyle: 'preserve-3d' }}
@@ -979,7 +979,7 @@ export default function Portfolio() {
           <motion.div
             initial={{ opacity: 0, scale: 0.9, y: 30 }}
             whileInView={{ opacity: 1, scale: 1, y: 0 }}
-            viewport={{ once: true, margin: "-50px" }}
+            viewport={{ margin: "-50px" }}
             transition={{ duration: 0.6, delay: 0.36, ease: [0.22, 1, 0.36, 1] }}
             className="w-full md:w-auto bg-slate-950/30 md:bg-slate-950/40 rounded-2xl md:rounded-2xl border border-white/[0.06] md:border-white/[0.08] hover:border-violet-400/30 cursor-pointer group relative overflow-hidden backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.3)] md:shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:shadow-[0_12px_40px_rgba(139,92,246,0.15)] md:hover:shadow-[0_20px_60px_rgba(139,92,246,0.2)] transition-all duration-300 ease-in-out hover:-translate-y-1 hover:scale-[1.02] active:scale-[0.98]"
             style={{ perspective: '1000px', transformStyle: 'preserve-3d' }}
@@ -1051,7 +1051,7 @@ export default function Portfolio() {
           <motion.div
             initial={{ opacity: 0, scale: 0.9, y: 30 }}
             whileInView={{ opacity: 1, scale: 1, y: 0 }}
-            viewport={{ once: true, margin: "-50px" }}
+            viewport={{ margin: "-50px" }}
             transition={{ duration: 0.6, delay: 0.48, ease: [0.22, 1, 0.36, 1] }}
             className="w-full md:w-auto bg-slate-950/30 md:bg-slate-950/40 rounded-2xl md:rounded-2xl border border-white/[0.06] md:border-white/[0.08] hover:border-orange-400/30 cursor-pointer group relative overflow-hidden backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.3)] md:shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:shadow-[0_12px_40px_rgba(251,146,60,0.15)] md:hover:shadow-[0_20px_60px_rgba(251,146,60,0.2)] transition-all duration-300 ease-in-out hover:-translate-y-1 hover:scale-[1.02] active:scale-[0.98]"
             style={{ perspective: '1000px', transformStyle: 'preserve-3d' }}
@@ -1115,7 +1115,7 @@ export default function Portfolio() {
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-50px" }}
+            viewport={{ margin: "-50px" }}
             transition={{ duration: 0.6, delay: 0.35, ease: [0.22, 1, 0.36, 1] }}
             className="w-full md:w-auto bg-slate-950/30 md:bg-slate-950/40 rounded-2xl md:rounded-2xl border border-white/[0.06] md:border-white/[0.08] hover:border-pink-400/30 cursor-pointer group relative overflow-hidden backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.3)] md:shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:shadow-[0_12px_40px_rgba(236,72,153,0.15)] md:hover:shadow-[0_20px_60px_rgba(236,72,153,0.2)] transition-all duration-300 ease-in-out hover:-translate-y-1 hover:scale-[1.02] active:scale-[0.98]"
             style={{ perspective: '1000px', transformStyle: 'preserve-3d' }}
@@ -1187,7 +1187,7 @@ export default function Portfolio() {
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-50px" }}
+            viewport={{ margin: "-50px" }}
             transition={{ duration: 0.6, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
             className="w-full md:w-auto bg-slate-950/30 md:bg-slate-950/40 rounded-2xl md:rounded-2xl border border-white/[0.06] md:border-white/[0.08] hover:border-blue-400/30 cursor-pointer group relative overflow-hidden backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.3)] md:shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:shadow-[0_12px_40px_rgba(59,130,246,0.15)] md:hover:shadow-[0_20px_60px_rgba(59,130,246,0.2)] transition-all duration-300 ease-in-out hover:-translate-y-1 hover:scale-[1.02] active:scale-[0.98]"
             style={{ perspective: '1000px', transformStyle: 'preserve-3d' }}
@@ -1263,13 +1263,13 @@ export default function Portfolio() {
         initial={{ opacity: 0, x: 30 }}
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
-        viewport={{ once: true, margin: "-100px" }}
+        viewport={{ margin: "-100px" }}
       >
         <motion.h2 
           initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
           whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
           transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
-          viewport={{ once: true }}
+          viewport={{ }}
           className="text-2xl md:text-4xl mb-8 md:mb-12 font-semibold tracking-tight text-center"
         >
           <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-500">Problem Solving</span>
@@ -1279,7 +1279,7 @@ export default function Portfolio() {
           initial={{ opacity: 0, scale: 0.95, y: 20 }}
           whileInView={{ opacity: 1, scale: 1, y: 0 }}
           transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
-          viewport={{ once: true }}
+          viewport={{ }}
           whileHover={{ y: -4, transition: { duration: 0.2 } }}
           className="max-w-3xl mx-auto rounded-2xl bg-slate-950/40 border border-white/[0.08] hover:border-cyan-400/40 backdrop-blur-md p-6 md:p-10 cursor-pointer shadow-[0_4px_20px_rgba(0,0,0,0.3)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.4)] transition-all duration-300"
         >
@@ -1304,13 +1304,13 @@ export default function Portfolio() {
         initial={{ opacity: 0, x: -30 }}
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
-        viewport={{ once: true, margin: "-100px" }}
+        viewport={{ margin: "-100px" }}
       >
         <motion.h2 
           initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
           whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
           transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
-          viewport={{ once: true }}
+          viewport={{ }}
           className="text-2xl md:text-4xl mb-8 md:mb-12 font-semibold tracking-tight text-center"
         >
           <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-500">Education</span>
@@ -1320,7 +1320,7 @@ export default function Portfolio() {
           initial={{ opacity: 0, scale: 0.95, y: 20 }}
           whileInView={{ opacity: 1, scale: 1, y: 0 }}
           transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
-          viewport={{ once: true }}
+          viewport={{ }}
           whileHover={{ y: -4, transition: { duration: 0.2 } }}
           className="max-w-2xl mx-auto rounded-2xl bg-slate-950/40 border border-white/[0.08] hover:border-cyan-400/40 backdrop-blur-md p-6 md:p-10 cursor-pointer shadow-[0_4px_20px_rgba(0,0,0,0.3)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.4)] transition-all duration-300"
         >
@@ -1339,13 +1339,13 @@ export default function Portfolio() {
         initial={{ opacity: 0, x: 30 }}
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
-        viewport={{ once: true, margin: "-100px" }}
+        viewport={{ margin: "-100px" }}
       >
         <motion.h2 
           initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
           whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
           transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
-          viewport={{ once: true }}
+          viewport={{ }}
           className="text-2xl md:text-4xl mb-4 md:mb-6 text-center font-semibold tracking-tight"
         >
           <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-500">Let's Connect</span>
@@ -1355,7 +1355,7 @@ export default function Portfolio() {
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1, ease: [0.25, 0.1, 0.25, 1] }}
-          viewport={{ once: true }}
+          viewport={{ }}
           className="text-center text-slate-400 mb-8 md:mb-10 max-w-xl mx-auto text-sm md:text-lg leading-relaxed px-4"
         >
           Open to internships and opportunities
@@ -1365,7 +1365,7 @@ export default function Portfolio() {
           initial={{ opacity: 0, scale: 0.95, y: 20 }}
           whileInView={{ opacity: 1, scale: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
-          viewport={{ once: true }}
+          viewport={{ }}
           className="flex flex-col sm:flex-row justify-center items-stretch sm:items-center gap-3 sm:gap-6"
         >
           {[
