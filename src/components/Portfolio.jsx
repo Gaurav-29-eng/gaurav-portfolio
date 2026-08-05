@@ -1361,6 +1361,7 @@ export default function Portfolio() {
               </div>
               <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent" />
               <div className="absolute top-2 right-2 md:top-3 md:right-3 flex flex-col md:flex-row items-end gap-1 md:gap-2">
+                <span className="px-1.5 py-0.5 md:px-2 md:py-1 bg-amber-500/20 backdrop-blur-sm text-amber-300 text-[10px] md:text-xs rounded-full border border-amber-500/30 whitespace-nowrap hover:bg-amber-500/30 hover:border-amber-500/50 transition-all duration-300">🚧 Under Progress</span>
                 <span className="px-1.5 py-0.5 md:px-2 md:py-1 bg-violet-400/20 backdrop-blur-sm text-violet-300 text-[10px] md:text-xs rounded-full border border-violet-400/30 whitespace-nowrap">Flask</span>
                 <span className="px-1.5 py-0.5 md:px-2 md:py-1 bg-violet-400/20 backdrop-blur-sm text-violet-300 text-[10px] md:text-xs rounded-full border border-violet-400/30 whitespace-nowrap">AI</span>
               </div>
@@ -1368,10 +1369,12 @@ export default function Portfolio() {
 
             <div className="p-4 md:p-6 w-full">
               <h3 className="text-base md:text-xl font-semibold text-slate-100 mb-2 leading-tight w-full break-words">AI Chat Analyzer</h3>
-              <p className="text-violet-300/90 text-xs md:text-sm mb-3 md:mb-4 leading-relaxed w-full break-words">Flask-based app to store, search and summarize conversations</p>
+              <p className="text-violet-300/90 text-xs md:text-sm mb-2 md:mb-3 leading-relaxed w-full break-words">Flask-based app to store, search and summarize conversations</p>
+              <p className="text-slate-500/70 text-[10px] md:text-xs mb-3 md:mb-4 leading-relaxed w-full break-words">🚧 Currently under active development.</p>
               
               <div className="space-y-2 md:space-y-3 mb-3 md:mb-4 w-full">
                 <div className="flex flex-wrap gap-1.5 md:gap-2 w-full">
+                  <span className="px-1.5 py-0.5 md:px-2 md:py-1 bg-amber-500/20 text-amber-300 text-[10px] md:text-xs rounded whitespace-nowrap hover:bg-amber-500/30 transition-all duration-300">🚧 Under Progress</span>
                   <span className="px-1.5 py-0.5 md:px-2 md:py-1 bg-slate-800/80 text-slate-300 text-[10px] md:text-xs rounded whitespace-nowrap">Flask</span>
                   <span className="px-1.5 py-0.5 md:px-2 md:py-1 bg-slate-800/80 text-slate-300 text-[10px] md:text-xs rounded whitespace-nowrap">Python</span>
                   <span className="px-1.5 py-0.5 md:px-2 md:py-1 bg-slate-800/80 text-slate-300 text-[10px] md:text-xs rounded whitespace-nowrap">AI</span>
