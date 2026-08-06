@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/react";
 import Portfolio from "./components/Portfolio";
 import MouseGlow from "./components/MouseGlow";
 import CursorTrail from "./components/CursorTrail";
@@ -8,6 +9,7 @@ function App() {
       <MouseGlow />
       <CursorTrail />
       <Portfolio />
+      <Analytics />
     </div>
   );
 }
